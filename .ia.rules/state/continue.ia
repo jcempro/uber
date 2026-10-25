@@ -2,5 +2,5 @@
 
 FT-001: registro inicial fe3d216 tecnicamente concluído; pendente validação humana. Contexto comum: contexts/FT-001/master.md.
 FT-010: confirmação Fluent e preparo oficial de44 pendências normativas concluídos tecnicamente; pendente validação humana, sem declarar código implementado.
-FT-002 ativa: configurar pacote, versões travadas e instalar toolchain em unidade delimitada. Próxima ação: revisar resultado do job desta unidade, registrar Q8S, commitar e liberar bootstrap funcional.
+FT-002 ativa: pacote configurado e instalação verificada pelo job5899d49b-d0cb-4bc9-acb2-b1bc82cc3554; Q8S9 registrado. Próxima ação: commit da instalação e unidade de dois componentes TSX com tipos/renderização reais; depois entrada HTML/Vite/CSS e build.
 Pendências: compilação real, matriz browsers/bundle, todos os módulos financeiros e aceite global F01–F18/U01/A01–A05. Produto ainda não implementado.

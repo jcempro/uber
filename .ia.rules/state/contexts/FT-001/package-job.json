@@ -1,0 +1,17 @@
+{
+  "job_id": "19cbb2f1-5e21-4d0e-af70-06714c546502",
+  "receipt_status": "RUNNING",
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "unit": "FT-002.1 pacote/configuração e instalação; inferência local delimitada",
+  "required_change_paths": ["package.json", "package-lock.json", ".node-version", ".npmrc", "docs/toolchain.md"],
+  "required_command_ids": ["install_toolchain", "verify_toolchain"],
+  "commit_policy": "supervisor",
+  "prerequisite_commit": "6f0829f",
+  "previous_review": {"job_id": "e598d8b0-0d94-481a-ace6-3ade98c9f7a8", "score": 9, "revision": 1},
+  "preflight": "Verificador passou Node24 --check. Executável Node, npmCLI10.9.4 e semver do npm foram descobertos e conferidos. Scripts e engines originais preservados como expectativas independentes via HEAD.",
+  "next": "Receber local_result uma vez em retomada autorizada e revisar alvos/evidências; registrar Q8S. Se satisfatório, assumir commit imediato da unidade e liberar bootstrap funcional em src com typecheck/lint/build/inspeção reais. Não repetir instalação bem-sucedida nem voltar a docs iniciais.",
+  "traceability": "44 linhas materiais preparadas pelo mecanismo oficial, todas pending sem hashes materiais. Artefatos são planejados e precisam de revisão causal por sentença antes de finalize. Tabela de24 critérios não é validada semanticamente pelo parser e permanece pendente.",
+  "global_acceptance": "Produto, cálculos/UI/JSON/browser/planilha/CI ainda pendentes. Nenhum build do produto executado.",
+  "native_compaction": "Impedida: ferramenta/rota suportada não exposta para contexto vivo"
+}

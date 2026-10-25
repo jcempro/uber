@@ -5,8 +5,8 @@
 # TO-DOs
 
 - [ ] FT-001 — Implementar repositório conforme RCF
-  - 🔄 Corrigir e validar o estado documental canônico.
-  - 📌 Revisar o contexto mestre e completar fontes, hashes, FTs e dependências antes do commit inicial.
-  - ⬜ Reconciliar RCF com decisões e solicitações financeiras antes de código.
-  - ⬜ Implementar e validar as fases 2–9 do contexto mestre em unidades delimitadas.
+  - ✅ Estado documental canônico corrigido; validação humana pendente.
+  - ✅ Fontes, hashes, FTs e dependências registrados em fe3d216; validação humana pendente.
+  - ✅ RCF conciliado e pendências preparadas oficialmente em6f0829f; código ainda não integralmente implementado.
+  - ⏳ Implementar e validar as fases 2–9; toolchain instalado e verificado, bootstrap TSX a seguir.
   - ⬜ Comprovar aceite global, regressões e validação humana; aplicação ainda não implementada.
