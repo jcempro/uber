@@ -1,0 +1,16 @@
+{
+  "job_id": "3c8b48cf-6892-4725-968f-8b839cf0958d",
+  "receipt_status": "RUNNING",
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "execution_kind": "command_sequence",
+  "command_sequence": ["collect_package_metadata", "verify_package_metadata"],
+  "required_change_paths": [".ia.rules/state/contexts/FT-001/toolchain-registry.json"],
+  "commits": {"initial_registration": "fe3d216", "fluent_confirmation": "ee86db4"},
+  "prior_review": {"job_id": "896d178e-a154-4855-8935-7414e71e2479", "score": 9, "revision": 1},
+  "commit_policy": "supervisor",
+  "next": "Receber resultado terminal uma vez em retomada autorizada; revisar metadados/versões/peers proporcionalmente e registrar Q8S. Decidir runtime e artefatos, preparar trace oficial e delegar primeira unidade funcional. Não repetir registro/estado/documentos já concluídos.",
+  "integration_note": "Primeira chamada foi recusada antes de criar job por timeout_ms acima de300000. Correção objetiva: timeout total300000, requisições12000; nenhum replay de job criado.",
+  "global_acceptance": "Pendente; nenhuma aplicação implementada ou dependência instalada",
+  "native_compaction": "Impedida: nenhuma ferramenta/rota suportada exposta para contexto vivo"
+}

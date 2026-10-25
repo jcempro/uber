@@ -1,0 +1,60 @@
+{
+  "schema": "jcem-compatible-packages/v1",
+  "node": "v24.22.1",
+  "packages": [
+    {
+      "name": "typescript",
+      "requested": "typescript@6.0",
+      "version": "6.0.3",
+      "source": "https://registry.npmjs.org/typescript/6.0.3",
+      "retrievedAt": "2026-10-25T22:54:33.625Z",
+      "responseSha256": "c3b095f0ba61c854843c4965598d3d1de8eb8e3d41cfec93c5ffbfd8bde537cc",
+      "license": "Apache-2.0",
+      "engines": {
+        "node": ">=14.17"
+      },
+      "peerDependencies": {},
+      "dist": {
+        "shasum": "90251dc007916e972786cb94d74d15b185577d21",
+        "tarball": "https://registry.npmjs.org/typescript/-/typescript-6.0.3.tgz",
+        "fileCount": 140,
+        "integrity": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==",
+        "signatures": [
+          {
+            "sig": "MEYCIQDv8tVB8x5z1EeS+UHLgSqOywErEEFERRmMNef6kTXsPQIhAMO+L+ktR6FwCDSc+z0KD68md8mvKukeVzgjuBhoie9i",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "unpackedSize": 24346827
+      }
+    },
+    {
+      "name": "@types/node",
+      "requested": "@types/node@24",
+      "version": "24.19.2",
+      "source": "https://registry.npmjs.org/%40types%2Fnode/24.19.2",
+      "retrievedAt": "2026-10-25T22:54:36.457Z",
+      "responseSha256": "208f2b8105302901160a596229d995f8cd53044cb6c32ff98f271dba50677f09",
+      "license": "MIT",
+      "engines": {},
+      "peerDependencies": {},
+      "dist": {
+        "shasum": "8718eedbc0f89648de6525be9f4a9c61cdbaa502",
+        "tarball": "https://registry.npmjs.org/@types/node/-/node-24.19.2.tgz",
+        "fileCount": 88,
+        "integrity": "sha512-93d49wCWJkCyN87MxLpNN6KXPCwFw7bVUg79mGUV1OS40JGWwVCr8n61DXCSqz7CV6/VfPkb7xec7uP2M+QHWQ==",
+        "signatures": [
+          {
+            "sig": "MEQCIANcVRgt/opOpIiouz2oQFvOIyDM4lBAgR5KWFpeM0S7AiAlIKKketPR7tVtdmeqoW9ERmEN+hUSbmSsgvw4PZE5xg==",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "sig": "MEQCIEyyRKiIaH5zy091E3cDbeZApk+zitfD9OmZP0qKnrKRAiB6X7j1j2Vakh+MTSX0FSCk/vXjx9TKwcy6mTWJb+rXXg==",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "unpackedSize": 2613701
+      }
+    }
+  ]
+}

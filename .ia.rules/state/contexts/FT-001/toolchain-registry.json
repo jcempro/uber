@@ -1,0 +1,685 @@
+{
+  "schema": "jcem-package-evidence/v1",
+  "recordedAt": "2026-10-25T22:48:46.102Z",
+  "node": "v24.22.1",
+  "rcfSha256": "d2b52d43284c64c4834bc1b1cc35d030d64c7629d5bd02b04ddc594aed78ff5a",
+  "scope": "Somente metadados públicos; não comprova instalação, compatibilidade ou bundle. Candidatos ainda sujeitos a decisão do supervisor.",
+  "packages": [
+    {
+      "name": "react",
+      "source": "https://registry.npmjs.org/react/latest",
+      "retrievedAt": "2026-10-25T22:48:41.863Z",
+      "etag": null,
+      "responseSha256": "ecf8c02b9096a7813842d87fae50a707a8809c5c3d0ec6b359ac51d40188ff6f",
+      "version": "19.3.1",
+      "license": "MIT",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {},
+      "dependencies": {},
+      "repository": {
+        "url": "git+https://github.com/react/react.git",
+        "type": "git",
+        "directory": "packages/react"
+      },
+      "dist": {
+        "integrity": "sha512-QNhWdt7nrgVWWQG58QuGsAR3jv3Hbe4mb4vz7w2csnHavciZJgda1CPNaldF6eVxv90ud3jUXpKlHL69gO38yw==",
+        "tarball": "https://registry.npmjs.org/react/-/react-19.3.1.tgz",
+        "unpackedSize": 178663
+      },
+      "deprecated": null
+    },
+    {
+      "name": "react-dom",
+      "source": "https://registry.npmjs.org/react-dom/latest",
+      "retrievedAt": "2026-10-25T22:48:41.896Z",
+      "etag": null,
+      "responseSha256": "2d72d7d33a8b0fea5614e1b415d06470877efa8eebbdf638cee04e5b83c2c7a5",
+      "version": "19.3.1",
+      "license": "MIT",
+      "engines": {},
+      "peerDependencies": {
+        "react": "^19.3.1"
+      },
+      "peerDependenciesMeta": {},
+      "dependencies": {
+        "scheduler": "^0.28.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/react/react.git",
+        "type": "git",
+        "directory": "packages/react-dom"
+      },
+      "dist": {
+        "integrity": "sha512-Y0bARz53lhEC1NMCASs0/j+faB/zqt3R8hpvg1e8+61ZVJ4UL0UdC4cBbXfZMcIuhrfgeILTLe+ZeBCavQPtKQ==",
+        "tarball": "https://registry.npmjs.org/react-dom/-/react-dom-19.3.1.tgz",
+        "unpackedSize": 8067632
+      },
+      "deprecated": null
+    },
+    {
+      "name": "vite",
+      "source": "https://registry.npmjs.org/vite/latest",
+      "retrievedAt": "2026-10-25T22:48:41.924Z",
+      "etag": null,
+      "responseSha256": "ba34bc2cd5e3e2c14de8d81d000e5596d4c110aab59b723c8b9bdb175df78723",
+      "version": "8.3.5",
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "peerDependencies": {
+        "tsx": "^4.8.1",
+        "jiti": ">=1.21.0",
+        "less": "^4.0.0",
+        "sass": "^1.70.0",
+        "yaml": "^2.4.2",
+        "stylus": ">=0.54.8",
+        "terser": "^5.16.0",
+        "esbuild": "^0.27.0 || ^0.28.0",
+        "sugarss": "^5.0.0",
+        "@types/node": "^20.19.0 || >=22.12.0",
+        "sass-embedded": "^1.70.0",
+        "@vitejs/devtools": "^0.7.1 || ^0.8.0"
+      },
+      "peerDependenciesMeta": {
+        "tsx": {
+          "optional": true
+        },
+        "jiti": {
+          "optional": true
+        },
+        "less": {
+          "optional": true
+        },
+        "sass": {
+          "optional": true
+        },
+        "yaml": {
+          "optional": true
+        },
+        "stylus": {
+          "optional": true
+        },
+        "terser": {
+          "optional": true
+        },
+        "esbuild": {
+          "optional": true
+        },
+        "sugarss": {
+          "optional": true
+        },
+        "@types/node": {
+          "optional": true
+        },
+        "sass-embedded": {
+          "optional": true
+        },
+        "@vitejs/devtools": {
+          "optional": true
+        }
+      },
+      "dependencies": {
+        "postcss": "^8.5.30",
+        "rolldown": "~1.2.14",
+        "picomatch": "^4.0.7",
+        "tinyglobby": "^0.2.17",
+        "lightningcss": "^1.33.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/vitejs/vite.git",
+        "type": "git",
+        "directory": "packages/vite"
+      },
+      "dist": {
+        "integrity": "sha512-z1YpjieJ9g0ebTmQpLBv/oq9E3F9EIlOe+7LahW8SrE3LTiG3udBRUXQOlYXP9b+IC2q2phHeVxj9xGlw34OEQ==",
+        "tarball": "https://registry.npmjs.org/vite/-/vite-8.3.5.tgz",
+        "unpackedSize": 2383283
+      },
+      "deprecated": null
+    },
+    {
+      "name": "typescript",
+      "source": "https://registry.npmjs.org/typescript/latest",
+      "retrievedAt": "2026-10-25T22:48:41.947Z",
+      "etag": null,
+      "responseSha256": "28a8ef314c6bbc3fddb831088f80eb2fcac6351cb618c8ac029f7229f587b8aa",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "engines": {
+        "node": ">=16.20.0"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {},
+      "dependencies": {
+        "@typescript/typescript-aix-ppc64": "7.0.2",
+        "@typescript/typescript-linux-arm": "7.0.2",
+        "@typescript/typescript-linux-x64": "7.0.2",
+        "@typescript/typescript-sunos-x64": "7.0.2",
+        "@typescript/typescript-win32-x64": "7.0.2",
+        "@typescript/typescript-darwin-x64": "7.0.2",
+        "@typescript/typescript-netbsd-x64": "7.0.2",
+        "@typescript/typescript-freebsd-x64": "7.0.2",
+        "@typescript/typescript-linux-arm64": "7.0.2",
+        "@typescript/typescript-linux-ppc64": "7.0.2",
+        "@typescript/typescript-linux-s390x": "7.0.2",
+        "@typescript/typescript-openbsd-x64": "7.0.2",
+        "@typescript/typescript-win32-arm64": "7.0.2",
+        "@typescript/typescript-darwin-arm64": "7.0.2",
+        "@typescript/typescript-netbsd-arm64": "7.0.2",
+        "@typescript/typescript-freebsd-arm64": "7.0.2",
+        "@typescript/typescript-linux-loong64": "7.0.2",
+        "@typescript/typescript-linux-riscv64": "7.0.2",
+        "@typescript/typescript-openbsd-arm64": "7.0.2",
+        "@typescript/typescript-linux-mips64el": "7.0.2"
+      },
+      "repository": {
+        "url": "git+https://github.com/microsoft/TypeScript.git",
+        "type": "git"
+      },
+      "dist": {
+        "integrity": "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA==",
+        "tarball": "https://registry.npmjs.org/typescript/-/typescript-7.0.2.tgz",
+        "unpackedSize": 2497498
+      },
+      "deprecated": null
+    },
+    {
+      "name": "sass",
+      "source": "https://registry.npmjs.org/sass/latest",
+      "retrievedAt": "2026-10-25T22:48:42.221Z",
+      "etag": null,
+      "responseSha256": "9d5a324fea48449f27b50f050c42534d5b3b486a0e8a4fd1c0727088452d4e70",
+      "version": "1.106.1",
+      "license": "MIT",
+      "engines": {
+        "node": ">=20.19.0"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {},
+      "dependencies": {
+        "chokidar": "^5.0.0",
+        "immutable": "^5.1.5",
+        "source-map-js": ">=0.6.2 <2.0.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/sass/dart-sass.git",
+        "type": "git"
+      },
+      "dist": {
+        "integrity": "sha512-kD+Gi66vycZcbJt+42NC4z4PXNMcCajVrJPhqoKKXy5cOBMmJQt052CxIBcRjwYXeImHYOpu/ydWWGZQIenl7A==",
+        "tarball": "https://registry.npmjs.org/sass/-/sass-1.106.1.tgz",
+        "unpackedSize": 6085346
+      },
+      "deprecated": null
+    },
+    {
+      "name": "vitest",
+      "source": "https://registry.npmjs.org/vitest/latest",
+      "retrievedAt": "2026-10-25T22:48:42.244Z",
+      "etag": null,
+      "responseSha256": "161da05d413b8aca31ebb7763625d66086cb47057057f00d24d69147a343ef62",
+      "version": "5.0.5",
+      "license": "MIT",
+      "engines": {
+        "node": "^22.12.0 || ^24.0.0 || >=26.0.0"
+      },
+      "peerDependencies": {
+        "vite": "^6.4.0 || ^7.0.0 || ^8.0.0",
+        "jsdom": "*",
+        "happy-dom": "*",
+        "@vitest/ui": "5.0.5",
+        "@types/node": "^22.0.0 || >=24.0.0",
+        "@edge-runtime/vm": "*",
+        "@opentelemetry/api": "^1.9.0",
+        "@vitest/coverage-v8": "5.0.5",
+        "@vitest/browser-preview": "5.0.5",
+        "@vitest/coverage-istanbul": "5.0.5",
+        "@vitest/browser-playwright": "5.0.5",
+        "@vitest/browser-webdriverio": "^5.0.0-beta.5 || >=5.0.0"
+      },
+      "peerDependenciesMeta": {
+        "vite": {
+          "optional": false
+        },
+        "jsdom": {
+          "optional": true
+        },
+        "happy-dom": {
+          "optional": true
+        },
+        "@vitest/ui": {
+          "optional": true
+        },
+        "@types/node": {
+          "optional": true
+        },
+        "@edge-runtime/vm": {
+          "optional": true
+        },
+        "@opentelemetry/api": {
+          "optional": true
+        },
+        "@vitest/coverage-v8": {
+          "optional": true
+        },
+        "@vitest/browser-preview": {
+          "optional": true
+        },
+        "@vitest/coverage-istanbul": {
+          "optional": true
+        },
+        "@vitest/browser-playwright": {
+          "optional": true
+        },
+        "@vitest/browser-webdriverio": {
+          "optional": true
+        }
+      },
+      "dependencies": {
+        "chai": "^6.3.0",
+        "obug": "^3.0.0",
+        "std-env": "^4.3.0",
+        "tinyexec": "^1.3.1",
+        "picomatch": "^4.0.7",
+        "tinybench": "^6.2.2",
+        "tinyglobby": "^0.2.17",
+        "@types/chai": "^5.2.2",
+        "expect-type": "^1.4.0",
+        "magic-string": "^1.4.3",
+        "@vitest/mocker": "5.0.5",
+        "es-module-lexer": "^2.3.2",
+        "why-is-node-running": "3.2.1"
+      },
+      "repository": {
+        "url": "git+https://github.com/vitest-dev/vitest.git",
+        "type": "git",
+        "directory": "packages/vitest"
+      },
+      "dist": {
+        "integrity": "sha512-cPODOMF8YnkiiYtDdHo6n4wWmBrOBBbOIYH2d33M4l3CdNn72h+qMmO6uXffUN6A5AZFXNND/d+krS9mgkXRfg==",
+        "tarball": "https://registry.npmjs.org/vitest/-/vitest-5.0.5.tgz",
+        "unpackedSize": 2817789
+      },
+      "deprecated": null
+    },
+    {
+      "name": "decimal.js",
+      "source": "https://registry.npmjs.org/decimal.js/latest",
+      "retrievedAt": "2026-10-25T22:48:42.518Z",
+      "etag": null,
+      "responseSha256": "5de673f3216f53d40847249fc654579334de1883ea2d3840238249b78722729c",
+      "version": "10.6.0",
+      "license": "MIT",
+      "engines": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {},
+      "dependencies": {},
+      "repository": {
+        "url": "git+https://github.com/MikeMcl/decimal.js.git",
+        "type": "git"
+      },
+      "dist": {
+        "integrity": "sha512-YpgQiITW3JXGntzdUmyUR1V812Hn8T1YVXhCu+wO3OpS4eU9l4YdD3qjyiKdV6mvV29zapkMeD390UVEf2lkUg==",
+        "tarball": "https://registry.npmjs.org/decimal.js/-/decimal.js-10.6.0.tgz",
+        "unpackedSize": 284347
+      },
+      "deprecated": null
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "source": "https://registry.npmjs.org/%40vitejs%2Fplugin-react/latest",
+      "retrievedAt": "2026-10-25T22:48:42.778Z",
+      "etag": null,
+      "responseSha256": "4b69f47be418b4a5db930c2e5189de1d51ff95f101d0ab0a056d79bdedc6f636",
+      "version": "6.1.2",
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "peerDependencies": {
+        "vite": "^8.0.0",
+        "oxc-transform-react": "^0.152.0",
+        "@rolldown/plugin-babel": "^0.1.7 || ^0.2.0",
+        "babel-plugin-react-compiler": "^1.0.0"
+      },
+      "peerDependenciesMeta": {
+        "oxc-transform-react": {
+          "optional": true
+        },
+        "@rolldown/plugin-babel": {
+          "optional": true
+        },
+        "babel-plugin-react-compiler": {
+          "optional": true
+        }
+      },
+      "dependencies": {
+        "@rolldown/pluginutils": "^1.0.1"
+      },
+      "repository": {
+        "url": "git+https://github.com/vitejs/vite-plugin-react.git",
+        "type": "git",
+        "directory": "packages/plugin-react"
+      },
+      "dist": {
+        "integrity": "sha512-fhJNGUdscQa4HkI0xFxwonWyhnVReCPDbXI7FH7jmzpnVCrFQI7PRrhWecO263610vOrs9tr2Y4xcf8uAdFxbw==",
+        "tarball": "https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-6.1.2.tgz",
+        "unpackedSize": 46296
+      },
+      "deprecated": null
+    },
+    {
+      "name": "@types/react",
+      "source": "https://registry.npmjs.org/%40types%2Freact/latest",
+      "retrievedAt": "2026-10-25T22:48:43.045Z",
+      "etag": null,
+      "responseSha256": "eec8e8dd1f72955d2fa12e256cd5ab96d476342594cd2034398679a76cfdcac8",
+      "version": "19.3.0",
+      "license": "MIT",
+      "engines": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {},
+      "dependencies": {
+        "csstype": "^3.2.2"
+      },
+      "repository": {
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "type": "git",
+        "directory": "types/react"
+      },
+      "dist": {
+        "integrity": "sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg==",
+        "tarball": "https://registry.npmjs.org/@types/react/-/react-19.3.0.tgz",
+        "unpackedSize": 408108
+      },
+      "deprecated": null
+    },
+    {
+      "name": "@types/react-dom",
+      "source": "https://registry.npmjs.org/%40types%2Freact-dom/latest",
+      "retrievedAt": "2026-10-25T22:48:43.428Z",
+      "etag": null,
+      "responseSha256": "4d8ed45d8ca1673b9e27017726cc0f97f65a177cb1499efd9d09f484d4e81f5c",
+      "version": "19.3.0",
+      "license": "MIT",
+      "engines": {},
+      "peerDependencies": {
+        "@types/react": "^19.3.0"
+      },
+      "peerDependenciesMeta": {},
+      "dependencies": {},
+      "repository": {
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "type": "git",
+        "directory": "types/react-dom"
+      },
+      "dist": {
+        "integrity": "sha512-ZI7bU42mZXXKHn/qNLEw2IrbiINU7X5+vfgdixBHkCNpYWXjKgfQ/P+uyGb5CjOLB9UcnTeg3rylQtV2hym44Q==",
+        "tarball": "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.3.0.tgz",
+        "unpackedSize": 32862
+      },
+      "deprecated": null
+    },
+    {
+      "name": "@types/node",
+      "source": "https://registry.npmjs.org/%40types%2Fnode/latest",
+      "retrievedAt": "2026-10-25T22:48:43.687Z",
+      "etag": null,
+      "responseSha256": "c7b04c1f31c47dc6589284644d790ded395526d47fc08c9732885e9818a7b9c4",
+      "version": "26.6.5",
+      "license": "MIT",
+      "engines": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {},
+      "dependencies": {
+        "undici-types": "~8.9.0"
+      },
+      "repository": {
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "type": "git",
+        "directory": "types/node"
+      },
+      "dist": {
+        "integrity": "sha512-uMzsv9stDdofIZBx4UGh4Z9ZgXnGC9seRDscilBcTHAeOFk67MZg/k9bWVfO+bk4qZmG+l52hRnLwUiH2LnJTg==",
+        "tarball": "https://registry.npmjs.org/@types/node/-/node-26.6.5.tgz",
+        "unpackedSize": 2546175
+      },
+      "deprecated": null
+    },
+    {
+      "name": "eslint",
+      "source": "https://registry.npmjs.org/eslint/latest",
+      "retrievedAt": "2026-10-25T22:48:43.710Z",
+      "etag": null,
+      "responseSha256": "1c53c5fad93e009f1315838f82bfb41e2bbf9c6da7ed8b90a5570d58c47e3f99",
+      "version": "10.13.0",
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || ^22.13.0 || >=24"
+      },
+      "peerDependencies": {
+        "jiti": "*"
+      },
+      "peerDependenciesMeta": {
+        "jiti": {
+          "optional": true
+        }
+      },
+      "dependencies": {
+        "ajv": "^6.14.0",
+        "debug": "^4.3.2",
+        "espree": "^11.2.0",
+        "ignore": "^5.2.0",
+        "esquery": "^1.7.0",
+        "esutils": "^2.0.2",
+        "find-up": "^5.0.0",
+        "is-glob": "^4.0.0",
+        "minimatch": "^10.2.5",
+        "optionator": "^0.9.3",
+        "cross-spawn": "^7.0.6",
+        "glob-parent": "^6.0.2",
+        "imurmurhash": "^0.1.4",
+        "@eslint/core": "^1.2.1",
+        "eslint-scope": "^9.1.2",
+        "@humanfs/node": "^0.16.6",
+        "@types/estree": "^1.0.6",
+        "fast-deep-equal": "^3.1.3",
+        "natural-compare": "^1.4.0",
+        "file-entry-cache": "11.1.5 || >11.1.6 <12",
+        "@eslint/plugin-kit": "^0.7.3",
+        "eslint-visitor-keys": "^5.0.1",
+        "@eslint/config-array": "^0.23.5",
+        "@humanwhocodes/retry": "^0.4.2",
+        "escape-string-regexp": "^4.0.0",
+        "@eslint/config-helpers": "^0.7.0",
+        "@eslint-community/regexpp": "^4.12.2",
+        "@eslint-community/eslint-utils": "^4.8.0",
+        "@humanwhocodes/module-importer": "^1.0.1",
+        "json-stable-stringify-without-jsonify": "^1.0.1"
+      },
+      "repository": {
+        "url": "git+https://github.com/eslint/eslint.git",
+        "type": "git"
+      },
+      "dist": {
+        "integrity": "sha512-UohDjD4zSzEwhf58M3O7vc/ycc8O1I7dNlhtD0WxE8Px8EHNJKtUwzBqrzeGhisRuv2ag4sAYswszCJRgKXYUg==",
+        "tarball": "https://registry.npmjs.org/eslint/-/eslint-10.13.0.tgz",
+        "unpackedSize": 2950609
+      },
+      "deprecated": null
+    },
+    {
+      "name": "typescript-eslint",
+      "source": "https://registry.npmjs.org/typescript-eslint/latest",
+      "retrievedAt": "2026-10-25T22:48:43.732Z",
+      "etag": null,
+      "responseSha256": "3af26e40360030187a06edddfacfdaecc33e32c1d6185658a37b01518fdbd376",
+      "version": "8.72.0",
+      "license": "MIT",
+      "engines": {
+        "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+      },
+      "peerDependencies": {
+        "eslint": "^8.57.0 || ^9.0.0 || ^10.0.0",
+        "typescript": ">=4.8.4 <6.1.0"
+      },
+      "peerDependenciesMeta": {},
+      "dependencies": {
+        "@typescript-eslint/utils": "8.72.0",
+        "@typescript-eslint/parser": "8.72.0",
+        "@typescript-eslint/eslint-plugin": "8.72.0",
+        "@typescript-eslint/typescript-estree": "8.72.0"
+      },
+      "repository": {
+        "url": "https://github.com/typescript-eslint/typescript-eslint.git",
+        "type": "git",
+        "directory": "packages/typescript-eslint"
+      },
+      "dist": {
+        "integrity": "sha512-r26Fkc8As+mZvqp7SLsMmNFyYUup/6CjK7/eHBHmhOw6GH6n6YFxHVFrG0jN1c5CMpDzelLPxvgeCOzx7BjN+A==",
+        "tarball": "https://registry.npmjs.org/typescript-eslint/-/typescript-eslint-8.72.0.tgz",
+        "unpackedSize": 42686
+      },
+      "deprecated": null
+    },
+    {
+      "name": "@fluentui/react-icons",
+      "source": "https://registry.npmjs.org/%40fluentui%2Freact-icons/latest",
+      "retrievedAt": "2026-10-25T22:48:43.993Z",
+      "etag": null,
+      "responseSha256": "07b3c440c9f818fc6526096fa180b6bbe845269a2702255e539032f7d45571e5",
+      "version": "2.0.344",
+      "license": "MIT",
+      "engines": {},
+      "peerDependencies": {
+        "react": ">=16.8.0 <20.0.0"
+      },
+      "peerDependenciesMeta": {},
+      "dependencies": {
+        "tslib": "^2.1.0",
+        "@griffel/react": "^1.6.1"
+      },
+      "repository": {
+        "url": "git+https://github.com/microsoft/fluentui-system-icons.git",
+        "type": "git"
+      },
+      "dist": {
+        "integrity": "sha512-pvEVFOUrrtmIglqdfhDVX6XT80a5z9kX+Tso6NAzgmkko8nlURhOzNwvZZlsCK4yQseH/4NQdYoN8ijO7IHdNw==",
+        "tarball": "https://registry.npmjs.org/@fluentui/react-icons/-/react-icons-2.0.344.tgz",
+        "unpackedSize": 174128591
+      },
+      "deprecated": null
+    },
+    {
+      "name": "lucide-react",
+      "source": "https://registry.npmjs.org/lucide-react/latest",
+      "retrievedAt": "2026-10-25T22:48:44.285Z",
+      "etag": null,
+      "responseSha256": "7d01a86a78ed805e020a8d9aedc4b8dc65d2c658bc13a64bb36dcbcefee08f2f",
+      "version": "1.61.0",
+      "license": "ISC",
+      "engines": {},
+      "peerDependencies": {
+        "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+        "@types/react": "*"
+      },
+      "peerDependenciesMeta": {
+        "@types/react": {
+          "optional": true
+        }
+      },
+      "dependencies": {},
+      "repository": {
+        "url": "https://github.com/lucide-icons/lucide.git",
+        "type": "git",
+        "directory": "packages/lucide-react"
+      },
+      "dist": {
+        "integrity": "sha512-v2SQPPPNjnr+BlhL9Spuzmo5yR+hLkftfuE4E3jaxdNPgSH0hJKPcLJBP7yAta87jQNPsSERS59PJjCJ/CorBA==",
+        "tarball": "https://registry.npmjs.org/lucide-react/-/lucide-react-1.61.0.tgz",
+        "unpackedSize": 36339823
+      },
+      "deprecated": null
+    },
+    {
+      "name": "@fortawesome/fontawesome-svg-core",
+      "source": "https://registry.npmjs.org/%40fortawesome%2Ffontawesome-svg-core/latest",
+      "retrievedAt": "2026-10-25T22:48:44.538Z",
+      "etag": null,
+      "responseSha256": "3be7ffa48afa17ff5314795a79961712d48b9c1f2abdd1d54393bddcd434e763",
+      "version": "7.3.1",
+      "license": "MIT",
+      "engines": {
+        "node": ">=6"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {},
+      "dependencies": {
+        "@fortawesome/fontawesome-common-types": "7.3.1"
+      },
+      "repository": {
+        "url": "git+https://github.com/FortAwesome/Font-Awesome.git",
+        "type": "git"
+      },
+      "dist": {
+        "integrity": "sha512-BoxVN3PKnMbgStHhjoaky/oWdxHomDqmBVA24IA3KEmssFGeI7u9YT/BJceOjIum/t6TpPa/vcMKaVYQeIQ/3Q==",
+        "tarball": "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-7.3.1.tgz",
+        "unpackedSize": 524658
+      },
+      "deprecated": null
+    },
+    {
+      "name": "@fortawesome/free-solid-svg-icons",
+      "source": "https://registry.npmjs.org/%40fortawesome%2Ffree-solid-svg-icons/latest",
+      "retrievedAt": "2026-10-25T22:48:44.885Z",
+      "etag": null,
+      "responseSha256": "8cc692f73aa2799f478d75fe2e8fa55000818c01351714618f97e5d85f9d1b79",
+      "version": "7.3.1",
+      "license": "(CC-BY-4.0 AND MIT)",
+      "engines": {
+        "node": ">=6"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {},
+      "dependencies": {
+        "@fortawesome/fontawesome-common-types": "7.3.1"
+      },
+      "repository": {
+        "url": "git+https://github.com/FortAwesome/Font-Awesome.git",
+        "type": "git"
+      },
+      "dist": {
+        "integrity": "sha512-v0BLa0eqg7ubvVWeNSHVBs8fWH/GJicERZoJaxJ3FE/lj67VSqzoMg9pzfZVOfLMX10y0pGwQAuxoRVVH2patg==",
+        "tarball": "https://registry.npmjs.org/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-7.3.1.tgz",
+        "unpackedSize": 5117091
+      },
+      "deprecated": null
+    },
+    {
+      "name": "@iconify-icons/mdi",
+      "source": "https://registry.npmjs.org/%40iconify-icons%2Fmdi/latest",
+      "retrievedAt": "2026-10-25T22:48:46.098Z",
+      "etag": null,
+      "responseSha256": "8a280742eac5d99076a9e383770d43f5628da42c5b5890b71df4b00ff09e5191",
+      "version": "2.0.0",
+      "license": "Apache-2.0",
+      "engines": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {},
+      "dependencies": {
+        "@iconify/types": "*"
+      },
+      "repository": null,
+      "dist": {
+        "integrity": "sha512-ppVItcrp6uRn9XYA4e8XkJC6VnFfBGSLJVrTrHrc7ft9iwLVat3u4ol/UldokaSZ2EyWYukdYYT2AhZP0uNOjg==",
+        "tarball": "https://registry.npmjs.org/@iconify-icons/mdi/-/mdi-2.0.0.tgz",
+        "unpackedSize": 7078725
+      },
+      "deprecated": null
+    }
+  ]
+}

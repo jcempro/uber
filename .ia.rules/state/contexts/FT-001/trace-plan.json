@@ -1,0 +1,112 @@
+{
+  "schema": "jcem-trace-plan/v1",
+  "scope": "Artefatos planejados, não implementados; revisar vínculos por sentença antes de finalize. Não atribuir commit normativo a código ausente.",
+  "plans": {
+    "1": [
+      "FT-009",
+      [
+        "src/main.tsx",
+        "src/domain/model.ts"
+      ]
+    ],
+    "2": [
+      "FT-002",
+      [
+        "package.json",
+        "vite.config.mts",
+        "tsconfig.json",
+        "index.html",
+        "scripts/check-runtime.mts",
+        "scripts/inspect-dist.mts",
+        ".github/workflows/pages.yml"
+      ]
+    ],
+    "3": [
+      "FT-007",
+      [
+        "src/assets/iconCatalog.tsx",
+        "src/components/Icon.tsx"
+      ]
+    ],
+    "4": [
+      "FT-006",
+      [
+        "src/domain/model.ts",
+        "src/state/store.ts",
+        "src/state/persistence.ts",
+        "src/state/calculation.ts",
+        "src/components/ParameterEditor.tsx"
+      ]
+    ],
+    "5": [
+      "FT-003",
+      [
+        "src/domain/defaults.ts",
+        "src/domain/model.ts"
+      ]
+    ],
+    "6": [
+      "FT-004",
+      [
+        "src/domain/costs.ts",
+        "src/domain/defaults.ts"
+      ]
+    ],
+    "7": [
+      "FT-004",
+      [
+        "src/domain/projection.ts"
+      ]
+    ],
+    "8": [
+      "FT-004",
+      [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ]
+    ],
+    "9": [
+      "FT-005",
+      [
+        "src/domain/rotapro.ts",
+        "src/components/OfferSimulator.tsx"
+      ]
+    ],
+    "10": [
+      "FT-007",
+      [
+        "src/App.tsx",
+        "src/components/AppShell.tsx",
+        "src/styles.scss"
+      ]
+    ],
+    "11": [
+      "FT-008",
+      [
+        "src/domain/defaults.ts",
+        "docs/historical-reference.md"
+      ]
+    ],
+    "12": [
+      "FT-009",
+      [
+        "src/domain/economics.test.ts",
+        "src/domain/rotapro.test.ts",
+        "scripts/inspect-dist.mts"
+      ]
+    ],
+    "13": [
+      "FT-009",
+      [
+        "src/domain/defaults.ts",
+        "README.md"
+      ]
+    ]
+  },
+  "officialValidation": {
+    "entries": 44,
+    "material": 44
+  },
+  "preamble": "Regras materiais anteriores ao §1 são globais e vinculadas à FT-009.",
+  "acceptanceTable": "F01–F18/U01/A01–A05 permanecem pendentes. Parser não valida semântica das tabelas."
+}

@@ -1,6 +1,6 @@
-# Estado canônico — FT-001 ativa
+# Estado canônico — FT-002 ativa
 
-FT-001: inicialização documental para implementação integral do RCF.
-Resultado: estado canônico corrigido e validado; fontes/hash e dez frentes registradas. Produto pendente.
-Próxima ação: commit inicial fe3d216 criado; confirmar conciliação Fluent e levantar toolchain. Preparar mapa/marcadores oficiais com artefatos concretos antes de código.
-Pendências: conciliação Fluent/rastreabilidade, fases técnicas e aceite global F01–F18/U01/A01–A05.
+FT-001: registro inicial fe3d216 tecnicamente concluído; pendente validação humana. Contexto comum: contexts/FT-001/master.md.
+FT-010: confirmação Fluent e preparo oficial de44 pendências normativas concluídos tecnicamente; pendente validação humana, sem declarar código implementado.
+FT-002 ativa: configurar pacote, versões travadas e instalar toolchain em unidade delimitada. Próxima ação: revisar resultado do job desta unidade, registrar Q8S, commitar e liberar bootstrap funcional.
+Pendências: compilação real, matriz browsers/bundle, todos os módulos financeiros e aceite global F01–F18/U01/A01–A05. Produto ainda não implementado.

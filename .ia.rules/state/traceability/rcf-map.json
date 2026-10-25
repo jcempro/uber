@@ -1,0 +1,661 @@
+{
+  "format": "agents-rcf-trace/v1",
+  "schema": 1,
+  "entries": [
+    {
+      "artifacts": [
+        "src/domain/model.ts",
+        "src/main.tsx"
+      ],
+      "commit": "",
+      "ft": "FT-009",
+      "id": "68e7d599c5884d5d224b73bb",
+      "line": 3,
+      "rcf": "RCF.md",
+      "sentenceSha256": "e33d8373220fab8708fcb62ff29c673a8e74e517e0a38d8d9de90884a352f1fe",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/model.ts",
+        "src/main.tsx"
+      ],
+      "commit": "",
+      "ft": "FT-009",
+      "id": "fe9563ca9a138f40772e2a32",
+      "line": 7,
+      "rcf": "RCF.md",
+      "sentenceSha256": "3f767717346bd02540f2802d8bbd5bae5af264569fe3e5feaf03756996271c7a",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/model.ts",
+        "src/main.tsx"
+      ],
+      "commit": "",
+      "ft": "FT-009",
+      "id": "041d6944fe79364aa7d367e3",
+      "line": 11,
+      "rcf": "RCF.md",
+      "sentenceSha256": "1b014baf6ff0892702c3a2b1420638b30d30e949035360fd719fc793529af362",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/pages.yml",
+        "index.html",
+        "package.json",
+        "scripts/check-runtime.mts",
+        "scripts/inspect-dist.mts",
+        "tsconfig.json",
+        "vite.config.mts"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "3bc43245eb8180b43850478f",
+      "line": 15,
+      "rcf": "RCF.md",
+      "sentenceSha256": "955525e4da9204be04fd446571febf64310a54cacf6e1be4e77905a9eb1b8d59",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/pages.yml",
+        "index.html",
+        "package.json",
+        "scripts/check-runtime.mts",
+        "scripts/inspect-dist.mts",
+        "tsconfig.json",
+        "vite.config.mts"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "a9c6cc76f544dc091c887fc2",
+      "line": 18,
+      "rcf": "RCF.md",
+      "sentenceSha256": "f8611a199779113d85cd0e9eff03f30b39adfcc728775781a5246ddcc2a2e52a",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/pages.yml",
+        "index.html",
+        "package.json",
+        "scripts/check-runtime.mts",
+        "scripts/inspect-dist.mts",
+        "tsconfig.json",
+        "vite.config.mts"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "48c2a8a49a1ffa793c1a197f",
+      "line": 19,
+      "rcf": "RCF.md",
+      "sentenceSha256": "b4376346457c37acc0cb68c6b64431f8af0fc13f5aa81f9acb71dc8047df35c1",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/pages.yml",
+        "index.html",
+        "package.json",
+        "scripts/check-runtime.mts",
+        "scripts/inspect-dist.mts",
+        "tsconfig.json",
+        "vite.config.mts"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "0a4eb160243a99e7b1479d4a",
+      "line": 21,
+      "rcf": "RCF.md",
+      "sentenceSha256": "4f0ad4a50254b33929577646d7fcc23887405b1f91a4468ad88af7dcd65948bb",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/assets/iconCatalog.tsx",
+        "src/components/Icon.tsx"
+      ],
+      "commit": "",
+      "ft": "FT-007",
+      "id": "b56c9491a6f38a4629df9eba",
+      "line": 25,
+      "rcf": "RCF.md",
+      "sentenceSha256": "4d7e9a2a685a4a16ace04e7fade337e5294d27330a7ff3bffe8e931c33955905",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/assets/iconCatalog.tsx",
+        "src/components/Icon.tsx"
+      ],
+      "commit": "",
+      "ft": "FT-007",
+      "id": "827ba9b3a585b5aaf0e90fd5",
+      "line": 27,
+      "rcf": "RCF.md",
+      "sentenceSha256": "9bce8ae1d26732c982fc68bb3564165d508778426a75f5cccd7f20bc4eb883be",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/assets/iconCatalog.tsx",
+        "src/components/Icon.tsx"
+      ],
+      "commit": "",
+      "ft": "FT-007",
+      "id": "d8377509f973df2cd30d2b6b",
+      "line": 28,
+      "rcf": "RCF.md",
+      "sentenceSha256": "4b0c6c21d61927d5aaf95dbd427627f50b8d7adae14b52cbe3ceb6396468a319",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/ParameterEditor.tsx",
+        "src/domain/model.ts",
+        "src/state/calculation.ts",
+        "src/state/persistence.ts",
+        "src/state/store.ts"
+      ],
+      "commit": "",
+      "ft": "FT-006",
+      "id": "25ef4813129ee285b9a138ca",
+      "line": 34,
+      "rcf": "RCF.md",
+      "sentenceSha256": "9d113f6f0b8e88ea9ac890b9f62bb042a8718dac7da0aab9e8f2cdb5de09352d",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/ParameterEditor.tsx",
+        "src/domain/model.ts",
+        "src/state/calculation.ts",
+        "src/state/persistence.ts",
+        "src/state/store.ts"
+      ],
+      "commit": "",
+      "ft": "FT-006",
+      "id": "2dabd4a2c557f3b176b439a8",
+      "line": 35,
+      "rcf": "RCF.md",
+      "sentenceSha256": "1f371327c5dfeec73d6b464c769e513e99f721b98ce9c8f427dd5bc2cad9c2cc",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/ParameterEditor.tsx",
+        "src/domain/model.ts",
+        "src/state/calculation.ts",
+        "src/state/persistence.ts",
+        "src/state/store.ts"
+      ],
+      "commit": "",
+      "ft": "FT-006",
+      "id": "a83e656cb9bb803ea8072767",
+      "line": 42,
+      "rcf": "RCF.md",
+      "sentenceSha256": "f28831cc667df780ad41a93b461eccf505ae7a88bb5aa96e90f61b036647954e",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/ParameterEditor.tsx",
+        "src/domain/model.ts",
+        "src/state/calculation.ts",
+        "src/state/persistence.ts",
+        "src/state/store.ts"
+      ],
+      "commit": "",
+      "ft": "FT-006",
+      "id": "537ed09b9e4311eb7dcd5243",
+      "line": 43,
+      "rcf": "RCF.md",
+      "sentenceSha256": "e3b9ee1e670a33010ee8e981d2e1384b47beca0b87d0fe92fbc2dc7f854618ea",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/ParameterEditor.tsx",
+        "src/domain/model.ts",
+        "src/state/calculation.ts",
+        "src/state/persistence.ts",
+        "src/state/store.ts"
+      ],
+      "commit": "",
+      "ft": "FT-006",
+      "id": "c3fdbe492eccafb8cef6b202",
+      "line": 47,
+      "rcf": "RCF.md",
+      "sentenceSha256": "af13fb7ebade4a8bf7cebfc6cc1a78a8a785f9cae17f1a280612cd8f2bb72ddf",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/ParameterEditor.tsx",
+        "src/domain/model.ts",
+        "src/state/calculation.ts",
+        "src/state/persistence.ts",
+        "src/state/store.ts"
+      ],
+      "commit": "",
+      "ft": "FT-006",
+      "id": "57778e0f1c989b4987527ced",
+      "line": 48,
+      "rcf": "RCF.md",
+      "sentenceSha256": "d4936edf664f914523d20de66c364070676f2d4342de69bda5fb446525ca147f",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/costs.ts",
+        "src/domain/defaults.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "f52575a34b93a335cd667d8c",
+      "line": 76,
+      "rcf": "RCF.md",
+      "sentenceSha256": "56b94915c7abfdca7235ae05d3c1ed58ea27f8268dbb630fc2ce596014e33a9c",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/costs.ts",
+        "src/domain/defaults.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "e60cebb88393a969dd48637f",
+      "line": 77,
+      "rcf": "RCF.md",
+      "sentenceSha256": "640f9c54103f4fd0bb7ad825853946a22ee580d55d6f39db66810c2fbbcb8cb7",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/costs.ts",
+        "src/domain/defaults.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "cdf61cfd48e17d6e6ecbdc66",
+      "line": 79,
+      "rcf": "RCF.md",
+      "sentenceSha256": "699a76256ba0ddbf1ca24eab4db71302e3df23c02306551d0c6a510672faf319",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/projection.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "8a6dc09bb9a61c9d2b8deaa8",
+      "line": 102,
+      "rcf": "RCF.md",
+      "sentenceSha256": "47c7406b2cb75fe4d1990fdb2167e079b0aeb1a18c79caeaebab3d20a9a0a188",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/projection.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "21788574d808c3c86f255616",
+      "line": 109,
+      "rcf": "RCF.md",
+      "sentenceSha256": "e691af7dd5a2903b20703a10ddcc760c4097de3a5dd743f6f440b972aa942021",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "7da00b05d3d0494fffd5e101",
+      "line": 117,
+      "rcf": "RCF.md",
+      "sentenceSha256": "a72c43429eb55948a7f33958f122f6984eff6a023d727006de90255c89ca4555",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "5ce23d060a7a321271cd997f",
+      "line": 119,
+      "rcf": "RCF.md",
+      "sentenceSha256": "7da8209b4457d3ef1fa5b9d13ea5574f79509f0c9b8bac6304da46177efe11ee",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "581d24cc9fd33b77e704a59c",
+      "line": 120,
+      "rcf": "RCF.md",
+      "sentenceSha256": "2e7b2a7d25ae247937e07e454b5ab5ea9c7a1de28f08307a2fa904f2a15a7c58",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "3fd735ab855c45cfc89a3746",
+      "line": 124,
+      "rcf": "RCF.md",
+      "sentenceSha256": "b9b065ca37721274ede4662550460c3e6764a8fe621a5486ef38ccc042987b80",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "56ea964c855de4ebfe2cf0cf",
+      "line": 146,
+      "rcf": "RCF.md",
+      "sentenceSha256": "57b9fd0b2f7fa2a6d82e0596b06212e25164bed4d595e25675e4699ff6d6bd47",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "e83d6286aed476cc90afe47b",
+      "line": 148,
+      "rcf": "RCF.md",
+      "sentenceSha256": "f0dabdc7d8b4341e75906c64dfd204e37bc0194e190b7bbba7c1423e9b3a79d5",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "f6af683382a06e84f707af1b",
+      "line": 153,
+      "rcf": "RCF.md",
+      "sentenceSha256": "ab149283a7d5ab877d806938b4995fb66893088810df710e627bf45905d99297",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "d88f8b761e577a9ee482f83d",
+      "line": 157,
+      "rcf": "RCF.md",
+      "sentenceSha256": "e60c79b9164615de512094ff4845e4e723f97b67c9e9f76c97678b43017cc007",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "ce6e05ac392ef280d801b068",
+      "line": 158,
+      "rcf": "RCF.md",
+      "sentenceSha256": "16ca4064b5e4dee32b76f9ede662a18f6077c090311b76982e60881f7b2084fe",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "3bbc060fe6e6058ba9ae7a05",
+      "line": 160,
+      "rcf": "RCF.md",
+      "sentenceSha256": "4ec6c0ead5ba4f81bbd3b4116004a39cdf7fc5b22538a8748d835e2dcac7453c",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ],
+      "commit": "",
+      "ft": "FT-005",
+      "id": "33f8ef991ea3f8fc6ed04bea",
+      "line": 166,
+      "rcf": "RCF.md",
+      "sentenceSha256": "daa8acbd52b43b0b092b2db77c32d929c7614001df85cdf65391eac9acbbe836",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ],
+      "commit": "",
+      "ft": "FT-005",
+      "id": "e1aa166800d49b1b57bbfd9c",
+      "line": 177,
+      "rcf": "RCF.md",
+      "sentenceSha256": "82296f3aa6603d2fab1bb427c3e62b6cc4f0f327d11b383238802a63d7aea6cd",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ],
+      "commit": "",
+      "ft": "FT-005",
+      "id": "1a3b9f842913ca270d373f3c",
+      "line": 181,
+      "rcf": "RCF.md",
+      "sentenceSha256": "06419338eb11f237b05d6e04c395aff96e93941fd1c4a4ee09a864c93cea3390",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ],
+      "commit": "",
+      "ft": "FT-005",
+      "id": "37fc3a91c43633baedbc5cf3",
+      "line": 183,
+      "rcf": "RCF.md",
+      "sentenceSha256": "399d4f8b21e22c77686d0faa3e8d3f3513dcdc99264efc3aabfa8afe0e76dc16",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ],
+      "commit": "",
+      "ft": "FT-005",
+      "id": "4ff2b938294eae8a069dae26",
+      "line": 204,
+      "rcf": "RCF.md",
+      "sentenceSha256": "393c310396c30e7012745d1b3af8b6137f9622812f5b0926c23f3db001106379",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ],
+      "commit": "",
+      "ft": "FT-005",
+      "id": "46b7c5298bd051c7baa9f2e6",
+      "line": 205,
+      "rcf": "RCF.md",
+      "sentenceSha256": "eefe6f1b543b92ddf852f58ebb99696ac692b5526af6b506b2b736f5f691d98c",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ],
+      "commit": "",
+      "ft": "FT-005",
+      "id": "5c6f848d9f2d027ec7fb48c3",
+      "line": 206,
+      "rcf": "RCF.md",
+      "sentenceSha256": "cd0d814c9fe12dae1e3e9db75c520b34eb63e78badb1b843f255cb61c6f1a1dd",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ],
+      "commit": "",
+      "ft": "FT-005",
+      "id": "82cc8e0290b0c9d78608a40e",
+      "line": 207,
+      "rcf": "RCF.md",
+      "sentenceSha256": "e623eef7149d03325f089e2ebcbc73bfd7af7c5472f871791ab34fea7c39cc38",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ],
+      "commit": "",
+      "ft": "FT-005",
+      "id": "f58fffb7b0deaaef40223f90",
+      "line": 209,
+      "rcf": "RCF.md",
+      "sentenceSha256": "13192a661cade9de15b92e7f909bc68e34169075e0c9f01d200f43f39a5725d3",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/App.tsx",
+        "src/components/AppShell.tsx",
+        "src/styles.scss"
+      ],
+      "commit": "",
+      "ft": "FT-007",
+      "id": "faef37826a543856c2fa88a8",
+      "line": 214,
+      "rcf": "RCF.md",
+      "sentenceSha256": "8cd362c4942267989322381f23b4386b337a4ea3454845b318521562bd216108",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/App.tsx",
+        "src/components/AppShell.tsx",
+        "src/styles.scss"
+      ],
+      "commit": "",
+      "ft": "FT-007",
+      "id": "21c794faa97c3bec668dafbe",
+      "line": 218,
+      "rcf": "RCF.md",
+      "sentenceSha256": "9bcf26122a76cc954838f2b3f927d4b21e67a474643fb72f7473c112521b6c85",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "scripts/inspect-dist.mts",
+        "src/domain/economics.test.ts",
+        "src/domain/rotapro.test.ts"
+      ],
+      "commit": "",
+      "ft": "FT-009",
+      "id": "8249a9333066b5402766316e",
+      "line": 238,
+      "rcf": "RCF.md",
+      "sentenceSha256": "d52633dc5abfbb351c16bb05b1547d9d962de3a5c205223934bcfe33b187572b",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "src/domain/defaults.ts"
+      ],
+      "commit": "",
+      "ft": "FT-009",
+      "id": "ccfa7b22f46a55eb558049d4",
+      "line": 277,
+      "rcf": "RCF.md",
+      "sentenceSha256": "5628d0ecf9d36a34ea38b2da04e790e45040b253d1f17847cfeceb54b97b5846",
+      "state": "pending",
+      "syncCommit": ""
+    }
+  ]
+}

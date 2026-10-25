@@ -1,0 +1,9 @@
+# Correção do coletor de metadados
+
+2026-10-25: local_result do job3c8b48cf-6892-4725-968f-8b839cf0958d recebido uma vez. Falha determinística ERR_AMBIGUOUS_MODULE_SYNTAX: script fornecido pelo supervisor misturou require e await no nível superior com formato module. Não iniciou consultas e não criou toolchain-registry.json. Git determinístico estava limpo, main ahead1; inspeção posterior encontrou somente toolchain-job.json não versionado, escrito pelo supervisor após o início do job, sem divergência de implementação. Q8S registrado:9, revisão1; não há cognição na sequência.
+
+Correção material: manter require em CommonJS explícito e envolver operação assíncrona em async IIFE com catch que preserva falha. Scripts corrigidos do coletor e do verificador passaram individualmente por Node24.22.1 --check --input-type=commonjs via stdin, ambos exit0. Preflight somente de sintaxe; não comprova rede, licenças, compatibilidade ou coleta. Autorizar nova sequência com os mesmos limites de fonte, tamanho, tempo e saída, sem reaproveitar resultado inexistente nem reiniciar job anterior. expect_changes=true no snapshot obrigatório.
+
+Próxima revisão: conferir resultado/evidência uma vez, registrar Q8S e decidir versões/peers/artefatos. Antes de código permanece exigido preparo oficial de pendências/mapa e conclusão da conciliação normativa. Produto ainda não implementado. Commits existentes: fe3d216 e ee86db4.
+
+Novo job confirmado RUNNING: a9328cac-6cb4-49b1-af1b-ad3b491af25c. Mesmo repoPath D:/trampo/jcem.pro-uber e thread01a16678-96c5-7eb2-9ee1-fea2b7b37cf2; commit_policy=supervisor, command_sequence collect_package_metadata→verify_package_metadata; alvo único toolchain-registry.json. Não consultar por demora nem repetir coleta bem-sucedida. Compactação nativa impedida por falta de ferramenta exposta.
