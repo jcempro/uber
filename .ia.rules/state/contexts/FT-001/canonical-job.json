@@ -1,0 +1,14 @@
+{
+  "job_id": "f13259b7-4d0c-4f75-918f-bffe3fe2635c",
+  "receipt_status": "RUNNING",
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "predecessor": "8dc45fd3-07d1-4ee6-8f36-3cb737a63092",
+  "predecessor_review": {"score": 6, "revision": 1},
+  "execution_kind": "command_sequence",
+  "command_sequence": ["patch_canonical", "verify_canonical"],
+  "commit_policy": "supervisor",
+  "next": "Receber resultado terminal uma vez; revisar evidência determinística proporcionalmente e registrar Q8S sem atribuir cognição à sequência. Não repetir testes aprovados sem achado concreto. Depois completar fontes/hashes/FTs e commit inicial; RCF antes de código.",
+  "global_acceptance": "Pendente; produto ainda não implementado",
+  "native_compaction": "Impedida: ferramenta/rota suportada não exposta para contexto vivo"
+}

@@ -1,0 +1,11 @@
+{
+  "job_id": "f6717810-3ac8-46f3-bb64-b2ce5893e6a6",
+  "receipt_status": "RUNNING",
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "unit": "FT-001: inicialização documental e decomposição da implementação",
+  "commit_policy": "supervisor",
+  "next": "Obter local_result uma vez em retomada autorizada; conferir evidência dos comandos e documentos; revisar/commitar unidade antes de liberar toolchain. Não repetir leitura global ou trabalho delegado.",
+  "global_acceptance": "Pendente; aplicação ainda não implementada",
+  "native_compaction": "Impedida: nenhuma ferramenta/rota suportada exposta para compactar o contexto vivo desta conversa. Este checkpoint não substitui compactação nativa."
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "jcem-request-sources/v1",
+  "recordedAt": "2026-10-25T22:42:07.802Z",
+  "thread": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repository": "D:/trampo/jcem.pro-uber",
+  "sources": [
+    {
+      "path": ".ia.rules/state/requests/FT-001/financial-correction.md",
+      "sha256": "8582df47b75ca502d32fe2e47320cd57aab0aba6fb0f9c0aaa2814c6061ba3f2",
+      "origin": "mensagem humana preservada nesta conversa",
+      "target": "RCF.md",
+      "incorporation": "revisão rastreável pendente"
+    },
+    {
+      "path": ".ia.rules/state/requests/FT-001/financial-supplement.md",
+      "sha256": "6d0e57661511b4810730e16ef2fcc342c5bc249e3312c4e54b71268d83dd0a4a",
+      "origin": "mensagem humana preservada nesta conversa",
+      "target": "RCF.md",
+      "incorporation": "revisão rastreável pendente"
+    },
+    {
+      "path": ".ia.rules/state/requests/FT-001/prompt.md",
+      "sha256": "4ed2678d2fda563f8649514d9316e6120fd6585b73d54152bf5d2c71975b45cb",
+      "origin": "mensagem humana preservada nesta conversa",
+      "target": "RCF.md",
+      "incorporation": "revisão rastreável pendente"
+    },
+    {
+      "path": ".ia.rules/state/contexts/FT-001/decision-icons.md",
+      "sha256": "71716a067b2db1f99886d4fbee28e1e4397726731304c1db7dc075b56f318da6",
+      "origin": "confirmação humana explícita",
+      "target": "RCF.md §§3 e13",
+      "incorporation": "confirmação consolidada; conciliação textual pendente"
+    }
+  ],
+  "rcf": {
+    "path": "RCF.md",
+    "sha256": "0bf0a4fd28a9bd9cff425ea3b7a986684d67a5d1e6140f7e2f1c28f97b34c3b7",
+    "commit": "96f0d92"
+  },
+  "fts": [
+    {
+      "id": "FT-001",
+      "path": ".ia.rules/state/contexts/FT-001/fts/FT-001.md"
+    },
+    {
+      "id": "FT-010",
+      "path": ".ia.rules/state/contexts/FT-001/fts/FT-010.md"
+    },
+    {
+      "id": "FT-002",
+      "path": ".ia.rules/state/contexts/FT-001/fts/FT-002.md"
+    },
+    {
+      "id": "FT-003",
+      "path": ".ia.rules/state/contexts/FT-001/fts/FT-003.md"
+    },
+    {
+      "id": "FT-004",
+      "path": ".ia.rules/state/contexts/FT-001/fts/FT-004.md"
+    },
+    {
+      "id": "FT-005",
+      "path": ".ia.rules/state/contexts/FT-001/fts/FT-005.md"
+    },
+    {
+      "id": "FT-006",
+      "path": ".ia.rules/state/contexts/FT-001/fts/FT-006.md"
+    },
+    {
+      "id": "FT-007",
+      "path": ".ia.rules/state/contexts/FT-001/fts/FT-007.md"
+    },
+    {
+      "id": "FT-008",
+      "path": ".ia.rules/state/contexts/FT-001/fts/FT-008.md"
+    },
+    {
+      "id": "FT-009",
+      "path": ".ia.rules/state/contexts/FT-001/fts/FT-009.md"
+    }
+  ],
+  "state": "registrado; nenhuma implementação ou aceite global comprovado"
+}

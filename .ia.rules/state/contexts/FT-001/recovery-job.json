@@ -1,0 +1,14 @@
+{
+  "job_id": "637f70ac-bc8f-4faf-8174-4865244c17e1",
+  "receipt_status": "RUNNING",
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "predecessor": "f6717810-3ac8-46f3-bb64-b2ce5893e6a6",
+  "predecessor_review": { "status": "FAILED", "error_kind": "WORKER_INCOMPLETE", "score": 4, "revision": 1 },
+  "scope": [".ia.rules/state/index.json", ".ia.rules/state/TODO.ia.md", ".ia.rules/state/continue.ia", ".ia.rules/state/contexts/FT-001/master.md"],
+  "required_command": "validate_recovery",
+  "commit_policy": "supervisor",
+  "next": "Em retomada autorizada, consultar job existente sem replay; receber resultado terminal uma vez, revisar delta/evidência proporcionalmente e registrar Q8S. Depois completar fontes/FTs/hash, commit inicial e RCF antes de código.",
+  "global_acceptance": "Pendente: aplicação ainda não implementada; esta unidade é somente correção documental",
+  "native_compaction": "Impedida: ferramenta/rota suportada para compactar contexto vivo não exposta; checkpoint não a substitui"
+}

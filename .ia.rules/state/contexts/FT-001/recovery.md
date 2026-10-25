@@ -1,0 +1,9 @@
+# Continuação documental delimitada
+
+2026-10-25: retorno terminal do job f6717810-3ac8-46f3-bb64-b2ce5893e6a6 recebido e examinado uma vez. WORKER_INCOMPLETE: ausência de progresso verificável e falha de validate_init; não comprova conformidade. Q8S registrado, revisão 1, nota 4. Arquivos parciais preservados. Diagnóstico direto: master.md e metadata.json ausentes; index.json usa formato ad hoc sem active=continue.ia; TODO não tem # TO-DOs e seu cabeçalho canônico não está no topo. Não há código de aplicação.
+
+Correção de estratégia: unidade menor, somente index.json, TODO.ia.md, continue.ia e master.md; sem criar FTs individuais nem metadata nesta unidade. Estes ficam no checkpoint seguinte, antes do commit inicial e de qualquer código. Não repetir validate_init antigo, cujo escopo excede esta unidade; validar apenas os documentos efetivamente autorizados e manter pendência global explícita. Não alterar RCF, pacote, planilha, núcleo ou fontes preservadas.
+
+Entradas adicionais obrigatórias: financial-supplement.md e financial-correction.md em requests/FT-001; decision-icons.md neste contexto confirma Fluent UI System Icons e supera a pendência histórica em supervisor.md. Reconciliar RCF antes de código, sem descartar funil/capacidade ou outros cálculos legítimos. Nenhum volume é evidência financeira. Alternativas de receita/jornada/km/custo devem recalcular dependências e limites, sem prometer demanda. Custos fixos independem do uso no mesmo período; variáveis acompanham uso/km. Resultado sem dados essenciais é condicional/incompleto, nunca zero inventado.
+
+Próximo checkpoint: examinar somente delta e evidências desta correção; depois completar registros individuais/fontes/hash, commit inicial e reconciliação normativa antes de toolchain. Implementação e aceite global seguem pendentes.

@@ -1,0 +1,14 @@
+{
+  "job_id": "8dc45fd3-07d1-4ee6-8f36-3cb737a63092",
+  "receipt_status": "RUNNING",
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "predecessor": "637f70ac-bc8f-4faf-8174-4865244c17e1",
+  "predecessor_review": {"score": 3, "revision": 1},
+  "scope": [".ia.rules/state/contexts/FT-001/master.md"],
+  "strategy": "Somente leitura e escrita nativas; sem comandos, hashes ou Node. Unidade reduzida de quatro arquivos para um.",
+  "commit_policy": "supervisor",
+  "next": "Receber resultado terminal uma vez em retomada autorizada; revisar arquivo e registrar Q8S. Depois corrigir estado canônico, completar FTs/fontes e commit inicial; RCF antes de código.",
+  "global_acceptance": "Pendente; aplicação ainda não implementada",
+  "native_compaction": "Impedida: ferramenta/rota suportada não exposta para contexto vivo"
+}

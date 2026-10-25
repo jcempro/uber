@@ -1,0 +1,16 @@
+{
+  "job_id": "896d178e-a154-4855-8935-7414e71e2479",
+  "receipt_status": "RUNNING",
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "predecessor": "f13259b7-4d0c-4f75-918f-bffe3fe2635c",
+  "predecessor_review": {"score": 9, "revision": 1},
+  "execution_kind": "command_sequence",
+  "command_sequence": ["patch_canonical_current", "verify_canonical_current"],
+  "rcf_head": "96f0d92",
+  "rcf_sha256": "0bf0a4fd28a9bd9cff425ea3b7a986684d67a5d1e6140f7e2f1c28f97b34c3b7",
+  "commit_policy": "supervisor",
+  "next": "Receber resultado terminal uma vez em retomada autorizada, revisar evidências e registrar Q8S. Sem repetição de testes confiáveis. Completar fontes/hash/FTs antes de commit inicial; reconciliar confirmação Fluent e rastreabilidade antes de código.",
+  "global_acceptance": "Pendente; aplicação ainda não implementada; contrato atual inclui F01–F18",
+  "native_compaction": "Impedida: nenhuma ferramenta/rota suportada exposta para contexto vivo"
+}
