@@ -1,0 +1,17 @@
+{
+  "job_id": "abb53764-6565-4f49-8c44-76ca8c826198",
+  "receipt_status": "RUNNING",
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "unit": "FT-002.2 — dois componentes TSX, escopo reduzido para inferência local",
+  "required_change_paths": ["src/App.tsx", "src/components/AppShell.tsx"],
+  "required_command_ids": ["verify_shell"],
+  "commit_policy": "supervisor",
+  "installed_toolchain_commit": "6a1b967",
+  "previous_review": {"job_id": "5899d49b-d0cb-4bc9-acb2-b1bc82cc3554", "score": 9, "revision": 1},
+  "evidence": "Instalação e verificação concluíram com0;142 pacotes instalados, lock gerado. Não repetir instalação ou verificação já confiáveis. Verificador shell passou Node24 --check antes da delegação.",
+  "next": "Receber resultado uma vez em retomada autorizada, revisar dois arquivos/evidência e registrar Q8S. Se conforme, commit imediato; próxima unidade HTML/main/CSS/config Vite/TS/lint e build real. Não aceitar esta renderização servidor como browser ou aplicação financeira pronta.",
+  "traceability": "RCF permanece com44 pendências; não finalizar sentença composta por cumprimento parcial do shell. Revisar causalidade e todas as cláusulas antes de assinatura material.",
+  "global_acceptance": "Cálculos, UI financeira, JSON, browsers, histórico e CI ainda pendentes",
+  "native_compaction": "Impedida: ferramenta/rota suportada não exposta para contexto vivo"
+}
