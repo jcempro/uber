@@ -1,0 +1,11 @@
+# Toolchain — levantamento delimitado
+
+Commit inicial fe3d216 registra fontes/hashes e dez frentes. RCF atual recebeu somente confirmação explícita Fluent em §§3.2/13.2; nenhum código implementado. FT-010 ainda exige mapa e pendências oficiais antes de código, com artefatos concretos. RCF atual F01–F18/U01/A01–A05. Não usar o hash histórico 3c6142... como expectativa atual; ler a versão em disco.
+
+Decisão arquitetural preliminar do supervisor: avaliar React/ReactDOM nativos com Vite/TSX, comparados a Preact/compat e TSX próprio; maturidade e compatibilidade com pacote oficial Fluent favorecem React, mas versões/peers/bundle exigem conferência real. Não instalar por presunção. Um renderizador próprio somaria manutenção e o fator comparativo 1,25 do RCF; esse fator nunca altera custos do motorista. Decimal.js é candidato para aritmética financeira; Vitest para testes de domínio. Nenhum framework de componentes, router, backend ou infraestrutura adicional está autorizado por hábito.
+
+Fontes primárias consultadas pelo supervisor: https://react.dev/learn/add-react-to-an-existing-project (integração com Vite e createRoot); https://vite.dev/guide/ (TS/TSX/templates e engines mínimos, que não substituem piso Node24 do RCF); https://vite.dev/guide/features/ (integração React). Docs públicas não substituem peers/engines do pacote efetivamente selecionado.
+
+Próxima unidade: consulta determinística somente aos metadados de pacotes públicos em registry.npmjs.org, gravação de snapshot local e verificação. Não instala dependências nem escolhe configuração definitiva. Em seguida supervisor decide versões/peers, artefatos e prepares oficiais antes da primeira unidade funcional. Bundled Node24.22.1 comprovado; PATH Node22 inadequado. Caminho suposto bin/node_modules/npm/bin/npm-cli.js não existe; descobrir npm real antes de autorizar instalação. Futuros comandos devem fixar Node24 e --ignore-scripts quando apropriado; preservar scripts gerenciados e considerar scripts de app instaláveis conforme agentsGovernance.
+
+Avisos Git LF→CRLF nas fontes preservadas exigem definir serialização ou atributos cirúrgicos antes de validadores futuros, sem classificar diferença de EOL como mudança semântica. Hashes registrados conferem com os bytes efetivos no registro inicial. Código, testes de produto, browser, bundle, planilha e publicação permanecem pendentes.
