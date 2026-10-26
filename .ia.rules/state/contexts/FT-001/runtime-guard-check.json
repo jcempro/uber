@@ -1,0 +1,73 @@
+{
+  "schema": "jcem-runtime-guard-check/v1",
+  "recordedAt": "2026-10-26T03:34:44.110Z",
+  "node": "v24.22.1",
+  "negativeNode": "v22.21.0",
+  "sourceSha256": "184f58f70aee12657c3bb199a27031da5d41e57b01146db985c603776d131d99",
+  "typecheck": true,
+  "cases": [
+    {
+      "name": "Node24 real compatível",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "name": "Node22 real bloqueado",
+      "expected": 3,
+      "actual": 3
+    },
+    {
+      "name": "Ajuda informativa",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "name": "Argumento inválido",
+      "expected": 2,
+      "actual": 2
+    },
+    {
+      "name": "caret legítimo",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "name": "união legítima",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "name": "piso enfraquecido",
+      "expected": 2,
+      "actual": 2
+    },
+    {
+      "name": "faixa inválida",
+      "expected": 2,
+      "actual": 2
+    },
+    {
+      "name": "campo ausente",
+      "expected": 2,
+      "actual": 2
+    },
+    {
+      "name": "tipo incorreto",
+      "expected": 2,
+      "actual": 2
+    },
+    {
+      "name": "runtime fora da faixa",
+      "expected": 3,
+      "actual": 3
+    },
+    {
+      "name": "cwd não altera fonte de configuração",
+      "expected": 0,
+      "actual": 0
+    }
+  ],
+  "aliasesIntegrated": false,
+  "browserValidated": false,
+  "financialImplemented": false
+}

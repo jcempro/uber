@@ -1,0 +1,19 @@
+{
+  "job_id": "e5d6266d-1205-40ff-a379-8fd37de748a1",
+  "receipt_status": "FAILED",
+  "terminal_review": {"error_kind": "WORKER_INCOMPLETE", "score": 2, "revision": 1, "reason": "Releituras sem helper, teste ou progresso verificável; sem falha de infraestrutura comprovada."},
+  "recovery": {"strategy": "Nova unidade command_sequence sem inferência: write_runtime_guard e verify_runtime_guard, separados; não reinicia o job anterior.", "scope": "scripts/check-runtime.mts e evidência isolada em cache/runtime-guard-check.json; aliases permanecem pendentes.", "preflight": "Ambos os scripts passaram node --check; executáveis e dependências já conferidos. Mudança material: efeitos e controles exatos, sem exploração livre.", "telemetry": "6 passos, 3 compactações e leituras repetidas; não prova estouro de contexto nem WORKER_INFRA_ERROR."},
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "unit": "FT-002.6b — somente helper TS de runtime, sem comandos",
+  "required_change_paths": ["scripts/check-runtime.mts"],
+  "commit_policy": "supervisor",
+  "previous_commit": "64fe5ef",
+  "previous_review": {"job_id": "c8b91aad-a8bd-4b6e-b6f4-25d95ebd9140", "score": 9, "revision": 1},
+  "preflight": "Semver7.8.5/tipos7.8.0 verificados; subset/satisfies conferidos com engines canônico e piso24. Binário alternativo C:/Program Files/nodejs/node.exe confirmado22.21.0. Scripts é diretório normal sem AGENTS/nestedGit; alvo ausente.",
+  "corrective_job": {"job_id": "2927b057-8db1-452f-bdc2-90b743cd23cb", "status": "COMPLETED", "commands": ["write_runtime_guard", "verify_runtime_guard"], "expect_changes": true, "required_change_paths": ["scripts/check-runtime.mts"], "commit_policy": "supervisor", "review": {"score": 10, "revision": 1, "execution_kind": "deterministic", "evidence": "runtime-guard-check.json: tipos e 12 controles; hash da fonte e Git conferidos; aliases ainda pendentes."}},
+  "next": "Na retomada, receber resultado do novo job uma vez, revisar fonte/evidências de tipos/Node24 positivo/Node22 negativo, CLI/cwd e ranges em fixtures .cache/build. Só então ligar app:* preservando scripts gerenciados, incluir helper no typecheck/lint, verificar entradas reais e assumir commit. Não repetir instalação, exploração ou antigo verificador fechado de devDeps.",
+  "integration": "Prefixos não foram alterados nesta unidade. Sem alegar guard efetivo até ligação e teste. NODE_ENV/preview/browser não são escopo.",
+  "global_acceptance": "Runtime guard/aliases, browser, financeiro/JSON/histórico/CI ainda pendentes",
+  "native_compaction": "Impedida: ferramenta/rota suportada não exposta para contexto vivo"
+}
