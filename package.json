@@ -145,11 +145,11 @@
     "agent:state": "node .ia.rules/core/runtime/scripts/state-manager.js",
     "agent:editorial": "node .ia.rules/core/runtime/scripts/editorial-authoring.js",
     "agent:spoken": "node .ia.rules/core/runtime/scripts/spoken-normalization.js",
-    "app:dev": "vite",
-    "app:typecheck": "tsc --noEmit",
-    "app:lint": "eslint src vite.config.mts",
-    "app:test": "vitest run",
-    "app:build": "vite build",
+    "app:dev": "node scripts/check-runtime.mts && vite",
+    "app:typecheck": "node scripts/check-runtime.mts && tsc --noEmit",
+    "app:lint": "node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts",
+    "app:test": "node scripts/check-runtime.mts && vitest run",
+    "app:build": "node scripts/check-runtime.mts && vite build",
     "dev": "npm run app:dev"
   },
   "agentsGovernance": {

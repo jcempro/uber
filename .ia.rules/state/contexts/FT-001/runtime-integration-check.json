@@ -1,0 +1,130 @@
+{
+  "schema": "jcem-runtime-integration-check/v1",
+  "recordedAt": "2026-10-26T03:39:34.081Z",
+  "baseCommit": "ec938ea",
+  "aliasesIntegrated": true,
+  "protectedMetadataPreserved": true,
+  "lockUnchanged": true,
+  "results": [
+    {
+      "command": "app:dev",
+      "args": [
+        "--help"
+      ],
+      "node": "22",
+      "exit": 3,
+      "guardBlocked": true
+    },
+    {
+      "command": "app:dev",
+      "args": [
+        "--help"
+      ],
+      "node": "24",
+      "exit": 0,
+      "guardBlocked": false
+    },
+    {
+      "command": "app:typecheck",
+      "args": [
+        "--help"
+      ],
+      "node": "22",
+      "exit": 3,
+      "guardBlocked": true
+    },
+    {
+      "command": "app:typecheck",
+      "args": [
+        "--help"
+      ],
+      "node": "24",
+      "exit": 0,
+      "guardBlocked": false
+    },
+    {
+      "command": "app:lint",
+      "args": [
+        "--help"
+      ],
+      "node": "22",
+      "exit": 3,
+      "guardBlocked": true
+    },
+    {
+      "command": "app:lint",
+      "args": [
+        "--help"
+      ],
+      "node": "24",
+      "exit": 0,
+      "guardBlocked": false
+    },
+    {
+      "command": "app:test",
+      "args": [
+        "--help"
+      ],
+      "node": "22",
+      "exit": 3,
+      "guardBlocked": true
+    },
+    {
+      "command": "app:test",
+      "args": [
+        "--help"
+      ],
+      "node": "24",
+      "exit": 0,
+      "guardBlocked": false
+    },
+    {
+      "command": "app:build",
+      "args": [
+        "--help"
+      ],
+      "node": "22",
+      "exit": 3,
+      "guardBlocked": true
+    },
+    {
+      "command": "app:build",
+      "args": [
+        "--help"
+      ],
+      "node": "24",
+      "exit": 0,
+      "guardBlocked": false
+    },
+    {
+      "command": "app:typecheck",
+      "args": [],
+      "node": "24",
+      "exit": 0,
+      "guardBlocked": false
+    },
+    {
+      "command": "app:lint",
+      "args": [],
+      "node": "24",
+      "exit": 0,
+      "guardBlocked": false
+    },
+    {
+      "command": "app:build",
+      "args": [],
+      "node": "24",
+      "exit": 0,
+      "guardBlocked": false
+    }
+  ],
+  "sources": {
+    "package.json": "fdcff1934c9ffa50761c434fe132c383534731cac3fde08bdebb105e1ba97c0d",
+    "tsconfig.json": "6d6c686b221e8f28042a705995476d6c0412d5e0306490189374f590111cbc82",
+    "eslint.config.mjs": "0bc6e62f6ebe1dd2d98767687448afd4db1cd446b38a277c74ec3341b4395acd",
+    "scripts/check-runtime.mts": "184f58f70aee12657c3bb199a27031da5d41e57b01146db985c603776d131d99"
+  },
+  "financialTestsRun": false,
+  "browserValidated": false,
+  "financialImplemented": false
+}

@@ -5,3 +5,4 @@ RCF.md text eol=lf
 /vite.config.mts text eol=lf
 /tsconfig.json text eol=lf
 /eslint.config.mjs text eol=lf
+/scripts/check-runtime.mts text eol=lf

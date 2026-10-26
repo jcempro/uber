@@ -11,7 +11,7 @@ export default defineConfig([
   },
   ...tseslint.configs.recommended,
   {
-    files: ['src/**/*.{ts,tsx}', 'vite.config.mts'],
+    files: ['src/**/*.{ts,tsx}', 'vite.config.mts', 'scripts/check-runtime.mts'],
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
