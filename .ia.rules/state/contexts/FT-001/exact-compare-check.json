@@ -1,0 +1,53 @@
+{
+  "scope": "Comparação racional exata somente;152testes exigidos,sem motorfinanceiro concluído.",
+  "base": "0d51dce",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/exact-compare.ts",
+      "sha256": "08d3a8d1ccbc402b2ce0906edfd76e24c93635037d861eed427829a7af8115aa"
+    },
+    {
+      "path": "src/domain/exact-compare.test.ts",
+      "sha256": "cfceae3f748435ea4ca4bf49dc5fe8be4824942f7c576e55c7819d81c4624a0d"
+    }
+  ],
+  "baselineFiles": 27,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\exact-compare-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\exact-compare-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/exact-compare-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 152,
+    "passed": 152,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 8
+  }
+}

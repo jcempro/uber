@@ -406,6 +406,8 @@
         "src/domain/economics.ts",
         "src/domain/exact-budget.test.ts",
         "src/domain/exact-budget.ts",
+        "src/domain/exact-compare.test.ts",
+        "src/domain/exact-compare.ts",
         "src/domain/exact-product.test.ts",
         "src/domain/exact-product.ts",
         "src/domain/exact-rational.ts",

@@ -1,0 +1,18 @@
+# FT-003.23 — comparação exata
+Execução determinística,sem inferência.Base0d51dce;144testes/tipos/lint aceitos. Gerar só src/domain/exact-compare.ts da estrutura de soma já aprovada,substituições fechadas epre/postSHA. Script lê normas/continue/estaunidade antes dos efeitos;preserva importações/narrowing válidos e27fontes. Depois instalarfixture fixa eexecutar validar_comparacao_exata. Contrato abaixo integralmente preservado.
+ImportsEXATOS:typeExactRational de'./exact';inspectExactLimits etypeExactLimits de'./exact-budget';inspectExactRational/loadExactRational/fitsProduct etypeExactRationalFailure de'./exact-rational'. Não importarExactRational do módulohelper;NÃO importarFraction como valor,nenhumconstrutornovo necessário.
+API documentada:
+ExactComparisonFailure=ExactRationalFailure|{readonly status:'unavailable';readonly code:'invalid-budget';readonly reason:string};
+ExactComparisonResult={readonly status:'ready';readonly order:-1|0|1}|ExactComparisonFailure;
+compareExactRationals(left:ExactRational,right:ExactRational,limits:ExactLimits):ExactComparisonResult.
+Ordem-1 esquerdo menor,0 igual,1 maior;único numberéeste enumadimensional,não converter dinheiro/parâmetro paraNumber.
+Fluxo:
+1 inspectExactLimits(limits);seinvalid retornarfrozenunavailableinvalid-budget MESMOreason,nãoduplicarvalidação.
+2 inspect cadaoperando(objetonãonull/camposstrings),sefalse→frozeninvalid-rational ptBR.Loadcadaum→Fraction normalizada oufalha jácongelada.Exemplo de NARROWING OBRIGATÓRIO:const a=loadExactRational(left,policy.limits);if('status' in a)return a;.FractionNÃOtem.status,proibidoa.status. HelpersjálimitamUTF16antesregex edígitos antesBigInt;retornar falhaoriginal.
+3 Toda fasearitmética/cap/guardas/compare emtry/catch→frozenarithmetic-failure ptBR.
+cap=10n**BigInt(policy.limits.maxDigits)-1n. ExigirfitsProduct(a.n,b.d,cap)&&fitsProduct(b.n,a.d,cap)ANTES produtos.Caso contráriofrozenresource-budget.NÃO exigirprodutoa.d*b.d:comparação nãomaterializa denominador comum.N1 DEVEpermitir1/8 vs1/8,apesar de8*8=64.
+FonteinstalledFraction5.3.4 inspecionada:compare forma t=this.s*this.n*P.d-P.s*P.n*this.d e retorna(C_ZERO<t)-(t<C_ZERO).Portanto também limitar diferença antes de materializá-la:apósprodutosguardados x=a.s*a.n*b.d,y=-b.s*b.n*a.d;ax=x<0n?-x:x,ay=y<0n?-y:y.Se(x>=0n)===(y>=0n) e ax>cap-ay→resource-budget.A comparação9vs-9 comN1recusa diferença18;N2permite.9vs9N1permite;nãoreprovar por soma de magnitudes quecancelam.
+4 Obter order EXCLUSIVAMENTE a.compare(b);seorder não for-1/0/1→arithmetic-failure,semcast/tolerância/fallbacks. Retornar Object.freeze({status:'ready',order}) comliteraltypenarrowing.Nãoimplementarcomparador próprio,nãousarsubtratorquecria denominadorou pode reprovar operação realizável.
+Helpers:Fraction.s/n/d bigint(s±1n,n≥0,d>0).fitsProduct=x===0n||y<=cap/x;budget interno jávalidado éprecondição,nãochosen default.NãoNumber/valueOf/toNumber/arredondamento.Guada de recursos nãoconclui validadefinanceira;orçamentoválido estruturalmente≠capacidadefísica,políticarealapp pendente.Cap sentinelaN+1técnica,intermediáriosde trabalhoN.
+Preservarentradas/limits/config/catálogos/27fontes e144testes.Nenhuma deps/Git/ediçãohelpers/UI/motorfinanceiro.Todoswrapperscongelados,semexporFraction/BigInt naJSON. CabeçalhoMPL2/linkhttps://www.mozilla.org/MPL/2.0/,origemRCF§§4/8.1/8.2FT003.23/autoriaJeanCarloEM <jeancarlo@jeancarloem.com>.JSDoc aliases/ramos/função/helpersnovos eguardasúteis.
+Comando run_authorized_command({id:'validar_comparacao_exata'}) SÓdepoisfonte;instalafixtureindependente8it eexige152/152testes/tipos/lint.Nãoeditarfixture/critérios/anteriores;corrigir sófonte enquantoativo.Saída≤60palavras,execução/evidência/impedimentoreal.Sem reexplorar/commit/aceitefinanceiroglobal.
