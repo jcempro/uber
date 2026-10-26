@@ -1,0 +1,53 @@
+{
+  "scope": "Quatro controles da matriz real; cinco controles de dados restantes obrigatórios; sem aceite final",
+  "base": "b48cd71",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/initial-scenarios.ts",
+      "sha256": "9e50bb1406fbe8ddfd7830a8c129c388db4bb4402a62d4830b6012e7488c0aea"
+    },
+    {
+      "path": "src/domain/initial-scenarios.test.ts",
+      "sha256": "dd05da156e9ff4860290b76e66ac6b26ec3db01b97559023545e1d3f29ed7f9d"
+    }
+  ],
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\seed-matrix-stage-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\seed-matrix-stage-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/seed-matrix-stage-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "pending": "Cinco controles de dados ainda obrigatórios para completar nove; sem aceite integral das sementes.",
+  "tests": {
+    "total": 90,
+    "passed": 90,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 4
+  }
+}
