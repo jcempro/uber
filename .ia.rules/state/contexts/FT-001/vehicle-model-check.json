@@ -1,0 +1,16 @@
+{
+  "scope": "Somente contratos veículo/combustível; não valida consumo/ciclo/referências/elegibilidade/runtime",
+  "base": "423e756",
+  "node": "v24.22.1",
+  "readonlyFields": 23,
+  "negativeControls": 16,
+  "sourceSha256": "2c49be9dc99d29ae2d882584f63d59478bf5024fc34b30b5ea67456f5f4f2573",
+  "fixtureSha256": "a77642e756061b06471d88c9aa2be46dee96ae337dbc699b4818d1d5450abee1",
+  "diagnostics": [],
+  "lint": {
+    "status": 0,
+    "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+    "stderr": "",
+    "error": null
+  }
+}

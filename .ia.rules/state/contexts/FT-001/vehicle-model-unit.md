@@ -1,0 +1,14 @@
+# FT-003.6 — contratos de veículo/combustível
+
+Worker subordinado. Base423e756; manutenção51 testes/tipos/lint aceita. Acrescentar SOMENTE4 tipos ao final de model.ts; preservar tudo existente, inclusive comentários. Único ajuste no prefixo: “RCF§§1/4/8, FT-003.1/003.4.” → “RCF§§1/4/5/6.1/8, FT-003.1/003.4/003.6.”. Fontes literais em vehicle-model-rcf.json. Sem valores/defaults, cálculos, CRUD/UI, validação runtime ou import/dependência nova. Uma edição ~50 linhas; leituras pequenas/margem32K. Supervisor assume commit.
+
+API decidida, todos campos readonly:
+
+- DrivingCycle = 'urban'|'highway'|'mixed'|'unspecified'. Ausência de ciclo confirmado não vira urbano nem ensaio oficial. Mesmo ciclo é pré-condição futura da comparação.
+- FuelConfigurationBase: id:string; vehicleId:string; name:string; enabled:boolean; cycle:DrivingCycle; pricePerLitreParameterId:string; efficiencyKmPerLitreParameterId:string; usableLitresParameterId:string; provenance:Provenance. Valores/unidades/status têm SSOT nos parâmetros referenciados; referências distintas permitem preservar operacional informado e ensaios sem sobreposição. Metadados do registro não certificam cada entrada.
+- FuelConfiguration = FuelConfigurationBase & união {kind:'ethanol';ethanolFractionParameterId?:never} | {kind:'gasoline';ethanolFractionParameterId?:never} | {kind:'blend';ethanolFractionParameterId:string}. Parentetizar união corretamente. Estes são os3 modos comparáveis definidos no RCF. Fração é parâmetro independente no blend, não dado extra em combustível puro. Nenhuma média de eficiências ou hipótese de mistura implícita; eficiência específica permanece referência a entrada validável.
+- Vehicle: id:string; name:string; enabled:boolean; manufactureYear:number; modelYear:number; fuelConfigurationIds:readonly string[]; defaultFuelConfigurationId:string; provenance:Provenance. IDs/referências/dados de ano são brutos: tipos não validam unicidade, inteiros, integridade ou elegibilidade Uber. Não criar veículos duplicados, copiar6.8 em perfis ou instanciar Yaris nesta unidade.
+
+Documentar alias/interface/3 ramos da união e restrições úteis; usar fonteRCF aplicável no cabeçalho. Não mudar comentários antigos para incluir fontes novas: acrescentar comentário imediatamente antes dos tipos novos. Não adicionar funções, enum, any, casts ou valores runtime. Flags/arrays e objetos aninhados readonly. Não definir Scenario/Calendar ou outros tipos agora.
+
+Ler uma vez os3 arquivos, editar e chamar run_authorized_command({"id":"validar_modelo_veiculo"}). NÃO usar run_command/Node/npm/eval. Validador fornecido exige prefixo e4 declarações/readonly, compilador strict com controles negativos independentes e lint real. Não relaxar testes para aprovação. Saída≤80 palavras: edição/execução/pendências. Sem declarar validação runtime, economia, veículo inicial ou FT-003/global concluídos.

@@ -1,6 +1,6 @@
 /**
  * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
- * Origem: jcem.pro-uber; RCF§§1/4/8, FT-003.1/003.4.
+ * Origem: jcem.pro-uber; RCF§§1/4/5/6.1/8, FT-003.1/003.4/003.6.
  * Autoria Git: JeanCarloEM <jeancarlo@jeancarloem.com>.
  */
 // Tipos baseados em model-input-rcf.json e model-input-unit.md; sem validação runtime, cálculos ou dependências.
@@ -118,4 +118,42 @@ export interface CostItem {
   readonly eventId: string | null;
   readonly reconcilesReserveId: string | null;
   readonly allocationRuleId: string | null;
+}
+
+// Tipos de veículo/combustível conforme vehicle-model-rcf.json; sem validação runtime ou confirmação de elegibilidade.
+/** Ciclo de condução: urbano, rodoviário, misto ou não especificado. Ausência de ciclo não implica ensaio oficial. */
+export type DrivingCycle = 'urban' | 'highway' | 'mixed' | 'unspecified';
+
+/** Base de configuração de combustível: identificação, ciclo, parâmetros e proveniência. */
+export interface FuelConfigurationBase {
+  readonly id: string;
+  readonly vehicleId: string;
+  readonly name: string;
+  readonly enabled: boolean;
+  readonly cycle: DrivingCycle;
+  readonly pricePerLitreParameterId: string;
+  readonly efficiencyKmPerLitreParameterId: string;
+  readonly usableLitresParameterId: string;
+  readonly provenance: Provenance;
+}
+
+/** Configuração de combustível: 3 modos comparáveis (etanol, gasolina, mistura) com restrições de fração. */
+export type FuelConfiguration =
+  /** Etanol puro não carrega fração de mistura; consumo depende da entrada específica. */
+  | (FuelConfigurationBase & { readonly kind: 'ethanol'; readonly ethanolFractionParameterId?: never })
+  /** Gasolina pura não carrega fração de mistura nem herda eficiência de outro combustível. */
+  | (FuelConfigurationBase & { readonly kind: 'gasoline'; readonly ethanolFractionParameterId?: never })
+  /** Mistura exige fração e eficiência próprias; preço ponderado não comprova consumo. */
+  | (FuelConfigurationBase & { readonly kind: 'blend'; readonly ethanolFractionParameterId: string });
+
+/** Veículo: identificação, anos, configurações de combustível e proveniência. IDs/dados não validam unicidade ou elegibilidade. */
+export interface Vehicle {
+  readonly id: string;
+  readonly name: string;
+  readonly enabled: boolean;
+  readonly manufactureYear: number;
+  readonly modelYear: number;
+  readonly fuelConfigurationIds: readonly string[];
+  readonly defaultFuelConfigurationId: string;
+  readonly provenance: Provenance;
 }

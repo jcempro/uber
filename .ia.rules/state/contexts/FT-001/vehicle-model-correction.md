@@ -1,0 +1,15 @@
+# FT-003.6a — fechamento determinístico do parcial de veículo
+
+Recebidoe7b09565 uma vez/revisado: COMPLETED determinístico, ambos comandos exit0. Reposição/docs preservam semântica/base, cabeçalho conforme contrato;4 tipos/23 campos readonly. Compilador strict16 negativos/lint aprovados, sem diagnóstico; SHA2c49be9dc99d29ae2d882584f63d59478bf5024fc34b30b5ea67456f5f4f2573. Git coincide,0 commits Worker. Q8S10/revisão1 registrado. Aceitar contratos para commit, não validar dados/consumo/elegibilidade ou concluir FT-003.
+
+Recibo e7b09565-320b-46fd-9f56-7720e31dbcae RUNNING, conversa01a16678-96c5-7eb2-9ee1-fea2b7b37cf2/cwd D:/trampo/jcem.pro-uber confirmados. Dry-run sem escrita comprovou160 linhas/SHA2c49be9dc99d29ae2d882584f63d59478bf5024fc34b30b5ea67456f5f4f2573; --check aprovado e saída já aplicada reconhecida. Verificador original preservado integralmente. Próxima retomada: local_result uma vez, revisão proporcional do diff/provas/Git, Q8S com recibo e commit do microescopo aceito. Não reexecutar por demora/polling.
+
+Compactação N7C impedida: rota/ferramenta nativa ligada ao contexto vivo não exposta. Checkpoint auxilia preservação, não prova compactação. FT-003/RCF global seguem pendentes, assim como dados iniciais6.8, validação de referências/ciclos/anos e economia/UI.
+
+4725d7b4 recebido uma vez: FAILED/WORKER_INCOMPLETE. Step3: validar_modelo_veiculo falhou no guard de prefixo antes de strict/lint, pois4 tipos foram inseridos antes dos existentes. Worker repetiu comando sem mudança e tentou ferramenta inexistente NEEDS_SUPERVISOR. Não é diagnóstico de infraestrutura ou pedido legítimo de acesso humano. Git confere; Q8S5/revisão1 registrado. Não reiniciar job/reexplorar/recriar tipos.
+
+Parcial SHA4a1561481330206ee18753e14ca169ceaa826abc22f3641433340cf1a3579353: tipos recuperáveis, todos campos readonly, interseção distributiva exige base em todos modos e é semanticamente válida. Não reescrever a união por preferência de forma. Falta docs específicas dos3 ramos. Patch determinístico apenas move bloco novo para o final e acrescenta JSDoc de etanol/gasolina/mistura; nenhum campo/tipo/discriminante alterado. Comparar resto exato com base423e756, salvo cabeçalho autorizado; recusar concorrência, links ou fonte divergente; reconhecer saída já aplicada.
+
+Sequência reposicionar_veiculo → validar_modelo_veiculo original, sem inferência. Primeiro comando lê normas/unidade antes do efeito e aplica pre/post/path. expect_changes=true em model.ts, commit_policy=supervisor. Não editar testes, critérios, Worker, dependências ou Git; não limitar stdout determinístico por palavras. Erro interrompe preservando efeitos. Strict16 negativos/4 tipos readonly/prefixo/lint obrigatórios, não alegar execução por autorização.
+
+Sucesso certifica somente tipos e documentação. Referências, ciclos, anos e elegibilidade exigem validação runtime futura; veículo inicial6.8/defaults de combustíveis/economia/UI/JSON/aceite global permanecem pendentes. Nenhuma conclusão global ou hash material RCF por implementação parcial.
