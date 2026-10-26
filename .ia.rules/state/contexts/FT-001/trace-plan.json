@@ -72,7 +72,9 @@
         "src/domain/defaults.ts",
         "src/domain/defaults.test.ts",
         "src/domain/maintenance.ts",
-        "src/domain/maintenance.test.ts"
+        "src/domain/maintenance.test.ts",
+        "src/domain/initial-scenarios.ts",
+        "src/domain/initial-scenarios.test.ts"
       ]
     ],
     "7": [
@@ -96,7 +98,9 @@
         "src/domain/defaults.ts",
         "src/domain/financial-defaults.test.ts",
         "src/domain/cost-requirement.ts",
-        "src/domain/maintenance.ts"
+        "src/domain/maintenance.ts",
+        "src/domain/initial-scenarios.ts",
+        "src/domain/initial-scenarios.test.ts"
       ]
     ],
     "9": [

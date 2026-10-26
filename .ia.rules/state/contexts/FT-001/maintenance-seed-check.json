@@ -1,0 +1,53 @@
+{
+  "scope": "Integração das provisões de manutenção;suíte12=9anteriores+3novos,sem custos completos/economia/CRUD/UI",
+  "base": "b643287",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/initial-scenarios.ts",
+      "sha256": "e6500648c4948a0e0a3fbe99ad542ff4c9b9b664d64290c73cab6c43f948da1f"
+    },
+    {
+      "path": "src/domain/initial-scenarios.test.ts",
+      "sha256": "663764a7a020d3ae2ff73b4b91218cb45006a718e2879a142558219586aa1780"
+    }
+  ],
+  "baselineFiles": 14,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\maintenance-seed-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\maintenance-seed-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/maintenance-seed-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 108,
+    "passed": 108,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 12
+  }
+}

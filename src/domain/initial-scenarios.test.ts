@@ -1,13 +1,13 @@
 /**
  * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
- * Origem: jcem.pro-uber; RCF§§4/7 e F01; FT-003.13d/003.13e.
+ * Origem: jcem.pro-uber; RCF§§4/7 e F01; FT-003.13d/003.13e/003.15.
  * Autoria: JeanCarloEM <jeancarlo@jeancarloem.com>.
  */
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { INITIAL_WORK_SCHEDULES, INITIAL_FINANCIAL_OBJECTIVES, INITIAL_PROFILE_REFERENCES, INITIAL_VEHICLES, INITIAL_FUEL_CONFIGURATIONS, INITIAL_CALENDARS } from './defaults';
 import { createEvaluationContexts } from './contexts';
-import { INITIAL_SCENARIOS, INITIAL_EVALUATION_CONTEXTS } from './initial-scenarios';
+import { INITIAL_SCENARIOS, INITIAL_EVALUATION_CONTEXTS, INITIAL_MAINTENANCE_PARAMETERS, INITIAL_MAINTENANCE_COST_ITEMS, INITIAL_MAINTENANCE_REQUIREMENTS } from './initial-scenarios';
 
 const rcf = readFileSync(new URL('../../RCF.md', import.meta.url), 'utf8');
 const normative = rcf.match(/(\d+) perfis × (\d+) jornadas × (\d+) objetivos = (\d+) contextos/);
@@ -93,5 +93,50 @@ describe('Matriz das sementes reais, sem resultados financeiros', () => {
       expect(Object.keys(c).sort()).toEqual(['id','objectiveId','scenarioId','scheduleId']);
       expect(Object.values(c).every(id => typeof id === 'string' && id.trim() !== '')).toBe(true);
     }
+  });
+
+  it('materializa as taxas de cada perfil uma vez, diretamente da tabela canônica', () => {
+    const section = rcf.split('### 6.2 Provisões por quilômetro')[1]?.split('## 7. Calendário')[0];
+    if (!section) throw new Error('Seção de manutenção ausente');
+    const table = section.split(/\r?\n/).filter(line=>line.startsWith('|')).map(line=>line.split('|').slice(1,-1).map(cell=>cell.replaceAll('*','').trim()));
+    const rates = table.slice(2).filter(row=>!row[0].includes('Total derivado'));
+    expect(rates.length).toBeGreaterThan(0);
+    const count = profiles * rates.length;
+    expect(INITIAL_MAINTENANCE_PARAMETERS).toHaveLength(count);
+    expect(INITIAL_MAINTENANCE_COST_ITEMS).toHaveLength(count);
+    expect(INITIAL_MAINTENANCE_REQUIREMENTS).toHaveLength(count);
+    for (const [index,s] of scenarios.entries()) {
+      const own = s.parameterIds.map(id=>INITIAL_MAINTENANCE_PARAMETERS.find(p=>p.id===id));
+      expect(own.map(p=>({name:p?.name,value:p?.input.status==='provided'?p.input.value:undefined})))
+        .toEqual(rates.map(row=>({name:row[0],value:row[index+1].replace(',','.')})));
+    }
+  });
+  it('resolve itens e requisitos dentro do cenário, sem órfãos ou duplicação por jornada/meta', () => {
+    for (const s of scenarios) {
+      const items = INITIAL_MAINTENANCE_COST_ITEMS.filter(i=>s.costItemIds.includes(i.id));
+      const reqs = INITIAL_MAINTENANCE_REQUIREMENTS.filter(r=>r.provenance.scope.kind==='scenario' && r.provenance.scope.scenarioId===s.id);
+      expect(items).toHaveLength(s.costItemIds.length);
+      expect(reqs).toHaveLength(items.length);
+      for (const item of items) {
+        expect(item.provenance.scope).toEqual({kind:'scenario',scenarioId:s.id});
+        expect(s.parameterIds).toContain(item.amountParameterId);
+        expect(INITIAL_MAINTENANCE_PARAMETERS.some(p=>p.id===item.amountParameterId)).toBe(true);
+        expect(reqs.filter(r=>r.status==='applicable' && r.costItemIds.length===1 && r.costItemIds[0]===item.id)).toHaveLength(1);
+      }
+      expect(INITIAL_EVALUATION_CONTEXTS.filter(c=>c.scenarioId===s.id)).toHaveLength(schedulesCount*goalsCount);
+    }
+  });
+  it('conserva os registros canônicos únicos e congelados sem marcar cobertura financeira', () => {
+    const collections = [INITIAL_MAINTENANCE_PARAMETERS,INITIAL_MAINTENANCE_COST_ITEMS,INITIAL_MAINTENANCE_REQUIREMENTS];
+    for (const collection of collections) {
+      expect(Object.isFrozen(collection)).toBe(true);
+      expect(collection.every(Object.isFrozen)).toBe(true);
+      expect(new Set(collection.map(x=>x.id)).size).toBe(collection.length);
+    }
+    const allIds = collections.flatMap(c=>c.map(x=>x.id));
+    expect(new Set(allIds).size).toBe(allIds.length);
+    // A coleção cobre somente manutenção: existência de referências não comprova custos totais ou lucro.
+    for (const c of INITIAL_EVALUATION_CONTEXTS)
+      expect(Object.keys(c).sort()).toEqual(['id','objectiveId','scenarioId','scheduleId']);
   });
 });
