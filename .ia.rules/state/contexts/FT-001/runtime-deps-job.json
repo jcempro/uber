@@ -1,0 +1,17 @@
+{
+  "job_id": "c8b91aad-a8bd-4b6e-b6f4-25d95ebd9140",
+  "receipt_status": "RUNNING",
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "unit": "FT-002.6a — dependências explícitas/tipadas do guard, sequência sem inferência",
+  "required_change_paths": ["package.json", "package-lock.json"],
+  "command_sequence": ["select_runtime_semver", "install_runtime_semver", "verify_runtime_deps"],
+  "commit_policy": "supervisor",
+  "previous_commit": "de27eae",
+  "previous_review": {"job_id": "77b0e3f3-d2db-4fbf-bf3e-0632e6366334", "score": 8, "revision": 1},
+  "preflight": "Três scripts passaram Node24 --check; dois scripts alterados receberam nova checagem. Semver7.8.5/ISC instalado confirmado; tipos ausentes. Node/npmCLI e APIs já verificados. Instalação protege hash/HEAD/cwd/escopo local e não usa --prefix.",
+  "next": "Receber resultado uma vez em retomada autorizada, examinar versões/integridade/preservação e registrar Q8S. Commit imediato se conforme. Depois helper scripts/check-runtime.mts e prefixos app:* usando semver/engines, sem mudar scripts gerenciados; Node22 deve falhar e Node24 passar. Financeiro permanece pendente.",
+  "caveat": "Não repetir antigo verify_toolchain com lista fechada anterior de devDeps: a adição explícita e justificada é legítima. Verificador novo compara somente duas adições com HEAD canônico e mantém demais contratos.",
+  "global_acceptance": "Lint validado; dependências do guard não provam guard, navegador, cálculos/cenários/JSON/histórico/CI",
+  "native_compaction": "Impedida: ferramenta/rota suportada não exposta para contexto vivo"
+}

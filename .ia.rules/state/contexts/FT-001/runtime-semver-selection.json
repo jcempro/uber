@@ -1,0 +1,23 @@
+{
+  "schema": "jcem-runtime-semver-selection/v1",
+  "recordedAt": "2026-10-26T02:57:55.624Z",
+  "basePackageSha256": "8f33a1247f5a805ffdd2270e3b86710eb2d42bcb343bd8de2f796e07780e8123",
+  "baseLockSha256": "353e20858c6ce61634d0c132d98a951da69c51dda499f27127f3ba630ab4d494",
+  "baseCommit": "de27eaec43c4916d359ccc5569b1e9f3a604494e",
+  "library": {
+    "name": "semver",
+    "version": "7.8.5",
+    "license": "ISC",
+    "source": "node_modules/semver/package.json + package-lock.json",
+    "integrity": "sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA=="
+  },
+  "types": {
+    "name": "@types/semver",
+    "version": "7.8.0",
+    "license": "MIT",
+    "source": "https://registry.npmjs.org/%40types%2Fsemver/7.8.0",
+    "responseSha256": "27368b2fc75692613cf1e328f0af14aaeb3c340e3fc04a2abe084c95e9593deb",
+    "integrity": "sha512-1mAINjtQCXXeLkJ9ehXkwOcBpqtLxiVtKhpUf83DdRNdQKV0iXZpaHYqRr7nj+wvxuJzoAmAwXI+sCNMv1CzLQ==",
+    "typescriptVersion": "5.6"
+  }
+}

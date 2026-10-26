@@ -1,0 +1,7 @@
+# FT-002.6a — dependências do guard
+
+Unidade determinística sem inferência: declarar semver7.8.5 já instalado/transitivo como devDependency exata e selecionar tipos oficiais estáveis do mesmo major. Fonte existente pacote/lock, licençaISC observada; tipos ausentes. Tipo/source precisam estar declarados para CI, não depender de hoisting transitivo ou npm global. Guard usará engines do package e piso Node24, sem parser SemVer próprio ou restrição inventada de sintaxe de ranges.
+
+Sequência: selecionar metadados e registrar fontes/integridade; instalar só semver e @types/semver como devDeps; verificar pins, lock, árvore npm e preservação de todos os demais campos. Guarda de hash/HEAD antes de mutação. cwd desta raiz e global=false, sem --prefix (defeito npm10/Windows já diagnosticado). Hooks ignorados, cache local, timeout finito. Não repetir instalação bem-sucedida. Relatórios em contexts/FT-001 autorizados; alvos funcionais obrigatórios package.json/lock. Sem script de guard, fonte browser ou commit nesta unidade.
+
+Lint de quatro arquivos e controles passaram, commitde27eae. Não repetir build/lint sem mudança pertinente. Após resultado: revisão/Q8S uma vez, commit imediato se conforme; próxima unidade scripts/check-runtime.mts e prefixos dos aliases app:*, com validação real Node22/24 e tipos/CLI. Instalação de dependência não significa guard implementado nem aceite do produto. QA visual continua pendente em fix.md.
