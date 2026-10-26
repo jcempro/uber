@@ -1,0 +1,51 @@
+{
+  "scope": "Referências de calendário/jornadas do RCF; sem calendário calculado/matriz18/finanças",
+  "base": "a6c9345",
+  "node": "v24.22.1",
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\time-defaults-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\time-defaults-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/time-defaults-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "files": [
+    {
+      "path": "src/domain/defaults.ts",
+      "sha256": "0362dce59c6cfe3f263063b3d0ed8712d30dbbcc9506eef814e18eaaf1b0c4f5"
+    },
+    {
+      "path": "src/domain/time-defaults.test.ts",
+      "sha256": "01664e9280629ac21fdc1041a2ef94e048ace1cd0fb478f84a61f910bdb8601c"
+    }
+  ],
+  "tests": {
+    "total": 67,
+    "passed": 67,
+    "failed": 0,
+    "pending": 0
+  }
+}

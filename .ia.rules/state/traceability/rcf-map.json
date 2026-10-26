@@ -672,6 +672,7 @@
         "README.md",
         "src/domain/defaults.test.ts",
         "src/domain/defaults.ts",
+        "src/domain/time-defaults.test.ts",
         "src/domain/vehicle-defaults.test.ts"
       ],
       "commit": "",

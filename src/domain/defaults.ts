@@ -1,10 +1,11 @@
 /**
  * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
- * Origem: jcem.pro-uber; RCF§§4/5/6.1/6.2, FT-003.5/003.7.
+ * Origem: jcem.pro-uber; RCF§§4/5/6.1/6.2/7, FT-003.5/003.7/003.9.
  * Autoria Git: JeanCarloEM <jeancarlo@jeancarloem.com>.
  */
 import type { DecimalText, Provenance, CostNature, CostRecognition, Vehicle, FuelConfiguration, NumericParameter } from './model';
 import { NUMERIC_RULES } from './validation';
+import type { CalendarConfiguration, WorkSchedule } from './scenario';
 /** Perfis de referência iniciais; não limita cenários personalizados. Copiar para estado editável, preservando IDs. */
 export const INITIAL_PROFILE_REFERENCES = Object.freeze([
   Object.freeze({"id":"optimistic","name":"Otimista"} as const),
@@ -164,6 +165,250 @@ export const INITIAL_VEHICLE_PARAMETERS: readonly NumericParameter[] = Object.fr
     } as const),
     "required": false,
     "constraints": NUMERIC_RULES.nonNegative,
+    "dependencies": Object.freeze([] as const)
+  } as const)
+] as const);
+
+/** Orçamento por premissas do RCF; dias perdidos desconhecidos não são implicitamente zero. */
+export const INITIAL_CALENDARS: readonly CalendarConfiguration[] = Object.freeze([
+  Object.freeze({
+    "id": "calendar-budget",
+    "name": "Orçamento programado",
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/7 — regra de simulação adotada",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const),
+    "kind": "budget",
+    "daysPerWeekParameterId": "time-workdays-week",
+    "daysPerMonthParameterId": "time-days-month",
+    "monthsPerYearParameterId": "time-months-year",
+    "lostDaysParameterId": "time-lost-days"
+  } as const)
+] as const);
+/** Jornadas comparáveis; só3h possuem faixa horária fornecida. Copiar para o estado editável. */
+export const INITIAL_WORK_SCHEDULES: readonly WorkSchedule[] = Object.freeze([
+  Object.freeze({
+    "id": "schedule-short",
+    "name": "Jornada curta",
+    "durationHoursParameterId": "time-hours-short",
+    "startTime": "16:30",
+    "endTime": "19:30",
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/7 — regra de simulação adotada",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const)
+  } as const),
+  Object.freeze({
+    "id": "schedule-medium",
+    "name": "Jornada intermediária",
+    "durationHoursParameterId": "time-hours-medium",
+    "startTime": null,
+    "endTime": null,
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/7 — regra de simulação adotada",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const)
+  } as const),
+  Object.freeze({
+    "id": "schedule-long",
+    "name": "Jornada longa",
+    "durationHoursParameterId": "time-hours-long",
+    "startTime": null,
+    "endTime": null,
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/7 — regra de simulação adotada",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const)
+  } as const)
+] as const);
+/** Regras iniciais de simulação, não presença comprovada; horas no dia orçamentário limitadas dimensionalmente a24. */
+export const INITIAL_TIME_PARAMETERS: readonly NumericParameter[] = Object.freeze([
+  Object.freeze({
+    "id": "time-workdays-week",
+    "name": "Dias de trabalho programados por semana",
+    "unit": "working-day/week",
+    "category": "calendar",
+    "input": Object.freeze({
+      "status": "provided",
+      "value": "4"
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/7 — regra de simulação adotada",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const),
+    "required": true,
+    "constraints": Object.freeze({...NUMERIC_RULES.nonNegative, maximum:"7"}),
+    "dependencies": Object.freeze([] as const)
+  } as const),
+  Object.freeze({
+    "id": "time-days-month",
+    "name": "Dias do mês orçamentário",
+    "unit": "day/month",
+    "category": "calendar",
+    "input": Object.freeze({
+      "status": "provided",
+      "value": "30"
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/7 — regra de simulação adotada",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const),
+    "required": true,
+    "constraints": NUMERIC_RULES.positive,
+    "dependencies": Object.freeze([] as const)
+  } as const),
+  Object.freeze({
+    "id": "time-months-year",
+    "name": "Meses do ano orçamentário",
+    "unit": "month/year",
+    "category": "calendar",
+    "input": Object.freeze({
+      "status": "provided",
+      "value": "12"
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/7 — regra de simulação adotada",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const),
+    "required": true,
+    "constraints": NUMERIC_RULES.positive,
+    "dependencies": Object.freeze([] as const)
+  } as const),
+  Object.freeze({
+    "id": "time-lost-days",
+    "name": "Dias de trabalho perdidos no período",
+    "unit": "working-day",
+    "category": "calendar",
+    "input": Object.freeze({
+      "status": "not-provided",
+      "reason": "Dias efetivamente perdidos ainda não informados."
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "gap",
+      "source": "RCF.md §7 — dias perdidos ainda não informados",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "unverified"
+    } as const),
+    "required": true,
+    "constraints": NUMERIC_RULES.nonNegative,
+    "dependencies": Object.freeze([
+      "time-workdays-week",
+      "time-days-month"
+    ] as const)
+  } as const),
+  Object.freeze({
+    "id": "time-hours-short",
+    "name": "Duração diária: jornada curta",
+    "unit": "h",
+    "category": "schedule",
+    "input": Object.freeze({
+      "status": "provided",
+      "value": "3"
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/7 — regra de simulação adotada",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const),
+    "required": true,
+    "constraints": Object.freeze({...NUMERIC_RULES.positive, maximum:"24"}),
+    "dependencies": Object.freeze([] as const)
+  } as const),
+  Object.freeze({
+    "id": "time-hours-medium",
+    "name": "Duração diária: jornada intermediária",
+    "unit": "h",
+    "category": "schedule",
+    "input": Object.freeze({
+      "status": "provided",
+      "value": "6"
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/7 — regra de simulação adotada",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const),
+    "required": true,
+    "constraints": Object.freeze({...NUMERIC_RULES.positive, maximum:"24"}),
+    "dependencies": Object.freeze([] as const)
+  } as const),
+  Object.freeze({
+    "id": "time-hours-long",
+    "name": "Duração diária: jornada longa",
+    "unit": "h",
+    "category": "schedule",
+    "input": Object.freeze({
+      "status": "provided",
+      "value": "8"
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/7 — regra de simulação adotada",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const),
+    "required": true,
+    "constraints": Object.freeze({...NUMERIC_RULES.positive, maximum:"24"}),
     "dependencies": Object.freeze([] as const)
   } as const)
 ] as const);

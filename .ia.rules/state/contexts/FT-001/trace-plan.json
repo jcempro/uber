@@ -53,7 +53,8 @@
       [
         "src/domain/defaults.ts",
         "src/domain/model.ts",
-        "src/domain/vehicle-defaults.test.ts"
+        "src/domain/vehicle-defaults.test.ts",
+        "src/domain/time-defaults.test.ts"
       ]
     ],
     "6": [
@@ -68,7 +69,9 @@
       "FT-004",
       [
         "src/domain/projection.ts",
-        "src/domain/scenario.ts"
+        "src/domain/scenario.ts",
+        "src/domain/defaults.ts",
+        "src/domain/time-defaults.test.ts"
       ]
     ],
     "8": [
@@ -107,7 +110,8 @@
         "src/domain/rotapro.test.ts",
         "scripts/inspect-dist.mts",
         "src/domain/defaults.test.ts",
-        "src/domain/vehicle-defaults.test.ts"
+        "src/domain/vehicle-defaults.test.ts",
+        "src/domain/time-defaults.test.ts"
       ]
     ],
     "13": [
