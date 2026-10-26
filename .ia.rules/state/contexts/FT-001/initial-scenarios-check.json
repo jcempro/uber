@@ -1,0 +1,52 @@
+{
+  "scope": "Sementes de três cenários e identidades de18contextos; sem custos completos/finanças/CRUD/UI",
+  "base": "992537c",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/initial-scenarios.ts",
+      "sha256": "9e50bb1406fbe8ddfd7830a8c129c388db4bb4402a62d4830b6012e7488c0aea"
+    },
+    {
+      "path": "src/domain/initial-scenarios.test.ts",
+      "sha256": "2eab2912aafaa27c393f66e344ce10f54469350b57543db0965ed0586b9c7611"
+    }
+  ],
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\initial-scenarios-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\initial-scenarios-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/initial-scenarios-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 95,
+    "passed": 95,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 9
+  }
+}
