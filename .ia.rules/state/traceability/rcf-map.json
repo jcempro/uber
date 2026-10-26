@@ -382,6 +382,7 @@
       "artifacts": [
         "src/domain/cost-requirement.ts",
         "src/domain/economics.ts",
+        "src/domain/maintenance.test.ts",
         "src/domain/maintenance.ts",
         "src/domain/sensitivity.ts"
       ],

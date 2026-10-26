@@ -1,0 +1,53 @@
+{
+  "scope": "Provas funcionais dos parâmetros de manutenção; sem itens/requisitos/integração ou apuração financeira",
+  "base": "38e3786",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/maintenance.ts",
+      "sha256": "c94a0ca134d9d7933ca60d8a59e5c3f105296b4133da8b8dd8626ee06108ad3e"
+    },
+    {
+      "path": "src/domain/maintenance.test.ts",
+      "sha256": "354650b2c40ec51b500cfcefa4785b4653d9f591eba1dd847e565534b9c97c7e"
+    }
+  ],
+  "baselineFiles": 15,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\maintenance-functional-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\maintenance-functional-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/maintenance-functional-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 101,
+    "passed": 101,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 6
+  }
+}
