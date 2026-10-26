@@ -1,0 +1,26 @@
+{
+  "scope": "Soma/subtração racionais exatas somente;sem comparação/motorfinanceiro concluído.",
+  "base": "fb123fc",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/exact-sum.ts",
+      "sha256": "c36a31b7a03903be861d5bb92570202a36b12b0ef030892e1476f91f04a1cc77"
+    },
+    {
+      "path": "src/domain/exact-sum.test.ts",
+      "sha256": "eeaa10e191b2345b0a7f31b485d257a7c218f4de3ef687a88deb91987c733aca"
+    }
+  ],
+  "baselineFiles": 25,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 2,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\nsrc/domain/exact-sum.ts(10,15): error TS2724: '\"./exact-rational.js\"' has no exported member named 'ExactRational'. Did you mean 'loadExactRational'?\r\nsrc/domain/exact-sum.ts(67,20): error TS2339: Property 'status' does not exist on type 'Fraction | ExactRationalFailure'.\r\n  Property 'status' does not exist on type 'Fraction'.\r\nsrc/domain/exact-sum.ts(68,5): error TS2322: Type 'Readonly<Fraction | ExactRationalFailure>' is not assignable to type 'ExactSumResult'.\r\n  Type 'Readonly<Fraction>' is not assignable to type 'ExactSumResult'.\r\nsrc/domain/exact-sum.ts(79,21): error TS2339: Property 'status' does not exist on type 'Fraction | ExactRationalFailure'.\r\n  Property 'status' does not exist on type 'Fraction'.\r\nsrc/domain/exact-sum.ts(80,5): error TS2322: Type 'Readonly<Fraction | ExactRationalFailure>' is not assignable to type 'ExactSumResult'.\r\n  Type 'Readonly<Fraction>' is not assignable to type 'ExactSumResult'.\r\nsrc/domain/exact-sum.ts(88,29): error TS2339: Property 'n' does not exist on type 'Fraction | ExactRationalFailure'.\r\n  Property 'n' does not exist on type 'ExactRationalFailure'.\r\nsrc/domain/exact-sum.ts(89,29): error TS2339: Property 'd' does not exist on type 'Fraction | ExactRationalFailure'.\r\n  Property 'd' does not exist on type 'ExactRationalFailure'.\r\nsrc/domain/exact-sum.ts(90,30): error TS2339: Property 'n' does not exist on type 'Fraction | ExactRationalFailure'.\r\n  Property 'n' does not exist on type 'ExactRationalFailure'.\r\nsrc/domain/exact-sum.ts(91,30): error TS2339: Property 'd' does not exist on type 'Fraction | ExactRationalFailure'.\r\n  Property 'd' does not exist on type 'ExactRationalFailure'.\r\nsrc/domain/exact-sum.ts(117,28): error TS2339: Property 's' does not exist on type 'Fraction | ExactRationalFailure'.\r\n  Property 's' does not exist on type 'ExactRationalFailure'.\r\nsrc/domain/exact-sum.ts(118,55): error TS2339: Property 's' does not exist on type 'Fraction | ExactRationalFailure'.\r\n  Property 's' does not exist on type 'ExactRationalFailure'.\r\nsrc/domain/exact-sum.ts(118,74): error TS2339: Property 's' does not exist on type 'Fraction | ExactRationalFailure'.\r\n  Property 's' does not exist on type 'ExactRationalFailure'.\r\nsrc/domain/exact-sum.ts(126,16): error TS2365: Operator '-' cannot be applied to types 'bigint' and 'number'.\r\nsrc/domain/exact-sum.ts(138,37): error TS2339: Property 'add' does not exist on type 'Fraction | ExactRationalFailure'.\r\n  Property 'add' does not exist on type 'ExactRationalFailure'.\r\nsrc/domain/exact-sum.ts(140,37): error TS2339: Property 'sub' does not exist on type 'Fraction | ExactRationalFailure'.\r\n  Property 'sub' does not exist on type 'ExactRationalFailure'.\r\n",
+      "stderr": "",
+      "error": null
+    }
+  ]
+}

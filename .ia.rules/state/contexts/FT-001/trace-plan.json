@@ -61,7 +61,9 @@
         "src/domain/exact-budget.test.ts",
         "src/domain/exact-product.ts",
         "src/domain/exact-product.test.ts",
-        "src/domain/exact-rational.ts"
+        "src/domain/exact-rational.ts",
+        "src/domain/exact-sum.ts",
+        "src/domain/exact-sum.test.ts"
       ]
     ],
     "5": [
@@ -90,7 +92,9 @@
         "src/domain/exact.test.ts",
         "src/domain/exact-product.ts",
         "src/domain/exact-product.test.ts",
-        "src/domain/exact-rational.ts"
+        "src/domain/exact-rational.ts",
+        "src/domain/exact-sum.ts",
+        "src/domain/exact-sum.test.ts"
       ]
     ],
     "7": [
@@ -125,7 +129,9 @@
         "src/domain/exact-budget.test.ts",
         "src/domain/exact-product.ts",
         "src/domain/exact-product.test.ts",
-        "src/domain/exact-rational.ts"
+        "src/domain/exact-rational.ts",
+        "src/domain/exact-sum.ts",
+        "src/domain/exact-sum.test.ts"
       ]
     ],
     "9": [
@@ -173,7 +179,9 @@
         "src/domain/exact-budget.test.ts",
         "src/domain/exact-product.ts",
         "src/domain/exact-product.test.ts",
-        "src/domain/exact-rational.ts"
+        "src/domain/exact-rational.ts",
+        "src/domain/exact-sum.ts",
+        "src/domain/exact-sum.test.ts"
       ]
     ],
     "13": [

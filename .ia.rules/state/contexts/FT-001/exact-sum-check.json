@@ -1,0 +1,53 @@
+{
+  "scope": "Correção deimporttype;144testes/tipos/lint exigidos,sem motorfinanceiro concluído.",
+  "base": "fb123fc",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/exact-sum.ts",
+      "sha256": "6561e83a6a7af62fb2f8442236c85731deeddbaf64f2a8d0bf0fb2dbbc595f6f"
+    },
+    {
+      "path": "src/domain/exact-sum.test.ts",
+      "sha256": "eeaa10e191b2345b0a7f31b485d257a7c218f4de3ef687a88deb91987c733aca"
+    }
+  ],
+  "baselineFiles": 25,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\exact-sum-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\exact-sum-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/exact-sum-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 144,
+    "passed": 144,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 9
+  }
+}

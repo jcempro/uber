@@ -1,0 +1,5 @@
+# FT-003.22a — correção de import e narrowing
+Origem63889ed7 FAILED/WORKER_INCOMPLETE,Q8S4: fonte/fixture presentes;15diagnósticos decompilação causados porimportExactRational naorigem errada enarrowing.status numtipoFraction|falha. Releituras semprogresso,nãoinfra. Git main ahead12 confere.
+Patch determinístico exato emsrc/domain/exact-sum.ts:sóimportExactRationaldeexact.js econdições 'status' in leftFraction/rightFraction. Sem alterarcorpos matemáticos/helpers/fixture9it/25fontes/critérios. Pre/postSHA guardados,estadojáaplicado reconhecido;relatóriofalho originalarquivado semsobrescrita.
+Ler normas/continue/unidade ANTES efeitos via primeiroscript. Sequência patch→validação,sem inferência/reexploração/Git.Commit supervisor.Aceite exige144/144testes(135anteriores+9originais),tipos/lint,25fontes intactas. Nãoadicionar testesqueespelhem correção de tipagem;compilador écontrole pertinente eos9controles independentes continuamobrigatórios.
+Sem aceitefuncional ainda;comparação/motorfinanceiro/calendário/custos/metas/limiares/budgetrealapp/CRUD/UI/JSON/histórico/CI/global pendentes.
