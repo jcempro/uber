@@ -1,0 +1,15 @@
+{
+  "source": "RCF.md",
+  "sha256": "45caa8e8e5c60681251a77256eb65ea41193b5482bdcb785d51eba82eb289a23",
+  "scope": "Somente calendário tipado; exploração anterior reaproveitada",
+  "lines": [
+    {
+      "line": 58,
+      "text": "| Trabalhos programados          | **4 dias por semana**, mês orçamentário de **30 dias**, ano orçamentário de **12 meses**                  | Regras de simulação editáveis                                                          |"
+    },
+    {
+      "line": 103,
+      "text": "2. Calendário sem datas reais: dias equivalentes programados/mês `4 × 30/7 = 17,142857…`, **não 16**; dias efetivos = programados − perdidos, respeitando domínio e período. Semana = 7 dias, mês orçamentário = 30, ano = 12 desses meses (**360 dias orçamentários**, não calendário civil); sempre identificar convenção. Se o usuário configurar dias exatos da semana/datas reais, usar calendário real e registrar competência, sem misturar as convenções. Não inventar escala horária para 6/8 h. Dias restantes/ausências recalculam valores necessários até o fechamento, sem aumentar demanda disponível por decreto."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+# FT-003.8a — apenas calendário, continuação segmentada
+
+Worker subordinado.79c09eaa falhou sem criar código, após leituras repetidas; não reiniciar/reexplorar. Basefc2f6f6. Criar SOMENTE src/domain/scenario.ts com2 aliases e import type {Provenance} from './model'. Arquivo ainda ausente. Não ler unidade anterior de6 tipos nem RCF inteiro; exploração/fonte já preservadas. Um arquivo novo/~25 linhas, contrato abaixo suficiente. Demais4 tipos da FT-003.8 continuam pendentes, não declarar conclusão global. Supervisor assume commit.
+
+- IsoWeekday = 1|2|3|4|5|6|7; ISO segunda=1/domingo=7, sem escolher dias trabalhados do usuário.
+- CalendarConfiguration = base readonly {id:string;name:string;provenance:Provenance} & (ramo readonly {kind:'budget';daysPerWeekParameterId:string;daysPerMonthParameterId:string;monthsPerYearParameterId:string;lostDaysParameterId:string} | ramo readonly {kind:'dated';startDate:string;endDate:string;workingWeekdays:readonly IsoWeekday[];excludedDates:readonly string[]}). Base obrigatória nos dois ramos; parentetizar união. Todos campos readonly. Datas são texto bruto, validação posterior. Não presumir dias perdidos zero nem inventar dias/horários/datas no orçamento.
+
+Cabeçalho MPL-2.0/link/origemRCF§§4/5/7, FT-003.8a, autoria JeanCarloEM <jeancarlo@jeancarloem.com>. JSDoc útil nos2 aliases/2 ramos. Sem interface auxiliar, funções/const/enum/any/casts, dados, cálculos ou edição de outros arquivos. Importar Provenance existente não exige copiar seus campos. Nada de Scenario/WorkSchedule/FinancialObjective/EvaluationContext nesta etapa.
+
+Ler esta unidade uma vez; fonte mínima calendar-model-rcf.json somente se necessário. Escrever os2 aliases e chamar run_authorized_command({"id":"validar_calendario_tipado"}); NÃO usar run_command/Node/npm/eval, nem NEEDS_SUPERVISOR como ferramenta. Guardas de fonte anterior/2 declarações/readonly, strict com controles negativos independentes e lint já fornecidos. Não alterar verificador ou enfraquecer o contrato. Sem nova exploração ou leituras repetidas. Saída≤60 palavras: execução real e pendência dos4 tipos restantes. Margem32K ampla, somente este microescopo.

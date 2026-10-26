@@ -1,0 +1,51 @@
+{
+  "source": "RCF.md",
+  "sha256": "45caa8e8e5c60681251a77256eb65ea41193b5482bdcb785d51eba82eb289a23",
+  "scope": "Contratos tipados de cenário/calendário/jornada/objetivo/contexto, não matriz em execução",
+  "lines": [
+    {
+      "line": 33,
+      "text": "- **Parâmetro canônico** com identificador estável, nome claro, unidade, categoria, valor e tipo, origem, competência/data, status de confiabilidade, escopo (global, veículo ou cenário), obrigatoriedade, intervalo/restrições, dependências e **regra de precedência entre valor geral e substituição específica**. Proibir _magic numbers_ e atualização de resultado derivado por edição direta sem explicitar a premissa que se pretende alterar."
+    },
+    {
+      "line": 34,
+      "text": "- **TODAS as premissas/configurações/estimativas**, inclusive padrões e inferências automáticas, DEVEM ser **visíveis onde pertinentes e editáveis na interface**: metas, dízimo, calendário, jornada, veículo e combustível, preços e consumos, categorias de custos, regras de rateio, distâncias, duração, oferta/demanda, critérios de seleção, notas, zonas, taxas condicionais, limites Rota Pro, taxas fiscais, reservas e sensibilidades. Exibir **valor, unidade, origem/status e impacto**, com entrada padronizada, sem esconder custo implícito. Um parâmetro derivado só é ajustável via premissas ou substituição **expressamente identificada e reversível**; não abrir duas fontes conflitantes de verdade. [PENDENTE-CODIGO]"
+    },
+    {
+      "line": 35,
+      "text": "- **Cenários** são entidades editáveis e identificadas; DEVE ser possível **criar, editar e remover** cenários personalizados, com proteção contra perda de dados relacionados. **Duplicar** apenas quando existir justificativa operacional na UI (por exemplo, comparar variação sem destruir original), copiando parâmetros de forma explícita, com novo ID e sem compartilhar referências mutáveis acidentalmente. Três perfis iniciais **Otimista / Equilibrado / Pessimista** são referências editáveis, não taxonomia fechada: a matriz principal inicial possui **3 perfis × 3 jornadas × 2 objetivos = 18 contextos**; cenários novos geram seus cruzamentos sem eliminar os 18 iniciais enquanto ativos. **Não** usar “Base”, “Teste” ou rótulos que confundam perfil com repasse hipotético. Cenários eliminados não deixam registros órfãos nem contaminam outros. [PENDENTE-CODIGO]"
+    },
+    {
+      "line": 38,
+      "text": "- **Editar ≠ confirmar resultado:** alterações válidas atualizam imediatamente o estado de entrada e disparam recálculo automático de **todos e apenas os contextos/dependências afetados**, inclusive projeções, limites Rota Pro, séries temporais e quadros comparativos. Nada requer botão “recalcular”. Inputs inválidos não substituem o último valor válido; resultados durante reprocessamento ficam inequivocamente **em atualização** e não são apresentados como atuais."
+    },
+    {
+      "line": 42,
+      "text": "- **Processamento assíncrono** sem bloquear/congelar UI, com agenda/coalescência adequada ao volume e isolamento da computação da apresentação. Estratégia (agendamento cooperativo, Web Workers ou outra) DEVE ser justificada por medição/necessidade, sem impor worker fictício; recomputar a partir de snapshot imutável e versão monotônica do estado. Edições subsequentes **invalidam/cancelam** trabalhos superados e **descartam** seus resultados tardios: somente a versão corrente pode publicar resultados. Cada resultado identifica cenário, período, premissas e versão do cálculo. [PENDENTE-CODIGO]"
+    },
+    {
+      "line": 58,
+      "text": "| Trabalhos programados          | **4 dias por semana**, mês orçamentário de **30 dias**, ano orçamentário de **12 meses**                  | Regras de simulação editáveis                                                          |"
+    },
+    {
+      "line": 59,
+      "text": "| Jornadas comparáveis           | **3 h/dia (16h30–19h30)**, **6 h/dia** e **8 h/dia**                                                      | Não inventar horários de 6/8 horas                                                     |"
+    },
+    {
+      "line": 102,
+      "text": "1. **Contexto de avaliação** = cenário operacional × jornada × objetivo. Perfis iniciais: **3 × 3 × 2 = 18**; o dashboard de cada perfil DEVE mostrar **6 avaliações (3 jornadas × 2 metas)**, com comparação ampliada dos 18 e de cenários personalizados. Nenhum cartão pode declarar “impossível” sem meta e premissas; custos/produtividade variam inclusive entre objetivos quando suas recomendações alterarem aceitação de ofertas. [PENDENTE-CODIGO]"
+    },
+    {
+      "line": 103,
+      "text": "2. Calendário sem datas reais: dias equivalentes programados/mês `4 × 30/7 = 17,142857…`, **não 16**; dias efetivos = programados − perdidos, respeitando domínio e período. Semana = 7 dias, mês orçamentário = 30, ano = 12 desses meses (**360 dias orçamentários**, não calendário civil); sempre identificar convenção. Se o usuário configurar dias exatos da semana/datas reais, usar calendário real e registrar competência, sem misturar as convenções. Não inventar escala horária para 6/8 h. Dias restantes/ausências recalculam valores necessários até o fechamento, sem aumentar demanda disponível por decreto."
+    },
+    {
+      "line": 107,
+      "text": "6. Exibir ofertas recebidas, recusadas por motivo, elegíveis, amarelas indeterminadas e verdes, aceites projetados, corridas/h executáveis, ciclo, espera/ociosidade, quilômetros com/sem passageiro, km/dia/mês/ano, tempo conectado e efetivo, receita por viagem **somente como média de planejamento**, receita por hora e quilômetro, **lucro líquido e margem financeira do mesmo período**, demanda e taxa de utilização requeridas. **Separar visual e semanticamente indicadores de atividade/capacidade daqueles de resultado financeiro**: receita/h ou R$/km não é contagem de viagens, e margem de oferta não substitui margem final da operação. Expor sensibilidade otimista/equilibrada/pessimista e a alterações de perfil, combustível, valor de repasse, notas, verdes, tempo, distância de coleta/retorno, manutenção, absenteísmo e disponibilidade."
+    },
+    {
+      "line": 124,
+      "text": "Definir, para **o mesmo contexto e intervalo**: `B` = **receita atribuível ao motorista, líquida de TODAS as retenções da plataforma**, **nunca o preço pago pelo passageiro**, com natureza obrigatoriamente explícita e segregada: **`B_real`**, soma de repasses **efetivamente creditados/recebidos e conferidos** na competência; **`B_projetado`**, total **estimado** mediante premissas declaradas; valores meramente **ofertados** em cartões, ainda não recebidos, são entradas prospectivas distintas, **não receita realizada**. As fórmulas abaixo usam `B` **apenas como símbolo comum aplicado separadamente** à série real ou à projeção identificada; **é proibido somar séries, equiparar oferta a crédito efetivo ou rotular projeção como resultado comprovado**. `K` = km **totais efetivamente rodados (apurados) ou projetados (simulados), conforme a mesma natureza de `B`** (coleta + trecho pago + retorno/reposicionamento + demais deslocamentos atribuíveis); `F` = todos os fixos incidentes na competência, mesmo sem corrida; `V` = soma dos variáveis de uso **não proporcionais a B**, cada um na sua unidade (por km/tempo/viagem/dia e demais incidências configuradas); `E` = extraordinários pertinentes incluídos expressamente no planejamento; `Tfix` = tributos/encargos de valor fixo não incluídos em `F`; `τ` = soma **documentada e aplicável** de alíquotas lineares sobre B (somente se a legislação/regras de competência realmente admitirem essa base); `q=0,10` = dízimo obrigatório de referência; `SM` = salário mínimo nacional vigente; `Lmin` = **lucro mínimo absoluto configurado da operação** (distinto do lucro mínimo absoluto **por corrida**, que permanece desligado no Rota Pro); `M15=0,15×SM`; `M100=1,00×SM`. [PENDENTE-CODIGO]"
+    }
+  ]
+}

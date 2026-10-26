@@ -205,6 +205,7 @@
       "artifacts": [
         "src/components/ParameterEditor.tsx",
         "src/domain/model.ts",
+        "src/domain/scenario.ts",
         "src/state/calculation.ts",
         "src/state/persistence.ts",
         "src/state/store.ts"
@@ -330,7 +331,8 @@
     },
     {
       "artifacts": [
-        "src/domain/projection.ts"
+        "src/domain/projection.ts",
+        "src/domain/scenario.ts"
       ],
       "commit": "",
       "ft": "FT-004",

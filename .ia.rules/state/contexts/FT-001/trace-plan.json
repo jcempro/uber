@@ -44,7 +44,8 @@
         "src/state/calculation.ts",
         "src/components/ParameterEditor.tsx",
         "src/domain/validation.ts",
-        "src/domain/validation.test.ts"
+        "src/domain/validation.test.ts",
+        "src/domain/scenario.ts"
       ]
     ],
     "5": [
@@ -66,7 +67,8 @@
     "7": [
       "FT-004",
       [
-        "src/domain/projection.ts"
+        "src/domain/projection.ts",
+        "src/domain/scenario.ts"
       ]
     ],
     "8": [

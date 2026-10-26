@@ -1,0 +1,16 @@
+{
+  "scope": "Apenas calendário tipado;4 tipos restantes/matriz18/cálculos pendentes",
+  "base": "fc2f6f6",
+  "node": "v24.22.1",
+  "readonlyFields": 16,
+  "negativeControls": 12,
+  "sourceSha256": "cbc64609264bb920fdf5829c2cb9e0c951c6ee3cf446b07df2077630b8958560",
+  "fixtureSha256": "a50c9fdb69bb5acb5d944731cb5bacc2521abee5af93525336d6609557620d32",
+  "diagnostics": [],
+  "lint": {
+    "status": 0,
+    "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+    "stderr": "",
+    "error": null
+  }
+}
