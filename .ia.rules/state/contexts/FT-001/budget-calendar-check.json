@@ -1,0 +1,53 @@
+{
+  "scope": "Kernel orçamentário composto;9provas originais intactas e172testes.Sem calendário civil/adaptadores/financeiro concluídos.",
+  "base": "0ce8bd9",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/budget-calendar.ts",
+      "sha256": "6f1527581355f1a0d3b4f71184edf1b45490005205722ebb3d191a95f78e1677"
+    },
+    {
+      "path": "src/domain/budget-calendar.test.ts",
+      "sha256": "84bc3e3e0375254d694e6057643ae34fd6126b54bdf23328a6c9bc54ca561488"
+    }
+  ],
+  "baselineFiles": 33,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\budget-calendar-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\budget-calendar-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/budget-calendar-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 172,
+    "passed": 172,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 9
+  }
+}
