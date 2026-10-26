@@ -12,13 +12,16 @@
     "2": [
       "FT-002",
       [
+        ".github/workflows/pages.yml",
+        "src/index.html",
         "package.json",
-        "vite.config.mts",
-        "tsconfig.json",
-        "index.html",
         "scripts/check-runtime.mts",
         "scripts/inspect-dist.mts",
-        ".github/workflows/pages.yml"
+        "tsconfig.json",
+        "vite.config.mts",
+        "src/main.tsx",
+        "src/App.tsx",
+        "src/components/AppShell.tsx"
       ]
     ],
     "3": [
@@ -108,5 +111,6 @@
     "material": 44
   },
   "preamble": "Regras materiais anteriores ao §1 são globais e vinculadas à FT-009.",
-  "acceptanceTable": "F01–F18/U01/A01–A05 permanecem pendentes. Parser não valida semântica das tabelas."
+  "acceptanceTable": "F01–F18/U01/A01–A05 permanecem pendentes. Parser não valida semântica das tabelas.",
+  "sourceEntry": "Vite usa src como root e src/index.html como entrada; dist é saída exclusiva na raiz."
 }

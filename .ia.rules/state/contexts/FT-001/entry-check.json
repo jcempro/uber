@@ -1,0 +1,33 @@
+{
+  "schema": "jcem-entry-check/v1",
+  "recordedAt": "2026-10-26T00:28:30.835Z",
+  "node": "v24.22.1",
+  "typescript": "6.0.3",
+  "inputs": [
+    {
+      "file": "src/index.html",
+      "sha256": "ca88b501a2495f93e38b9480bae242fb379747eca49af3906574843c833c625c"
+    },
+    {
+      "file": "src/main.tsx",
+      "sha256": "360660fd395feb562685cf7ded0f8c72de30371903593ffc88d7c6d1c41a3072"
+    },
+    {
+      "file": "src/App.tsx",
+      "sha256": "bb9aac0eaa5f70940ba0fc9dfb4b78d92dd9e69c2fb07cac35f502e8cf874c6b"
+    },
+    {
+      "file": "src/components/AppShell.tsx",
+      "sha256": "a76ba55903033c5d6a9d1270233f4283fe8211d0d1fe02f0f6b6122efcbfe8ab"
+    }
+  ],
+  "typecheck": true,
+  "target": "ES2023",
+  "htmlStructuralChecks": true,
+  "rootPresentInitialization": true,
+  "rootMissingControlledFailure": true,
+  "reactMountAdapter": true,
+  "browserValidated": false,
+  "viteBuilt": false,
+  "financialImplemented": false
+}

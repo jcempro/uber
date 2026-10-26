@@ -47,10 +47,13 @@
     {
       "artifacts": [
         ".github/workflows/pages.yml",
-        "index.html",
         "package.json",
         "scripts/check-runtime.mts",
         "scripts/inspect-dist.mts",
+        "src/App.tsx",
+        "src/components/AppShell.tsx",
+        "src/index.html",
+        "src/main.tsx",
         "tsconfig.json",
         "vite.config.mts"
       ],
@@ -66,10 +69,13 @@
     {
       "artifacts": [
         ".github/workflows/pages.yml",
-        "index.html",
         "package.json",
         "scripts/check-runtime.mts",
         "scripts/inspect-dist.mts",
+        "src/App.tsx",
+        "src/components/AppShell.tsx",
+        "src/index.html",
+        "src/main.tsx",
         "tsconfig.json",
         "vite.config.mts"
       ],
@@ -85,10 +91,13 @@
     {
       "artifacts": [
         ".github/workflows/pages.yml",
-        "index.html",
         "package.json",
         "scripts/check-runtime.mts",
         "scripts/inspect-dist.mts",
+        "src/App.tsx",
+        "src/components/AppShell.tsx",
+        "src/index.html",
+        "src/main.tsx",
         "tsconfig.json",
         "vite.config.mts"
       ],
@@ -104,10 +113,13 @@
     {
       "artifacts": [
         ".github/workflows/pages.yml",
-        "index.html",
         "package.json",
         "scripts/check-runtime.mts",
         "scripts/inspect-dist.mts",
+        "src/App.tsx",
+        "src/components/AppShell.tsx",
+        "src/index.html",
+        "src/main.tsx",
         "tsconfig.json",
         "vite.config.mts"
       ],

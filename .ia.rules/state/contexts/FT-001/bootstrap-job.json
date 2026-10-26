@@ -1,0 +1,17 @@
+{
+  "job_id": "c89d9b32-9fb1-4a9b-ab60-568a94634f1b",
+  "receipt_status": "RUNNING",
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "unit": "FT-002.3 — HTML/main/Vite/tsconfig, quatro arquivos",
+  "required_change_paths": ["src/index.html", "src/main.tsx", "vite.config.mts", "tsconfig.json"],
+  "required_command_ids": ["verify_bootstrap"],
+  "commit_policy": "supervisor",
+  "previous_commit": "531e9c2",
+  "previous_review": {"job_id": "abb53764-6565-4f49-8c44-76ca8c826198", "score": 7, "revision": 1},
+  "preflight": "Verificador passou Node24 --check. APIs do Vite8 e TypeScript instalados foram consultadas. Fonte HTML em src, root do Vite em src e dist na raiz; vínculos pendentes atualizados pelo prepare oficial e validate44/44.",
+  "next": "Receber resultado uma vez em retomada autorizada, revisar quatro arquivos/evidência e registrar Q8S. Se conforme, assumir commit; depois CSS/Sass, lint/runtime guard e browser real. Não refazer instalação nem testes confiáveis sem achado específico.",
+  "traceability": "Todos os vínculos continuam pending; não finalizar sentenças compostas por cumprimento parcial. Tabela de aceite exige revisão semântica independente do parser44/44.",
+  "global_acceptance": "Build técnico não comprova browsers, cálculos, cenários, JSON, histórico ou CI",
+  "native_compaction": "Impedida: ferramenta/rota suportada não exposta para contexto vivo"
+}

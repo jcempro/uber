@@ -2,5 +2,5 @@
 
 FT-001: registro inicial fe3d216 tecnicamente concluído; pendente validação humana. Contexto comum: contexts/FT-001/master.md.
 FT-010: confirmação Fluent e preparo oficial de44 pendências normativas concluídos tecnicamente; pendente validação humana, sem declarar código implementado.
-FT-002 ativa: instalação commitada6a1b967; dois TSX criados e corrigidos após revisão (shell-review.md), teste ampliado exit0 e Q8S7 registrado. Próxima ação: commit dos componentes; entrada HTML em src, main TSX/configuração Vite e build técnico; CSS/lint/runtime guard e matriz de browsers a seguir.
+FT-002 ativa: instalação6a1b967 e shell531e9c2 commitados; HTML/main criados e corrigidos, verify_entry exit0 e Q8S6 registrados (entry-review.md). Próxima ação: commit da entrada; unidade reduzida somente configs TypeScript/Vite e build técnico. CSS/lint/runtime guard/browser a seguir.
 Pendências: build browser real, matriz browsers/bundle, todos os módulos financeiros e aceite global F01–F18/U01/A01–A05. Produto ainda não implementado integralmente.

@@ -1,0 +1,18 @@
+{
+  "job_id": "d63938b6-4a16-4d57-9f63-bae5ddd9c97a",
+  "receipt_status": "RUNNING",
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "unit": "FT-002.3a — somente HTML/main, dois arquivos",
+  "required_change_paths": ["src/index.html", "src/main.tsx"],
+  "required_command_ids": ["verify_entry"],
+  "commit_policy": "supervisor",
+  "predecessor": "c89d9b32-9fb1-4a9b-ab60-568a94634f1b",
+  "predecessor_review": {"score": 2, "revision": 1},
+  "cause": "Releituras sem progresso; nenhum dos quatro alvos do predecessor foi criado. Sem erro de compilação/rede comprovado nessa unidade.",
+  "material_change": "Escopo reduzido de quatro para dois fontes; nenhuma configuração/build nesta unidade. Reutiliza componentes531e9c2 e toolchain6a1b967.",
+  "preflight": "Verificador passou Node24 --check; transpileModule nos parâmetros usados passou contrato real sem diagnósticos. Checagem de caixa exata dos paths; tipos reais e inicialização com adaptador DOM/mount explícito.",
+  "next": "Receber retorno uma vez em retomada autorizada; revisar dois arquivos/evidências e registrar Q8S. Se conforme, commit imediato; próxima unidade somente Vite/tsconfig e build real. Não refazer registros, instalação ou componentes já aprovados.",
+  "global_acceptance": "Adaptador de mount não é navegador; build/browser/CSS/lint/runtime guard/financeiro/JSON/CI permanecem pendentes",
+  "native_compaction": "Impedida: ferramenta/rota suportada não exposta para contexto vivo"
+}
