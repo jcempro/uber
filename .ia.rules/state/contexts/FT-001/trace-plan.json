@@ -58,7 +58,8 @@
       "FT-004",
       [
         "src/domain/costs.ts",
-        "src/domain/defaults.ts"
+        "src/domain/defaults.ts",
+        "src/domain/defaults.test.ts"
       ]
     ],
     "7": [
@@ -101,7 +102,8 @@
       [
         "src/domain/economics.test.ts",
         "src/domain/rotapro.test.ts",
-        "scripts/inspect-dist.mts"
+        "scripts/inspect-dist.mts",
+        "src/domain/defaults.test.ts"
       ]
     ],
     "13": [

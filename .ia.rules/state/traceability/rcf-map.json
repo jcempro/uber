@@ -668,6 +668,7 @@
     {
       "artifacts": [
         "README.md",
+        "src/domain/defaults.test.ts",
         "src/domain/defaults.ts"
       ],
       "commit": "",

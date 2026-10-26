@@ -1,0 +1,51 @@
+{
+  "scope": "Referências estimadas da tabela RCF§6.2, sem apuração/aceite financeiro",
+  "base": "3837d86",
+  "node": "v24.22.1",
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\maintenance-defaults-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\maintenance-defaults-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/maintenance-defaults-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "files": [
+    {
+      "path": "src/domain/defaults.ts",
+      "sha256": "ae0b0926d0e3179070189f022a808d5719ea39818188a7cd89dfe0e2f3620c80"
+    },
+    {
+      "path": "src/domain/defaults.test.ts",
+      "sha256": "004e33d67540124c1194889598da6f115445805688ccb2d62edfc31c961355ee"
+    }
+  ],
+  "tests": {
+    "total": 51,
+    "passed": 51,
+    "failed": 0,
+    "pending": 0
+  }
+}
