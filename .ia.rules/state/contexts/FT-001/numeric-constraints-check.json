@@ -1,0 +1,37 @@
+{
+  "scope": "Somente configurações e comparações; suíte completa/valores/finanças pendentes",
+  "base": "b47414c",
+  "node": "v24.22.1",
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "src/domain/validation.test.ts",
+        "-t",
+        "valida configuração primeiro|compara"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run src/domain/validation.test.ts -t valida configuração primeiro|compara\n\n\n\u001b[1m\u001b[30m\u001b[46m RUN \u001b[49m\u001b[39m\u001b[22m \u001b[36mv5.0.5 \u001b[39m\u001b[90mD:/trampo/jcem.pro-uber/src\u001b[39m\n\n \u001b[32m✓\u001b[39m domain/validation.test.ts \u001b[2m(\u001b[22m\u001b[2m45 tests\u001b[22m\u001b[2m | \u001b[22m\u001b[33m30 skipped\u001b[39m\u001b[2m)\u001b[22m\u001b[32m 16\u001b[2mms\u001b[22m\u001b[39m\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m15 passed\u001b[39m\u001b[22m\u001b[2m | \u001b[22m\u001b[33m30 skipped\u001b[39m\u001b[90m (45)\u001b[39m\n\u001b[2m   Start at \u001b[22m 10:54:25\n\u001b[2m   Duration \u001b[22m 831ms\u001b[2m (import 43%, transform 36%, worker 13%, tests 8%)\u001b[22m\n\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "sha256": "f9f8d4a1d4b21ba85b4e1f8544d83756d7a3d30ee2c22f9049a794211f87f14b"
+}

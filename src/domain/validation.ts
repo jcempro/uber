@@ -21,32 +21,34 @@ export const NUMERIC_RULES = Object.freeze({
 /** Regex para validação léxica de número decimal (base 10, sem hex/bin). */
 const DECIMAL_LEXICAL_REGEX = /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?$/;
 
-/**
- * Valida uma configuração de restrições numéricas.
- * Retorna true se válida; false se invalid-constraints.
- */
+/** Valida limites e inclusividade sem coerção, rejeitando domínio vazio, negativos, não finitos e underflow. */
 function validateConstraints(constraints: unknown): boolean {
   if (constraints === null || typeof constraints !== 'object') return false;
   const c = constraints as NumericConstraints;
-  if (typeof c.minimum !== 'string' && c.minimum !== null) return false;
-  if (typeof c.maximum !== 'string' && c.maximum !== null) return false;
-  if (typeof c.minimumInclusive !== 'boolean') return false;
-  if (typeof c.maximumInclusive !== 'boolean') return false;
-  if (c.minimum !== null && !DECIMAL_LEXICAL_REGEX.test(c.minimum)) return false;
-  if (c.maximum !== null && !DECIMAL_LEXICAL_REGEX.test(c.maximum)) return false;
-  if (c.minimum !== null && c.maximum !== null) {
-    if (c.minimum === c.maximum) {
-      if (c.minimumInclusive && c.maximumInclusive) return true;
-      return false; // intervalo vazio com extremos exclusivos
-    }
-    // Comparação léxica não basta; Decimal.js fará a comparação correta
+  if ((typeof c.minimum !== 'string' && c.minimum !== null) || (typeof c.maximum !== 'string' && c.maximum !== null)) return false;
+  if (typeof c.minimumInclusive !== 'boolean' || typeof c.maximumInclusive !== 'boolean') return false;
+  if ((c.minimum !== null && !DECIMAL_LEXICAL_REGEX.test(c.minimum)) || (c.maximum !== null && !DECIMAL_LEXICAL_REGEX.test(c.maximum))) return false;
+  /** Converte limite lexical já conferido; null representa extremo ausente ou inválido, discriminado pelo chamador. */
+  const parseLimit = (value: string | null): Decimal | null => {
+    if (value === null) return null;
     try {
-      const min = new Decimal(c.minimum);
-      const max = new Decimal(c.maximum);
-      if (min.gt(max)) return false;
+      const d = new Decimal(value);
+      if (!d.isFinite() || d.lt(0)) return null;
+      if (d.isZero()) {
+        const mantissa = value.split(/[eE]/)[0];
+        if (/[1-9]/.test(mantissa)) return null;
+      }
+      return d;
     } catch {
-      return false;
+      return null;
     }
+  };
+  const minDecimal = parseLimit(c.minimum);
+  const maxDecimal = parseLimit(c.maximum);
+  if ((minDecimal === null && c.minimum !== null) || (maxDecimal === null && c.maximum !== null)) return false;
+  if (c.minimum !== null && c.maximum !== null) {
+    if (minDecimal!.eq(maxDecimal!)) return c.minimumInclusive && c.maximumInclusive;
+    if (minDecimal!.gt(maxDecimal!)) return false;
   }
   return true;
 }
