@@ -1,0 +1,11 @@
+# Revisão das configurações e primeiro build
+
+Jobbba21bb4-90cd-4f1b-9d4f-1ce9022ddbc9 recebido uma vez. Dois arquivos criados; nenhum teste alegado como executado. Git determinístico e inspeção concordam. Campos de configuração corretos; supervisor acrescentou cabeçalho obrigatório e traduziu comentário. Q8S8, revisão1 após revisão/build.
+
+Primeira validação: tipos passaram, Vite executou, porém inspeção reprovou ausência real de MPL-2.0 no JS final. Dois problemas independentes foram diagnosticados, sem relaxar critérios: resolveConfig chamado pelo verificador com defaults development contaminou NODE_ENV, apesar de log de build declarar produção; banner pré-minificação também foi descartado. Documentação/código do Vite confirmaram defaults. Verificador agora informa mode/defaultMode/defaultNodeEnv production e exige isProduction/env.PROD/NODE_ENV, além de rejeitar módulos cjs*.development.js efetivamente renderizados.
+
+Config corrigida com postBanner nativo após minificação e comments.legal=true. Tipos locais do Rolldown e documentação oficial confirmam opções. Verificação posterior exit0: tipos estritos/ES2023, sourceRoot src, saída dist protegida, manifest e recursos relativos existentes, ausência de fontes/maps/governança no artefato, banner preservado e módulos de produção. Artefato bootstrap-build.json contém hashes e medidas dos bytes finais. JS221766 bytes; gzip68646 bytes medidos com node:zlib.gzipSync padrão. Log do Vite mede compressão de forma própria; valores não foram equiparados silenciosamente. Sem limite arbitrário de bundle.
+
+Fontes primárias: https://vite.dev/guide/api-javascript.html ; https://rolldown.rs/reference/Interface.OutputOptions . postBanner evita pós-processamento paralelo. Corrigiu-se causa real no pipeline e no verificador, não critérios para produzir aprovação. Fonte TypeScript/TSX permanece canônica, sem type:module global.
+
+Aceite local: primeiro build técnico de produção e tipos. Sem browser real, CSS/Sass exercitado, lint/runtime guard dos aliases, cálculos/cenários/JSON ou CI. RCF permanece pending nas sentenças compostas. Próximo: commit das configurações; unidade pequena CSS/Sass e import, depois gates/visual e modelo financeiro. Não refazer instalação ou bootstrap sem achado novo.

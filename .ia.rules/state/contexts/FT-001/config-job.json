@@ -1,0 +1,16 @@
+{
+  "job_id": "bba21bb4-90cd-4f1b-9d4f-1ce9022ddbc9",
+  "receipt_status": "RUNNING",
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "unit": "FT-002.3b — somente escrever duas configurações, sem comandos",
+  "required_change_paths": ["vite.config.mts", "tsconfig.json"],
+  "commit_policy": "supervisor",
+  "previous_commit": "8625e5e",
+  "previous_review": {"job_id": "d63938b6-4a16-4d57-9f63-bae5ddd9c97a", "score": 6, "revision": 1},
+  "material_change": "Retira execução de comandos da inferência: criação estrita de dois arquivos; validação proporcional de tipos/build no checkpoint supervisor antes do aceite. Evita reincidência de Node genérico bloqueado.",
+  "next": "Receber retorno uma vez, revisar arquivos. Executar bootstrapVerifyCode previamente preparado: tipos, guarda src/dist e build/manifest/paths/banner/tamanhos. Não confundir autorrelato com build executado. Registrar Q8S somente após revisão suficiente. Se aprovado, commit imediato e unidade CSS/lint/runtime guard/browser.",
+  "evidence_scope": "Entrada passou verificação curta real no supervisor após correção de dois comentários; adapter não equivale a navegador. Não repetir instalação/componentes/entrada sem motivo novo.",
+  "global_acceptance": "Criação das configs não comprova build, navegador, Sass, métricas financeiras ou contrato integral",
+  "native_compaction": "Impedida: ferramenta/rota suportada não exposta para contexto vivo"
+}

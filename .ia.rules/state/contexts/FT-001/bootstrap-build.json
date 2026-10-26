@@ -1,0 +1,76 @@
+{
+  "schema": "jcem-bootstrap-build/v1",
+  "recordedAt": "2026-10-26T00:43:31.105Z",
+  "node": "v24.22.1",
+  "vite": "8.3.5",
+  "typescript": "6.0.3",
+  "target": "ES2023",
+  "sourceRoot": "src",
+  "outputRoot": "dist",
+  "base": "./",
+  "inputs": [
+    {
+      "file": "src/index.html",
+      "sha256": "ca88b501a2495f93e38b9480bae242fb379747eca49af3906574843c833c625c"
+    },
+    {
+      "file": "src/main.tsx",
+      "sha256": "360660fd395feb562685cf7ded0f8c72de30371903593ffc88d7c6d1c41a3072"
+    },
+    {
+      "file": "vite.config.mts",
+      "sha256": "592918920867b4461b29dbc7b8600ac1d24c89a02a2352416c82f95a1c3f7c27"
+    },
+    {
+      "file": "tsconfig.json",
+      "sha256": "6cc153eabc100f0ea651605e821a56e2e4f77082a50a1a00ed4dc00586b7fceb"
+    },
+    {
+      "file": "src/App.tsx",
+      "sha256": "bb9aac0eaa5f70940ba0fc9dfb4b78d92dd9e69c2fb07cac35f502e8cf874c6b"
+    },
+    {
+      "file": "src/components/AppShell.tsx",
+      "sha256": "a76ba55903033c5d6a9d1270233f4283fe8211d0d1fe02f0f6b6122efcbfe8ab"
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/index-CIpOTvzV.js",
+      "bytes": 221766,
+      "gzipBytes": 68646,
+      "sha256": "63bc4bbc2ce7516d10bfb0ee2b11b643f89f7201feaac0adfba1befcae6799c5"
+    },
+    {
+      "file": "index.html",
+      "bytes": 479,
+      "gzipBytes": 364,
+      "sha256": "7c609553ffc805d30336d336c1523c1b00ae2f1ac86efad7823810ff4cd07b8a"
+    },
+    {
+      "file": ".vite/manifest.json",
+      "bytes": 131,
+      "gzipBytes": 115,
+      "sha256": "39fb7e44c9d6984e5e32326bd8f4b6ec9c5b56c4c17454cf223582c8ab650b54"
+    }
+  ],
+  "typecheck": true,
+  "technicalBuild": true,
+  "mode": "production",
+  "productionModulesVerified": true,
+  "moduleCount": 15,
+  "browserValidated": false,
+  "sassCompiled": false,
+  "financialImplemented": false,
+  "limitations": [
+    "Sem testes reais de navegador/matriz mínima",
+    "CSS/lint/runtime guard dos aliases ainda pendentes",
+    "Sem cálculos, cenários, persistência ou aceite global"
+  ],
+  "gzipMeasurement": {
+    "implementation": "node:zlib.gzipSync",
+    "options": "padrão",
+    "input": "bytes finais lidos de dist",
+    "node": "v24.22.1"
+  }
+}
