@@ -12,6 +12,12 @@ export default defineConfig({
   root: fileURLToPath(new URL('./src', import.meta.url)),
   base: './',
   plugins: [react()],
+  css: {
+    preprocessorOptions: {
+      // A página já declara UTF-8; manter a licença antes de qualquer regra CSS.
+      scss: { charset: false }
+    }
+  },
   build: {
     target: 'es2023',
     outDir: fileURLToPath(new URL('./dist', import.meta.url)),

@@ -1,0 +1,15 @@
+{
+  "job_id": "95332d1c-051b-4422-be48-55f8e3e4f65e",
+  "receipt_status": "RUNNING",
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "unit": "FT-002.4 — Sass compartilhado e import, dois fontes",
+  "required_change_paths": ["src/styles.scss", "src/main.tsx"],
+  "commit_policy": "supervisor",
+  "previous_commit": "68c7547",
+  "previous_review": {"job_id": "bba21bb4-90cd-4f1b-9d4f-1ce9022ddbc9", "score": 8, "revision": 1},
+  "next": "Receber resultado uma vez, revisar SCSS/import e validar Sass real com build de produção corrigido (bootstrapProductionVerify), ampliando para CSS extraído/licença/manifest/variável Sass resolvida e método gzip explícito. Registrar Q8S após revisão suficiente; assumir commit se conforme. Depois lint/runtime guard e visual/browser, sem refazer instalação.",
+  "validation_caveat": "resolveConfig deve receber mode/defaultMode/defaultNodeEnv production. postBanner/comments.legal preservam licença. Não usar antiga chamada defaults development ou antigo verify_entry sem suporte a CSS. Nenhum browser foi testado ainda.",
+  "global_acceptance": "Build técnico aprovado não comprova CSS novo, browser, cálculos/cenários/JSON/CI ou aderência integral",
+  "native_compaction": "Impedida: ferramenta/rota suportada não exposta para contexto vivo"
+}

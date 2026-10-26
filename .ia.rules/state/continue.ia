@@ -2,5 +2,5 @@
 
 FT-001: registro inicial fe3d216 tecnicamente concluído; pendente validação humana. Contexto comum: contexts/FT-001/master.md.
 FT-010: confirmação Fluent e preparo oficial de44 pendências normativas concluídos tecnicamente; pendente validação humana, sem declarar código implementado.
-FT-002 ativa: instalação6a1b967, shell531e9c2 e entrada8625e5e commitados. Configs e primeiro build técnico de produção passaram após correção de banner/modo do verificador; Q8S8 e bootstrap-build.json registrados. Próxima ação: commit das configs e unidade CSS/Sass/import; lint/runtime guard/browser e modelo financeiro depois.
+FT-002 ativa: instalação6a1b967, shell531e9c2, entrada8625e5e e build68c7547 commitados. Sass/CSS/import passaram em produção após correção de licença/charset; Q8S7 e bootstrap-build.json atualizados. Próxima ação: commit dos estilos, lint e runtime guard; modelo financeiro depois. QA visual pendente por falha CUA, rota fix.md.
 Pendências: build browser real, matriz browsers/bundle, todos os módulos financeiros e aceite global F01–F18/U01/A01–A05. Produto ainda não implementado integralmente.

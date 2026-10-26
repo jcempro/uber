@@ -47,6 +47,7 @@
     {
       "artifacts": [
         ".github/workflows/pages.yml",
+        "eslint.config.mjs",
         "package.json",
         "scripts/check-runtime.mts",
         "scripts/inspect-dist.mts",
@@ -54,6 +55,7 @@
         "src/components/AppShell.tsx",
         "src/index.html",
         "src/main.tsx",
+        "src/styles.scss",
         "tsconfig.json",
         "vite.config.mts"
       ],
@@ -69,6 +71,7 @@
     {
       "artifacts": [
         ".github/workflows/pages.yml",
+        "eslint.config.mjs",
         "package.json",
         "scripts/check-runtime.mts",
         "scripts/inspect-dist.mts",
@@ -76,6 +79,7 @@
         "src/components/AppShell.tsx",
         "src/index.html",
         "src/main.tsx",
+        "src/styles.scss",
         "tsconfig.json",
         "vite.config.mts"
       ],
@@ -91,6 +95,7 @@
     {
       "artifacts": [
         ".github/workflows/pages.yml",
+        "eslint.config.mjs",
         "package.json",
         "scripts/check-runtime.mts",
         "scripts/inspect-dist.mts",
@@ -98,6 +103,7 @@
         "src/components/AppShell.tsx",
         "src/index.html",
         "src/main.tsx",
+        "src/styles.scss",
         "tsconfig.json",
         "vite.config.mts"
       ],
@@ -113,6 +119,7 @@
     {
       "artifacts": [
         ".github/workflows/pages.yml",
+        "eslint.config.mjs",
         "package.json",
         "scripts/check-runtime.mts",
         "scripts/inspect-dist.mts",
@@ -120,6 +127,7 @@
         "src/components/AppShell.tsx",
         "src/index.html",
         "src/main.tsx",
+        "src/styles.scss",
         "tsconfig.json",
         "vite.config.mts"
       ],

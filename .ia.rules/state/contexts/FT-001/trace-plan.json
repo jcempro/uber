@@ -13,15 +13,17 @@
       "FT-002",
       [
         ".github/workflows/pages.yml",
-        "src/index.html",
         "package.json",
         "scripts/check-runtime.mts",
         "scripts/inspect-dist.mts",
+        "src/App.tsx",
+        "src/components/AppShell.tsx",
+        "src/index.html",
+        "src/main.tsx",
         "tsconfig.json",
         "vite.config.mts",
-        "src/main.tsx",
-        "src/App.tsx",
-        "src/components/AppShell.tsx"
+        "src/styles.scss",
+        "eslint.config.mjs"
       ]
     ],
     "3": [

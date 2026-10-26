@@ -1,7 +1,12 @@
 {
   "schema": "jcem-bootstrap-build/v1",
-  "recordedAt": "2026-10-26T00:43:31.105Z",
+  "recordedAt": "2026-10-26T01:20:34.633Z",
   "node": "v24.22.1",
+  "gzipMeasurement": {
+    "implementation": "node:zlib.gzipSync",
+    "options": "padrão",
+    "input": "bytes finais de dist"
+  },
   "vite": "8.3.5",
   "typescript": "6.0.3",
   "target": "ES2023",
@@ -15,11 +20,11 @@
     },
     {
       "file": "src/main.tsx",
-      "sha256": "360660fd395feb562685cf7ded0f8c72de30371903593ffc88d7c6d1c41a3072"
+      "sha256": "32be7138e0b5b457942cac3345b2eb84f6c2a52f119a9a71b59065948aa6ffca"
     },
     {
       "file": "vite.config.mts",
-      "sha256": "592918920867b4461b29dbc7b8600ac1d24c89a02a2352416c82f95a1c3f7c27"
+      "sha256": "86af3fc94ffbbe7c9fe06f7bfdc872d50e8beec98563f9fd402c60202276b6e9"
     },
     {
       "file": "tsconfig.json",
@@ -32,45 +37,51 @@
     {
       "file": "src/components/AppShell.tsx",
       "sha256": "a76ba55903033c5d6a9d1270233f4283fe8211d0d1fe02f0f6b6122efcbfe8ab"
+    },
+    {
+      "file": "src/styles.scss",
+      "sha256": "68eabb6a97b67bca7a64aa141faef17e3e40ebec3947593e3960669552c26620"
     }
   ],
   "assets": [
     {
-      "file": "assets/index-CIpOTvzV.js",
-      "bytes": 221766,
-      "gzipBytes": 68646,
-      "sha256": "63bc4bbc2ce7516d10bfb0ee2b11b643f89f7201feaac0adfba1befcae6799c5"
+      "file": "assets/index-D5l81lYY.js",
+      "bytes": 221762,
+      "gzipBytes": 68643,
+      "sha256": "0ad361c7e8947d5d4a79b7069845e9db77ac1c4e542bb898d5a448851c492de4"
+    },
+    {
+      "file": "assets/index-CSi6DNRV.css",
+      "bytes": 1330,
+      "gzipBytes": 718,
+      "sha256": "4ee1b6a400aa212e9187c57d0692d5dcf2e57744e61a7bdf44340c145cf6c77b"
     },
     {
       "file": "index.html",
-      "bytes": 479,
-      "gzipBytes": 364,
-      "sha256": "7c609553ffc805d30336d336c1523c1b00ae2f1ac86efad7823810ff4cd07b8a"
+      "bytes": 554,
+      "gzipBytes": 398,
+      "sha256": "49d61bf059275d4409cdf8deaae5ae94107425dc2dd732aa6813fcd42eaaad15"
     },
     {
       "file": ".vite/manifest.json",
-      "bytes": 131,
-      "gzipBytes": 115,
-      "sha256": "39fb7e44c9d6984e5e32326bd8f4b6ec9c5b56c4c17454cf223582c8ab650b54"
+      "bytes": 185,
+      "gzipBytes": 143,
+      "sha256": "2160971da9a76339b92a92a695887f7c2649eff9243fe33a72bfd6e332ef2c5f"
     }
   ],
   "typecheck": true,
   "technicalBuild": true,
   "mode": "production",
   "productionModulesVerified": true,
-  "moduleCount": 15,
+  "moduleCount": 16,
   "browserValidated": false,
-  "sassCompiled": false,
+  "sassCompiled": true,
+  "cssExtracted": true,
+  "sassVariableResolved": true,
   "financialImplemented": false,
   "limitations": [
     "Sem testes reais de navegador/matriz mínima",
-    "CSS/lint/runtime guard dos aliases ainda pendentes",
+    "Lint/runtime guard dos aliases ainda pendentes",
     "Sem cálculos, cenários, persistência ou aceite global"
-  ],
-  "gzipMeasurement": {
-    "implementation": "node:zlib.gzipSync",
-    "options": "padrão",
-    "input": "bytes finais lidos de dist",
-    "node": "v24.22.1"
-  }
+  ]
 }

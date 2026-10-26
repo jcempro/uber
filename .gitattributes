@@ -1,3 +1,7 @@
 # Preserva os bytes das fontes e hashes normativos em Windows/Linux.
 RCF.md text eol=lf
 .ia.rules/state/** text eol=lf
+/src/** text eol=lf
+/vite.config.mts text eol=lf
+/tsconfig.json text eol=lf
+/eslint.config.mjs text eol=lf
