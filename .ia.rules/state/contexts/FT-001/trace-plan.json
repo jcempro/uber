@@ -51,7 +51,8 @@
       "FT-003",
       [
         "src/domain/defaults.ts",
-        "src/domain/model.ts"
+        "src/domain/model.ts",
+        "src/domain/vehicle-defaults.test.ts"
       ]
     ],
     "6": [
@@ -103,7 +104,8 @@
         "src/domain/economics.test.ts",
         "src/domain/rotapro.test.ts",
         "scripts/inspect-dist.mts",
-        "src/domain/defaults.test.ts"
+        "src/domain/defaults.test.ts",
+        "src/domain/vehicle-defaults.test.ts"
       ]
     ],
     "13": [

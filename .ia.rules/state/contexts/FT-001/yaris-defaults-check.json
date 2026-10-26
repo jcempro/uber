@@ -1,0 +1,51 @@
+{
+  "scope": "Yaris único/consumo operacional do RCF, preço/volume não informados; sem elegibilidade/apuração financeira",
+  "base": "82a6edc",
+  "node": "v24.22.1",
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\yaris-defaults-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\yaris-defaults-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/yaris-defaults-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "files": [
+    {
+      "path": "src/domain/defaults.ts",
+      "sha256": "33626085131625718b8d393d0dfeb42a9b5cec8e63c3e0a5a7542bbe865211ae"
+    },
+    {
+      "path": "src/domain/vehicle-defaults.test.ts",
+      "sha256": "55ae40122337edf6c962c2f6db4ef241af38ab6b05c0600400e029740754613e"
+    }
+  ],
+  "tests": {
+    "total": 59,
+    "passed": 59,
+    "failed": 0,
+    "pending": 0
+  }
+}

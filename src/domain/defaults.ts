@@ -1,9 +1,10 @@
 /**
  * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
- * Origem: jcem.pro-uber; RCF§§4/6.2, FT-003.5.
+ * Origem: jcem.pro-uber; RCF§§4/5/6.1/6.2, FT-003.5/003.7.
  * Autoria Git: JeanCarloEM <jeancarlo@jeancarloem.com>.
  */
-import type { DecimalText, Provenance, CostNature, CostRecognition } from './model';
+import type { DecimalText, Provenance, CostNature, CostRecognition, Vehicle, FuelConfiguration, NumericParameter } from './model';
+import { NUMERIC_RULES } from './validation';
 /** Perfis de referência iniciais; não limita cenários personalizados. Copiar para estado editável, preservando IDs. */
 export const INITIAL_PROFILE_REFERENCES = Object.freeze([
   Object.freeze({"id":"optimistic","name":"Otimista"} as const),
@@ -40,3 +41,129 @@ export const MAINTENANCE_RATE_REFERENCES: readonly MaintenanceRateReference[] = 
   Object.freeze({ id: "battery-consumables", name: "Bateria, velas, correias, consumíveis", rates: Object.freeze({"optimistic":"0.014","balanced":"0.022","pessimistic":"0.035"}) }),
   Object.freeze({ id: "routine-repairs", name: "Reparos corretivos usuais provisionados", rates: Object.freeze({"optimistic":"0.025","balanced":"0.045","pessimistic":"0.080"}) })
 ]);
+
+/** Veículo informado único; cadastro ativo não confirma elegibilidade Uber. Referência para futuro estado editável. */
+export const INITIAL_VEHICLES: readonly Vehicle[] = Object.freeze([
+  Object.freeze({
+    "id": "vehicle-yaris-2019",
+    "name": "Toyota Yaris XL Sedan 1.5 Flex CVT 2019/2019",
+    "enabled": true,
+    "manufactureYear": 2019,
+    "modelYear": 2019,
+    "fuelConfigurationIds": Object.freeze([
+      "fuel-yaris-operational-ethanol"
+    ] as const),
+    "defaultFuelConfigurationId": "fuel-yaris-operational-ethanol",
+    "provenance": Object.freeze({
+      "kind": "reported-personal",
+      "source": "RCF.md §5",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "vehicle",
+        "vehicleId": "vehicle-yaris-2019"
+      } as const),
+      "reliability": "reported"
+    } as const)
+  } as const)
+] as const);
+/** Etanol operacional sem ciclo de ensaio presumido; outros modos serão cadastrados sem duplicar o veículo. */
+export const INITIAL_FUEL_CONFIGURATIONS: readonly FuelConfiguration[] = Object.freeze([
+  Object.freeze({
+    "id": "fuel-yaris-operational-ethanol",
+    "vehicleId": "vehicle-yaris-2019",
+    "name": "Etanol operacional informado",
+    "enabled": true,
+    "cycle": "unspecified",
+    "pricePerLitreParameterId": "yaris-ethanol-price-litre",
+    "efficiencyKmPerLitreParameterId": "yaris-ethanol-efficiency-km-litre",
+    "usableLitresParameterId": "yaris-usable-litres",
+    "provenance": Object.freeze({
+      "kind": "reported-personal",
+      "source": "RCF.md §5",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "vehicle",
+        "vehicleId": "vehicle-yaris-2019"
+      } as const),
+      "reliability": "reported"
+    } as const),
+    "kind": "ethanol"
+  } as const)
+] as const);
+/** Consumo informado6.8; preço/volume não informados não viram zero. Volume só condiciona os resultados que dele dependem. */
+export const INITIAL_VEHICLE_PARAMETERS: readonly NumericParameter[] = Object.freeze([
+  Object.freeze({
+    "id": "yaris-ethanol-price-litre",
+    "name": "Preço atual do etanol (Yaris)",
+    "unit": "BRL/L",
+    "category": "fuel-price",
+    "input": Object.freeze({
+      "status": "not-provided",
+      "reason": "Preço atual do etanol ainda não informado."
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "gap",
+      "source": "RCF.md §§5/6.1 — dado operacional pendente",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "vehicle",
+        "vehicleId": "vehicle-yaris-2019"
+      } as const),
+      "reliability": "unverified"
+    } as const),
+    "required": true,
+    "constraints": NUMERIC_RULES.positive,
+    "dependencies": Object.freeze([] as const)
+  } as const),
+  Object.freeze({
+    "id": "yaris-ethanol-efficiency-km-litre",
+    "name": "Eficiência operacional do etanol (Yaris)",
+    "unit": "km/L",
+    "category": "fuel-efficiency",
+    "input": Object.freeze({
+      "status": "provided",
+      "value": "6.8"
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "reported-personal",
+      "source": "RCF.md §5",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "vehicle",
+        "vehicleId": "vehicle-yaris-2019"
+      } as const),
+      "reliability": "reported"
+    } as const),
+    "required": true,
+    "constraints": NUMERIC_RULES.positive,
+    "dependencies": Object.freeze([] as const)
+  } as const),
+  Object.freeze({
+    "id": "yaris-usable-litres",
+    "name": "Volume utilizável atual (Yaris)",
+    "unit": "L",
+    "category": "vehicle-volume",
+    "input": Object.freeze({
+      "status": "not-provided",
+      "reason": "Volume de combustível efetivamente utilizável ainda não informado."
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "gap",
+      "source": "RCF.md §§5/6.1 — dado operacional pendente",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "vehicle",
+        "vehicleId": "vehicle-yaris-2019"
+      } as const),
+      "reliability": "unverified"
+    } as const),
+    "required": false,
+    "constraints": NUMERIC_RULES.nonNegative,
+    "dependencies": Object.freeze([] as const)
+  } as const)
+] as const);

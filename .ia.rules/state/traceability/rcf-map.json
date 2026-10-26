@@ -669,7 +669,8 @@
       "artifacts": [
         "README.md",
         "src/domain/defaults.test.ts",
-        "src/domain/defaults.ts"
+        "src/domain/defaults.ts",
+        "src/domain/vehicle-defaults.test.ts"
       ],
       "commit": "",
       "ft": "FT-009",
