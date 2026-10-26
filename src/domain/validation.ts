@@ -106,20 +106,17 @@ export function validateDecimalText(value: unknown, constraints: NumericConstrai
     });
   }
 
-  // Rejeitar não finito (NaN, Infinity, -Infinity)
-  if (!decimalValue.isFinite()) {
+  // Rejeitar não finitos e underflow: coeficiente não zero nunca pode virar zero conveniente.
+  if (!decimalValue.isFinite() || (decimalValue.isZero() && /[1-9]/.test(value.split(/[eE]/)[0]))) {
     return Object.freeze({
       valid: false,
       code: 'invalid-decimal' as NumericValidationCode,
-      message: 'Valor não é finito.',
+      message: 'Valor fora da faixa decimal representável.',
     });
   }
 
-  // negative: Decimal.lt(0) ou -0 matemático
-  const isNegative = decimalValue.lt(0);
-  const isNegativeZero = decimalValue.isZero() && decimalValue.isNegative();
-
-  if (isNegative || isNegativeZero) {
+  // Zero matemático é preservado; somente valores menores que zero são negativos.
+  if (decimalValue.lt(0)) {
     return Object.freeze({
       valid: false,
       code: 'negative' as NumericValidationCode,

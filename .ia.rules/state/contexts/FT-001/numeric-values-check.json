@@ -1,0 +1,70 @@
+{
+  "scope": "Adaptador decimal completo45 testes; sem aceitação financeira/global",
+  "base": "bf18c04",
+  "node": "v24.22.1",
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\numeric-values-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\numeric-values-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/numeric-values-tests.json\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:build",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:build\n> node scripts/check-runtime.mts && vite build\n\n\u001b[36mvite v8.3.5 \u001b[32mbuilding client environment for production...\u001b[36m\u001b[39m\ntransforming...\n✓ 17 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/.vite/manifest.json          0.18 kB │ gzip:  0.14 kB\ndist/index.html                   0.55 kB │ gzip:  0.40 kB\ndist/assets/index-CSi6DNRV.css    1.33 kB │ gzip:  0.71 kB\ndist/assets/index-D5l81lYY.js   221.76 kB │ gzip: 69.38 kB\n\n\u001b[32m✓ built in 1.10s\u001b[39m\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "files": [
+    {
+      "path": "src/domain/validation.ts",
+      "sha256": "87756656d344bb58c7f127b72210bf5b7ba71e920453266fac6093348c2da18a"
+    },
+    {
+      "path": "vite.config.mts",
+      "sha256": "3af7cb45c78e5c5215b5eaef34319e1b67a6c91224f902cb55335cfa1a377bbb"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "2f82cab089aaf0d52aa8db3e7f4e5df68c80d21d5c77ecce28a765e8b47564ba"
+    }
+  ],
+  "tests": {
+    "total": 45,
+    "passed": 45,
+    "failed": 0,
+    "pending": 0
+  },
+  "config": {
+    "root": "D:/trampo/jcem.pro-uber/src",
+    "cacheDir": "D:/trampo/jcem.pro-uber/.cache/vite",
+    "outDir": "D:\\trampo\\jcem.pro-uber\\dist",
+    "isProduction": true,
+    "target": "es2023"
+  }
+}

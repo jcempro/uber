@@ -11,6 +11,8 @@ import { fileURLToPath, URL } from 'node:url'
 export default defineConfig({
   root: fileURLToPath(new URL('./src', import.meta.url)),
   base: './',
+  // Cache gerado fica fora da árvore de fontes, inclusive durante testes.
+  cacheDir: fileURLToPath(new URL('./.cache/vite', import.meta.url)),
   plugins: [react()],
   css: {
     preprocessorOptions: {
