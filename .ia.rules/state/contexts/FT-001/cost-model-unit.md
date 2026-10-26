@@ -1,0 +1,18 @@
+# FT-003.4 — contratos imutáveis de custos
+
+Worker subordinado. Base b8326e9; adaptador numérico aceito45 testes/tipos/lint/build. Não repetir testes/exploração/instalação. Acrescentar SOMENTE os tipos abaixo ao final de src/domain/model.ts, preservando conteúdo existente; única atualização permitida no prefixo: cabeçalho “RCF§§1/4, FT-003.1.” para “RCF§§1/4/8, FT-003.1/003.4.”. Sem imports/dependências/cálculos/defaults/UI/CRUD/validação runtime. Uma edição, um arquivo (~70 linhas novas); leitura dirigida e margem32K. Fonte canônica literal em cost-model-rcf.json. Normas aplicáveis preservadas. Supervisor assume commit.
+
+API decidida pelo supervisor; todas propriedades e objetos aninhados readonly:
+
+- BudgetPeriod = 'day'|'week'|'month'|'year'. Denomina competência do custo; convenção civil/orçamentária será dada pelo contexto, sem normalização aqui.
+- CostNature = 'fixed'|'usage-variable'|'extraordinary'. Fixo não se torna variável pelo rateio/km; não inferir natureza pelo nome.
+- CostBasis (união discriminada): {kind:'calendar';period:BudgetPeriod} | {kind:'usage';unit:'km'|'hour'|'working-day'|'trip'} | {kind:'one-off'} | {kind:'custom';unit:string;ruleId:string;justification:string}. Dia de calendário e dia trabalhado são distintos. Trip serve só incidência legítima de custo, jamais meta/indicador financeiro. Custom é referência a regra declarativa catalogada/justificada, não código executável ou função em JSON; validação de referências/compatibilidade é futura.
+- CostValidity: {start:string|null;end:string|null}. Textos de data ainda não certificados; null é limite não informado, não comprova incidência/vigência. Não criar datas/defaults.
+- CostRecognition = 'planned-outflow'|'planned-reserve'|'actual-payment'|'economic-accrual'. Distingue saída planejada, provisão, pagamento realizado e reconhecimento econômico; nenhum somatório indiscriminado autorizado.
+- CostItem: id:string; name:string; category:string; enabled:boolean; nature:CostNature; basis:CostBasis; amountParameterId:string; provenance:Provenance; validity:CostValidity; recognition:CostRecognition; eventId:string|null; reconcilesReserveId:string|null; allocationRuleId:string|null.
+
+Valor e unidade monetária têm SSOT no NumericParameter referenciado por amountParameterId; NÃO acrescentar amount/value ou cópia da unidade/origem do valor. provenance do item documenta classificação/incidência; seu scope aplica-se ao item, sem campo scope paralelo. Proveniência do parâmetro continua própria da medição/estimativa do valor. eventId identifica fato econômico quando conhecido, reconcilesReserveId vincula consumo de reserva sem segunda despesa; allocationRuleId referencia rateio expresso, especialmente extraordinário (null não autoriza mensalização automática). Vínculos são texto bruto a validar; tipos não garantem integridade referencial/deduplicação.
+
+Cabeçalho existente preservado; documentar cada alias/interface e cada ramo de CostBasis com finalidade/restrição útil. Não usar any, casts, enum, função ou valor runtime. Compatibilidade entre natureza/incidência/unidade e apuração/competência será validada em unidade futura: não alegar que tipos impedem toda combinação inválida ou comprovam cobertura de custos. Estado desconhecido/zero vem do parâmetro referenciado, nunca default conveniente.
+
+Após ler uma vez e editar, chamar SOMENTE run_authorized_command({"id":"validar_modelo_custos"}) para validação. NÃO usar run_command para node/npm/eval. Comando confere prefixo antigo imutável, campos readonly e compilador TypeScript strict com fixture independente/controles negativos, depois lint real. Não relaxar contrato/testes para aprovar. Saída≤80 palavras: arquivo/execução/lacunas; nenhuma conclusão financeira/global.

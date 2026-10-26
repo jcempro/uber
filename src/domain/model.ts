@@ -1,6 +1,6 @@
 /**
  * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
- * Origem: jcem.pro-uber; RCF§§1/4, FT-003.1.
+ * Origem: jcem.pro-uber; RCF§§1/4/8, FT-003.1/003.4.
  * Autoria Git: JeanCarloEM <jeancarlo@jeancarloem.com>.
  */
 // Tipos baseados em model-input-rcf.json e model-input-unit.md; sem validação runtime, cálculos ou dependências.
@@ -72,4 +72,50 @@ export interface NumericParameter {
   readonly required: boolean;
   readonly constraints: NumericConstraints;
   readonly dependencies: readonly string[];
+}
+
+// Contratos adicionais baseados em cost-model-rcf.json/cost-model-unit.md; sem validação runtime ou apuração financeira.
+/** Período de competência do custo: dia, semana, mês ou ano. Convenção civil/orçamentária é contextual. */
+export type BudgetPeriod = 'day' | 'week' | 'month' | 'year';
+
+/** Natureza do custo: fixo, variável por uso ou extraordinário. Fixo não se torna variável por rateio/km. */
+export type CostNature = 'fixed' | 'usage-variable' | 'extraordinary';
+
+/** Base de custo: discrimina como o custo é definido (calendário, uso, único ou customizado). */
+export type CostBasis =
+  /** Incidência por competência, distinta de quantidade de uso; convenção vem do contexto. */
+  | { readonly kind: 'calendar'; readonly period: BudgetPeriod }
+  /** Incidência física: dia trabalhado não é dia civil; viagem serve a custo, não a meta financeira. */
+  | { readonly kind: 'usage'; readonly unit: 'km' | 'hour' | 'working-day' | 'trip' }
+  /** Incidência pontual; não autoriza mensalização automática sem regra de rateio. */
+  | { readonly kind: 'one-off' }
+  /** Unidade justificada e referência a regra declarativa; não carrega código executável. */
+  | { readonly kind: 'custom'; readonly unit: string; readonly ruleId: string; readonly justification: string };
+
+/** Validade do custo: intervalo de vigência. null indica limite não informado, não comprova incidência/vigência. */
+export interface CostValidity {
+  readonly start: string | null;
+  readonly end: string | null;
+}
+
+/** Reconhecimento contábil do custo: saída planejada, provisão, pagamento realizado ou reconhecimento econômico. */
+export type CostRecognition = 'planned-outflow' | 'planned-reserve' | 'actual-payment' | 'economic-accrual';
+
+/** Item imutável: valor/unidade têm SSOT no parâmetro referenciado; proveniência descreve classificação/incidência.
+ * eventId/reconcilesReserveId vinculam fatos e reservas; allocationRuleId exige rateio expresso. IDs/datas ainda requerem validação runtime.
+ */
+export interface CostItem {
+  readonly id: string;
+  readonly name: string;
+  readonly category: string;
+  readonly enabled: boolean;
+  readonly nature: CostNature;
+  readonly basis: CostBasis;
+  readonly amountParameterId: string;
+  readonly provenance: Provenance;
+  readonly validity: CostValidity;
+  readonly recognition: CostRecognition;
+  readonly eventId: string | null;
+  readonly reconcilesReserveId: string | null;
+  readonly allocationRuleId: string | null;
 }

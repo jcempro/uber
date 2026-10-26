@@ -1,0 +1,16 @@
+{
+  "scope": "Somente contratos tipados; não valida custos/finanças/runtime",
+  "base": "b8326e9",
+  "node": "v24.22.1",
+  "readonlyFields": 24,
+  "negativeControls": 16,
+  "sourceSha256": "fad1eddb8b6d5ca64b10d2e47de059024be27cf1ed22618fa66eb07d4226f3f7",
+  "fixtureSha256": "014f0b2111739f0812055a5b41a70b323968cd6a8bd4a381d94179f9fbd7f886",
+  "diagnostics": [],
+  "lint": {
+    "status": 0,
+    "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+    "stderr": "",
+    "error": null
+  }
+}
