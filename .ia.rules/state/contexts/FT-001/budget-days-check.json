@@ -1,0 +1,53 @@
+{
+  "scope": "Só dias programados de orçamento;157testes.Noveprovas/integração do calendário completo ainda obrigatórias.",
+  "base": "5c2160b",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/budget-days.ts",
+      "sha256": "1397f5c0c3a5ddab6a6cf46a6ff4b540dcd630fe57fc827884f0fc00bbcc5d83"
+    },
+    {
+      "path": "src/domain/budget-days.test.ts",
+      "sha256": "7e6a1e86daa10b4d6a829af7207dcee2dc0dece722f3e497fde61c6b88133914"
+    }
+  ],
+  "baselineFiles": 29,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\budget-days-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\budget-days-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/budget-days-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 157,
+    "passed": 157,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 5
+  }
+}

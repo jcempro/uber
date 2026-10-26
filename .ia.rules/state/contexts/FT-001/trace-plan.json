@@ -65,7 +65,11 @@
         "src/domain/exact-sum.ts",
         "src/domain/exact-sum.test.ts",
         "src/domain/exact-compare.ts",
-        "src/domain/exact-compare.test.ts"
+        "src/domain/exact-compare.test.ts",
+        "src/domain/budget-calendar.ts",
+        "src/domain/budget-calendar.test.ts",
+        "src/domain/budget-days.ts",
+        "src/domain/budget-days.test.ts"
       ]
     ],
     "5": [
@@ -111,7 +115,11 @@
         "src/domain/contexts.ts",
         "src/domain/contexts.test.ts",
         "src/domain/initial-scenarios.ts",
-        "src/domain/initial-scenarios.test.ts"
+        "src/domain/initial-scenarios.test.ts",
+        "src/domain/budget-calendar.ts",
+        "src/domain/budget-calendar.test.ts",
+        "src/domain/budget-days.ts",
+        "src/domain/budget-days.test.ts"
       ]
     ],
     "8": [
@@ -137,7 +145,11 @@
         "src/domain/exact-sum.ts",
         "src/domain/exact-sum.test.ts",
         "src/domain/exact-compare.ts",
-        "src/domain/exact-compare.test.ts"
+        "src/domain/exact-compare.test.ts",
+        "src/domain/budget-calendar.ts",
+        "src/domain/budget-calendar.test.ts",
+        "src/domain/budget-days.ts",
+        "src/domain/budget-days.test.ts"
       ]
     ],
     "9": [
@@ -189,7 +201,11 @@
         "src/domain/exact-sum.ts",
         "src/domain/exact-sum.test.ts",
         "src/domain/exact-compare.ts",
-        "src/domain/exact-compare.test.ts"
+        "src/domain/exact-compare.test.ts",
+        "src/domain/budget-calendar.ts",
+        "src/domain/budget-calendar.test.ts",
+        "src/domain/budget-days.ts",
+        "src/domain/budget-days.test.ts"
       ]
     ],
     "13": [
