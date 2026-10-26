@@ -97,7 +97,9 @@
     {
       "artifacts": [
         ".github/workflows/pages.yml",
+        "docs/toolchain.md",
         "eslint.config.mjs",
+        "package-lock.json",
         "package.json",
         "scripts/check-runtime.mts",
         "scripts/inspect-dist.mts",

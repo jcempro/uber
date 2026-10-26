@@ -1,0 +1,94 @@
+{
+  "scope": "Instalação/API/tipos/bundle instrumental; sem adaptador ou cálculos financeiros",
+  "version": "5.3.4",
+  "license": "MIT",
+  "integrity": "sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==",
+  "baselineFiles": 18,
+  "otherPackageAndLockEntriesPreserved": true,
+  "probes": [
+    {
+      "name": "decimal sum exact",
+      "actual": "3/10",
+      "expected": "3/10"
+    },
+    {
+      "name": "repeating roundtrip",
+      "actual": "1",
+      "expected": "1"
+    },
+    {
+      "name": "budget days",
+      "actual": "120/7",
+      "expected": "120/7"
+    },
+    {
+      "name": "large decimal",
+      "actual": "900719925474099301/100",
+      "expected": "900719925474099301/100"
+    },
+    {
+      "name": "negative result",
+      "actual": "-1",
+      "expected": "-1"
+    },
+    {
+      "name": "CJS exact",
+      "actual": "1",
+      "expected": "1"
+    },
+    {
+      "name": "numerator BigInt",
+      "actual": "bigint",
+      "expected": "bigint"
+    },
+    {
+      "name": "denominator BigInt",
+      "actual": "bigint",
+      "expected": "bigint"
+    },
+    {
+      "name": "sign BigInt",
+      "actual": "bigint",
+      "expected": "bigint"
+    },
+    {
+      "name": "zero division rejected",
+      "passed": true
+    },
+    {
+      "name": "scientific bridge",
+      "actual": "1/800",
+      "expected": "1/800"
+    },
+    {
+      "name": "Decimal config preserved",
+      "actual": 20,
+      "expected": 20
+    },
+    {
+      "name": "bundled ES2023 exact",
+      "actual": "1/7",
+      "expected": "1/7"
+    }
+  ],
+  "directScientific": {
+    "supported": false,
+    "error": "Invalid argument"
+  },
+  "types": {
+    "diagnostics": []
+  },
+  "projectTypecheck": {
+    "status": 0,
+    "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+    "stderr": ""
+  },
+  "bundle": {
+    "target": "es2023",
+    "write": false,
+    "rawBytes": 9612,
+    "gzipBytes": 2899,
+    "note": "Probe da biblioteca, não incremento final do app; matriz browsers pendente."
+  },
+  "pending": "Adaptador/JSON/limites de recurso/política de apresentação/cálculos/segurança/browsers ainda pendentes."
+}

@@ -25,7 +25,9 @@
         "src/styles.scss",
         "eslint.config.mjs",
         "src/domain/validation.ts",
-        "src/domain/validation.test.ts"
+        "src/domain/validation.test.ts",
+        "package-lock.json",
+        "docs/toolchain.md"
       ]
     ],
     "3": [

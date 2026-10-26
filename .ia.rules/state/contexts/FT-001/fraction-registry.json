@@ -1,0 +1,32 @@
+{
+  "name": "fraction.js",
+  "version": "5.3.4",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rawify/Fraction.js.git"
+  },
+  "integrity": "sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==",
+  "tarball": "https://registry.npmjs.org/fraction.js/-/fraction.js-5.3.4.tgz",
+  "engines": {
+    "node": "*"
+  },
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./fraction.d.mts",
+        "require": "./fraction.d.ts"
+      },
+      "import": "./dist/fraction.mjs",
+      "require": "./dist/fraction.js",
+      "browser": "./dist/fraction.min.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "dependencies": {},
+  "published": "2025-08-22T11:44:45.549Z",
+  "modified": "2025-08-22T11:44:45.725Z",
+  "source": "https://registry.npmjs.org/fraction.js/5.3.4",
+  "observedAt": "2026-10-26T20:17:01.433Z"
+}
