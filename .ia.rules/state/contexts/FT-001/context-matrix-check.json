@@ -1,0 +1,51 @@
+{
+  "scope": "Geração de identidades de contextos; sem custos/avaliações financeiras/sementes completas",
+  "base": "9ad1962",
+  "node": "v24.22.1",
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\context-matrix-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\context-matrix-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/context-matrix-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "files": [
+    {
+      "path": "src/domain/contexts.ts",
+      "sha256": "8a23a4e9b84b50295154fc2f7e4b43d9edbd43b67b7dfbd4b84887862b1dd3d0"
+    },
+    {
+      "path": "src/domain/contexts.test.ts",
+      "sha256": "77e392ee5e5e910c906ab81ee6a4193189db9d83c4d44d0c627ff5a4b5f4ed5f"
+    }
+  ],
+  "tests": {
+    "total": 86,
+    "passed": 86,
+    "failed": 0,
+    "pending": 0
+  }
+}

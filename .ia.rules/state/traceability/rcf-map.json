@@ -204,6 +204,8 @@
     {
       "artifacts": [
         "src/components/ParameterEditor.tsx",
+        "src/domain/contexts.test.ts",
+        "src/domain/contexts.ts",
         "src/domain/model.ts",
         "src/domain/scenario.ts",
         "src/state/calculation.ts",
@@ -331,6 +333,8 @@
     },
     {
       "artifacts": [
+        "src/domain/contexts.test.ts",
+        "src/domain/contexts.ts",
         "src/domain/projection.ts",
         "src/domain/scenario.ts"
       ],

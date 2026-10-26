@@ -46,7 +46,9 @@
         "src/domain/validation.ts",
         "src/domain/validation.test.ts",
         "src/domain/scenario.ts",
-        "src/domain/cost-requirement.ts"
+        "src/domain/cost-requirement.ts",
+        "src/domain/contexts.ts",
+        "src/domain/contexts.test.ts"
       ]
     ],
     "5": [
@@ -73,7 +75,9 @@
         "src/domain/projection.ts",
         "src/domain/scenario.ts",
         "src/domain/defaults.ts",
-        "src/domain/time-defaults.test.ts"
+        "src/domain/time-defaults.test.ts",
+        "src/domain/contexts.ts",
+        "src/domain/contexts.test.ts"
       ]
     ],
     "8": [
@@ -117,7 +121,9 @@
         "src/domain/defaults.test.ts",
         "src/domain/vehicle-defaults.test.ts",
         "src/domain/time-defaults.test.ts",
-        "src/domain/financial-defaults.test.ts"
+        "src/domain/financial-defaults.test.ts",
+        "src/domain/contexts.ts",
+        "src/domain/contexts.test.ts"
       ]
     ],
     "13": [

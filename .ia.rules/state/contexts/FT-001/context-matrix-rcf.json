@@ -1,0 +1,13 @@
+{
+  "source": "RCF.md",
+  "entries": [
+    {
+      "line": 35,
+      "text": "- **Cenários** são entidades editáveis e identificadas; DEVE ser possível **criar, editar e remover** cenários personalizados, com proteção contra perda de dados relacionados. **Duplicar** apenas quando existir justificativa operacional na UI (por exemplo, comparar variação sem destruir original), copiando parâmetros de forma explícita, com novo ID e sem compartilhar referências mutáveis acidentalmente. Três perfis iniciais **Otimista / Equilibrado / Pessimista** são referências editáveis, não taxonomia fechada: a matriz principal inicial possui **3 perfis × 3 jornadas × 2 objetivos = 18 contextos**; cenários novos geram seus cruzamentos sem eliminar os 18 iniciais enquanto ativos. **Não** usar “Base”, “Teste” ou rótulos que confundam perfil com repasse hipotético. Cenários eliminados não deixam registros órfãos nem contaminam outros. [PENDENTE-CODIGO]"
+    },
+    {
+      "line": 102,
+      "text": "1. **Contexto de avaliação** = cenário operacional × jornada × objetivo. Perfis iniciais: **3 × 3 × 2 = 18**; o dashboard de cada perfil DEVE mostrar **6 avaliações (3 jornadas × 2 metas)**, com comparação ampliada dos 18 e de cenários personalizados. Nenhum cartão pode declarar “impossível” sem meta e premissas; custos/produtividade variam inclusive entre objetivos quando suas recomendações alterarem aceitação de ofertas. [PENDENTE-CODIGO]"
+    }
+  ]
+}
