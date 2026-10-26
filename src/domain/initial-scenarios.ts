@@ -1,12 +1,13 @@
 /**
  * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
- * Origem: jcem.pro-uber; RCF§§4/7, FT-003.13a/003.15.
+ * Origem: jcem.pro-uber; RCF§§4/7, FT-003.13a/003.15/003.16.
  * Autoria: JeanCarloEM <jeancarlo@jeancarloem.com>.
  */
 import type { OperationalScenario, EvaluationContext } from './scenario';
 import type { NumericParameter, CostItem } from './model';
 import type { CostRequirement } from './cost-requirement';
 import { createInitialMaintenanceCatalog } from './maintenance';
+import { INITIAL_UNVERIFIED_COST_REQUIREMENTS } from './cost-requirements';
 import { INITIAL_PROFILE_REFERENCES, INITIAL_VEHICLES, INITIAL_CALENDARS, INITIAL_WORK_SCHEDULES, INITIAL_FINANCIAL_OBJECTIVES } from './defaults';
 import { createEvaluationContexts } from './contexts';
 
@@ -54,3 +55,6 @@ export const INITIAL_EVALUATION_CONTEXTS: readonly EvaluationContext[] = createE
   INITIAL_WORK_SCHEDULES,
   INITIAL_FINANCIAL_OBJECTIVES,
 );
+
+/** Requisitos iniciais incluem pendências globais explícitas; manutenção sozinha não comprova cobertura integral. */
+export const INITIAL_COST_REQUIREMENTS: readonly CostRequirement[] = Object.freeze([...INITIAL_UNVERIFIED_COST_REQUIREMENTS, ...INITIAL_MAINTENANCE_REQUIREMENTS]);

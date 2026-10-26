@@ -1,0 +1,57 @@
+{
+  "scope": "Pendências explícitas de rubricas e agregado de requisitos;sem quantias/cobertura/resultado financeiro",
+  "base": "4bd500c",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/cost-requirements.ts",
+      "sha256": "99c7ca7066aa1989f62afbb18c2d0e130a962601ceab5009a0e209719dad673a"
+    },
+    {
+      "path": "src/domain/cost-requirements.test.ts",
+      "sha256": "86ca83484d52021efaca61524e856bc377920d2fba7139248abdb745805836a9"
+    },
+    {
+      "path": "src/domain/initial-scenarios.ts",
+      "sha256": "7ac5aefa3097884bd59df70802ba67cd01a883b6b3bef05dbeb2fcaf7a4d9ecf"
+    }
+  ],
+  "baselineFiles": 15,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\unverified-cost-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\unverified-cost-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/unverified-cost-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 112,
+    "passed": 112,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 4
+  }
+}
