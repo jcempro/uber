@@ -77,6 +77,8 @@
         "scripts/inspect-dist.mts",
         "src/App.tsx",
         "src/components/AppShell.tsx",
+        "src/domain/validation.test.ts",
+        "src/domain/validation.ts",
         "src/index.html",
         "src/main.tsx",
         "src/styles.scss",

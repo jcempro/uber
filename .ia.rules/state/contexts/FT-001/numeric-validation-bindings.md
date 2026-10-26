@@ -1,0 +1,15 @@
+# FT-003.3b — sequência determinística de bindings e fixture
+
+Retorno recebido uma vez/revisado: COMPLETED determinístico, três comandos exit0. Patch de bindings exato e fixture SHA256a75ccca59f0e9645524199decbbd40ddae46cae8c8ffa2388a46217321887a5d íntegra; typecheck/lint reais passaram. Git coincide com seção canônica;0 commits Worker. Q8S10/revisão1 registrada no microescopo mecânico, sem cognição atribuída. Aceita esta etapa para commit WIP do supervisor: módulo ainda não integrado à UI/economia, sem alegar suíte funcional aprovada. Falhas conhecidas de -0/configuração/representabilidade seguem bloqueando FT-003.3.
+
+Recibo efetivo f2270fa3-29a7-4d20-b992-05c1433d0a4a RUNNING, response_contract_version1, conversa01a16678-96c5-7eb2-9ee1-fea2b7b37cf2/cwd corrente confirmados. Receber local_result uma vez somente na retomada; sem polling. required_read_paths omitido porque o contrato instalado veda sua combinação com command_sequence; normas/modelo/unidade são lidos explicitamente no primeiro comando antes da edição. Próximo: revisão proporcional/Q8S/commit do microescopo; restante funcional continua pendente.
+
+Compactação nativa N7C impedida: nenhuma ferramenta/rota suportada ligada ao contexto vivo exposta. Checkpoint não equivale a compactação; não alegar cumprimento.
+
+Job anterior230d7caa-fddf-4fbf-b324-11e4cdd2a594 recebido uma vez: FAILED/WORKER_INCOMPLETE por quatro leituras repetidas, sem efeitos novos nem testes. Git coincide com estado determinístico. Q8S2/revisão1 registrado. Fonte parcial preservada, não aceita. Não reexplorar nem repetir inferência equivalente.
+
+Novo microescopo mecânico: corrigir somente import inexistente (Decimal real e dois tipos locais exportados conforme API já decidida), criar fixture Vitest fornecida e validar APENAS typecheck/lint. Nenhum cálculo, refatoração lógica, runtime financeiro ou aceite funcional. Defeitos de -0, configurações e representabilidade continuam obrigatórios para unidade seguinte; o teste comportamental não será executado nesta etapa, não alegar que passou. Não enfraquecer/editar fixture. Sequência não usa inferência.
+
+Ordem exata: corrigir_bindings (precondição SHA2561764825c4e4d31518624c9ee75a66e6ca0c7abf81560a8afe1189c088518f7b3, substituição única, normas lidas antes do efeito, path físico confinado, reconhecer já aplicado, pós-condição); gravar_testes (arquivo ausente/igual, path físico seguro, texto literal independente); conferir_bindings (fixture intocada, typecheck/lint reais, sem Vitest; evidência numeric-bindings-check.json). Scripts passaram Node24 --check. Nenhum script instalado/Worker/managed alterado. expect_changes=true nos dois alvos; supervisor assume revisão e commit. COMPlETED técnico desta sequência não conclui FT-003.3.
+
+Rastreabilidade preparada no mecanismo oficial permanece pending; nenhum hash material do RCF será finalizado por esta fração de implementação. Próximo: receber uma vez/revisão/Q8S, conferir diff/evidência/commit somente do microescopo; depois corrigir comportamentos sob testes permanentes. Não repetir instalação/exploração.

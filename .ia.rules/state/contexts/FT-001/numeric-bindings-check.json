@@ -1,0 +1,32 @@
+{
+  "node": "v24.22.1",
+  "source": "numeric-validation-unit.md + numeric-validation-rcf.json; expectativas não derivadas da implementação",
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "files": [
+    {
+      "path": "src/domain/validation.ts",
+      "sha256": "3618f9eedfbbda252b6628b0b139f71a2e07709a92bb0e0c653493450ff6f471"
+    },
+    {
+      "path": "src/domain/validation.test.ts",
+      "sha256": "a75ccca59f0e9645524199decbbd40ddae46cae8c8ffa2388a46217321887a5d"
+    }
+  ]
+}

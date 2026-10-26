@@ -23,7 +23,9 @@
         "tsconfig.json",
         "vite.config.mts",
         "src/styles.scss",
-        "eslint.config.mjs"
+        "eslint.config.mjs",
+        "src/domain/validation.ts",
+        "src/domain/validation.test.ts"
       ]
     ],
     "3": [
@@ -40,7 +42,9 @@
         "src/state/store.ts",
         "src/state/persistence.ts",
         "src/state/calculation.ts",
-        "src/components/ParameterEditor.tsx"
+        "src/components/ParameterEditor.tsx",
+        "src/domain/validation.ts",
+        "src/domain/validation.test.ts"
       ]
     ],
     "5": [
