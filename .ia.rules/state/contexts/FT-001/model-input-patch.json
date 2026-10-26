@@ -1,0 +1,8 @@
+{
+  "schema": "jcem-model-input-patch/v1",
+  "beforeSha256": "14d652458183fc53737187cd3fa315d72f82bff72763816b550f0d5360231cb2",
+  "afterSha256": "950c3bb34d65e3b578b81aa857e40724c20038006dee2c756aa9f0a4b597724b",
+  "readonlyProperties": 42,
+  "documentedBranches": 7,
+  "sourcePreservedExceptModifiersAndDocumentation": true
+}

@@ -1,0 +1,17 @@
+# FT-003.1 — contratos básicos de entrada numérica
+
+Worker subordinado. Implementar SOMENTE src/domain/model.ts (novo), até180 linhas, TypeScript puro compartilhado/browser, sem imports Node/React ou dependência nova. Não implementar cálculos, defaults, custos completos, calendário, UI, validação runtime, persistência, overrides ou resolver nesta unidade. Próximas unidades completarão o modelo. Não ler RCF inteiro/reexplorar; recorte literal rastreável em model-input-rcf.json fundamenta este escopo. Ler uma vez o necessário, escrever e executar validar_modelo. Nenhum commit; supervisor assume. Citar fonte MPL-2.0, origem RCF§§1/4, autoria Git já existente; não inventar ano.
+
+Contrato público decidido pelo supervisor, imutável (readonly também em arrays/objetos aninhados):
+
+- DecimalText = string: representação decimal JSON sem coerção/arredondamento; DOCUMENTAR que texto bruto ainda exige validação numérica do catálogo futuro, não é valor certificado. Não criar aritmética/parser/regex.
+- ParameterScope: união {kind:'global'} | {kind:'vehicle';vehicleId:string} | {kind:'scenario';scenarioId:string}. IDs são referências estáveis, sem cadastro duplicado.
+- EvidenceKind: 'current-decision' | 'dated-official-fact' | 'reported-personal' | 'observation' | 'measurement' | 'estimate' | 'illustrative-hypothesis' | 'suggestion' | 'gap'. Não confundir hipótese com medição.
+- Provenance: kind:EvidenceKind; source:string; date:string|null; competence:string|null; scope:ParameterScope; reliability:'confirmed'|'reported'|'estimated'|'conditional'|'unverified'. Datas nulas representam desconhecimento, não data inventada; validação/congruência futura obrigatória.
+- NumericInput: união discriminada por status. 'provided' exige value:DecimalText; 'confirmed-zero' e 'assumed-zero' exigem value:'0' literal (distintos); 'absent', 'not-provided', 'not-applicable', 'invalid' exigem reason:string e NÃO carregam value (value?:never). Cada ramo documentado. Status fornecido não comprova validade matemática nem completude financeira; a futura validação deve verificar conteúdo/domínio e coerência do zero.
+- NumericConstraints: minimum:DecimalText|null; maximum:DecimalText|null; minimumInclusive:boolean; maximumInclusive:boolean. Restrições descrevem dados, sem validar/executar código livre.
+- NumericParameter: id:string; name:string; unit:string; category:string; input:NumericInput; provenance:Provenance; required:boolean; constraints:NumericConstraints; dependencies:readonly string[]. Unidade aberta permite catálogo dimensional posterior; string não garante compatibilidade. Nada de fontes duplicadas, função embutida ou resultado derivado editável. Escopo tem SSOT em provenance.scope.
+
+Cada alias/interface/ramo próprio recebe doc útil associado, sem comentários de sintaxe óbvia. Não usar any, casts que finjam validação, enum, defaults arbitrários, métricas de viagens como meta ou resultado. Tipagem representa estados, não valida JSON externo. Este arquivo é início real do modelo; não alegar FT-003/RCF atendidos integralmente.
+
+Automação fornecida validar_modelo: TypeScript real/strict do projeto e fixture virtual com controles positivos/negativos de estados e imutabilidade, depois lint real. Expectativas vêm do contrato/RCF, não de valores derivados da implementação. Nenhum teste financeiro fictício. Alvos conhecidos e expect_changes=true. Saída≤100 palavras com fonte, execução exigida, lacunas concretas; não repetir normas no relatório.

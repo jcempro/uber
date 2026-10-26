@@ -1,0 +1,23 @@
+# Handoff — FT-003.1
+
+Recibo efetivo: d8dac36b-8aa6-40e9-b052-478c91d63b45 RUNNING; response_contract_version:1; conversa01a16678-96c5-7eb2-9ee1-fea2b7b37cf2, repo D:/trampo/jcem.pro-uber. Sem polling; consulta somente na retomada.
+
+Retorno recebido uma vez: FAILED/WORKER_INCOMPLETE, releituras sem progresso. Fonte model.ts parcial presente, sem readonly nas propriedades e sem validação obrigatória; Git confirma diretório src/domain não versionado. Q8S4/revisão1 registrado. Estado mínimo:8 passos,1 compactação, última leitura do recorte já disponível; não comprova estouro de contexto ou WORKER_INFRA_ERROR.
+
+Correção materialmente diferente: nova command_sequence sem inferência/reexploração. Preservar fonte parcial sha25614d652458183fc53737187cd3fa315d72f82bff72763816b550f0d5360231cb2. Aplicar readonly por AST TypeScript e completar apenas cabeçalho/docs dos7 ramos; nenhum tipo/campo/critério alterado. Pré-condição por hash e fronteira física; recibo idempotente model-input-patch.json. Depois executar o MESMO validar_modelo original, sem relaxar os12 controles negativos. Alvo funcional continua src/domain/model.ts, expect_changes=true, commit_policy=supervisor. Script corretivo passou Node24 --check; não alegar validação antes da execução. Modelo financeiro completo e aceite global permanecem pendentes.
+
+Recibo corretivo efetivo: bb2c931f-38d8-454e-95b9-d4261ea6cf65 RUNNING nesta mesma conversa/raiz. Comandos corrigir_modelo e validar_modelo; próxima ação somente na retomada: local_result uma vez e revisão/Q8S. Não consultar por demora.
+
+Revisão do corretivo: FAILED/WORKER_INCOMPLETE recebido uma vez. corrigir_modelo exit1 antes de escrita: comparação física normalizava separador só à esquerda; falso insucesso na precondição preparada pelo supervisor, não falha de infraestrutura nem defeito demonstrado no modelo por este comando. Fonte ainda tem hash14d652458183fc53737187cd3fa315d72f82bff72763816b550f0d5360231cb2; recibos de patch/validação ausentes e Git coincide. Q8S9/revisão1 para execução determinística que parou corretamente, sem confundir nota com aceite funcional.
+
+Nova unidade autorizada: normalizar separadores em ambos os lados da MESMA comparação de igualdade física; preservar guards de symlink/Git/hash, AST e validar_modelo original. Mudança material no comando, sem exploração ou implementação de domínio nova. Preflight Node24 passou sintaxe e conferência real dos3 diretórios, com destino diferente como controle negativo. Não reiniciar jobs anteriores, não repetir efeitos; expect_changes=true sobre model.ts. Compactação nativa continua impedida por ausência de rota/ferramenta suportada.
+
+Recibo efetivo desta unidade: c9b6e134-e9e0-4ecc-bb5d-3f8e68a1d019 RUNNING, mesma conversa/raiz. Próximo passo: receber resultado uma vez na retomada, revisar e registrar Q8S, assumir commit se fonte/verificação estiverem conformes. Sem polling.
+
+Retorno recebido uma vez e revisado: COMPLETED determinístico; corrigir_modelo/validar_modelo exit0. Fonte conserva tipos/campos e agora42 propriedades readonly/7 ramos documentados. Hash950c3bb34d65e3b578b81aa857e40724c20038006dee2c756aa9f0a4b597724b coincide nos recibos/fonte; TypeScript strict,12 controles negativos e lint aprovados. Git coincide com seção canônica, sem commit do Worker. Q8S10/revisão1 registrado. Microescopo aceito para commit; não prova validação runtime, cálculos ou FT-003 integral.
+
+Objetivo/alvo: implementar contratos tipados de entrada em src/domain/model.ts, conforme model-input-unit.md. Dependência técnica operacional: dc3c14a, guard/tsc/lint/build aprovados; browser/decimal/auditoria e produto integral pendentes.
+
+Unidade de inferência local pequena: uma fonte≤180 linhas e somente normas diretas/recorte canônico≈3KB. Não explorar histórico, fonte inexistente de domínio ou RCF inteiro. Margem na janela32K preservada por leitura normativa seletiva e implementação sem matemática/dependências novas. Macro e contrato definidos pelo supervisor; autonomia na organização/docs do microescopo. Validação exata fornecida, com12 controles negativos independentes de tipagem; Node24/TS/CLI já instalados e usados. expect_changes=true, alvo funcional declarado; commit_policy=supervisor. Comando executável passou preflight sintático; não foi executado como validação antes da fonte.
+
+Aceite local: fonte documentada e imutável, estados distintos sem zero conveniente, tipos/fixture/lint aprovados. Não comprova domínio numérico, JSON externo, cálculos ou UI. Próximo: receber uma vez, revisar evidências e Git, Q8S com recibo, commit e segmentar contratos restantes/validação reutilizável. Compactação nativa impedida: ferramenta/rota suportada não exposta.
