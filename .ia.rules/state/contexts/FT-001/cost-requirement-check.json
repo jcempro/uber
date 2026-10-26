@@ -1,0 +1,16 @@
+{
+  "scope": "Somente aplicabilidade tipada, sem validar preços/referências/cobertura de custos",
+  "base": "07cc417",
+  "node": "v24.22.1",
+  "readonlyFields": 13,
+  "negativeControls": 17,
+  "sourceSha256": "1bf58f5b59c397c7e0b274cf243aefe164026d888db992b5b2d525520a24714b",
+  "fixtureSha256": "002ad7ede5453ef0ade6b5865006eb9ac6bfc752043f6e837814d3eaca268bf1",
+  "diagnostics": [],
+  "lint": {
+    "status": 0,
+    "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+    "stderr": "",
+    "error": null
+  }
+}

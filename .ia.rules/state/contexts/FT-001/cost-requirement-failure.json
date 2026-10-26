@@ -1,0 +1,27 @@
+{
+  "scope": "Somente aplicabilidade tipada, sem validar preços/referências/cobertura de custos",
+  "base": "07cc417",
+  "node": "v24.22.1",
+  "readonlyFields": 9,
+  "negativeControls": 17,
+  "sourceSha256": "9913408679d5ccc4e82cf458bb135876d468b1ac83de1c07658d4e36ae4dc20c",
+  "fixtureSha256": "002ad7ede5453ef0ade6b5865006eb9ac6bfc752043f6e837814d3eaca268bf1",
+  "diagnostics": [
+    {
+      "code": 2578,
+      "message": "Unused '@ts-expect-error' directive."
+    },
+    {
+      "code": 2578,
+      "message": "Unused '@ts-expect-error' directive."
+    },
+    {
+      "code": 2578,
+      "message": "Unused '@ts-expect-error' directive."
+    },
+    {
+      "code": 6133,
+      "message": "'Provenance' is declared but its value is never read."
+    }
+  ]
+}

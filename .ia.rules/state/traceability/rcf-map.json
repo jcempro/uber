@@ -372,6 +372,7 @@
     },
     {
       "artifacts": [
+        "src/domain/cost-requirement.ts",
         "src/domain/economics.ts",
         "src/domain/sensitivity.ts"
       ],

@@ -45,7 +45,8 @@
         "src/components/ParameterEditor.tsx",
         "src/domain/validation.ts",
         "src/domain/validation.test.ts",
-        "src/domain/scenario.ts"
+        "src/domain/scenario.ts",
+        "src/domain/cost-requirement.ts"
       ]
     ],
     "5": [
@@ -81,7 +82,8 @@
         "src/domain/economics.ts",
         "src/domain/sensitivity.ts",
         "src/domain/defaults.ts",
-        "src/domain/financial-defaults.test.ts"
+        "src/domain/financial-defaults.test.ts",
+        "src/domain/cost-requirement.ts"
       ]
     ],
     "9": [
