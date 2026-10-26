@@ -1,0 +1,12 @@
+# FT-003.13a — somente arquivo de sementes
+Worker subordinado. Antecessor28f80c73: releituras sem progresso, nenhum código/teste/comando; Q8S2. Exploração e especificação preservadas em initial-scenarios-unit.md. Continuação materialmente menor: UM arquivo novo src/domain/initial-scenarios.ts,~40linhas, sem teste novo nesta etapa. Base85b544b. Não refazer exploração nem ler defaults/modelos/unidades antigas: nomes/contrato necessários seguem completos. Ler esta unidade, escrever e executar comando; não repetir leitura já recebida. Normas aplicáveis continuam obrigatórias.
+
+Import type OperationalScenario,EvaluationContext de './scenario'; import INITIAL_PROFILE_REFERENCES,INITIAL_VEHICLES,INITIAL_CALENDARS,INITIAL_WORK_SCHEDULES,INITIAL_FINANCIAL_OBJECTIVES de './defaults'; import createEvaluationContexts de './contexts'.
+
+Exportar só:
+1. INITIAL_SCENARIOS: readonly OperationalScenario[]: map de INITIAL_PROFILE_REFERENCES. Cada cenário congelado: id='scenario-'+profile.id; name=profile.name;enabled=true; referenceProfileId=profile.id;vehicleId=INITIAL_VEHICLES[0].id;fuelConfigurationId=INITIAL_VEHICLES[0].defaultFuelConfigurationId;calendarId=INITIAL_CALENDARS[0].id;parameterIds e costItemIds arrays readonly congelados inicialmente vazios (sem itens/override instalados, NÃO custo0/cobertura). provenance congelada {kind:'current-decision',source:'RCF§§4/7',date:null,competence:null,scope: congelado {kind:'scenario',scenarioId:id},reliability:'confirmed'}. Array externo congelado. Proveniência confirma cadastro inicial, NUNCA resultado econômico.
+2. INITIAL_EVALUATION_CONTEXTS: readonly EvaluationContext[]=createEvaluationContexts(INITIAL_SCENARIOS,INITIAL_WORK_SCHEDULES,INITIAL_FINANCIAL_OBJECTIVES). Reusar a função, sem algoritmo paralelo nem valores derivados duplicados.
+
+Cabeçalho MPL2/link/origemRCF§§4/7 FT003.13a/autoria JeanCarloEM <jeancarlo@jeancarloem.com>. JSDoc útil em2exports, comentário ressalva custos incompletos. Sem helper genérico, any, supressão/cast de fuga, edição de outros fontes/Git/deps/Worker/UI/cálculos. Tipagem contextual ou as const legítimo para literais. Não limitar tipo geral a3cenários.
+
+Executar run_authorized_command({id:'validar_sementes_tipadas'}). Gate:2exports/reuso gerador, fontes anteriores intactas, tipos/lint/86testes prévios. NÃO é aceite funcional das sementes:9testes novos obrigatórios da FT003.13 continuam pendentes, não criar/aprovar FT global agora. Saída≤50palavras com ação e pendências. Sem run_command/npm livre.

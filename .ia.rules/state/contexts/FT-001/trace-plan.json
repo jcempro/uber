@@ -48,7 +48,9 @@
         "src/domain/scenario.ts",
         "src/domain/cost-requirement.ts",
         "src/domain/contexts.ts",
-        "src/domain/contexts.test.ts"
+        "src/domain/contexts.test.ts",
+        "src/domain/initial-scenarios.ts",
+        "src/domain/initial-scenarios.test.ts"
       ]
     ],
     "5": [
@@ -58,7 +60,9 @@
         "src/domain/model.ts",
         "src/domain/vehicle-defaults.test.ts",
         "src/domain/time-defaults.test.ts",
-        "src/domain/financial-defaults.test.ts"
+        "src/domain/financial-defaults.test.ts",
+        "src/domain/initial-scenarios.ts",
+        "src/domain/initial-scenarios.test.ts"
       ]
     ],
     "6": [
@@ -77,7 +81,9 @@
         "src/domain/defaults.ts",
         "src/domain/time-defaults.test.ts",
         "src/domain/contexts.ts",
-        "src/domain/contexts.test.ts"
+        "src/domain/contexts.test.ts",
+        "src/domain/initial-scenarios.ts",
+        "src/domain/initial-scenarios.test.ts"
       ]
     ],
     "8": [
@@ -123,7 +129,9 @@
         "src/domain/time-defaults.test.ts",
         "src/domain/financial-defaults.test.ts",
         "src/domain/contexts.ts",
-        "src/domain/contexts.test.ts"
+        "src/domain/contexts.test.ts",
+        "src/domain/initial-scenarios.ts",
+        "src/domain/initial-scenarios.test.ts"
       ]
     ],
     "13": [

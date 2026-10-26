@@ -1,0 +1,48 @@
+{
+  "scope": "Somente estrutura tipada das sementes; testes específicos originais pendentes, sem aceite funcional",
+  "base": "85b544b",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/initial-scenarios.ts",
+      "sha256": "9e50bb1406fbe8ddfd7830a8c129c388db4bb4402a62d4830b6012e7488c0aea"
+    }
+  ],
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\scenario-seeds-segment-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\scenario-seeds-segment-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/scenario-seeds-segment-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 86,
+    "passed": 86,
+    "failed": 0,
+    "pending": 0
+  },
+  "pending": "Nove controles específicos da FT003.13 não executados nesta microetapa; sem aceite funcional."
+}
