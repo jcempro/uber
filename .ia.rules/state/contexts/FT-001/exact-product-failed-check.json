@@ -1,0 +1,26 @@
+{
+  "scope": "Produtos/razões exatos somente; sem soma/comparação/finanças",
+  "base": "7fb7424",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/exact-product.ts",
+      "sha256": "5aae2513b363bb7e7c47de4c3bfd4872e8762e3e673b36145ea92abc1597d6de"
+    },
+    {
+      "path": "src/domain/exact-product.test.ts",
+      "sha256": "f61224c23569384d918a7e2c13dbe5d9f8500bcb7126276787ea1f5fa67f9ba7"
+    }
+  ],
+  "baselineFiles": 22,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 2,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\nsrc/domain/exact-product.ts(163,13): error TS2339: Property 'status' does not exist on type 'Fraction | { readonly status: \"unavailable\"; readonly code: ExactProductFailureCode; readonly reason: string; }'.\r\n  Property 'status' does not exist on type 'Fraction'.\r\nsrc/domain/exact-product.ts(163,39): error TS2322: Type 'Fraction | { readonly status: \"unavailable\"; readonly code: ExactProductFailureCode; readonly reason: string; }' is not assignable to type 'ExactProductResult'.\r\n  Type 'Fraction' is not assignable to type 'ExactProductResult'.\r\nsrc/domain/exact-product.ts(166,14): error TS2339: Property 'status' does not exist on type 'Fraction | { readonly status: \"unavailable\"; readonly code: ExactProductFailureCode; readonly reason: string; }'.\r\n  Property 'status' does not exist on type 'Fraction'.\r\nsrc/domain/exact-product.ts(166,40): error TS2322: Type 'Fraction | { readonly status: \"unavailable\"; readonly code: ExactProductFailureCode; readonly reason: string; }' is not assignable to type 'ExactProductResult'.\r\n  Type 'Fraction' is not assignable to type 'ExactProductResult'.\r\n",
+      "stderr": "",
+      "error": null
+    }
+  ]
+}
