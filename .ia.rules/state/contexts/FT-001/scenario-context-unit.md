@@ -1,0 +1,12 @@
+# FT-003.8c — cenário e contexto, fechamento dos6 contratos
+
+Worker subordinado. Base8ae9a79,4 tipos existentes aceitos26 negativos/lint. Acrescentar SOMENTE2 declarações ao FINAL de scenario.ts, preservando todo prefixo. Única atualização de cabeçalho: “FT-003.8a/003.8b,” → “FT-003.8a/003.8b/003.8c,”. Import Provenance já existe. Não reexplorar unidade grande/RCF/modelos; unidade+arquivo curto uma vez, ~25linhas novas/margem32K. Supervisor assume commit.
+
+- OperationalScenario: id:string;name:string;enabled:boolean;vehicleId:string;fuelConfigurationId:string;calendarId:string;referenceProfileId:string|null;parameterIds:readonly string[];costItemIds:readonly string[];provenance:Provenance. TODOS readonly. Cadastro aberto: name/string e referência de perfil/string|null não são union fechada dos3 iniciais. Referência inicial é opcional; parâmetros próprios e custos são referências, não cópias de veículo/valores. IDs/deduplicação/vigência serão validados em runtime; não fingir integridade por tipagem.
+- EvaluationContext: id:string;scenarioId:string;scheduleId:string;objectiveId:string. TODOS readonly. É identificação de entrada cenário×jornada×objetivo; calendário vem do cenário, sem campo paralelo/resultado derivado embutido. Resultado/versionamento/proveniência das premissas serão outro contrato, não registrar sucesso financeiro neste tipo.
+
+JSDoc útil nas2 declarações, fonteRCF§§4/7/8, FT-003.8c. Sem tipo auxiliar, import novo, função/const/enum/any/casts/dados/cálculo/UI/JSON/Git/Worker/dependência. Não modificar calendário/jornada/objetivo ou testes para passar. Formas estruturalmente equivalentes são válidas; obrigatoriedade/readonly/semântica permanecem.
+
+Depois de ler uma vez/editar no FIM, executar run_authorized_command({"id":"validar_cenarios_completo"}); NÃO run_command/Node/npm/eval ou NEEDS_SUPERVISOR como ferramenta. Verificador preserva checks originais6tipos/24negativos, adiciona14 checks de referências/contexto e mantém26 anteriores de calendário/jornada/meta, total64 num único programa strict, depois lint real. Fontes anteriores/prefixo e6 declarações readonly sem runtime protegidos. Nada de ignorar controles antigos ou relaxar critério original para produzir aprovação.
+
+Saída≤60 palavras: execução real/lacunas. Passar6 tipos/64 controles conclui apenas contratos tipados, não18 contextos iniciais, dados operacionais, apuração, vínculos/datas runtime, recálculo/CRUD/JSON/UI/RCF global. Próximas unidades tratarão dados e funções efetivas.

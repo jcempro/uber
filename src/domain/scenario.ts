@@ -1,6 +1,6 @@
 /**
  * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
- * Origem: jcem.pro-uber; RCF§§4/5/7/8, FT-003.8a/003.8b, autoria JeanCarloEM <jeancarlo@jeancarloem.com>.
+ * Origem: jcem.pro-uber; RCF§§4/5/7/8, FT-003.8a/003.8b/003.8c, autoria JeanCarloEM <jeancarlo@jeancarloem.com>.
  */
 
 import type { Provenance } from './model';
@@ -64,4 +64,34 @@ export type FinancialObjective = {
     /** Lucro líquido absoluto referenciado; não representa faturamento ou volume operacional. */
     | { readonly kind: 'absolute-net-profit'; readonly amountParameterId: string };
   readonly provenance: Provenance;
+};
+
+/**
+ * Cenário operacional: configuração de veículos, combustível, calendário, perfis e parâmetros para simulação.
+ * - Referências a IDs de veículos, parâmetros e itens de custo exigem validação em runtime; tipagem não certifica integridade.
+ * - `referenceProfileId` aceita null sem impor um perfil; listas de parâmetros/custos guardam referências, não cópias de valores.
+ */
+export type OperationalScenario = {
+  readonly id: string;
+  readonly name: string;
+  readonly enabled: boolean;
+  readonly vehicleId: string;
+  readonly fuelConfigurationId: string;
+  readonly calendarId: string;
+  readonly referenceProfileId: string | null;
+  readonly parameterIds: readonly string[];
+  readonly costItemIds: readonly string[];
+  readonly provenance: Provenance;
+};
+
+/**
+ * Contexto de avaliação: identificação de entrada para execução de cenário × jornada × objetivo.
+ * - Não inclui resultado, versionamento ou proveniência das premissas; esses serão contratos distintos.
+ * - `scheduleId` e `objectiveId` referenciam jornada e objetivo associados ao cenário.
+ */
+export type EvaluationContext = {
+  readonly id: string;
+  readonly scenarioId: string;
+  readonly scheduleId: string;
+  readonly objectiveId: string;
 };

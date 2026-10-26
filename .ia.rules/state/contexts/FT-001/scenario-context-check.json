@@ -1,0 +1,20 @@
+{
+  "scope": "Seis contratos tipados completos; dados/matriz18/runtime/finanças pendentes",
+  "base": "8ae9a79",
+  "node": "v24.22.1",
+  "readonlyFields": 45,
+  "negativeControls": 64,
+  "originalControls": 24,
+  "priorControls": 26,
+  "addedControls": 14,
+  "originalFixtureSha256": "cf5f950cca37eea139f30c173a6092334cc3b47c2a89957be09267bf43e34a65",
+  "sourceSha256": "56938e688e6249e04d64ce8a099394ed132e55809406e6c78b2981bb93793ff8",
+  "fixtureSha256": "66827d11cec611eb3e2f5956198101fd9b932324ad51047a83c6cecabf680d8e",
+  "diagnostics": [],
+  "lint": {
+    "status": 0,
+    "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+    "stderr": "",
+    "error": null
+  }
+}
