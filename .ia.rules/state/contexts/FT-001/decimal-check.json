@@ -1,0 +1,23 @@
+{
+  "schema": "jcem-decimal-check/v1",
+  "recordedAt": "2026-10-26T04:02:09.623Z",
+  "node": "v24.22.1",
+  "npm": "10.9.4",
+  "version": "10.6.0",
+  "license": "MIT",
+  "registrySource": "https://registry.npmjs.org/decimal.js/latest",
+  "registryRetrievedAt": "2026-10-25T22:48:42.518Z",
+  "integrity": "sha512-YpgQiITW3JXGntzdUmyUR1V812Hn8T1YVXhCu+wO3OpS4eU9l4YdD3qjyiKdV6mvV29zapkMeD390UVEf2lkUg==",
+  "lockPreservedOutsideDecimal": true,
+  "metadataAndScriptsPreserved": true,
+  "typecheck": true,
+  "esmApiProbes": 5,
+  "installedModuleBytes": 127787,
+  "bundleImpactMeasured": false,
+  "financialCalculationsImplemented": false,
+  "sources": {
+    "package.json": "475df744883f16181c6924c26148c79d603af8da2ff7d189a03a1fd4fe29a32d",
+    "package-lock.json": "7fb3d323f31d8af4db09fe7ea19c04b15d8fb1386c8d87ffb744be8180b7f579",
+    "docs/toolchain.md": "a335309664e4d78e64b47d3b207ca3d62f5ec2e6f5f6f3594a48279f6977cb2d"
+  }
+}

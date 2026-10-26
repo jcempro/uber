@@ -180,6 +180,7 @@
     "optionalDependencies": []
   },
   "dependencies": {
+    "decimal.js": "10.6.0",
     "react": "19.3.1",
     "react-dom": "19.3.1"
   },

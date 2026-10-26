@@ -18,8 +18,9 @@ React favorece maturidade e compatibilidade nativa com Fluent; Preact/compat exi
 | eslint | 10.13.0 | MIT |
 | typescript-eslint | 8.72.0 | MIT |
 | vitest | 5.0.5 | MIT |
+| decimal.js | 10.6.0 | MIT |
 
-Evidências: ../.ia.rules/state/contexts/FT-001/toolchain-registry.json e ../.ia.rules/state/contexts/FT-001/toolchain-compatible.json preservam origem oficial, datas e integridade. TypeScript6.0.3 atende ao peer<6.1; tipos Node24 correspondem ao runtime. Ícones e decimal.js adiados até uso efetivo.
+Evidências: ../.ia.rules/state/contexts/FT-001/toolchain-registry.json e ../.ia.rules/state/contexts/FT-001/toolchain-compatible.json preservam origem oficial, datas e integridade. TypeScript6.0.3 atende ao peer<6.1; tipos Node24 correspondem ao runtime. Ícones adiados até uso efetivo. decimal.js10.6.0 está instalado para validação e aritmética decimal compartilhadas.
 
 ESLint usa `eslint.config.mjs`, uma exceção técnica de configuração em ESM nativo. Isso preserva o escopo CommonJS dos runtimes gerenciados; não foi criado JavaScript de aplicação. Na versão instalada, configuração TypeScript exigiria `jiti` ou a flag nativa adicional, sem benefício necessário nesta configuração declarativa. Regras maduras recomendadas do typescript-eslint e imports type-only são reutilizadas. A fronteira `node:*` restringe somente código browser; testes continuam lintados e podem usar Node. Controles positivos/negativos passaram sem auto-fix: [evidência](../.ia.rules/state/contexts/FT-001/lint-check.json).
 
@@ -30,3 +31,5 @@ Instalar com Node24 e npmCLI verificados, --ignore-scripts e cache .cache/npm. N
 Scripts `app:*` executam primeiro `node scripts/check-runtime.mts`, que lê `engines.node` da raiz do helper e rejeita runtime incompatível antes da ferramenta. O helper integra o typecheck/lint. Evidência: `../.ia.rules/state/contexts/FT-001/runtime-integration-check.json`; não equivale à suíte financeira ou ao aceite global. As APIs de compilação/build/lint foram executadas com Node24 absoluto, sem usar verificações gerenciadas como teste do produto. Não usar `--passWithNoTests`. Não há suíte financeira implementada ainda.
 
 O [relatório do build](../.ia.rules/state/contexts/FT-001/bootstrap-build.json) registra produção, ES2023, extração Sass/CSS, manifesto, caminhos relativos, licenças e medidas dos bytes finais. Linux, matriz de navegadores, funcionamento offline/subdiretório em navegador real, métricas financeiras, CRUD/JSON e Pages continuam pendentes. O bloqueio atual da ferramenta de navegador está registrado em `../.ia.rules/state/fix.md`; não prova defeito no aplicativo.
+
+decimal.js reutiliza aritmética decimal consolidada e tipos oficiais; evita manter aritmética própria. A seleção oficial datada e a integridade estão em toolchain-registry.json; a instalação/API/tipos em decimal-check.json no mesmo diretório. Não arredondar intermediários. A política de precisão das operações e o custo real no bundle serão validados na integração dos cálculos; esta instalação não comprova resultados financeiros.
