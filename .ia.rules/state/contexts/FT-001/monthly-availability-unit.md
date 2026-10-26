@@ -1,0 +1,5 @@
+# FT-003.24b — disponibilidade mensal
+Base ddc2704;157testes/tipos/lint aceitos.Segundo segmento da24:perdasmensais explícitas deduzidas dos diasprogramados ehorasmês=efetivos×horasdia,comasAPIsexatas jáaceitas.Semadaptação deparâmetros:time-lost-days continua not-provided,nãopresumir0/competência.
+Materialização localdeterminística debloco fechado,sem novainferência,reexploração oufallback integral da24.Pre/postSHA,normas/continue/unidade antesefeitos,31fontes preservadas;patch→teste emcomandos separados.Só monthly-availability.ts/test.ts.
+Domínio:programados/perdas≥0,perdas≤programados,0<h/dia≤24;violações→invalid-calendar.Ausência/wrapper/dígitosforaformato efalhatécnica propagados dasAPIs,nãonormalizarcomozero;budgetinválidoprimeiro.Zeroefetivo/horasélegítimo semalegar custos0/viabilidade.Calendário/demanda/finanças/dateclocks nãoinferidos.
+6provasindependentes+163testes/tipos/lint são gate destesegmento.Noveprovasoriginais ecomposição docompletocalendário24 continuamobrigatórias(totalfuturo≥172incluindo5+6novos),semconclusãoparcial.Nãoeditarcritérios/fontesanteriores/novasdeps/Git;commit supervisor.

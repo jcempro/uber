@@ -69,7 +69,9 @@
         "src/domain/budget-calendar.ts",
         "src/domain/budget-calendar.test.ts",
         "src/domain/budget-days.ts",
-        "src/domain/budget-days.test.ts"
+        "src/domain/budget-days.test.ts",
+        "src/domain/monthly-availability.ts",
+        "src/domain/monthly-availability.test.ts"
       ]
     ],
     "5": [
@@ -119,7 +121,9 @@
         "src/domain/budget-calendar.ts",
         "src/domain/budget-calendar.test.ts",
         "src/domain/budget-days.ts",
-        "src/domain/budget-days.test.ts"
+        "src/domain/budget-days.test.ts",
+        "src/domain/monthly-availability.ts",
+        "src/domain/monthly-availability.test.ts"
       ]
     ],
     "8": [
@@ -149,7 +153,9 @@
         "src/domain/budget-calendar.ts",
         "src/domain/budget-calendar.test.ts",
         "src/domain/budget-days.ts",
-        "src/domain/budget-days.test.ts"
+        "src/domain/budget-days.test.ts",
+        "src/domain/monthly-availability.ts",
+        "src/domain/monthly-availability.test.ts"
       ]
     ],
     "9": [
@@ -205,7 +211,9 @@
         "src/domain/budget-calendar.ts",
         "src/domain/budget-calendar.test.ts",
         "src/domain/budget-days.ts",
-        "src/domain/budget-days.test.ts"
+        "src/domain/budget-days.test.ts",
+        "src/domain/monthly-availability.ts",
+        "src/domain/monthly-availability.test.ts"
       ]
     ],
     "13": [

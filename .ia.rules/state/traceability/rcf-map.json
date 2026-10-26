@@ -419,6 +419,8 @@
         "src/domain/exact-sum.ts",
         "src/domain/exact.test.ts",
         "src/domain/exact.ts",
+        "src/domain/monthly-availability.test.ts",
+        "src/domain/monthly-availability.ts",
         "src/domain/sensitivity.ts"
       ],
       "commit": "",

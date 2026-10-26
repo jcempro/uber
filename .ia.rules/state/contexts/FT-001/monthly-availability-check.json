@@ -1,0 +1,53 @@
+{
+  "scope": "Sódisponibilidade mensal explícita;163testes.Noveprovas/integração do calendário completo ainda obrigatórias.",
+  "base": "ddc2704",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/monthly-availability.ts",
+      "sha256": "8043866adc2566ad798d1593832cdc3efc728e2ab2d7e4104c380939dd789e29"
+    },
+    {
+      "path": "src/domain/monthly-availability.test.ts",
+      "sha256": "34567bdb54578d2a9143581c87e9ec35cb6d45006e608f27d1778df49291c5e9"
+    }
+  ],
+  "baselineFiles": 31,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\monthly-availability-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\monthly-availability-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/monthly-availability-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 163,
+    "passed": 163,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 6
+  }
+}
