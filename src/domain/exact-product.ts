@@ -4,9 +4,10 @@
  * Autoria: JeanCarloEM <jeancarlo@jeancarloem.com>.
  */
 
-import Fraction from 'fraction.js';
+import type Fraction from 'fraction.js';
 import { inspectExactLimits } from './exact-budget.js';
 import type { ExactLimits, ExactRational } from './exact.js';
+import { inspectExactRational, loadExactRational, fitsProduct, serializeExactRational } from './exact-rational';
 
 /** Operações suportadas: multiplicação e divisão exatas. */
 export type ExactProductOperation = 'multiply' | 'divide';
@@ -27,93 +28,6 @@ export type ExactProductFailureCode =
 
 /** Representação de falha da operação exata. */
 export type ExactProductFailure = Extract<ExactProductResult, { status: 'unavailable' }>;
-
-/**
- * Verifica somente objeto e campos string; formato é validado após limitar comprimento.
- * @param value Valor a validar.
- * @returns true quando os dois campos são strings.
- */
-function inspectExactRational(value: unknown): value is ExactRational {
-  if (value === null || typeof value !== 'object') return false;
-  const candidate = value as ExactRational;
-  if (typeof candidate.numerator !== 'string' || typeof candidate.denominator !== 'string') return false;
-  return true;
-}
-
-/**
- * Carrega um racional exato em Fraction, validando comprimento e dígitos antes de BigInt.
- * @param rational Racional exato validado.
- * @param limits Orçamento técnico.
- * @returns Fraction congelado ou falha com código e motivo.
- */
-function loadExactRational(rational: ExactRational, limits: ExactLimits): Fraction | ExactProductFailure {
-  const numStr = rational.numerator;
-  const denStr = rational.denominator;
-
-  // Comprimento UTF-16 da string de entrada ≤ maxInputLength
-  if (numStr.length > limits.maxInputLength || denStr.length > limits.maxInputLength) {
-    return Object.freeze({
-      status: 'unavailable' as const,
-      code: 'resource-budget' as const,
-      reason: 'Orçamento de recurso excedido: comprimento da representação do racional.',
-    });
-  }
-
-  // Formato canônico somente após limitar comprimento, antes de BigInt.
-  if (!/^-?(?:0|[1-9]\d*)$/.test(numStr) || !/^[1-9]\d*$/.test(denStr)) {
-    return Object.freeze({
-      status: 'unavailable' as const,
-      code: 'invalid-rational' as const,
-      reason: 'Racional inválido: representação inteira não canônica.',
-    });
-  }
-
-  // Contar dígitos sem sinal do numerador e comprimento do denominador
-  const numDigits = numStr.replace(/^-/, '').length;
-  const denDigits = denStr.length;
-
-  if (numDigits > limits.maxDigits || denDigits > limits.maxDigits) {
-    return Object.freeze({
-      status: 'unavailable' as const,
-      code: 'resource-budget' as const,
-      reason: 'Orçamento de recurso excedido: dígitos do racional.',
-    });
-  }
-
-  try {
-    const numerator = BigInt(numStr);
-    const denominator = BigInt(denStr);
-
-    if (denominator === 0n) {
-      return Object.freeze({
-        status: 'unavailable' as const,
-        code: 'invalid-rational' as const,
-        reason: 'Racional inválido: denominador zero.',
-      });
-    }
-
-    // Fraction.js normaliza no construtor; campos canônicos, sem sinal no denominador
-    const f = new Fraction(numerator, denominator);
-    return Object.freeze(f);
-  } catch {
-    return Object.freeze({
-      status: 'unavailable' as const,
-      code: 'arithmetic-failure' as const,
-      reason: 'Falha aritmética ao materializar racional exato.',
-    });
-  }
-}
-
-/**
- * Verifica se o produto de dois BigInts cabe no limite técnico antes da materialização.
- * @param x Primeiro fator.
- * @param y Segundo fator.
- * @param cap Limite técnico (cap = 10^maxDigits - 1).
- * @returns true se x * y ≤ cap ou x === 0n.
- */
-function fitsProduct(x: bigint, y: bigint, cap: bigint): boolean {
-  return x === 0n || y <= cap / x;
-}
 
 /**
  * Calcula o produto ou divisão exata de dois racionais, respeitando orçamento técnico.
@@ -213,10 +127,7 @@ export function calculateExactProduct(
     }
 
     // Valor retornado: sinal no numerador, denominador positivo, congelado
-    const value: ExactRational = Object.freeze({
-      numerator: (f.s * f.n).toString(),
-      denominator: f.d.toString(),
-    });
+    const value = serializeExactRational(f);
 
     return Object.freeze({ status: 'ready' as const, value });
   } catch {

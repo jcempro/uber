@@ -408,6 +408,7 @@
         "src/domain/exact-budget.ts",
         "src/domain/exact-product.test.ts",
         "src/domain/exact-product.ts",
+        "src/domain/exact-rational.ts",
         "src/domain/exact.test.ts",
         "src/domain/exact.ts",
         "src/domain/sensitivity.ts"
