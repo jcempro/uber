@@ -1,6 +1,6 @@
 /**
  * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
- * Origem: jcem.pro-uber; RCF§§4/5/7, FT-003.8a, autoria JeanCarloEM <jeancarlo@jeancarloem.com>.
+ * Origem: jcem.pro-uber; RCF§§4/5/7/8, FT-003.8a/003.8b, autoria JeanCarloEM <jeancarlo@jeancarloem.com>.
  */
 
 import type { Provenance } from './model';
@@ -36,3 +36,32 @@ export type CalendarConfiguration =
       readonly workingWeekdays: readonly IsoWeekday[];
       readonly excludedDates: readonly string[];
     };
+/**
+ * Jornada de trabalho: horários em texto bruto, duração referenciada ao parâmetro.
+ * - `startTime`/`endTime`: texto bruto; null representa horário ainda não informado/definido, sem inventar faixa horária.
+ * - `durationHoursParameterId`: referência única ao parâmetro de duração.
+ */
+export type WorkSchedule = {
+  readonly id: string;
+  readonly name: string;
+  readonly durationHoursParameterId: string;
+  readonly startTime: string | null;
+  readonly endTime: string | null;
+  readonly provenance: Provenance;
+};
+
+/**
+ * Objetivo financeiro: definição direta por fração salarial ou lucro líquido absoluto.
+ * - Salário/fração e valor absoluto têm SSOT nos parâmetros referenciados; não armazenar alvo derivado duplicado.
+ * - Não há definição por receita bruta ou quantidade de viagens.
+ */
+export type FinancialObjective = {
+  readonly id: string;
+  readonly name: string;
+  readonly definition:
+    /** Alvo de lucro derivado de salário e fração independentes, sujeitos à validação das premissas. */
+    | { readonly kind: 'salary-fraction'; readonly salaryParameterId: string; readonly fractionParameterId: string }
+    /** Lucro líquido absoluto referenciado; não representa faturamento ou volume operacional. */
+    | { readonly kind: 'absolute-net-profit'; readonly amountParameterId: string };
+  readonly provenance: Provenance;
+};
