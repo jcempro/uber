@@ -70,7 +70,8 @@
       [
         "src/domain/costs.ts",
         "src/domain/defaults.ts",
-        "src/domain/defaults.test.ts"
+        "src/domain/defaults.test.ts",
+        "src/domain/maintenance.ts"
       ]
     ],
     "7": [
@@ -93,7 +94,8 @@
         "src/domain/sensitivity.ts",
         "src/domain/defaults.ts",
         "src/domain/financial-defaults.test.ts",
-        "src/domain/cost-requirement.ts"
+        "src/domain/cost-requirement.ts",
+        "src/domain/maintenance.ts"
       ]
     ],
     "9": [

@@ -1,0 +1,48 @@
+{
+  "scope": "Somente parâmetros de manutenção; itens/requisitos/fábrica completa/testes funcionais/integração pendentes",
+  "base": "503228e",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/maintenance.ts",
+      "sha256": "c94a0ca134d9d7933ca60d8a59e5c3f105296b4133da8b8dd8626ee06108ad3e"
+    }
+  ],
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\maintenance-parameter-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\maintenance-parameter-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/maintenance-parameter-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 95,
+    "passed": 95,
+    "failed": 0,
+    "pending": 0
+  },
+  "pending": "Somente parâmetros: itens/requisitos/fábrica completa e testes funcionais/integração obrigatórios, sem aceite financeiro."
+}
