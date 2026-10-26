@@ -1,0 +1,17 @@
+{
+  "negativeControls": 9,
+  "diagnostics": [
+    {
+      "code": 1361,
+      "message": "'validateDecimalText' cannot be used as a value because it was imported using 'import type'."
+    },
+    {
+      "code": 2349,
+      "message": "This expression is not callable.\n  Type 'BigInt' has no call signatures."
+    },
+    {
+      "code": 2349,
+      "message": "This expression is not callable.\n  Type 'BigInt' has no call signatures."
+    }
+  ]
+}

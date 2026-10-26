@@ -1,0 +1,53 @@
+{
+  "scope": "Ponte exata com validação compartilhada/budget técnico,sem operações financeiras ou orçamento padrão do app",
+  "base": "84c9e65",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/exact.ts",
+      "sha256": "3911ed6bf38de0d88b4191bc7ba43b05470b6625ed3c55f23f8c44343f337b17"
+    },
+    {
+      "path": "src/domain/exact.test.ts",
+      "sha256": "40fd1666175ee96bc2355e2474387086d263a0c34c601af103aa3a913b97ccb3"
+    }
+  ],
+  "baselineFiles": 18,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\exact-parser-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\exact-parser-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/exact-parser-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 120,
+    "passed": 120,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 8
+  }
+}
