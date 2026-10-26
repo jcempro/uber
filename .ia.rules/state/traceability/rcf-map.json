@@ -404,6 +404,8 @@
     {
       "artifacts": [
         "src/domain/economics.ts",
+        "src/domain/exact-budget.test.ts",
+        "src/domain/exact-budget.ts",
         "src/domain/exact.test.ts",
         "src/domain/exact.ts",
         "src/domain/sensitivity.ts"

@@ -1,11 +1,13 @@
 /**
  * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
- * Origem: jcem.pro-uber; RCF§§4/8.1, FT-003.18.
+ * Origem: jcem.pro-uber; RCF§§4/8.1, FT-003.18/003.19.
  * Autoria: JeanCarloEM <jeancarlo@jeancarloem.com>.
  */
 
 import Decimal from 'decimal.js';
 import Fraction from 'fraction.js';
+import type { ExactLimits } from './exact-budget.js';
+import { inspectExactLimits } from './exact-budget.js';
 import type { NumericConstraints } from './model.js';
 import type { NumericValidationResult } from './validation.js';
 import { validateDecimalText } from './validation.js';
@@ -22,15 +24,8 @@ export type ExactRational = {
   readonly denominator: string;
 };
 
-/**
- * Limites de orçamento técnico explícito do chamador.
- * maxInputLength: contagem UTF-16 da string de entrada.
- * maxDigits: limite de dígitos materializados ANTES da redução.
- */
-export type ExactLimits = {
-  readonly maxInputLength: number;
-  readonly maxDigits: number;
-};
+/** Compatibilidade da API: definição do orçamento compartilhada com outras operações exatas. */
+export type { ExactLimits } from './exact-budget.js';
 
 /**
  * Resultado da conversão decimal→racional exata.
@@ -59,30 +54,10 @@ export function parseExactDecimal(
   constraints: NumericConstraints,
   limits: ExactLimits
 ): ExactDecimalResult {
-  // 1. Orçamento inválido: limits nulo/não-objeto ou campos não Number.isSafeInteger/≤0
-  if (limits === null || typeof limits !== 'object') {
-    return Object.freeze({
-      status: 'unavailable',
-      code: 'invalid-budget' as const,
-      reason: 'Orçamento inválido: limits ausente ou não objeto.',
-    });
-  }
-
-  const l = limits as ExactLimits;
-  if (!Number.isSafeInteger(l.maxInputLength) || l.maxInputLength <= 0) {
-    return Object.freeze({
-      status: 'unavailable',
-      code: 'invalid-budget' as const,
-      reason: 'Orçamento inválido: maxInputLength não é inteiro positivo seguro.',
-    });
-  }
-  if (!Number.isSafeInteger(l.maxDigits) || l.maxDigits <= 0) {
-    return Object.freeze({
-      status: 'unavailable',
-      code: 'invalid-budget' as const,
-      reason: 'Orçamento inválido: maxDigits não é inteiro positivo seguro.',
-    });
-  }
+  // Política técnica compartilhada; não se confunde com validade ou magnitude financeira.
+  const policy = inspectExactLimits(limits);
+  if (!policy.valid) return Object.freeze({status:'unavailable',code:'invalid-budget' as const,reason:policy.reason});
+  const l = policy.limits;
 
   // 2. Orçamento de recurso: input string.length > maxInputLength
   if (typeof input === 'string' && input.length > l.maxInputLength) {
