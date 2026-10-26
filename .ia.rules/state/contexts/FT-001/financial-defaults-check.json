@@ -1,0 +1,51 @@
+{
+  "scope": "Referências de objetivos/salário datado/dízimo, sem cobertura/viabilidade/finanças calculadas",
+  "base": "c95eef1",
+  "node": "v24.22.1",
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\financial-defaults-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\financial-defaults-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/financial-defaults-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "files": [
+    {
+      "path": "src/domain/defaults.ts",
+      "sha256": "ea346fe02a15b180dddff52649de7180be602668d22ba1586554c4b6a05d11ba"
+    },
+    {
+      "path": "src/domain/financial-defaults.test.ts",
+      "sha256": "f221d2ad950978ff81ff5b87fb3ef99b6107a0e267d9118cad298c7dcfe3440d"
+    }
+  ],
+  "tests": {
+    "total": 75,
+    "passed": 75,
+    "failed": 0,
+    "pending": 0
+  }
+}

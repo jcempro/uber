@@ -1,0 +1,12 @@
+{
+  "source": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12797.htm",
+  "kind": "primary-official-decree",
+  "decree": "12.797/2025",
+  "issuedDate": "2025-12-23",
+  "effectiveFrom": "2026-01-01",
+  "competence": "2026",
+  "monthlyAmountBRL": "1621.00",
+  "checkedOn": "2026-10-26",
+  "method": "Leitura direta do decreto pelo supervisor; título, art.1 e art.2 conferidos com RCF225.",
+  "scope": "Referência oficial datada; revalidar por competência. Não usar valores legais diário/horário como equilíbrio do motorista. Sem dependência de rede em runtime."
+}

@@ -54,7 +54,8 @@
         "src/domain/defaults.ts",
         "src/domain/model.ts",
         "src/domain/vehicle-defaults.test.ts",
-        "src/domain/time-defaults.test.ts"
+        "src/domain/time-defaults.test.ts",
+        "src/domain/financial-defaults.test.ts"
       ]
     ],
     "6": [
@@ -78,7 +79,9 @@
       "FT-004",
       [
         "src/domain/economics.ts",
-        "src/domain/sensitivity.ts"
+        "src/domain/sensitivity.ts",
+        "src/domain/defaults.ts",
+        "src/domain/financial-defaults.test.ts"
       ]
     ],
     "9": [
@@ -111,7 +114,8 @@
         "scripts/inspect-dist.mts",
         "src/domain/defaults.test.ts",
         "src/domain/vehicle-defaults.test.ts",
-        "src/domain/time-defaults.test.ts"
+        "src/domain/time-defaults.test.ts",
+        "src/domain/financial-defaults.test.ts"
       ]
     ],
     "13": [

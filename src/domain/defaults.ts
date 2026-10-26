@@ -1,11 +1,11 @@
 /**
  * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
- * Origem: jcem.pro-uber; RCF§§4/5/6.1/6.2/7, FT-003.5/003.7/003.9.
+ * Origem: jcem.pro-uber; RCF§§4/5/6.1/6.2/7/8/11, FT-003.5/003.7/003.9/003.10.
  * Autoria Git: JeanCarloEM <jeancarlo@jeancarloem.com>.
  */
 import type { DecimalText, Provenance, CostNature, CostRecognition, Vehicle, FuelConfiguration, NumericParameter } from './model';
 import { NUMERIC_RULES } from './validation';
-import type { CalendarConfiguration, WorkSchedule } from './scenario';
+import type { CalendarConfiguration, WorkSchedule, FinancialObjective } from './scenario';
 /** Perfis de referência iniciais; não limita cenários personalizados. Copiar para estado editável, preservando IDs. */
 export const INITIAL_PROFILE_REFERENCES = Object.freeze([
   Object.freeze({"id":"optimistic","name":"Otimista"} as const),
@@ -409,6 +409,166 @@ export const INITIAL_TIME_PARAMETERS: readonly NumericParameter[] = Object.freez
     } as const),
     "required": true,
     "constraints": Object.freeze({...NUMERIC_RULES.positive, maximum:"24"}),
+    "dependencies": Object.freeze([] as const)
+  } as const)
+] as const);
+
+/** Metas de lucro por fração salarial, sem armazenar alvo monetário derivado ou usar volume de viagens. */
+export const INITIAL_FINANCIAL_OBJECTIVES: readonly FinancialObjective[] = Object.freeze([
+  Object.freeze({
+    "id": "objective-partial-salary",
+    "name": "Meta complementar",
+    "definition": Object.freeze({
+      "kind": "salary-fraction",
+      "salaryParameterId": "finance-salary-reference",
+      "fractionParameterId": "finance-goal-partial"
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/8 — regra financeira definida",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const)
+  } as const),
+  Object.freeze({
+    "id": "objective-full-salary",
+    "name": "Meta salarial",
+    "definition": Object.freeze({
+      "kind": "salary-fraction",
+      "salaryParameterId": "finance-salary-reference",
+      "fractionParameterId": "finance-goal-full"
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/8 — regra financeira definida",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const)
+  } as const)
+] as const);
+/** Referência salarial datada2026, decisões de meta/dízimo e lacuna Lmin. Revalidar salário por competência; não implica viabilidade. */
+export const INITIAL_FINANCIAL_PARAMETERS: readonly NumericParameter[] = Object.freeze([
+  Object.freeze({
+    "id": "finance-salary-reference",
+    "name": "Salário mínimo mensal de referência (2026)",
+    "unit": "BRL/month",
+    "category": "salary-reference",
+    "input": Object.freeze({
+      "status": "provided",
+      "value": "1621.00"
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "dated-official-fact",
+      "source": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12797.htm",
+      "date": "2025-12-23",
+      "competence": "2026",
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const),
+    "required": true,
+    "constraints": NUMERIC_RULES.positive,
+    "dependencies": Object.freeze([] as const)
+  } as const),
+  Object.freeze({
+    "id": "finance-goal-partial",
+    "name": "Fração salarial da meta complementar",
+    "unit": "ratio",
+    "category": "profit-goal",
+    "input": Object.freeze({
+      "status": "provided",
+      "value": "0.15"
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/8 — regra financeira definida",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const),
+    "required": true,
+    "constraints": NUMERIC_RULES.nonNegative,
+    "dependencies": Object.freeze([] as const)
+  } as const),
+  Object.freeze({
+    "id": "finance-goal-full",
+    "name": "Fração salarial da meta salarial",
+    "unit": "ratio",
+    "category": "profit-goal",
+    "input": Object.freeze({
+      "status": "provided",
+      "value": "1"
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/8 — regra financeira definida",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const),
+    "required": true,
+    "constraints": NUMERIC_RULES.nonNegative,
+    "dependencies": Object.freeze([] as const)
+  } as const),
+  Object.freeze({
+    "id": "finance-tithe-rate",
+    "name": "Dízimo sobre receita creditada, antes dos custos",
+    "unit": "ratio",
+    "category": "tithe-credit-rate",
+    "input": Object.freeze({
+      "status": "provided",
+      "value": "0.1"
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "current-decision",
+      "source": "RCF.md §§5/8 — regra financeira definida",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "confirmed"
+    } as const),
+    "required": true,
+    "constraints": NUMERIC_RULES.fraction,
+    "dependencies": Object.freeze([] as const)
+  } as const),
+  Object.freeze({
+    "id": "finance-minimum-operation-profit",
+    "name": "Lucro mínimo absoluto da operação",
+    "unit": "BRL/month",
+    "category": "operation-profit-floor",
+    "input": Object.freeze({
+      "status": "not-provided",
+      "reason": "Lucro mínimo absoluto da operação ainda não informado."
+    } as const),
+    "provenance": Object.freeze({
+      "kind": "gap",
+      "source": "RCF.md §8 — lucro mínimo absoluto da operação ainda não informado",
+      "date": null,
+      "competence": null,
+      "scope": Object.freeze({
+        "kind": "global"
+      } as const),
+      "reliability": "unverified"
+    } as const),
+    "required": true,
+    "constraints": NUMERIC_RULES.nonNegative,
     "dependencies": Object.freeze([] as const)
   } as const)
 ] as const);
