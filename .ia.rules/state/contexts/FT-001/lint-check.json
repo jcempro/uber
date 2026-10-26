@@ -1,0 +1,58 @@
+{
+  "schema": "jcem-lint-check/v1",
+  "recordedAt": "2026-10-26T02:40:40.506Z",
+  "node": "v24.22.1",
+  "eslint": "10.13.0",
+  "files": [
+    {
+      "path": "vite.config.mts",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "path": "src\\components\\AppShell.tsx",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "path": "src\\App.tsx",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "path": "src\\main.tsx",
+      "errors": 0,
+      "warnings": 0
+    }
+  ],
+  "controls": {
+    "browserNodeRejected": true,
+    "nodeTestAllowed": true,
+    "testsStillLinted": true,
+    "typeOnlyImportsEnforced": true,
+    "managedAndGeneratedIgnored": true
+  },
+  "inputs": [
+    {
+      "path": "eslint.config.mjs",
+      "sha256": "662940ad4dc10613d2ddd8dc79343fb8252df588da1df74426a4d651c9c1399b"
+    },
+    {
+      "path": "src\\App.tsx",
+      "sha256": "bb9aac0eaa5f70940ba0fc9dfb4b78d92dd9e69c2fb07cac35f502e8cf874c6b"
+    },
+    {
+      "path": "src\\main.tsx",
+      "sha256": "32be7138e0b5b457942cac3345b2eb84f6c2a52f119a9a71b59065948aa6ffca"
+    },
+    {
+      "path": "src\\components\\AppShell.tsx",
+      "sha256": "a76ba55903033c5d6a9d1270233f4283fe8211d0d1fe02f0f6b6122efcbfe8ab"
+    },
+    {
+      "path": "vite.config.mts",
+      "sha256": "86af3fc94ffbbe7c9fe06f7bfdc872d50e8beec98563f9fd402c60202276b6e9"
+    }
+  ],
+  "fixApplied": false
+}

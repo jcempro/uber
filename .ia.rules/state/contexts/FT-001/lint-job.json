@@ -1,0 +1,16 @@
+{
+  "job_id": "77b0e3f3-d2db-4fbf-bf3e-0632e6366334",
+  "receipt_status": "RUNNING",
+  "thread_id": "01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+  "repoPath": "D:/trampo/jcem.pro-uber",
+  "unit": "FT-002.5 — configuração ESLint e documentação, sem comandos",
+  "required_change_paths": ["eslint.config.mjs", "docs/toolchain.md"],
+  "commit_policy": "supervisor",
+  "previous_commit": "e08c97d",
+  "previous_review": {"job_id": "95332d1c-051b-4422-be48-55f8e3e4f65e", "score": 7, "revision": 1},
+  "next": "Receber resultado uma vez, revisar config/docs e rodar lint real sem fix com Node24. Controles negativos: import node:fs em src browser deve reprovar; em .test.ts pode ser legítimo e continuar lintado. Verificar que núcleo/dist/cache não entram no escopo. Registrar Q8S após exame suficiente, assumir commit; próxima unidade runtime guard dos aliases e depois modelo financeiro.",
+  "preflight": "defineConfig de eslint/config, recommended e regra consistent-type-imports verificados nos módulos instalados. ESLint10 config-loader.js confirmou flag nativa TS ou jiti; mjs é configuração ESM justificada, sem type:module global.",
+  "visual_pending": "CUA falhou antes da página ao gravar kernel assets; reset e retry único não resolveram. Preview local encerrado exit0; não há browser validado. Não atribuir falha de ferramenta ao aplicativo nem editar instalação externa aqui.",
+  "global_acceptance": "Sass/produção verificados; lint novo, runtime guard, browser, cálculos/cenários/JSON/histórico/CI ainda pendentes",
+  "native_compaction": "Impedida: ferramenta/rota suportada não exposta para contexto vivo"
+}
