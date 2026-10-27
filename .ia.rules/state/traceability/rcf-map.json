@@ -468,6 +468,8 @@
         "src/domain/financial-result.ts",
         "src/domain/operating-cost.test.ts",
         "src/domain/operating-cost.ts",
+        "src/domain/revenue-charges.test.ts",
+        "src/domain/revenue-charges.ts",
         "src/domain/sensitivity.ts"
       ],
       "commit": "",

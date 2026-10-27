@@ -95,7 +95,9 @@
         "src/domain/financial-input.ts",
         "src/domain/financial-input.test.ts",
         "src/domain/operating-cost.ts",
-        "src/domain/operating-cost.test.ts"
+        "src/domain/operating-cost.test.ts",
+        "src/domain/revenue-charges.ts",
+        "src/domain/revenue-charges.test.ts"
       ]
     ],
     "5": [
@@ -154,7 +156,9 @@
         "src/domain/financial-input.ts",
         "src/domain/financial-input.test.ts",
         "src/domain/operating-cost.ts",
-        "src/domain/operating-cost.test.ts"
+        "src/domain/operating-cost.test.ts",
+        "src/domain/revenue-charges.ts",
+        "src/domain/revenue-charges.test.ts"
       ]
     ],
     "7": [
@@ -239,7 +243,9 @@
         "src/domain/financial-input.ts",
         "src/domain/financial-input.test.ts",
         "src/domain/operating-cost.ts",
-        "src/domain/operating-cost.test.ts"
+        "src/domain/operating-cost.test.ts",
+        "src/domain/revenue-charges.ts",
+        "src/domain/revenue-charges.test.ts"
       ]
     ],
     "9": [
@@ -321,7 +327,9 @@
         "src/domain/financial-input.ts",
         "src/domain/financial-input.test.ts",
         "src/domain/operating-cost.ts",
-        "src/domain/operating-cost.test.ts"
+        "src/domain/operating-cost.test.ts",
+        "src/domain/revenue-charges.ts",
+        "src/domain/revenue-charges.test.ts"
       ]
     ],
     "13": [

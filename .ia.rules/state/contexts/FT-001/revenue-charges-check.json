@@ -1,0 +1,49 @@
+{
+  "scope": "FT-003.34d: encargos proporcionais e fator remanescente; quatro controles direcionados. Núcleo final e admissibilidade fiscal pendentes.",
+  "base": "127503f",
+  "node": "v24.22.1",
+  "baselineFiles": 58,
+  "acceptedSources": 57,
+  "preservedPendingFixture": "financial-result.test.ts",
+  "files": [
+    {
+      "path": "src/domain/revenue-charges.ts",
+      "sha256": "e2d0ec106294ef21632b47c11f54ef77b01c9f6bfa17425696136896157fa342"
+    },
+    {
+      "path": "src/domain/revenue-charges.test.ts",
+      "sha256": "fc4205df2948991b2b1a6886de5c3879a699785db463f67e4458b50ffe6482d9"
+    }
+  ],
+  "commands": [
+    {
+      "name": "typecheck-isolated",
+      "status": 0,
+      "stdout": "",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "lint-targeted",
+      "status": 0,
+      "stdout": "",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "tests-targeted",
+      "status": 0,
+      "stdout": "JSON report written to D:/trampo/jcem.pro-uber/.cache/build/revenue-charges-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "scope": "targeted-only",
+    "total": 4,
+    "passed": 4,
+    "failed": 0,
+    "pending": 0
+  },
+  "fullAppValidation": "not-executed: financial-result.ts continua pendente"
+}
