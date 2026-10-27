@@ -1,0 +1,53 @@
+{
+  "scope": "Integração algébrica de projeção: 263 testes completos exigidos; resultado não certifica completude de custos/base fiscal/realização.",
+  "base": "b7ffc58",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/financial-result.ts",
+      "sha256": "b09c93e28e3880a7873042613335078e153ca0c1caf521df58aa4bdd5b6035e2"
+    },
+    {
+      "path": "src/domain/financial-result.test.ts",
+      "sha256": "928cba62feb142bdaea837f12ff876c14261f43e7d8a8be6c27f756051372956"
+    }
+  ],
+  "baselineFiles": 60,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\financial-integration-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\financial-integration-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/financial-integration-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 263,
+    "passed": 263,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 8
+  }
+}
