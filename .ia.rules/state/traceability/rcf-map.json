@@ -409,6 +409,8 @@
         "src/domain/budget-days.ts",
         "src/domain/budget-loss-period.test.ts",
         "src/domain/budget-loss-period.ts",
+        "src/domain/calendar-parameters.test.ts",
+        "src/domain/calendar-parameters.ts",
         "src/domain/economics.ts",
         "src/domain/exact-budget.test.ts",
         "src/domain/exact-budget.ts",

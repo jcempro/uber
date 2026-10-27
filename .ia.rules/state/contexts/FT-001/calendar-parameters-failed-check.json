@@ -1,0 +1,46 @@
+{
+  "scope": "Adaptador5IDs/unidades para kernelbudget;201testes.Sem esquema/proveniência/precedência/relógios oufinanceiro certificados.",
+  "base": "6cb57c7",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/calendar-parameters.ts",
+      "sha256": "7c76239bfefc13ccfeb7fd5149ad8f4671ecde39ff04615a0e91c60f4b82f8ee"
+    },
+    {
+      "path": "src/domain/calendar-parameters.test.ts",
+      "sha256": "4d49d9f97b98ae46f483b1d33fced5f43d1b1ed328088e579e0e16ad348f5044"
+    }
+  ],
+  "baselineFiles": 41,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\calendar-parameters-tests.json"
+      ],
+      "status": 1,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\calendar-parameters-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/calendar-parameters-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ]
+}

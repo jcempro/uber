@@ -1,0 +1,22 @@
+{
+  "job": "cbc5eb8a-e70b-429d-b715-7ae55a2d084e",
+  "fixtureBefore": "4d49d9f97b98ae46f483b1d33fced5f43d1b1ed328088e579e0e16ad348f5044",
+  "total": 201,
+  "passed": 200,
+  "failed": 1,
+  "failures": [
+    {
+      "suite": "D:/trampo/jcem.pro-uber/src/domain/calendar-parameters.test.ts",
+      "test": "mantém a falha matemática original quando as quantidades resolvidas violam o calendário",
+      "failureMessages": [
+        "AssertionError: expected { status: 'unavailable', …(7) } to match object { status: 'unavailable', …(2) }\n(8 matching properties omitted from actual)\n    at Proxy.<anonymous> (file:///D:/trampo/jcem.pro-uber/node_modules/vitest/dist/chunks/index.aTZaPVhf.js:2066:10)\n    at Proxy.<anonymous> (file:///D:/trampo/jcem.pro-uber/node_modules/vitest/dist/chunks/index.aTZaPVhf.js:1958:14)\n    at Proxy.methodWrapper (file:///D:/trampo/jcem.pro-uber/node_modules/chai/index.js:1737:25)\n    at D:/trampo/jcem.pro-uber/src/domain/calendar-parameters.test.ts:79:82\n    at file:///D:/trampo/jcem.pro-uber/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:1632:35\n    at file:///D:/trampo/jcem.pro-uber/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:26\n    at file:///D:/trampo/jcem.pro-uber/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:3338:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///D:/trampo/jcem.pro-uber/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:3333:10)\n    at file:///D:/trampo/jcem.pro-uber/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:3318:20"
+      ]
+    }
+  ],
+  "canonicalExpectation": {
+    "path": "src/domain/defaults.ts",
+    "parameterId": "time-hours-short",
+    "maximum": "24",
+    "sha256": "ea346fe02a15b180dddff52649de7180be602668d22ba1586554c4b6a05d11ba"
+  }
+}

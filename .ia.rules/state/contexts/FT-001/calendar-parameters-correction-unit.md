@@ -1,0 +1,6 @@
+# FT-003.28a — falso insucesso da fixture
+Origemcbc5eb8a FAILED/WORKER_INCOMPLETEdeterminístico.Q8S9:materialização conformeSHA,tipo/lint aprovados,200/201testes.Únicofalha:noitdedomain,h25esperavaerrodecálculo,mascadastrocanônico time-hours-short maximum24 rejeitajánocatálogocomum.Gitmainahead20confere;handoffextra póssnapshot,mtime confirmado.Nãoinfra,nãoalterarprodução paracontornarvalidaçãocorreta.
+Fonteindependente:src/domain/defaults.tsregistrotime-hours-short constraints=Object.freeze({...NUMERIC_RULES.positive,maximum:"24"});NUMERIC_RULES/validadoraceitos.18diasperdidos excede120/7somente na relação dekernel;25h violacampoprimeiro.
+Patchsomente 1it emcalendar-parameters.test.ts;rejeição25mantida/reforçada:calendar-dependencies,bindingshorasstatusinvalid/códigoout-of-range,semvalue/calculationnull.Perdas18mantêmexigênciacalculation-unavailable/invalid-calendar;outros7itintactos.SHApre/post,produção7c76239inalterada e41fontesprotegidas.
+Arquivarrelatóriooriginal falho epreservarresumo201/200/1+falha.Rodartipo/lint/todos201testes,sem skip/relaxarcritério/model/domain/fixturealheia.Normas/continue/unidade antesefeitos;patch→validaçãodeterminística,sem inferência/reexploração/commit.
+Aceite doadapter continua pendente até201/201.Ambiguidades deprecedência/esquema/relógios/real/financeiro/budgetrealapp/CRUD/UI/JSON/histórico/CI/global seguempendentes.
