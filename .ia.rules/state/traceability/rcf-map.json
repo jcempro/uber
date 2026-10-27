@@ -296,7 +296,9 @@
     {
       "artifacts": [
         "src/domain/costs.ts",
-        "src/domain/defaults.ts"
+        "src/domain/defaults.ts",
+        "src/domain/fuel-metrics.test.ts",
+        "src/domain/fuel-metrics.ts"
       ],
       "commit": "",
       "ft": "FT-004",
@@ -427,6 +429,8 @@
         "src/domain/exact-sum.ts",
         "src/domain/exact.test.ts",
         "src/domain/exact.ts",
+        "src/domain/fuel-metrics.test.ts",
+        "src/domain/fuel-metrics.ts",
         "src/domain/monthly-availability.test.ts",
         "src/domain/monthly-availability.ts",
         "src/domain/numeric-input.test.ts",

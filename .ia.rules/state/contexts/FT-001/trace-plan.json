@@ -85,7 +85,9 @@
         "src/domain/calendar-cost.ts",
         "src/domain/calendar-cost.test.ts",
         "src/domain/usage-cost.ts",
-        "src/domain/usage-cost.test.ts"
+        "src/domain/usage-cost.test.ts",
+        "src/domain/fuel-metrics.ts",
+        "src/domain/fuel-metrics.test.ts"
       ]
     ],
     "5": [
@@ -97,7 +99,9 @@
         "src/domain/time-defaults.test.ts",
         "src/domain/financial-defaults.test.ts",
         "src/domain/initial-scenarios.ts",
-        "src/domain/initial-scenarios.test.ts"
+        "src/domain/initial-scenarios.test.ts",
+        "src/domain/fuel-metrics.ts",
+        "src/domain/fuel-metrics.test.ts"
       ]
     ],
     "6": [
@@ -128,7 +132,9 @@
         "src/domain/calendar-cost.ts",
         "src/domain/calendar-cost.test.ts",
         "src/domain/usage-cost.ts",
-        "src/domain/usage-cost.test.ts"
+        "src/domain/usage-cost.test.ts",
+        "src/domain/fuel-metrics.ts",
+        "src/domain/fuel-metrics.test.ts"
       ]
     ],
     "7": [
@@ -203,7 +209,9 @@
         "src/domain/calendar-cost.ts",
         "src/domain/calendar-cost.test.ts",
         "src/domain/usage-cost.ts",
-        "src/domain/usage-cost.test.ts"
+        "src/domain/usage-cost.test.ts",
+        "src/domain/fuel-metrics.ts",
+        "src/domain/fuel-metrics.test.ts"
       ]
     ],
     "9": [
@@ -275,7 +283,9 @@
         "src/domain/calendar-cost.ts",
         "src/domain/calendar-cost.test.ts",
         "src/domain/usage-cost.ts",
-        "src/domain/usage-cost.test.ts"
+        "src/domain/usage-cost.test.ts",
+        "src/domain/fuel-metrics.ts",
+        "src/domain/fuel-metrics.test.ts"
       ]
     ],
     "13": [

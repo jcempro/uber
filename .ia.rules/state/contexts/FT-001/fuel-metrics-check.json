@@ -1,0 +1,53 @@
+{
+  "scope": "Combustível puro: custo/km e autonomia independentes; 235 testes. Mistura, verificação de fontes e integração financeira pendentes.",
+  "base": "aac65fb",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/fuel-metrics.ts",
+      "sha256": "31ee470e75cde5a48cd2a0acae0869fa97dea32e13f548e686d5ec194f4f2aa6"
+    },
+    {
+      "path": "src/domain/fuel-metrics.test.ts",
+      "sha256": "2d8b15679a0a7555353262dd0479fe9f62abeb36580a4dc91e39da09af44fd74"
+    }
+  ],
+  "baselineFiles": 49,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\fuel-metrics-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\fuel-metrics-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/fuel-metrics-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 235,
+    "passed": 235,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 10
+  }
+}
