@@ -5,6 +5,15 @@
   "repository": "D:/trampo/jcem.pro-uber",
   "sources": [
     {
+      "path": ".ia.rules/state/requests/FT-001/autocalc-evolution.md",
+      "sha256": "bc83c568900ec13ff4076f62cd13088ce01ce710f461af6c0b30f0a8f247a48c",
+      "originSha256": "29f0240630cbf8683d9c064b7583b91097c6be93fdd4a79f7dd89f3770438667",
+      "preservation": "texto integral UTF-8; somente CRLF→LF explicitamente normalizado conforme .gitattributes; hash da origem preservado",
+      "origin": "anexo humano integral de27/10/2026: C:/Users/admin/.codex/attachments/6891d9ba-26df-4191-8ddc-6b46cea0ff58/Texto colado.txt; conversa01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
+      "target": "RCF.md e FTs010/003/004/006/007/009",
+      "incorporation": "pendente; unidades emautocalc-evolution-plan.md"
+    },
+    {
       "path": ".ia.rules/state/requests/FT-001/financial-correction.md",
       "sha256": "8582df47b75ca502d32fe2e47320cd57aab0aba6fb0f9c0aaa2814c6061ba3f2",
       "origin": "mensagem humana preservada nesta conversa",

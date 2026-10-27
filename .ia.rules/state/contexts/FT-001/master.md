@@ -3,6 +3,7 @@
 **Objetivo global**: executar integralmente a solicitação canônica `../../requests/FT-001/prompt.md`, conforme RCF.md, como pré-requisito documental para implementação.
 
 **Fontes e decisões prevalecentes**:
+- Evolução humana de27/10/2026: `../../requests/FT-001/autocalc-evolution.md`, segmentada em `autocalc-evolution-plan.md`; prevalece sobre dízimo invariavelmente obrigatório e restrição de IR somente legal. Dízimo ativável,10% obrigatório quando ativo; IR opcional como simulação separada de apuração legal. Reconciliação RCF pendente antes de código afetado. Demais decisões financeiras preservadas.
 - `supervisor.md`: RCF como contrato; sem dados operacionais reais; Microsoft Fluent UI System Icons confirmado (prevalece sobre pendência); invariantes: nota ≥ 4,80 e dízimo 10%; 4 dias/semana = 120/7 dias/mês; Yaris etanol 6,8 km/L; planilha histórica intacta.
 - `decision-icons.md`: confirmação humana de Fluent UI System Icons; não autoriza coleção completa ou rede em runtime.
 - `../../requests/FT-001/financial-supplement.md`: eliminar métricas sem valor decisório (ex. corridas/hora como indicador); priorizar receita creditada, R$/hora/dia/semana/mês, custos fixos/variáveis, lucro/margem; cada cenário deve responder viabilidade e metas com limiares mínimos.

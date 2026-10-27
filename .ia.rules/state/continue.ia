@@ -1,5 +1,7 @@
 # Estado canônico — FT-003 ativa
 
+Prioridade atual: FT-010 reaberta pelo anexo autocalc-evolution.md; plano emcontexts/FT-001/autocalc-evolution-plan.md. Reconciliação normativa segmentada antes do código afetado. FT-003.37 incompleta: instalaçãoValibot preservada,sem schemas/testes/gate;Q8S4/revisão1. Gitterminalahead7→liveorigin9da8e22sincronizado;pushnãoatribuído. Última suíte aceita275. PróximoFT-010.1: opções dízimo10%/IRsimulado, sem certificarfinanceiro/global.
+
 FT-001: registro inicial fe3d216 tecnicamente concluído; pendente validação humana. Contexto comum: contexts/FT-001/master.md.
 FT-010: confirmação Fluent e preparo oficial de44 pendências normativas concluídos tecnicamente; pendente validação humana, sem declarar código implementado.
 FT-002: estilos e08c97d, lint de27eae, semver/tipos64fe5ef e helper ec938ea commitados. Guard ligado aos5 app:* e incluído no typecheck/lint: job96513f23-a7a8-4525-b8b8-f296940bbed9 concluído/revisado, Q8S10. Cinco entradas npm bloqueiam Node22; cinco ajudas e typecheck/lint/build passam Node24. Próxima ação: modelo tipado FT-003 em unidade pequena; decimal na primeira operação econômica. QA visual/matriz e auditoria de dependências continuam pendentes, rota fix.md.
@@ -246,3 +248,5 @@ FT-003.35 aceita:4d0e3f04 recebido uma vez/revisado,Q8S10/revisão1. SHAsbf8635c
 FT-003.36 preparada:vínculos269aceitos/versionados9bb4ec7. Relaçãoinclusiva deCostValidityfechada comintervaloISO explícito,DateUTCnativo/roundtripdeterminístico;nullcontinualimitenãoinformado. Covers/outside/partial temporaisnãoadmitemcustofinanceiro nemrateioautomaticamente,costAdmission not-evaluated.2novasfontes,63anteriores intactas;6provas/275totais/tipo/lint. Ledger/escopo/quantias/reconciliação/completude/metas/UI/globalpendentes.
 
 FT-003.36 aceita:ec19d8c4 recebido uma vez/revisado,Q8S10/revisão1. SHAsaec7ce0/9c09a19confirmados;275/275+tipo/lint,63anteriores intactos. Relaçãofechadainclusiva/UTC,rolloversrejeitados,nullpendente,partialsemrateio e costAdmission not-evaluated. Git main ahead6confere;cost-validity-job.md póssnapshot13:22:23Z,mtime13:22:30Z. Commit antes deintegridadeestrutural/custos/admissão;nãoafirmar cobertura financeira/global.
+
+FT-003.37 preparada:9da8e22/275aceitos;Valibot1.5.0MIT/semdependênciasruntime,SRI/releaseverificados. Unidade pequena schemaestrito deProvenance/ParameterScope,semcertificarfontes/datas/admissão/completude.65fontes preservadas porbaseline,locksemalteraçõesalheias;gate281mínimo/tipos/lint/bundleisoladoVite. JSON/UI/financeiroglobalpendentes.
