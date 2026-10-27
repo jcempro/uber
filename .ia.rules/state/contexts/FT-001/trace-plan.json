@@ -6,7 +6,9 @@
       "FT-009",
       [
         "src/main.tsx",
-        "src/domain/model.ts"
+        "src/domain/model.ts",
+        "src/domain/cost-validity.ts",
+        "src/domain/cost-validity.test.ts"
       ]
     ],
     "2": [
@@ -99,7 +101,9 @@
         "src/domain/revenue-charges.ts",
         "src/domain/revenue-charges.test.ts",
         "src/domain/cost-references.ts",
-        "src/domain/cost-references.test.ts"
+        "src/domain/cost-references.test.ts",
+        "src/domain/cost-validity.ts",
+        "src/domain/cost-validity.test.ts"
       ]
     ],
     "5": [
@@ -117,7 +121,9 @@
         "src/domain/fuel-period.ts",
         "src/domain/fuel-period.test.ts",
         "src/domain/financial-result.ts",
-        "src/domain/financial-result.test.ts"
+        "src/domain/financial-result.test.ts",
+        "src/domain/cost-validity.ts",
+        "src/domain/cost-validity.test.ts"
       ]
     ],
     "6": [
@@ -249,7 +255,9 @@
         "src/domain/revenue-charges.ts",
         "src/domain/revenue-charges.test.ts",
         "src/domain/cost-references.ts",
-        "src/domain/cost-references.test.ts"
+        "src/domain/cost-references.test.ts",
+        "src/domain/cost-validity.ts",
+        "src/domain/cost-validity.test.ts"
       ]
     ],
     "9": [
@@ -335,7 +343,9 @@
         "src/domain/revenue-charges.ts",
         "src/domain/revenue-charges.test.ts",
         "src/domain/cost-references.ts",
-        "src/domain/cost-references.test.ts"
+        "src/domain/cost-references.test.ts",
+        "src/domain/cost-validity.ts",
+        "src/domain/cost-validity.test.ts"
       ]
     ],
     "13": [
