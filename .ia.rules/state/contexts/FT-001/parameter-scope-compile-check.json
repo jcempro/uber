@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "unit": "FT-003.37a.1",
+  "source": {
+    "schema": 1,
+    "unit": "FT-003.37a.1",
+    "target": "src/domain/parameter-scope-schema.ts",
+    "sha256": "54f2a3764290403a0f661d185ae1026cf4c109efd4e39c217da16f8d7edc6c82",
+    "priorFiles": 65,
+    "limits": "Mapeamento declarativo trivial dos3ramos do tipo canônico para Valibot; não execução de testes comportamentais, Provenance, JSON ou finanças."
+  },
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "app:lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    }
+  ],
+  "priorFilesPreserved": 65,
+  "limits": "Compilação estrita e lint; nenhum teste comportamental novo/suíte completa/bundle/UI executado nesta etapa. Última suíte aceita275."
+}

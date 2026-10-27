@@ -1,0 +1,5 @@
+# FT-003.37 — estrutura de proveniência
+Base9da8e22;275testes/65fontes preservados. Unidade pequena: Valibot1.5.0 e schemas estritos ParameterScope/Provenance canônicos. Estrutura não comprova veracidade, datas semânticas, escopo aplicável ou cobertura financeira.
+Escolha supervisor: MIT, sem dependências runtime, sideEffects false, versão/release/SRI conferidos; alternativa Zod Mini também funcional/tree-shakable. Não alegar vantagem numérica sem medir. Reuso evita validador manual. Fontes em provenance-schema-baseline.json; medir bundle isolado com Vite instalado, sem limite arbitrário.
+Somente package/lock,2fontes novas,documentação/contexto/rastreabilidade oficial. Não tocar65fontes anteriores,RCF ou testes aceitos. npmignore-scripts/registry público/cachelocal. Schema sem coerções/transformações; não é importadorJSON nem financeiro concluído. No mínimo6controles independentes; guardas de fonte/lock/tipos/lint/testes/bundle em provenance-schema-verify.mjs. Gate>=281 sem pendentes/falhas. Não reduzir critérios.
+Admissão de custos, JSON completo, UI e aceiteglobal pendentes.

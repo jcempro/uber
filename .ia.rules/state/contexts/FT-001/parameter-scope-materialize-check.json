@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "unit": "FT-003.37a.1",
+  "target": "src/domain/parameter-scope-schema.ts",
+  "sha256": "54f2a3764290403a0f661d185ae1026cf4c109efd4e39c217da16f8d7edc6c82",
+  "priorFiles": 65,
+  "limits": "Mapeamento declarativo trivial dos3ramos do tipo canônico para Valibot; não execução de testes comportamentais, Provenance, JSON ou finanças."
+}

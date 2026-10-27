@@ -1,0 +1,15 @@
+# Handoff — FT-003.37a.1
+
+Revisado1b05009a:recebido uma vez,Q8S10/revisão1. Fonte54f2a376/21linhas/3ramoscanônicosconferida,65fontes preservadas,preflight/tipos/lint exit0. Gitmainahead4 confere. Aceite apenasmaterialização/compilação;testescomportamentais/suíteintegral/bundle/docs nãoexecutados. Commitparcialdoartefato+dependênciavalidadaantesde6testes;275continuaúltimasuíte.
+
+RUNNING confirmado:1b05009a-6b52-4f6d-9a61-3d2a2fa6332c;thread01a16678-96c5-7eb2-9ee1-fea2b7b37cf2/repoD:/trampo/jcem.pro-uber conferidoslist_threadsnesteturno. Sequênciascope_preflight(read-only)→materialize_scope→compile_scope,seminferência,expect_changestrue1fonte/commit_policysupervisor. Preflightfonteausente/SHA54f2a376/1120bytes/65proteçõesconferido;Node24/scripts syntaxcheckpassaram. Retomada:resultadoúnico/revisão/Q8S/commitparcialseconforme;semconsultar86e83b61novamente. Seis testes/docs/bundle continuampróximaetapa.
+
+86e83b61 recebido uma vez/revisado,Q8S3 revisão1. WORKER_INCOMPLETE por4açõessemprogresso/releituras;nenhum schema/teste/doc/report. Gitterminal/live mainahead4 coincidem. Não há prova deinfra/contextocausal; não diagnosticarhardwareporstatus. Não consultarpredecessornovamente,nãoreinstalar/nãoreexplorar.
+
+Novaunidade menor/materialmentediferente: materialização determinística de1fonte, mapeamento trivial3ramos doParameterScopejáinspecionado emmodel.ts paraAPIsValibot1.5.0instaladas. Não algoritmopróprio/cálculofinanceiro nemfallbackintegralpago. Fontepreparada literal21linhas,tipada emGenericSchema<ParameterScope>,IDnão-branco semtransformar,strictObject/variant/camposcanônicos. API/modeloselecionados jáconhecidos,macrodecisãodosupervisor. Runtimeworkerexecutacomandosseminferência,nãoatribuircogniçãoàsequência.
+
+Preflight doverificador jácomprovou65fontes/package/SRI/lockintegros eapenasTSdevOptionallegítimo;novo preflightmaterializador comprovaausência/alvo/SHA. Sequência:scope_preflight→materialize_scope→compile_scope. Primeiroguardas/leituradasnormas/cânone,patchnãorepetível,sóentãotipos/lint. Preservar65fontes;colisõesrecusadas/estadojáaplicadoreconhecido. expect_changestrue emsrc/domain/parameter-scope-schema.ts;commit_policysupervisor.
+
+Retomada:resultadoúnico/revisãofonte/tipos/lint/Q8S/commitdoartefatoseconforme,semaceitecomportamentalainda. Depois006testes/documentação/bundleemnovaunidadeaproveitandofonte;Provenanceposterior. Não chamarunitinteira37aconcluída nemcontabilizar281;últimasuíte275. Nenhumfinanceiro/UI/globalaceito. Scriptsestãoapenasnoalvoautorizado,node24/npmCLIdescobertos,semrede/instalação/commitnocomando.
+
+N7C:semrota decompactaçãonativaexposta;handoffauxiliarnãosubstitui,impedimentoprecisaserinformado.

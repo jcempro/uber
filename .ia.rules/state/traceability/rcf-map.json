@@ -204,6 +204,8 @@
       "artifacts": [
         "src/components/ParameterEditor.tsx",
         "src/domain/model.ts",
+        "src/domain/parameter-scope-schema.test.ts",
+        "src/domain/parameter-scope-schema.ts",
         "src/state/calculation.ts",
         "src/state/persistence.ts",
         "src/state/store.ts"
