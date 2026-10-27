@@ -81,7 +81,9 @@
         "src/domain/calendar-parameters.ts",
         "src/domain/calendar-parameters.test.ts",
         "src/domain/budget-amount.ts",
-        "src/domain/budget-amount.test.ts"
+        "src/domain/budget-amount.test.ts",
+        "src/domain/calendar-cost.ts",
+        "src/domain/calendar-cost.test.ts"
       ]
     ],
     "5": [
@@ -120,7 +122,9 @@
         "src/domain/numeric-parameter.ts",
         "src/domain/numeric-parameter.test.ts",
         "src/domain/budget-amount.ts",
-        "src/domain/budget-amount.test.ts"
+        "src/domain/budget-amount.test.ts",
+        "src/domain/calendar-cost.ts",
+        "src/domain/calendar-cost.test.ts"
       ]
     ],
     "7": [
@@ -191,7 +195,9 @@
         "src/domain/calendar-parameters.ts",
         "src/domain/calendar-parameters.test.ts",
         "src/domain/budget-amount.ts",
-        "src/domain/budget-amount.test.ts"
+        "src/domain/budget-amount.test.ts",
+        "src/domain/calendar-cost.ts",
+        "src/domain/calendar-cost.test.ts"
       ]
     ],
     "9": [
@@ -259,7 +265,9 @@
         "src/domain/calendar-parameters.ts",
         "src/domain/calendar-parameters.test.ts",
         "src/domain/budget-amount.ts",
-        "src/domain/budget-amount.test.ts"
+        "src/domain/budget-amount.test.ts",
+        "src/domain/calendar-cost.ts",
+        "src/domain/calendar-cost.test.ts"
       ]
     ],
     "13": [
