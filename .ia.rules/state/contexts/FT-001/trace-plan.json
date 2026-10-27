@@ -75,7 +75,9 @@
         "src/domain/numeric-input.ts",
         "src/domain/numeric-input.test.ts",
         "src/domain/numeric-parameter.ts",
-        "src/domain/numeric-parameter.test.ts"
+        "src/domain/numeric-parameter.test.ts",
+        "src/domain/budget-loss-period.ts",
+        "src/domain/budget-loss-period.test.ts"
       ]
     ],
     "5": [
@@ -135,7 +137,9 @@
         "src/domain/numeric-input.ts",
         "src/domain/numeric-input.test.ts",
         "src/domain/numeric-parameter.ts",
-        "src/domain/numeric-parameter.test.ts"
+        "src/domain/numeric-parameter.test.ts",
+        "src/domain/budget-loss-period.ts",
+        "src/domain/budget-loss-period.test.ts"
       ]
     ],
     "8": [
@@ -171,7 +175,9 @@
         "src/domain/numeric-input.ts",
         "src/domain/numeric-input.test.ts",
         "src/domain/numeric-parameter.ts",
-        "src/domain/numeric-parameter.test.ts"
+        "src/domain/numeric-parameter.test.ts",
+        "src/domain/budget-loss-period.ts",
+        "src/domain/budget-loss-period.test.ts"
       ]
     ],
     "9": [
@@ -233,7 +239,9 @@
         "src/domain/numeric-input.ts",
         "src/domain/numeric-input.test.ts",
         "src/domain/numeric-parameter.ts",
-        "src/domain/numeric-parameter.test.ts"
+        "src/domain/numeric-parameter.test.ts",
+        "src/domain/budget-loss-period.ts",
+        "src/domain/budget-loss-period.test.ts"
       ]
     ],
     "13": [

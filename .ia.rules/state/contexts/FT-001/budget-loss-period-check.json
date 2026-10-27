@@ -1,0 +1,57 @@
+{
+  "scope": "Período explícito de perdas com campoopcionalcompatível;193testes.Sem calendário civil/normalização deoutrosperíodos/adaptador financeiro.",
+  "base": "5ed9a89",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/scenario.ts",
+      "sha256": "d733c8bc51972b051cdf6b32bebc4efb1b46ab935dd20c14b5cc053b9c6b5054"
+    },
+    {
+      "path": "src/domain/budget-loss-period.ts",
+      "sha256": "d324214068bc2e3e4bc8da8335398e678c9ff3a6787b85b9a8177ba36189b10e"
+    },
+    {
+      "path": "src/domain/budget-loss-period.test.ts",
+      "sha256": "cb785379d1543b577998fdc67b82ccb294962688d3ffd5d85fe179976886b4ae"
+    }
+  ],
+  "baselineFiles": 38,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\budget-loss-period-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\budget-loss-period-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/budget-loss-period-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 193,
+    "passed": 193,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 5
+  }
+}

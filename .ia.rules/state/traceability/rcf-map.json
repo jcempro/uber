@@ -407,6 +407,8 @@
         "src/domain/budget-calendar.ts",
         "src/domain/budget-days.test.ts",
         "src/domain/budget-days.ts",
+        "src/domain/budget-loss-period.test.ts",
+        "src/domain/budget-loss-period.ts",
         "src/domain/economics.ts",
         "src/domain/exact-budget.test.ts",
         "src/domain/exact-budget.ts",
@@ -425,6 +427,7 @@
         "src/domain/numeric-input.ts",
         "src/domain/numeric-parameter.test.ts",
         "src/domain/numeric-parameter.ts",
+        "src/domain/scenario.ts",
         "src/domain/sensitivity.ts"
       ],
       "commit": "",

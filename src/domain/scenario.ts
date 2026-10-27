@@ -3,7 +3,7 @@
  * Origem: jcem.pro-uber; RCF§§4/5/7/8, FT-003.8a/003.8b/003.8c, autoria JeanCarloEM <jeancarlo@jeancarloem.com>.
  */
 
-import type { Provenance } from './model';
+import type { Provenance, BudgetPeriod } from './model';
 
 /** Dia da semana conforme ISO 8601: segunda=1, domingo=7. */
 export type IsoWeekday = 1 | 2 | 3 | 4 | 5 | 6 | 7;
@@ -24,6 +24,8 @@ export type CalendarConfiguration =
       readonly daysPerMonthParameterId: string;
       readonly monthsPerYearParameterId: string;
       readonly lostDaysParameterId: string;
+      /** Período explícito das perdas; ausência preserva legado e impede inferência silenciosa. */
+      readonly lostDaysPeriod?: BudgetPeriod;
     }
   /** Calendário civil explicitamente configurado; datas e exclusões exigem validação posterior. */
   | {
