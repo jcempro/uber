@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "unit": "FT-010.3a",
+  "predecessor": "4847dcc9-b206-4855-b47f-5d1b96768259",
+  "before": "dab0452539c5f9dddbcd1bda3d68298e6b969a47e24e544ce38285f8a4cd85cb",
+  "after": "b66b4ba23d82abbbfb4a9350b629ee3dff3b1c473d7ece2f6a329563190dbd65",
+  "outsideAfter": "e4f273d0b673a2d4850ab6afe42483fcdb04170f03d905d3e2a1a4711dd5e579",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d8e94f943d916af502a5e7f20810420dce6d5efb3b3bc233dfd8187fa71b18e5"
+    },
+    {
+      "path": ".ia.rules/core/authority.md",
+      "sha256": "1e376c1931c48cade6da4612264df5501e1199bce1724da793baefca9c5138b6"
+    },
+    {
+      "path": ".ia.rules/normative-index.json",
+      "sha256": "a7a34d63938081d6e40fce102568e4e8d3ac9c92f650d2cb908dfe61337163f7"
+    },
+    {
+      "path": ".ia.rules/state/continue.ia",
+      "sha256": "252887f2f54478189533657e8fd295ae59482a82586be12e3b6abfe0ec30bc96"
+    },
+    {
+      "path": ".ia.rules/state/requests/FT-001/autocalc-evolution.md",
+      "sha256": "bc83c568900ec13ff4076f62cd13088ce01ce710f461af6c0b30f0a8f247a48c"
+    },
+    {
+      "path": ".ia.rules/state/contexts/FT-001/autocalc-modes-correction.json",
+      "sha256": "492349f6f173c9b74ddf13a6b7991156c42d95e30faaf9be4aa4c0661d7d3227"
+    }
+  ],
+  "backups": [
+    {
+      "source": ".ia.rules/state/contexts/FT-001/autocalc-modes-section.md",
+      "path": ".ia.rules/state/contexts/FT-001/autocalc-modes-section.pre-correction-4847dcc9.md",
+      "sha256": "8711cb5d224fbf1d8f148b5c9ba77b41bd62e65b79851c5d5526ed0cf6fdd8c8"
+    },
+    {
+      "source": ".ia.rules/state/contexts/FT-001/autocalc-modes-check.json",
+      "path": ".ia.rules/state/contexts/FT-001/autocalc-modes-check.pre-correction-4847dcc9.json",
+      "sha256": "e189dd52fd5a216dde93154f73c42a37662975ed227ee6c0f36cabd9c0944f0d"
+    },
+    {
+      "source": ".ia.rules/state/contexts/FT-001/autocalc-modes-patch.json",
+      "path": ".ia.rules/state/contexts/FT-001/autocalc-modes-patch.pre-correction-4847dcc9.json",
+      "sha256": "d037f0dc0ce052f0950a27cf8386f2b30b61d43fb2092fd98681a3c3a9cc4553"
+    }
+  ],
+  "configSha256": "492349f6f173c9b74ddf13a6b7991156c42d95e30faaf9be4aa4c0661d7d3227"
+}

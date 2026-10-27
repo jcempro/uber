@@ -1,4 +1,10 @@
-# Estado canônico — FT-010 ativa; FT-003 dependente
+# Estado canônico — FT-003 ativa após conciliação FT-010
+
+FT-010.3a a0f709a5 recebido uma vez/revisado,Q8S10/revisão1.11correções+headerhistórico/71proteções/5parágrafos/backups/1mudançaexterna/SHA RCFb66b4ba/Gitmainahead3conferidos. Auditoria bidirecional anexo↔RCF emautocalc-source-audit.md; norma conciliada semaceitefuncional. Commit antesderetomar003.37 segmentadoescopo→proveniência,jáinstaladoValibotsemreinstalar. CorrigirguardaTSdevOptional legitimadopelopeerdeps,semrelaxarlock. Defaultsmanutençãoativosprecisamopt-infundamentadoantesdeadmissão;UI/financeiro/globalpendentes. Últimasuíte275.
+
+FT-010.3 resultado4847dcc9 recebido uma vez/revisado,Q8S6/revisão1. Leituras4/comandos2/71proteções/Gitmainahead3conferidos;COMPLETEDnãocomprovoucompletudesemântica.010.3a corrige11trechosde8.5+1header6.2historicotornandoreservasopt-infundamentadas,conservandooriginais3artefatos. Novosefeitosdeterminísticos/expect_changestrue,nãoreexecutarintegrador. Aceitenormativoglobal/códigoeúltimasuíte275continuampendentes.
+
+FT-010.3 preparada:010.2a versionada a8558c7;010.1 versionada c3408c4. Redação5parágrafos8.5 emunidadecurta+fonteintegral,4leiturasiniciaisexplícitas,integraçãoreutilizadaperfilmodes+gate5/5/71proteções. Não carregarRCFintegral/históricoworker. Norma/fonteafetadasantesdecódigo;010.3/auditoriabidirecional/implementaçãoglobalpendentes. Últimasuíte275.
 
 FT-010.2a aceitaapenasnormativamente:1cecc170 recebido uma vez/revisado,Q8S10/revisão1.8correções/domínios/5parágrafos mapeados/72proteções/evidênciafalhapreservada,SHA RCFbada600/Gitmainahead2conferidos. Próximo010.3:modosautônomo/aceleradores/convergência/custosidentificáveis/rateio eaceitebidirecionalantesdecódigoafetado. Normamargem/tetonãocertificafinanceiro;últimatestagemfuncional275.
 

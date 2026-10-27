@@ -1,0 +1,15 @@
+# Handoff — FT-010.3a
+
+Aceite limitadonormativo:a0f709a5 recebido uma vez/revisado,Q8S10/revisão1.11correções+header6.2,71proteções/5parágrafos/backups/1mudançaexternadeclarada/Gitmainahead3 conferidos. Seçãointeiraeheaderconfrontadoscomfonte;RCFb66b4ba confirmado. Auditoria bidirecional emautocalc-source-audit.md mantémcódigopendente. Nenhumaceitefuncional;últimasuíte275.
+
+RUNNING confirmado:a0f709a5-10e0-4d2a-a311-e4745b4048b7;thread01a16678-96c5-7eb2-9ee1-fea2b7b37cf2/repoD:/trampo/jcem.pro-uber confirmadoslist_threadsnesteturno. Sequênciacorrect_modes→verify_corrected_modes,sem inferência,expect_changestrue/commit_policysupervisor. Retomada:local_resultúnico/revisão/Q8S/commitseconforme,semconsultar4847dcc9novamente. Preflightpassou11fragmentEdits/1wholeEdit/71proteções/5parágrafos;nenhumRCFalteradonapreparação.
+
+4847dcc9 recebido uma vez/revisado,Q8S6 revisão1. COMPLETED/inferência cumpriu4leituras/2comandos,mas “conformeunidade” foi falso sucesso semântico: derivação/status tornadosPODE,condições/tolerâncias/testes omitidos. Gitterminal/live mainahead3 coincidem;SHA RCFdab04525confirmado.71proteções/5parágrafos verdadeiros,nãoaderênciaintegral.
+
+Correção delimitada determinística:11substituições nofragmento eRCF,1noheaderhistórico6.2. Preservarversõesrecebidas de3artefatos. Supervisorconferiufontehumana e6.2canônico;headerantigopodiaimporreservas0,195/0,295/0,440semcoeficientesconfirmados. Novaqualificaçãomantémvalores/categorias/CRUD como históricos/hipótesesopt-infundamentadas,semdefaultfinanceiroarbitrário. Corpoanteriorexterno8.5permaneceigualexcetoesseheader rastreado. Nãoalterarfontesapp/pacotes/testesaceitos nemreintegrar010.3.
+
+Comandos exatos:autocalc-norm-revise.mjs apply→verify;configautocalc-modes-correction.json. Cadaarquivo/alvo/ancestralguardado,antesdeefeitoslê6fontes/normas;71proteções+SHAantes/forafragmento+config+backupsverificados. Preparoficialdetodasaslinhasmateriais,5parágrafos;retornorelataexceçãoexternacontada,nãoafirmapreservaçãointegralsemressalva. preflightsemalteraçãoRCF/scriptcheckprimeiro. Seminferência/rede/commit. expect_changes=true emRCF/fragmento,commit_policy=supervisor.
+
+Apósterminal:resultadoúnico,reviewdocompleto8.5/header6.2àfonte,conferirGit/check,Q8S ecommitseaderente. Auditoriabidirecionalfinalanexo↔RCFantesdecódigoafetado;depoisFT003.37/ledger/inversas/controlesfinanceiros/UI. Últimasuíte275permanece;nenhumaceitefuncionalouglobal.
+
+N7C:compactaçãonativa não exposta;handoffpreservado nãoasubstitui.

@@ -11,7 +11,7 @@
       "preservation": "texto integral UTF-8; somente CRLF→LF explicitamente normalizado conforme .gitattributes; hash da origem preservado",
       "origin": "anexo humano integral de27/10/2026: C:/Users/admin/.codex/attachments/6891d9ba-26df-4191-8ddc-6b46cea0ff58/Texto colado.txt; conversa01a16678-96c5-7eb2-9ee1-fea2b7b37cf2",
       "target": "RCF.md e FTs010/003/004/006/007/009",
-      "incorporation": "pendente; unidades emautocalc-evolution-plan.md"
+      "incorporation": "conciliação normativa revisada em FT010.1/010.2a/010.3a; auditoria bidirecional emautocalc-source-audit.md; implementação funcional pendente"
     },
     {
       "path": ".ia.rules/state/requests/FT-001/financial-correction.md",

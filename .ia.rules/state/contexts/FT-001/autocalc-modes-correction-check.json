@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "unit": "FT-010.3a",
+  "after": "b66b4ba23d82abbbfb4a9350b629ee3dff3b1c473d7ece2f6a329563190dbd65",
+  "protectedFiles": 71,
+  "sectionParagraphs": 5,
+  "officialTrace": {
+    "entries": 66,
+    "material": 56
+  },
+  "readsBeforeEffects": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d8e94f943d916af502a5e7f20810420dce6d5efb3b3bc233dfd8187fa71b18e5"
+    },
+    {
+      "path": ".ia.rules/core/authority.md",
+      "sha256": "1e376c1931c48cade6da4612264df5501e1199bce1724da793baefca9c5138b6"
+    },
+    {
+      "path": ".ia.rules/normative-index.json",
+      "sha256": "a7a34d63938081d6e40fce102568e4e8d3ac9c92f650d2cb908dfe61337163f7"
+    },
+    {
+      "path": ".ia.rules/state/continue.ia",
+      "sha256": "252887f2f54478189533657e8fd295ae59482a82586be12e3b6abfe0ec30bc96"
+    },
+    {
+      "path": ".ia.rules/state/requests/FT-001/autocalc-evolution.md",
+      "sha256": "bc83c568900ec13ff4076f62cd13088ce01ce710f461af6c0b30f0a8f247a48c"
+    },
+    {
+      "path": ".ia.rules/state/contexts/FT-001/autocalc-modes-correction.json",
+      "sha256": "492349f6f173c9b74ddf13a6b7991156c42d95e30faaf9be4aa4c0661d7d3227"
+    }
+  ],
+  "backupsPreserved": true,
+  "wholeEdits": 1,
+  "limits": "Somente norma; sem teste financeiro novo/aceite global. Semântica depende de revisão supervisor."
+}
