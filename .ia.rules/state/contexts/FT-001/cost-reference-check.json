@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "unit": "FT-003.37a.2a",
+  "source": {
+    "schema": 1,
+    "unit": "FT-003.37a.2a",
+    "target": "src/domain/cost-requirements.ts",
+    "before": "99c7ca7066aa1989f62afbb18c2d0e130a962601ceab5009a0e209719dad673a",
+    "after": "56db3ad05995583dd01f6ecfb276234265d82b0a525285b9599de8ea7b7454a6",
+    "rcfSha256": "b66b4ba23d82abbbfb4a9350b629ee3dff3b1c473d7ece2f6a329563190dbd65",
+    "canonicalSection": "8.2",
+    "quote": "apuração tributária legal",
+    "failedEvidence": {
+      "path": ".ia.rules/state/contexts/FT-001/scope-tests-failed-4841fad6.json",
+      "sha256": "a1f605674d686387a0f8079468d9bd1c83f16a2c35a022de10f6167dd9ee28a3",
+      "originalPath": "src/.cache/parameter-scope-schema-tests.json",
+      "wrapper": ".ia.rules/state/contexts/FT-001/scope-tests-failed-4841fad6-commands.json"
+    },
+    "packageHashes": {
+      "package.json": "124b68ea8ccafc112f82468ffc288022b71a625e5574d50b1392bbbed4f7ffc7",
+      "package-lock.json": "aa15aca7c3228676d72df7257bf33145a911270cca5d4338201cd65657d4dda3"
+    },
+    "limits": "Corrige apenas nome e vínculo literal de rubrica legal; status unverified/ID/categoria preservados. Não implementa IR simulado nem testes do schema."
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\cost-reference-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/cost-reference-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 275,
+    "passed": 275
+  },
+  "priorFilesPreserved": 64,
+  "scopeSchemaPreserved": true,
+  "testsPath": "D:\\trampo\\jcem.pro-uber\\.cache\\cost-reference-tests.json",
+  "limits": "Restaura teste canônico sem mudar expectativas/testes; seis testes comportamentais do schema continuam inexistentes e pendentes."
+}

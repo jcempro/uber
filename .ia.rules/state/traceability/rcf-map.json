@@ -520,6 +520,8 @@
     },
     {
       "artifacts": [
+        "src/domain/cost-requirements.test.ts",
+        "src/domain/cost-requirements.ts",
         "src/domain/economics.ts",
         "src/domain/financial-input.test.ts",
         "src/domain/financial-input.ts",

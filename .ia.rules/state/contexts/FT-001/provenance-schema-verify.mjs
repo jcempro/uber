@@ -6,6 +6,7 @@ for(const p of ['AGENTS.md','.ia.rules/core/authority.md','.ia.rules/state/conti
 const prior=JSON.parse(fs.readFileSync(base+'provenance-schema-baseline.json','utf8'));const hash=x=>crypto.createHash('sha256').update(x).digest('hex');
 const stable=x=>JSON.stringify(sort(x));function sort(x){if(Array.isArray(x))return x.map(sort);if(x&&typeof x==='object')return Object.fromEntries(Object.keys(x).sort().map(k=>[k,sort(x[k])]));return x;}
 for(const [p,h]of Object.entries(prior.files)){guard(p);if(hash(fs.readFileSync(p))!==h)throw Error('prior source changed: '+p);}
+if(profile==='scope'){guard(sourcePath);if(!fs.existsSync(sourcePath)||hash(fs.readFileSync(sourcePath))!=='54f2a3764290403a0f661d185ae1026cf4c109efd4e39c217da16f8d7edc6c82')throw Error('approved scope schema changed; tests cannot redefine production');}
 const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));if(pkg.dependencies?.valibot!=='1.5.0')throw Error('unpinned dependency');
 const pkgOld=structuredClone(pkg);delete pkgOld.dependencies.valibot;if(stable(pkgOld)!==stable(prior.package))throw Error('unrelated package change');
 const lock=JSON.parse(fs.readFileSync('package-lock.json','utf8'));const lockOld=structuredClone(lock);const addition=lockOld.packages['node_modules/valibot'];if(addition?.version!=='1.5.0'||addition.integrity!==prior.selection.integrity)throw Error('lock identity');
@@ -22,7 +23,7 @@ const installed=JSON.parse(fs.readFileSync('node_modules/valibot/package.json','
 if(process.argv.includes('--preflight')){console.log(JSON.stringify({preflight:true,profile,priorFiles:Object.keys(prior.files).length,lockMetadata,version:installed.version}));process.exit(0);}
 const env={...process.env,PATH:path.dirname(process.execPath)+path.delimiter+process.env.PATH};const npm='C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js';const commands=[];
 for(const [name,args]of [['types',['run','app:typecheck']],['lint',['run','app:lint']],['tests',['run','app:test','--','--reporter=json','--outputFile='+testsPath]]]){
-const r=spawnSync(process.execPath,[npm,...args],{cwd:root,env,encoding:'utf8',timeout:150000,maxBuffer:2e6});commands.push({name,status:r.status,error:r.error?.message,stdout:r.stdout,stderr:r.stderr});if(r.status!==0){fs.writeFileSync(reportPath,JSON.stringify({commands,failed:name},null,2)+'\n');throw Error(name+' failed: '+r.stderr);}
+const actualArgs=args.map(arg=>arg==='--outputFile='+testsPath?'--outputFile='+path.resolve(testsPath):arg);const r=spawnSync(process.execPath,[npm,...actualArgs],{cwd:root,env,encoding:'utf8',timeout:150000,maxBuffer:2e6});commands.push({name,status:r.status,error:r.error?.message,stdout:r.stdout,stderr:r.stderr});if(r.status!==0){fs.writeFileSync(reportPath,JSON.stringify({commands,failed:name},null,2)+'\n');throw Error(name+' failed: '+r.stderr);}
 }
 const tests=JSON.parse(fs.readFileSync(testsPath,'utf8'));const suite=tests.testResults.find(x=>x.name.replaceAll('\\','/').endsWith('/'+suitePath));
 if(!suite||suite.assertionResults.length<6||suite.assertionResults.some(x=>x.status!=='passed')||tests.numTotalTests<prior.priorTests+6||tests.numPassedTests!==tests.numTotalTests||tests.numFailedTests||tests.numPendingTests)throw Error('test gate');
