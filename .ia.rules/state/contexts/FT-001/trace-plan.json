@@ -71,7 +71,9 @@
         "src/domain/budget-days.ts",
         "src/domain/budget-days.test.ts",
         "src/domain/monthly-availability.ts",
-        "src/domain/monthly-availability.test.ts"
+        "src/domain/monthly-availability.test.ts",
+        "src/domain/numeric-input.ts",
+        "src/domain/numeric-input.test.ts"
       ]
     ],
     "5": [
@@ -104,7 +106,9 @@
         "src/domain/exact-sum.ts",
         "src/domain/exact-sum.test.ts",
         "src/domain/exact-compare.ts",
-        "src/domain/exact-compare.test.ts"
+        "src/domain/exact-compare.test.ts",
+        "src/domain/numeric-input.ts",
+        "src/domain/numeric-input.test.ts"
       ]
     ],
     "7": [
@@ -123,7 +127,9 @@
         "src/domain/budget-days.ts",
         "src/domain/budget-days.test.ts",
         "src/domain/monthly-availability.ts",
-        "src/domain/monthly-availability.test.ts"
+        "src/domain/monthly-availability.test.ts",
+        "src/domain/numeric-input.ts",
+        "src/domain/numeric-input.test.ts"
       ]
     ],
     "8": [
@@ -155,7 +161,9 @@
         "src/domain/budget-days.ts",
         "src/domain/budget-days.test.ts",
         "src/domain/monthly-availability.ts",
-        "src/domain/monthly-availability.test.ts"
+        "src/domain/monthly-availability.test.ts",
+        "src/domain/numeric-input.ts",
+        "src/domain/numeric-input.test.ts"
       ]
     ],
     "9": [
@@ -213,7 +221,9 @@
         "src/domain/budget-days.ts",
         "src/domain/budget-days.test.ts",
         "src/domain/monthly-availability.ts",
-        "src/domain/monthly-availability.test.ts"
+        "src/domain/monthly-availability.test.ts",
+        "src/domain/numeric-input.ts",
+        "src/domain/numeric-input.test.ts"
       ]
     ],
     "13": [

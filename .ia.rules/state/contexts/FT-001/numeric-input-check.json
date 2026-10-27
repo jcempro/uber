@@ -1,0 +1,53 @@
+{
+  "scope": "Ponte de7estados numéricos somente;180testes.Sem IDs/precedência/proveniência oufinanceiro concluídos.",
+  "base": "2d91287",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/numeric-input.ts",
+      "sha256": "c83b0028017563ace9083a6afec6fcdb47914a5217f88ecff8a4e13c2e09af42"
+    },
+    {
+      "path": "src/domain/numeric-input.test.ts",
+      "sha256": "fda6536c59b79d3bc55bf871b110e5dac9868d5f38a0719702221e6269cc9d7b"
+    }
+  ],
+  "baselineFiles": 35,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\numeric-input-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\numeric-input-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/numeric-input-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 180,
+    "passed": 180,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 8
+  }
+}

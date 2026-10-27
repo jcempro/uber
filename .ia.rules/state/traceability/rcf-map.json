@@ -421,6 +421,8 @@
         "src/domain/exact.ts",
         "src/domain/monthly-availability.test.ts",
         "src/domain/monthly-availability.ts",
+        "src/domain/numeric-input.test.ts",
+        "src/domain/numeric-input.ts",
         "src/domain/sensitivity.ts"
       ],
       "commit": "",
