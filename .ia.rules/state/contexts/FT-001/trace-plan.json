@@ -97,7 +97,9 @@
         "src/domain/operating-cost.ts",
         "src/domain/operating-cost.test.ts",
         "src/domain/revenue-charges.ts",
-        "src/domain/revenue-charges.test.ts"
+        "src/domain/revenue-charges.test.ts",
+        "src/domain/cost-references.ts",
+        "src/domain/cost-references.test.ts"
       ]
     ],
     "5": [
@@ -245,7 +247,9 @@
         "src/domain/operating-cost.ts",
         "src/domain/operating-cost.test.ts",
         "src/domain/revenue-charges.ts",
-        "src/domain/revenue-charges.test.ts"
+        "src/domain/revenue-charges.test.ts",
+        "src/domain/cost-references.ts",
+        "src/domain/cost-references.test.ts"
       ]
     ],
     "9": [
@@ -329,7 +333,9 @@
         "src/domain/operating-cost.ts",
         "src/domain/operating-cost.test.ts",
         "src/domain/revenue-charges.ts",
-        "src/domain/revenue-charges.test.ts"
+        "src/domain/revenue-charges.test.ts",
+        "src/domain/cost-references.ts",
+        "src/domain/cost-references.test.ts"
       ]
     ],
     "13": [

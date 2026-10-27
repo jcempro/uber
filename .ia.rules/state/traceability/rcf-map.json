@@ -419,6 +419,8 @@
         "src/domain/calendar-cost.ts",
         "src/domain/calendar-parameters.test.ts",
         "src/domain/calendar-parameters.ts",
+        "src/domain/cost-references.test.ts",
+        "src/domain/cost-references.ts",
         "src/domain/economics.ts",
         "src/domain/exact-budget.test.ts",
         "src/domain/exact-budget.ts",

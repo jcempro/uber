@@ -1,0 +1,53 @@
+{
+  "scope": "Vínculos de rubricas;269testes exigidos. Referências resolvidas não certificam quantias/vigência/completude/cobertura financeira.",
+  "base": "c899b6c",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/cost-references.ts",
+      "sha256": "bf8635ccebad706a1e6385332ccb59bddcdf1960073e3669009afa8fc5a32789"
+    },
+    {
+      "path": "src/domain/cost-references.test.ts",
+      "sha256": "5f8599e77c75cfd7b48b7dc3e865f1209440fd36e7f6825bdad880aecc20abcd"
+    }
+  ],
+  "baselineFiles": 61,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\cost-references-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\cost-references-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/cost-references-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 269,
+    "passed": 269,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 6
+  }
+}
