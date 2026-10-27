@@ -1,0 +1,27 @@
+{
+  "scope": "FT-003.34b: somente entradas financeiras; quatro controles direcionados. Núcleo final e fixture8 continuam pendentes.",
+  "base": "1e1d701",
+  "node": "v24.22.1",
+  "baselineFiles": 54,
+  "acceptedSources": 53,
+  "preservedPendingFixture": "financial-result.test.ts",
+  "files": [
+    {
+      "path": "src/domain/financial-input.ts",
+      "sha256": "18faa90f642131fe9ac6aeb0cc1d5675d963781055b3afb923e77778c8a7136d"
+    },
+    {
+      "path": "src/domain/financial-input.test.ts",
+      "sha256": "b066f58bb03dba4110a3f7f847ef2e2930d94f7c8895fcf70a9a33ebfce967ae"
+    }
+  ],
+  "commands": [
+    {
+      "name": "typecheck-isolated",
+      "status": 1,
+      "stdout": "error TS5112: tsconfig.json is present but will not be loaded if files are specified on commandline. Use '--ignoreConfig' to skip this error.\r\n",
+      "stderr": "",
+      "error": null
+    }
+  ]
+}

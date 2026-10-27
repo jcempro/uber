@@ -1,0 +1,15 @@
+{
+  "job_id": "604a05d9-22ca-4338-9640-8644a5eabee3",
+  "classification": "WORKER_INCOMPLETE",
+  "stage": "typecheck-isolated antes de lint/testes",
+  "cause": "TS5112: invocação por arquivos explícitos exige --ignoreConfig no TypeScript instalado.",
+  "materialization": "executada; dois SHAs conferidos",
+  "newStrategy": "validation-only, sem nova materialização; mesmo perfilcompiler estrito com flag de seleção do modo requerida pelo próprio CLI",
+  "review": {
+    "score": 9,
+    "revision": 1,
+    "recorded": true
+  },
+  "git": "main ahead1 confere; financial-input-job.md extra posterior ao snapshot12:43:11Z,mtime12:43:36Z",
+  "functionalOutcome": "não determinado: lint e4testes ainda não executados"
+}

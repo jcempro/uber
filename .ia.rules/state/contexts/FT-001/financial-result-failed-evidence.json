@@ -1,0 +1,23 @@
+{
+  "job_id": "f5b5ac26-41f0-4a7d-bc90-5dafe141c3b1",
+  "classification": "WORKER_INCOMPLETE",
+  "stage": "após preparar_fixture, antes da implementação e validação",
+  "cause": "Releitura de evidência já obtida sem alteração verificável; bloqueio de progresso.",
+  "observed": {
+    "sourceExists": false,
+    "validationReportExists": false,
+    "fixtureSha": "928cba62feb142bdaea837f12ff876c14261f43e7d8a8be6c27f756051372956",
+    "completed_tools": 10,
+    "failed_tools": 1,
+    "context_limit_tokens": 32768,
+    "context_compactions": 2,
+    "compactionCausality": "não comprovada"
+  },
+  "review": {
+    "score": 4,
+    "revision": 1,
+    "recorded": true
+  },
+  "git": "main...origin/main [ahead 1], snapshot/live coincidem",
+  "correction": "Preservar fixture/APIs já exploradas; um contrato consolidado para ler, somente fonte pendente. Remover preparação e cinco leituras obrigatórias, transferir payload do validador já conferido para artefato local com wrapper de hash; não alterar critérios nem reiniciar job."
+}

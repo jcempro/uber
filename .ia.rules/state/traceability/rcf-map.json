@@ -431,6 +431,8 @@
         "src/domain/exact-sum.ts",
         "src/domain/exact.test.ts",
         "src/domain/exact.ts",
+        "src/domain/financial-result.test.ts",
+        "src/domain/financial-result.ts",
         "src/domain/fuel-metrics.test.ts",
         "src/domain/fuel-metrics.ts",
         "src/domain/fuel-period.test.ts",
@@ -458,6 +460,10 @@
     {
       "artifacts": [
         "src/domain/economics.ts",
+        "src/domain/financial-input.test.ts",
+        "src/domain/financial-input.ts",
+        "src/domain/financial-result.test.ts",
+        "src/domain/financial-result.ts",
         "src/domain/sensitivity.ts"
       ],
       "commit": "",
