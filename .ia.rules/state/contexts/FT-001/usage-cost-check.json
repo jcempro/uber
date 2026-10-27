@@ -1,0 +1,53 @@
+{
+  "scope": "Quantificação de custos de uso; 225 testes. Admissão/vigência/reconciliação/completude financeira não avaliadas.",
+  "base": "7ec88e4",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/usage-cost.ts",
+      "sha256": "7d7f752cbf3fa675d55a7d71b152a2ab8a0bbd73dfb30916fab86e4eb2948a55"
+    },
+    {
+      "path": "src/domain/usage-cost.test.ts",
+      "sha256": "1ae871b4828df1ef2d1132ac96a91dcd5e8adae42426baffe39ff9c6b8ba6353"
+    }
+  ],
+  "baselineFiles": 47,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\usage-cost-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\usage-cost-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/usage-cost-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 225,
+    "passed": 225,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 8
+  }
+}

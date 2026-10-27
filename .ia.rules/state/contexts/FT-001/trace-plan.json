@@ -83,7 +83,9 @@
         "src/domain/budget-amount.ts",
         "src/domain/budget-amount.test.ts",
         "src/domain/calendar-cost.ts",
-        "src/domain/calendar-cost.test.ts"
+        "src/domain/calendar-cost.test.ts",
+        "src/domain/usage-cost.ts",
+        "src/domain/usage-cost.test.ts"
       ]
     ],
     "5": [
@@ -124,7 +126,9 @@
         "src/domain/budget-amount.ts",
         "src/domain/budget-amount.test.ts",
         "src/domain/calendar-cost.ts",
-        "src/domain/calendar-cost.test.ts"
+        "src/domain/calendar-cost.test.ts",
+        "src/domain/usage-cost.ts",
+        "src/domain/usage-cost.test.ts"
       ]
     ],
     "7": [
@@ -197,7 +201,9 @@
         "src/domain/budget-amount.ts",
         "src/domain/budget-amount.test.ts",
         "src/domain/calendar-cost.ts",
-        "src/domain/calendar-cost.test.ts"
+        "src/domain/calendar-cost.test.ts",
+        "src/domain/usage-cost.ts",
+        "src/domain/usage-cost.test.ts"
       ]
     ],
     "9": [
@@ -267,7 +273,9 @@
         "src/domain/budget-amount.ts",
         "src/domain/budget-amount.test.ts",
         "src/domain/calendar-cost.ts",
-        "src/domain/calendar-cost.test.ts"
+        "src/domain/calendar-cost.test.ts",
+        "src/domain/usage-cost.ts",
+        "src/domain/usage-cost.test.ts"
       ]
     ],
     "13": [

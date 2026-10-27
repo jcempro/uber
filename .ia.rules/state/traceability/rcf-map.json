@@ -434,7 +434,9 @@
         "src/domain/numeric-parameter.test.ts",
         "src/domain/numeric-parameter.ts",
         "src/domain/scenario.ts",
-        "src/domain/sensitivity.ts"
+        "src/domain/sensitivity.ts",
+        "src/domain/usage-cost.test.ts",
+        "src/domain/usage-cost.ts"
       ],
       "commit": "",
       "ft": "FT-004",
