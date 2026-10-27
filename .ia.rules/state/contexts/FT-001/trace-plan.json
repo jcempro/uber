@@ -73,7 +73,9 @@
         "src/domain/monthly-availability.ts",
         "src/domain/monthly-availability.test.ts",
         "src/domain/numeric-input.ts",
-        "src/domain/numeric-input.test.ts"
+        "src/domain/numeric-input.test.ts",
+        "src/domain/numeric-parameter.ts",
+        "src/domain/numeric-parameter.test.ts"
       ]
     ],
     "5": [
@@ -108,7 +110,9 @@
         "src/domain/exact-compare.ts",
         "src/domain/exact-compare.test.ts",
         "src/domain/numeric-input.ts",
-        "src/domain/numeric-input.test.ts"
+        "src/domain/numeric-input.test.ts",
+        "src/domain/numeric-parameter.ts",
+        "src/domain/numeric-parameter.test.ts"
       ]
     ],
     "7": [
@@ -129,7 +133,9 @@
         "src/domain/monthly-availability.ts",
         "src/domain/monthly-availability.test.ts",
         "src/domain/numeric-input.ts",
-        "src/domain/numeric-input.test.ts"
+        "src/domain/numeric-input.test.ts",
+        "src/domain/numeric-parameter.ts",
+        "src/domain/numeric-parameter.test.ts"
       ]
     ],
     "8": [
@@ -163,7 +169,9 @@
         "src/domain/monthly-availability.ts",
         "src/domain/monthly-availability.test.ts",
         "src/domain/numeric-input.ts",
-        "src/domain/numeric-input.test.ts"
+        "src/domain/numeric-input.test.ts",
+        "src/domain/numeric-parameter.ts",
+        "src/domain/numeric-parameter.test.ts"
       ]
     ],
     "9": [
@@ -223,7 +231,9 @@
         "src/domain/monthly-availability.ts",
         "src/domain/monthly-availability.test.ts",
         "src/domain/numeric-input.ts",
-        "src/domain/numeric-input.test.ts"
+        "src/domain/numeric-input.test.ts",
+        "src/domain/numeric-parameter.ts",
+        "src/domain/numeric-parameter.test.ts"
       ]
     ],
     "13": [
