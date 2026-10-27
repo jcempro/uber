@@ -79,7 +79,9 @@
         "src/domain/budget-loss-period.ts",
         "src/domain/budget-loss-period.test.ts",
         "src/domain/calendar-parameters.ts",
-        "src/domain/calendar-parameters.test.ts"
+        "src/domain/calendar-parameters.test.ts",
+        "src/domain/budget-amount.ts",
+        "src/domain/budget-amount.test.ts"
       ]
     ],
     "5": [
@@ -116,7 +118,9 @@
         "src/domain/numeric-input.ts",
         "src/domain/numeric-input.test.ts",
         "src/domain/numeric-parameter.ts",
-        "src/domain/numeric-parameter.test.ts"
+        "src/domain/numeric-parameter.test.ts",
+        "src/domain/budget-amount.ts",
+        "src/domain/budget-amount.test.ts"
       ]
     ],
     "7": [
@@ -143,7 +147,9 @@
         "src/domain/budget-loss-period.ts",
         "src/domain/budget-loss-period.test.ts",
         "src/domain/calendar-parameters.ts",
-        "src/domain/calendar-parameters.test.ts"
+        "src/domain/calendar-parameters.test.ts",
+        "src/domain/budget-amount.ts",
+        "src/domain/budget-amount.test.ts"
       ]
     ],
     "8": [
@@ -183,7 +189,9 @@
         "src/domain/budget-loss-period.ts",
         "src/domain/budget-loss-period.test.ts",
         "src/domain/calendar-parameters.ts",
-        "src/domain/calendar-parameters.test.ts"
+        "src/domain/calendar-parameters.test.ts",
+        "src/domain/budget-amount.ts",
+        "src/domain/budget-amount.test.ts"
       ]
     ],
     "9": [
@@ -249,7 +257,9 @@
         "src/domain/budget-loss-period.ts",
         "src/domain/budget-loss-period.test.ts",
         "src/domain/calendar-parameters.ts",
-        "src/domain/calendar-parameters.test.ts"
+        "src/domain/calendar-parameters.test.ts",
+        "src/domain/budget-amount.ts",
+        "src/domain/budget-amount.test.ts"
       ]
     ],
     "13": [

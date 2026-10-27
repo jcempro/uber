@@ -1,0 +1,53 @@
+{
+  "scope": "Quantias assinadas porcalendário orçamentário;16rotas/209testes.Sem diatrabalhado/eventospontuais/custocompleto/financeiro certificados.",
+  "base": "068823f",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/budget-amount.ts",
+      "sha256": "08f956d7663a6da3ffdcfacd4c8072de864fd61095e07f285c68c02428eb014e"
+    },
+    {
+      "path": "src/domain/budget-amount.test.ts",
+      "sha256": "21f772d5e3b939630965df684b58f3d2499b30953483d9e259cd1fa19ba716ed"
+    }
+  ],
+  "baselineFiles": 43,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\budget-amount-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\budget-amount-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/budget-amount-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 209,
+    "passed": 209,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 8
+  }
+}

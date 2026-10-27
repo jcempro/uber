@@ -403,6 +403,8 @@
     },
     {
       "artifacts": [
+        "src/domain/budget-amount.test.ts",
+        "src/domain/budget-amount.ts",
         "src/domain/budget-calendar.test.ts",
         "src/domain/budget-calendar.ts",
         "src/domain/budget-days.test.ts",
