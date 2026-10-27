@@ -1,0 +1,531 @@
+{
+  "schema": 1,
+  "unit": "FT-010.2",
+  "before": "de6964765c12542139d40da8834d3aefedb866e4789b670920d83232afbf0522",
+  "after": "c9b6abd94fc5bfdf0b50791698dfb70c8ac08ba39f3e96afa887a6da6cd1a2ca",
+  "fragmentInput": "97fd92956e276cf0e31dd105c8459c4e03428fb5cf893cc4c9fe4d0455c26fad",
+  "inserted": "### 8.4 Margem mínima, teto de custo e identificabilidade\n\n- **Margem mínima configurável:** L% obrigatório, admite 0, define m = L%/100, não impõe Lmin absoluto nem Lucro%RotaPro; preserva equilíbrio, Lmin, 15%/100% SM e matriz 18. Não impor teto artificial m < 1: condições degeneradas devem ser resolvidas. T ≥ 0 finito explícito em BRL/km total; ausente não vira 0 ou kRP. Inputs ausentes suspendem somente derivados. [PENDENTE-CODIGO]\n\n- **Custo real por km:** definir C_real/km para decisão principal como C_total_planejado(B)/K da mesma base gerencial/competência/cenário: F + V + E + Tfix + qB + τB, todas incidências materiais, fixos independentes de K. Projeção permanece estimada, palavra \"real\" não certifica realização/evidência. Econômico alternativo é distinto, sem parcela integral + depreciação duplicadas. T se aplica exclusivamente à mesma base; não confundir com custo operacional, variável ou kRP. K = 0: custo/km indefinido, fixos calculáveis. [PENDENTE-CODIGO]\n\n- **Modelo linear completo:** A(K) = Coper(K), p = q + τ (q = 0,10 quando ativo, 0 explicitamente desligado; τ opcional, simulação declarada ou legal comprovada), C = A + pB. Margem para B > 0: LLF/B. Equilíbrio/absolutos preservados. Margem ≥ m equivale (1 − p − m)B ≥ A; quociente Bmin = A/(1 − p − m) só com denominador positivo e A estável em B. Denominador zero/negativo exige resolver inequação, não NaN/não impossibilidade universal: A ≤ 0, p ≤ 0, m = 1 admite 100% com B > 0; A ≤ 0 com denominador positivo pode ter ínfimo 0 sem mínimo positivo atingido. B = 0 nunca possui margem definida. [PENDENTE-CODIGO]\n\n- **Teto para K > 0:** A(K) + pB ≤ T × K. Avaliar interseção das restrições, não resolver margem/teto isoladamente; se p > 0 há limite superior B ≤ (TK − A)/p; p = 0 trata T independente B, sem divisão por 0. Custos não lineares/por hora/viagem/extraordinários exigem modelo real, não impor F + cK ou quociente falso. Preservar incidências legítimas/ajustes que mudam custos. [PENDENTE-CODIGO]\n\n- **Identificabilidade e limites:** não derivar demanda/receita/velocidade/relação K ↔ h de T, custos, jornada. Sem vínculo fundamentado B(K)/tempo, K/horas só timos não identificáveis; derivar limiares/faixas/condições/sensibilidade demonstráveis e pedir só parâmetro indispensável. Com vínculo válido, minimizar K e horas sob conjunto de restrições/limites fundamentados; expor conflito/compromisso sem prioridade inventada. Separar solução analítica, inviabilidade demonstrada, resultado condicional e dados insuficientes. Identificar mínimo atingido versus ínfimo quando domínio K > 0 impedir menor positivo. Nunca garantir demanda/resultado físico por álgebra. [PENDENTE-CODIGO]\n\n",
+  "plans": [
+    {
+      "line": 3,
+      "ft": "FT-009",
+      "artifacts": [
+        "src/domain/model.ts",
+        "src/main.tsx"
+      ]
+    },
+    {
+      "line": 7,
+      "ft": "FT-009",
+      "artifacts": [
+        "src/domain/model.ts",
+        "src/main.tsx"
+      ]
+    },
+    {
+      "line": 10,
+      "ft": "FT-003",
+      "artifacts": [
+        "src/domain/model-scenarios.ts",
+        "src/domain/model.ts"
+      ]
+    },
+    {
+      "line": 11,
+      "ft": "FT-009",
+      "artifacts": [
+        "src/domain/model.ts",
+        "src/main.tsx"
+      ]
+    },
+    {
+      "line": 15,
+      "ft": "FT-002",
+      "artifacts": [
+        ".github/workflows/pages.yml",
+        "eslint.config.mjs",
+        "package.json",
+        "scripts/check-runtime.mts",
+        "scripts/inspect-dist.mts",
+        "src/App.tsx",
+        "src/components/AppShell.tsx",
+        "src/index.html",
+        "src/main.tsx",
+        "src/styles.scss",
+        "tsconfig.json",
+        "vite.config.mts"
+      ]
+    },
+    {
+      "line": 18,
+      "ft": "FT-002",
+      "artifacts": [
+        ".github/workflows/pages.yml",
+        "eslint.config.mjs",
+        "package.json",
+        "scripts/check-runtime.mts",
+        "scripts/inspect-dist.mts",
+        "src/App.tsx",
+        "src/components/AppShell.tsx",
+        "src/domain/validation.test.ts",
+        "src/domain/validation.ts",
+        "src/index.html",
+        "src/main.tsx",
+        "src/styles.scss",
+        "tsconfig.json",
+        "vite.config.mts"
+      ]
+    },
+    {
+      "line": 19,
+      "ft": "FT-002",
+      "artifacts": [
+        ".github/workflows/pages.yml",
+        "docs/toolchain.md",
+        "eslint.config.mjs",
+        "package-lock.json",
+        "package.json",
+        "scripts/check-runtime.mts",
+        "scripts/inspect-dist.mts",
+        "src/App.tsx",
+        "src/components/AppShell.tsx",
+        "src/index.html",
+        "src/main.tsx",
+        "src/styles.scss",
+        "tsconfig.json",
+        "vite.config.mts"
+      ]
+    },
+    {
+      "line": 21,
+      "ft": "FT-002",
+      "artifacts": [
+        ".github/workflows/pages.yml",
+        "eslint.config.mjs",
+        "package.json",
+        "scripts/check-runtime.mts",
+        "scripts/inspect-dist.mts",
+        "src/App.tsx",
+        "src/components/AppShell.tsx",
+        "src/index.html",
+        "src/main.tsx",
+        "src/styles.scss",
+        "tsconfig.json",
+        "vite.config.mts"
+      ]
+    },
+    {
+      "line": 25,
+      "ft": "FT-007",
+      "artifacts": [
+        "src/assets/iconCatalog.tsx",
+        "src/components/Icon.tsx"
+      ]
+    },
+    {
+      "line": 27,
+      "ft": "FT-007",
+      "artifacts": [
+        "src/assets/iconCatalog.tsx",
+        "src/components/Icon.tsx"
+      ]
+    },
+    {
+      "line": 28,
+      "ft": "FT-007",
+      "artifacts": [
+        "src/assets/iconCatalog.tsx",
+        "src/components/Icon.tsx"
+      ]
+    },
+    {
+      "line": 34,
+      "ft": "FT-006",
+      "artifacts": [
+        "src/components/ParameterEditor.tsx",
+        "src/domain/model.ts",
+        "src/state/calculation.ts",
+        "src/state/persistence.ts",
+        "src/state/store.ts"
+      ]
+    },
+    {
+      "line": 35,
+      "ft": "FT-006",
+      "artifacts": [
+        "src/components/ParameterEditor.tsx",
+        "src/domain/contexts.test.ts",
+        "src/domain/contexts.ts",
+        "src/domain/initial-scenarios.test.ts",
+        "src/domain/initial-scenarios.ts",
+        "src/domain/model.ts",
+        "src/domain/scenario.ts",
+        "src/state/calculation.ts",
+        "src/state/persistence.ts",
+        "src/state/store.ts"
+      ]
+    },
+    {
+      "line": 42,
+      "ft": "FT-006",
+      "artifacts": [
+        "src/components/ParameterEditor.tsx",
+        "src/domain/model.ts",
+        "src/state/calculation.ts",
+        "src/state/persistence.ts",
+        "src/state/store.ts"
+      ]
+    },
+    {
+      "line": 43,
+      "ft": "FT-006",
+      "artifacts": [
+        "src/components/ParameterEditor.tsx",
+        "src/domain/model.ts",
+        "src/state/calculation.ts",
+        "src/state/persistence.ts",
+        "src/state/store.ts"
+      ]
+    },
+    {
+      "line": 47,
+      "ft": "FT-006",
+      "artifacts": [
+        "src/components/ParameterEditor.tsx",
+        "src/domain/model.ts",
+        "src/state/calculation.ts",
+        "src/state/persistence.ts",
+        "src/state/store.ts"
+      ]
+    },
+    {
+      "line": 48,
+      "ft": "FT-006",
+      "artifacts": [
+        "src/components/ParameterEditor.tsx",
+        "src/domain/model.ts",
+        "src/state/calculation.ts",
+        "src/state/persistence.ts",
+        "src/state/store.ts"
+      ]
+    },
+    {
+      "line": 76,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/costs.ts",
+        "src/domain/defaults.ts",
+        "src/domain/fuel-metrics.test.ts",
+        "src/domain/fuel-metrics.ts",
+        "src/domain/fuel-period.test.ts",
+        "src/domain/fuel-period.ts"
+      ]
+    },
+    {
+      "line": 77,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/costs.ts",
+        "src/domain/defaults.ts"
+      ]
+    },
+    {
+      "line": 79,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/costs.ts",
+        "src/domain/defaults.ts"
+      ]
+    },
+    {
+      "line": 102,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/contexts.test.ts",
+        "src/domain/contexts.ts",
+        "src/domain/initial-scenarios.test.ts",
+        "src/domain/initial-scenarios.ts",
+        "src/domain/projection.ts",
+        "src/domain/scenario.ts"
+      ]
+    },
+    {
+      "line": 109,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/projection.ts"
+      ]
+    },
+    {
+      "line": 117,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ]
+    },
+    {
+      "line": 119,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/cost-requirement.ts",
+        "src/domain/cost-requirements.test.ts",
+        "src/domain/cost-requirements.ts",
+        "src/domain/economics.ts",
+        "src/domain/initial-scenarios.test.ts",
+        "src/domain/initial-scenarios.ts",
+        "src/domain/maintenance.test.ts",
+        "src/domain/maintenance.ts",
+        "src/domain/sensitivity.ts"
+      ]
+    },
+    {
+      "line": 120,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/budget-amount.test.ts",
+        "src/domain/budget-amount.ts",
+        "src/domain/budget-calendar.test.ts",
+        "src/domain/budget-calendar.ts",
+        "src/domain/budget-days.test.ts",
+        "src/domain/budget-days.ts",
+        "src/domain/budget-loss-period.test.ts",
+        "src/domain/budget-loss-period.ts",
+        "src/domain/calendar-cost.test.ts",
+        "src/domain/calendar-cost.ts",
+        "src/domain/calendar-parameters.test.ts",
+        "src/domain/calendar-parameters.ts",
+        "src/domain/cost-references.test.ts",
+        "src/domain/cost-references.ts",
+        "src/domain/cost-validity.test.ts",
+        "src/domain/cost-validity.ts",
+        "src/domain/economics.ts",
+        "src/domain/exact-budget.test.ts",
+        "src/domain/exact-budget.ts",
+        "src/domain/exact-compare.test.ts",
+        "src/domain/exact-compare.ts",
+        "src/domain/exact-product.test.ts",
+        "src/domain/exact-product.ts",
+        "src/domain/exact-rational.ts",
+        "src/domain/exact-sum.test.ts",
+        "src/domain/exact-sum.ts",
+        "src/domain/exact.test.ts",
+        "src/domain/exact.ts",
+        "src/domain/financial-result.test.ts",
+        "src/domain/financial-result.ts",
+        "src/domain/fuel-metrics.test.ts",
+        "src/domain/fuel-metrics.ts",
+        "src/domain/fuel-period.test.ts",
+        "src/domain/fuel-period.ts",
+        "src/domain/monthly-availability.test.ts",
+        "src/domain/monthly-availability.ts",
+        "src/domain/numeric-input.test.ts",
+        "src/domain/numeric-input.ts",
+        "src/domain/numeric-parameter.test.ts",
+        "src/domain/numeric-parameter.ts",
+        "src/domain/operating-cost.test.ts",
+        "src/domain/operating-cost.ts",
+        "src/domain/scenario.ts",
+        "src/domain/sensitivity.ts",
+        "src/domain/usage-cost.test.ts",
+        "src/domain/usage-cost.ts"
+      ]
+    },
+    {
+      "line": 124,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/financial-input.test.ts",
+        "src/domain/financial-input.ts",
+        "src/domain/financial-result.test.ts",
+        "src/domain/financial-result.ts",
+        "src/domain/operating-cost.test.ts",
+        "src/domain/operating-cost.ts",
+        "src/domain/revenue-charges.test.ts",
+        "src/domain/revenue-charges.ts",
+        "src/domain/sensitivity.ts"
+      ]
+    },
+    {
+      "line": 146,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ]
+    },
+    {
+      "line": 148,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ]
+    },
+    {
+      "line": 153,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ]
+    },
+    {
+      "line": 157,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ]
+    },
+    {
+      "line": 158,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ]
+    },
+    {
+      "line": 160,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ]
+    },
+    {
+      "line": 164,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts",
+        "src/domain/economics.test.ts",
+        "src/domain/model.ts"
+      ]
+    },
+    {
+      "line": 168,
+      "ft": "FT-004",
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts",
+        "src/domain/economics.test.ts",
+        "src/domain/model.ts"
+      ]
+    },
+    {
+      "line": 178,
+      "ft": "FT-005",
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ]
+    },
+    {
+      "line": 189,
+      "ft": "FT-005",
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ]
+    },
+    {
+      "line": 193,
+      "ft": "FT-005",
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ]
+    },
+    {
+      "line": 195,
+      "ft": "FT-005",
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ]
+    },
+    {
+      "line": 216,
+      "ft": "FT-005",
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ]
+    },
+    {
+      "line": 217,
+      "ft": "FT-005",
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ]
+    },
+    {
+      "line": 218,
+      "ft": "FT-005",
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ]
+    },
+    {
+      "line": 219,
+      "ft": "FT-005",
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ]
+    },
+    {
+      "line": 221,
+      "ft": "FT-005",
+      "artifacts": [
+        "src/components/OfferSimulator.tsx",
+        "src/domain/rotapro.ts"
+      ]
+    },
+    {
+      "line": 226,
+      "ft": "FT-007",
+      "artifacts": [
+        "src/App.tsx",
+        "src/components/AppShell.tsx",
+        "src/styles.scss"
+      ]
+    },
+    {
+      "line": 230,
+      "ft": "FT-007",
+      "artifacts": [
+        "src/App.tsx",
+        "src/components/AppShell.tsx",
+        "src/styles.scss"
+      ]
+    },
+    {
+      "line": 250,
+      "ft": "FT-009",
+      "artifacts": [
+        "scripts/inspect-dist.mts",
+        "src/domain/economics.test.ts",
+        "src/domain/rotapro.test.ts"
+      ]
+    },
+    {
+      "line": 289,
+      "ft": "FT-009",
+      "artifacts": [
+        "README.md",
+        "src/domain/defaults.test.ts",
+        "src/domain/defaults.ts",
+        "src/domain/financial-defaults.test.ts",
+        "src/domain/time-defaults.test.ts",
+        "src/domain/vehicle-defaults.test.ts"
+      ]
+    }
+  ],
+  "limits": "Norma somente; sem validação financeira/UI ou garantia de demanda; revisão semântica supervisor pendente."
+}

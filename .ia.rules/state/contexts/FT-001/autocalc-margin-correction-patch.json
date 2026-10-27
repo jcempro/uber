@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "unit": "FT-010.2a",
+  "predecessor": "26fdc33f-2f53-4005-aa47-4526496dffe1",
+  "before": "c9b6abd94fc5bfdf0b50791698dfb70c8ac08ba39f3e96afa887a6da6cd1a2ca",
+  "after": "bada6004814a70a9589d977060601fa2cb62188f05dc6e5aec358731bf15a399",
+  "edits": 8,
+  "readBeforeEffects": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d8e94f943d916af502a5e7f20810420dce6d5efb3b3bc233dfd8187fa71b18e5"
+    },
+    {
+      "path": ".ia.rules/core/authority.md",
+      "sha256": "1e376c1931c48cade6da4612264df5501e1199bce1724da793baefca9c5138b6"
+    },
+    {
+      "path": ".ia.rules/normative-index.json",
+      "sha256": "a7a34d63938081d6e40fce102568e4e8d3ac9c92f650d2cb908dfe61337163f7"
+    },
+    {
+      "path": ".ia.rules/state/continue.ia",
+      "sha256": "3bffce6be2facfe84670088aeb137553ec2cace0c29505c17971db00bf5208ea"
+    },
+    {
+      "path": ".ia.rules/state/requests/FT-001/autocalc-evolution.md",
+      "sha256": "bc83c568900ec13ff4076f62cd13088ce01ce710f461af6c0b30f0a8f247a48c"
+    },
+    {
+      "path": ".ia.rules/state/contexts/FT-001/autocalc-margin-unit.md",
+      "sha256": "1146abdfd36d11cd34de2063494e0e6f26cb27b4461761b0810c132f25470f78"
+    }
+  ],
+  "sectionParagraphs": 5,
+  "backupNames": [
+    "autocalc-margin-section.md",
+    "autocalc-margin-check.json",
+    "autocalc-margin-patch.json"
+  ],
+  "limits": "Nova revisão corretiva determinística; não convalida retroativamente leituras não cumpridas do predecessor. Somente norma, sem implementação financeira."
+}
