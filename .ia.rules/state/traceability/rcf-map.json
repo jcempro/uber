@@ -443,6 +443,8 @@
         "src/domain/numeric-input.ts",
         "src/domain/numeric-parameter.test.ts",
         "src/domain/numeric-parameter.ts",
+        "src/domain/operating-cost.test.ts",
+        "src/domain/operating-cost.ts",
         "src/domain/scenario.ts",
         "src/domain/sensitivity.ts",
         "src/domain/usage-cost.test.ts",
@@ -464,6 +466,8 @@
         "src/domain/financial-input.ts",
         "src/domain/financial-result.test.ts",
         "src/domain/financial-result.ts",
+        "src/domain/operating-cost.test.ts",
+        "src/domain/operating-cost.ts",
         "src/domain/sensitivity.ts"
       ],
       "commit": "",

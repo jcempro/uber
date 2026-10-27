@@ -1,0 +1,49 @@
+{
+  "scope": "FT-003.34c: soma operacional independente; quatro controles direcionados. Resultado financeiro final e fixture8 continuam pendentes.",
+  "base": "4d1d587",
+  "node": "v24.22.1",
+  "baselineFiles": 56,
+  "acceptedSources": 55,
+  "preservedPendingFixture": "financial-result.test.ts",
+  "files": [
+    {
+      "path": "src/domain/operating-cost.ts",
+      "sha256": "690b3cf3c0429e0b1951189c6b750ac2df6478bbb282da8ae45d5eabbeb4523c"
+    },
+    {
+      "path": "src/domain/operating-cost.test.ts",
+      "sha256": "53c2eb92a667260d79b07b76ccd6d4a09104b06088a8ef7ec56c827063698f9b"
+    }
+  ],
+  "commands": [
+    {
+      "name": "typecheck-isolated",
+      "status": 0,
+      "stdout": "",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "lint-targeted",
+      "status": 0,
+      "stdout": "",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "tests-targeted",
+      "status": 0,
+      "stdout": "JSON report written to D:/trampo/jcem.pro-uber/.cache/build/operating-cost-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "scope": "targeted-only",
+    "total": 4,
+    "passed": 4,
+    "failed": 0,
+    "pending": 0
+  },
+  "fullAppValidation": "not-executed: financial-result.ts continua pendente"
+}
