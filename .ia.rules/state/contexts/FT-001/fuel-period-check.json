@@ -1,0 +1,53 @@
+{
+  "scope": "Combustível puro por contexto/período; 243 testes. Custo calculado não comprova pagamento nem custo completo.",
+  "base": "39d36be",
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "src/domain/fuel-period.ts",
+      "sha256": "2736df87f7e8b247b8d20f06ca85d9c6f683ef8d039c4ccab8959be683c5ba1d"
+    },
+    {
+      "path": "src/domain/fuel-period.test.ts",
+      "sha256": "082101de54948353d1581a8a5c960e581d0a09ce26717738b7cba2621b6bff48"
+    }
+  ],
+  "baselineFiles": 51,
+  "commands": [
+    {
+      "name": "app:typecheck",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:lint",
+      "args": [],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "app:test",
+      "args": [
+        "--",
+        "--reporter=json",
+        "--outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\fuel-period-tests.json"
+      ],
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\build\\fuel-period-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/build/fuel-period-tests.json\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "tests": {
+    "total": 243,
+    "passed": 243,
+    "failed": 0,
+    "pending": 0,
+    "newControls": 8
+  }
+}

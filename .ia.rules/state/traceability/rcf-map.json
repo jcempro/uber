@@ -298,7 +298,9 @@
         "src/domain/costs.ts",
         "src/domain/defaults.ts",
         "src/domain/fuel-metrics.test.ts",
-        "src/domain/fuel-metrics.ts"
+        "src/domain/fuel-metrics.ts",
+        "src/domain/fuel-period.test.ts",
+        "src/domain/fuel-period.ts"
       ],
       "commit": "",
       "ft": "FT-004",
@@ -431,6 +433,8 @@
         "src/domain/exact.ts",
         "src/domain/fuel-metrics.test.ts",
         "src/domain/fuel-metrics.ts",
+        "src/domain/fuel-period.test.ts",
+        "src/domain/fuel-period.ts",
         "src/domain/monthly-availability.test.ts",
         "src/domain/monthly-availability.ts",
         "src/domain/numeric-input.test.ts",

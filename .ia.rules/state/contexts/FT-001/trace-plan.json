@@ -87,7 +87,9 @@
         "src/domain/usage-cost.ts",
         "src/domain/usage-cost.test.ts",
         "src/domain/fuel-metrics.ts",
-        "src/domain/fuel-metrics.test.ts"
+        "src/domain/fuel-metrics.test.ts",
+        "src/domain/fuel-period.ts",
+        "src/domain/fuel-period.test.ts"
       ]
     ],
     "5": [
@@ -101,7 +103,9 @@
         "src/domain/initial-scenarios.ts",
         "src/domain/initial-scenarios.test.ts",
         "src/domain/fuel-metrics.ts",
-        "src/domain/fuel-metrics.test.ts"
+        "src/domain/fuel-metrics.test.ts",
+        "src/domain/fuel-period.ts",
+        "src/domain/fuel-period.test.ts"
       ]
     ],
     "6": [
@@ -134,7 +138,9 @@
         "src/domain/usage-cost.ts",
         "src/domain/usage-cost.test.ts",
         "src/domain/fuel-metrics.ts",
-        "src/domain/fuel-metrics.test.ts"
+        "src/domain/fuel-metrics.test.ts",
+        "src/domain/fuel-period.ts",
+        "src/domain/fuel-period.test.ts"
       ]
     ],
     "7": [
@@ -211,7 +217,9 @@
         "src/domain/usage-cost.ts",
         "src/domain/usage-cost.test.ts",
         "src/domain/fuel-metrics.ts",
-        "src/domain/fuel-metrics.test.ts"
+        "src/domain/fuel-metrics.test.ts",
+        "src/domain/fuel-period.ts",
+        "src/domain/fuel-period.test.ts"
       ]
     ],
     "9": [
@@ -285,7 +293,9 @@
         "src/domain/usage-cost.ts",
         "src/domain/usage-cost.test.ts",
         "src/domain/fuel-metrics.ts",
-        "src/domain/fuel-metrics.test.ts"
+        "src/domain/fuel-metrics.test.ts",
+        "src/domain/fuel-period.ts",
+        "src/domain/fuel-period.test.ts"
       ]
     ],
     "13": [
