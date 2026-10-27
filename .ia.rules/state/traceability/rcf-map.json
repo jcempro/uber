@@ -32,6 +32,20 @@
     },
     {
       "artifacts": [
+        "src/domain/model-scenarios.ts",
+        "src/domain/model.ts"
+      ],
+      "commit": "",
+      "ft": "FT-003",
+      "id": "3702dae0c166ac926f4efed9",
+      "line": 10,
+      "rcf": "RCF.md",
+      "sentenceSha256": "069dcf57567cdecf1405ffb5062b5d8cea6aa6f329e49b3aa331cbd2ab988776",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
         "src/domain/model.ts",
         "src/main.tsx"
       ],
@@ -488,6 +502,28 @@
     {
       "artifacts": [
         "src/domain/economics.ts",
+        "src/domain/financial-input.test.ts",
+        "src/domain/financial-input.ts",
+        "src/domain/financial-result.test.ts",
+        "src/domain/financial-result.ts",
+        "src/domain/operating-cost.test.ts",
+        "src/domain/operating-cost.ts",
+        "src/domain/revenue-charges.test.ts",
+        "src/domain/revenue-charges.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "42978f5fb671c8b77716d40f",
+      "line": 124,
+      "rcf": "RCF.md",
+      "sentenceSha256": "d19cf083dd3ca30045afe4e1533bff34c27821a0fc8dfb1f2d71bf28d99d10fb",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/economics.ts",
         "src/domain/sensitivity.ts"
       ],
       "commit": "",
@@ -506,10 +542,38 @@
       ],
       "commit": "",
       "ft": "FT-004",
+      "id": "4573704d0cc7b3d572ae4c80",
+      "line": 146,
+      "rcf": "RCF.md",
+      "sentenceSha256": "5a94959f3bf6c46eb716a2fbf4cd3db73b18d5c1d289f1493a74cc205335684a",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
       "id": "e83d6286aed476cc90afe47b",
       "line": 148,
       "rcf": "RCF.md",
       "sentenceSha256": "f0dabdc7d8b4341e75906c64dfd204e37bc0194e190b7bbba7c1423e9b3a79d5",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "commit": "",
+      "ft": "FT-004",
+      "id": "d021b0993f33f85241da6d38",
+      "line": 148,
+      "rcf": "RCF.md",
+      "sentenceSha256": "5a2968a1893d04d03372a8a4946c83056243c9a15dfd5259dd64c4e6760e1757",
       "state": "pending",
       "syncCommit": ""
     },

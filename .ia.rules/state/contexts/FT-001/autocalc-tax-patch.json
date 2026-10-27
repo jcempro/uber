@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "unit": "FT-010.1",
+  "before": "45caa8e8e5c60681251a77256eb65ea41193b5482bdcb785d51eba82eb289a23",
+  "after": "de6964765c12542139d40da8834d3aefedb866e4789b670920d83232afbf0522",
+  "request": "bc83c568900ec13ff4076f62cd13088ce01ce710f461af6c0b30f0a8f247a48c",
+  "edits": 11,
+  "changedLines": [
+    10,
+    124,
+    130,
+    131,
+    139,
+    146,
+    148,
+    150,
+    248,
+    273
+  ],
+  "prepared": [
+    {
+      "line": 10,
+      "oldId": null,
+      "artifacts": [
+        "src/domain/model.ts",
+        "src/domain/model-scenarios.ts"
+      ],
+      "ft": "FT-003"
+    },
+    {
+      "line": 124,
+      "oldId": "3fd735ab855c45cfc89a3746",
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/financial-input.test.ts",
+        "src/domain/financial-input.ts",
+        "src/domain/financial-result.test.ts",
+        "src/domain/financial-result.ts",
+        "src/domain/operating-cost.test.ts",
+        "src/domain/operating-cost.ts",
+        "src/domain/revenue-charges.test.ts",
+        "src/domain/revenue-charges.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "ft": "FT-004"
+    },
+    {
+      "line": 146,
+      "oldId": "56ea964c855de4ebfe2cf0cf",
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "ft": "FT-004"
+    },
+    {
+      "line": 148,
+      "oldId": "e83d6286aed476cc90afe47b",
+      "artifacts": [
+        "src/domain/economics.ts",
+        "src/domain/sensitivity.ts"
+      ],
+      "ft": "FT-004"
+    }
+  ],
+  "limits": "Norma parcial: sem implementação financeira, margem/teto/modo autônomo ainda pendentes; registros anteriores de sentenças alteradas preservados pelo prepare oficial, não comprovam cobertura atual."
+}
