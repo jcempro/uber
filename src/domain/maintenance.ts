@@ -10,10 +10,10 @@ import { INITIAL_PROFILE_REFERENCES, MAINTENANCE_RATE_REFERENCES, MAINTENANCE_RE
 import { NUMERIC_RULES } from './validation';
 
 /**
- * Materializa parâmetros das referências iniciais; não totaliza custos nem cria pagamentos.
+ * Materializa pendências iniciais; taxas históricas não são adotadas automaticamente.
  * @param scenarioId ID bruto não vazio do cenário; não é normalizado.
  * @param profileId Perfil da tabela inicial, sem restringir cadastros personalizados.
- * @returns Sete parâmetros congelados, com estimativa e escopo de cenário preservados.
+ * @returns Sete parâmetros pendentes congelados, sem valor presumido, no escopo do cenário.
  * @throws Error em pt-BR para ID vazio/não textual ou perfil desconhecido; sem mutar catálogos.
  */
 export function createInitialMaintenanceParameters(scenarioId: string, profileId: InitialProfileId): readonly NumericParameter[] {
@@ -21,15 +21,16 @@ export function createInitialMaintenanceParameters(scenarioId: string, profileId
   if (!INITIAL_PROFILE_REFERENCES.some(p => p.id === profileId)) throw new Error('profileId inválido: perfil inicial desconhecido.');
   const provenance = Object.freeze({
     ...MAINTENANCE_REFERENCE_METADATA.provenance,
+    kind: 'gap' as const, reliability: 'unverified' as const,
     scope: Object.freeze({ kind: 'scenario' as const, scenarioId }),
   });
-  // Reserva estimada por km não é pagamento realizado ou cobertura dos demais custos.
+  // Referência histórica não substitui parametrização ou adoção explícita fundamentada.
   return Object.freeze(MAINTENANCE_RATE_REFERENCES.map((row): NumericParameter => Object.freeze({
     id: JSON.stringify(['maintenance-rate', scenarioId, row.id]),
     name: row.name,
     unit: MAINTENANCE_REFERENCE_METADATA.unit,
     category: row.id,
-    input: Object.freeze({ status: 'provided' as const, value: row.rates[profileId] }),
+    input: Object.freeze({ status: 'not-provided' as const, reason: 'Manutenção pendente: informar custo ou adotar hipótese histórica com fundamento explícito.' }),
     provenance,
     required: true,
     constraints: NUMERIC_RULES.nonNegative,
@@ -37,7 +38,7 @@ export function createInitialMaintenanceParameters(scenarioId: string, profileId
   })));
 }
 
-/** Catálogo inicial de manutenção: parâmetros canônicos e referências de provisão, sem apuração ou cobertura dos demais custos. */
+/** Catálogo inicial de manutenção pendente, sem taxas históricas ativas ou cobertura presumida. */
 export type InitialMaintenanceCatalog = {
   readonly parameters: readonly NumericParameter[];
   readonly items: readonly CostItem[];
@@ -45,17 +46,17 @@ export type InitialMaintenanceCatalog = {
 };
 
 /**
- * Liga as reservas iniciais aos parâmetros, preservando identidade e proveniência.
+ * Liga itens desativados aos parâmetros pendentes, preservando identidade e proveniência.
  * @param scenarioId ID bruto do cenário, validado pelo gerador de parâmetros.
  * @param profileId Perfil inicial das estimativas, sem restringir cenários personalizados.
- * @returns Catálogo profundamente congelado; aplicabilidade declarada não comprova vigência, valor computado ou cobertura integral.
+ * @returns Catálogo profundamente congelado; manutenção pendente não equivale a zero ou inaplicabilidade.
  * @throws Error em pt-BR para argumentos rejeitados pelo gerador; sem efeitos nos catálogos.
  */
 export function createInitialMaintenanceCatalog(scenarioId: string, profileId: InitialProfileId): InitialMaintenanceCatalog {
   const parameters = createInitialMaintenanceParameters(scenarioId, profileId);
   const items = Object.freeze(parameters.map((parameter): CostItem => Object.freeze({
     id: JSON.stringify(['maintenance-reserve', scenarioId, parameter.category]),
-    name: parameter.name, category: parameter.category, enabled: true,
+    name: parameter.name, category: parameter.category, enabled: false,
     nature: MAINTENANCE_REFERENCE_METADATA.nature,
     basis: Object.freeze({ kind: 'usage' as const, unit: 'km' as const }),
     amountParameterId: parameter.id, provenance: parameter.provenance,
@@ -63,11 +64,11 @@ export function createInitialMaintenanceCatalog(scenarioId: string, profileId: I
     recognition: MAINTENANCE_REFERENCE_METADATA.recognition,
     eventId: null, reconcilesReserveId: null, allocationRuleId: null,
   })));
-  // Aplicabilidade da provisão estimada não significa pagamento, vigência comprovada ou ausência de outros custos.
+  // Desativar hipótese histórica não dispensa a revisão da incidência/custo de manutenção.
   const requirements = Object.freeze(items.map((item): CostRequirement => Object.freeze({
     id: JSON.stringify(['maintenance-requirement', scenarioId, item.category]),
     name: item.name, category: item.category, provenance: item.provenance,
-    status: 'applicable' as const, costItemIds: Object.freeze([item.id] as const),
+    status: 'unverified' as const, reason: 'Incidência e parametrização da manutenção pendentes; referência histórica não adotada.' ,
   })));
   return Object.freeze({ parameters, items, requirements });
 }

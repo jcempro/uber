@@ -1,0 +1,11 @@
+# FT-003.38a.1 — somente fábrica de manutenção
+
+Worker subordinado. Job7cd596aa não alterou código: chamou validação antes de escrever e depois repetiu leituras. Não reinicie a exploração. Unidade nova reduzida a um arquivo: src/domain/maintenance.ts. Leia AGENTS.md, authority.md, este documento e maintenance.ts uma vez; escreva em seguida. Não leia testes, histórico, diretórios ou outros scripts. Não modifique outro arquivo.
+
+RCF6.2 vigente, fonte integral já capturada em maintenance-inactive-rcf.json: “O sistema NÃO DEVE impô-los como custos operacionais ativos por padrão; só pode utilizá-los em hipótese opcional explicitamente adotada, com estimativa/decisão e fundamento identificados”. Os21valores da tabela são históricos; manutenção desconhecida não vale zero. Não implementar adoção explícita nesta unidade.
+
+Em createInitialMaintenanceParameters, preservar assinatura, validações, IDs brutos/estáveis, sete rubricas, unidade/domínio e congelamento. Substituir input provided/value por not-provided/reason não vazio, sem value. Provenance mantém origem RCF6.2/data/competence null e scope de cenário, mas kind='gap' e reliability='unverified'. Reason deve indicar parametrização/adoção fundamentada pendente. Não copiar taxa histórica para entrada operacional.
+
+Em createInitialMaintenanceCatalog, preservar sete items/requirements e suas identidades: items enabled=false; requirements status='unverified', reason não vazio e sem costItemIds (ramo do contrato existente). Demais vínculos e campos não mudam. Pendência não é not-applicable, pagamento ou zero. Atualizar JSDoc/comentários deste arquivo que descreviam aplicabilidade inicial; sem mudar API ou adicionar helpers/exportações.
+
+Depois de salvar fonte, executar compile_maintenance_source. Não executar comando antes da escrita. O comando exige fonte alterada, preserva outros71arquivos e roda apenas tipos/lint; testes ainda representam a norma anterior e serão ajustados em unidade seguinte, sem mascarar falhas ou declarar regressão resolvida. Não executar suíte nesta etapa nem editar verificador/baseline para aprovar. Retornar mudança e resultado factual até80palavras. Conclusão desta unidade não significa aceite funcional ou global.

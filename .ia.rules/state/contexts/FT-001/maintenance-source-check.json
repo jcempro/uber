@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "unit": "FT-003.38a.1",
+  "node": "v24.22.1",
+  "sourceHash": "5e6f9353ed33cc9b78d416cf2ff2a0278119cb4ac193e2fc09b9b7be77207f89",
+  "protectedFiles": 71,
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    }
+  ],
+  "tests": "Não executados; expectativas anteriores e comentários do seed exigem próxima unidade.287 era a última suíte aceita antes da alteração.",
+  "limits": "Compilação/lint não certificam testes, adoção explícita, ledger, cobertura, UI ou finanças."
+}

@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "unit": "FT-003.38a.1b",
+  "predecessor": "c1d42c6f-30e6-455f-a534-64d6dae398b2",
+  "target": "src/domain/maintenance.ts",
+  "before": "80c6c938e8c5800ff102b22c4d432402e02cbbc8656ae85fcc660f9a2ddfa5fa",
+  "after": "5e6f9353ed33cc9b78d416cf2ff2a0278119cb4ac193e2fc09b9b7be77207f89",
+  "substitutions": 11,
+  "protectedFiles": 71,
+  "limits": "Fonte parcial; testes/seed e adoção explícita permanecem pendentes. Não certifica finanças."
+}
