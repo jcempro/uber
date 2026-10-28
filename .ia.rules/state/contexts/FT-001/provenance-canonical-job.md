@@ -1,0 +1,9 @@
+# Handoff — FT-003.37b.2a
+
+RUNNING confirmado: dbd16073-e046-4c6d-8c96-a4a347f3e47e. Conversa 01a16678-96c5-7eb2-9ee1-fea2b7b37cf2 e repo D:/trampo/jcem.pro-uber conferidos por list_threads neste turno. Inferência local; response_contract v1 confirmado; expect_changes=true no fragmento provenance-canonical-cases.json; commit_policy=supervisor. Escopo: somente nove casos positivos/um grupo; quatro leituras obrigatórias, sem comandos, helpers, testes ou exploração. Contexto estimado inferior a 10K, não é medição de ocupação do supervisor.
+
+Anterior f4e97c6a recebido uma vez: FAILED/WORKER_INCOMPLETE; leituras iniciais permitidas, repetição posterior sem efeitos. Nenhum catálogo/teste/comando. Git determinístico e live main...origin/main concordam, sem ahead; não atribuir push. Q8S3 revisão1 registrado com recibo real. Não reconsultar resultado. Preparo existente preservado; correção material reduz de seis grupos+geração+suíte para um grupo JSON.
+
+Retomada: local_result uma vez; revisão do JSON contra model.ts e contrato, cobertura 9/5/3 e seis campos, nenhum efeito extra; Q8S por recibo, commit se aceito. Depois grupos negativos/composição e gerador+verificação já preparados. Última suíte aceita281;287 é gate futuro. Nunca certificar data/calendário/fonte, resultado financeiro ou global pelo fragmento. Normativa RCF b66b4ba preservada; fonte Provenance727f/Scope54f e baseline68 do49a390d não podem mudar. UI/ledger/admissão/metas/defaults de manutenção/JSON operacional e aceite integral pendentes.
+
+N7C: catálogo de ferramentas sem rota de compactação nativa, sem telemetria autoritativa barata. Impedimento técnico declarado; handoff não equivale a compactação. Sem polling. Latência mantida automaticamente pelo runner; não somar de novo. Dívida conhecida: continue.ia ainda contém histórico legado; não migrar sem matriz transacional própria.

@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "unit": "FT-003.37b.2b",
+  "originalJob": "dbd16073-e046-4c6d-8c96-a4a347f3e47e",
+  "originalSha256": "e9fa963c51e4f712f05a76930835e037abf01d9b49124421f2c1e840594c5428",
+  "canonicalSha256": "603bddd7903a7976f1ff96164620b7e11b454a732e0f5183d905752e0534a040",
+  "catalogSha256": "b848a46cffd9b8b61a2dd883e167d723160321de3e6c610d5c8307298a6363ba",
+  "modelSha256": "2c49be9dc99d29ae2d882584f63d59478bf5024fc34b30b5ea67456f5f4f2573",
+  "groups": 6,
+  "cases": 47,
+  "protectedFiles": 68,
+  "limits": "Oráculos estruturais sintéticos; não validam calendário, fonte, finanças ou UI."
+}

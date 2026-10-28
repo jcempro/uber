@@ -1,5 +1,11 @@
 # Estado canônico — FT-003 ativa após conciliação FT-010
 
+FT-003.37b.2b validada no microescopo estrutural: c52b6eec recebido/revisado uma vez, Q8S10 revisão1; três comandos0, tipos/lint287/287,47casos/6grupos,68fontes preservadas. Fonte727f/testeec83ec3a/catálogob848a46c e original arquivadoe9fa963c conferidos. Bundle isolado8126B/gzip2472, sem medição app/browser. Gitmain...origin/main coincide. Próximo: retirar taxas históricas de manutenção do conjunto ativo antes da admissão financeira. Semântica proveniência, ledger/metas/JSON/UI/global pendentes; histórico detalhado em provenance-compose-job.md.
+
+37b.2 f4e97c6a recebido uma vez, FAILED/WORKER_INCOMPLETE: quatro leituras obrigatórias concluídas, depois leituras repetidas sem escrita/comandos. Revisão proporcional/Q8S3 revisão1 registrados; Git determinístico e atual main...origin/main coincidem, sem ahead a atribuir. Sem evidência de infraestrutura; nenhum teste novo. Correção 37b.2a reduz a um fragmento JSON canônico de nove casos, sem helpers/testes nesta unidade; preserva preparo e evita reexploração. Última suíte aceita281. Demais grupos, validação e implementação financeira/global pendentes.
+
+37b.2 preparada pós49a390d:casosJSONcanônicosProvenance→harnesscomumprofileprovenance→tipos/lint>=287+bundle. Modelo6campos9kind5reliability/dataNull≠ausente/scopecomposto,nãocalendárioouverdadedefonte;leituraindependentedomodelo. Baseline68fontes/pacotesdo49a390d,produçãonãoeditável.281últimaaceita;287exigênciafutura. Admissão/ledger/metas/defaultsmanutenção/UI/globalpendentes.
+
 37b.1aceita:4a5683a6 recebido uma vez/revisado,Q8S10/revisão1. Fonte727f2fc7/6campos/9kinds/5reliabilities/datasnullable+scopecomum,tiposlint0/67fontes/Gitmainahead7conferidos. Commitantesde37b.2casosJSONindependentes/harnesscomum+gate>=287. Não afirmarsemânticadedatas/fontesnemcomportamento;281últimasuíte,UI/ledger/metas/globalpendentes.
 
 37b.1 preparada após04bc2f9:sourceúnicoProvenance6campos/9kinds/5reliabilities extraídosAST docânoneTS6,escopo54f2a376composto,reusoValibotnullable/picklist.Semdefaults/coerção/dataoufontesemântica. Baseline67fontes/pacotes docommitaceito04bc2f9,281últimasuíte. Materializaçãodeterminística+tipos/lint,expect_changestrue;testesdeProvenance serãoetapaprópria. Semrepetir281porapenasdoc;JSON/ledger/metas/UI/defaultsmanutenção/globalpendentes.

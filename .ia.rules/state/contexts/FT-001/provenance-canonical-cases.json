@@ -1,0 +1,142 @@
+{
+  "schema": 1,
+  "groups": [
+    {
+      "group": "canonical",
+      "cases": [
+        {
+          "id": " canonical-001 ",
+          "input": {
+            "kind": "current-decision",
+            "source": " fonte A ",
+            "date": "2025-01-01",
+            "competence": "analista",
+            "scope": {
+              "kind": "global"
+            },
+            "reliability": "confirmed"
+          },
+          "success": true
+        },
+        {
+          "id": "canonical-002",
+          "input": {
+            "kind": "dated-official-fact",
+            "source": "fonte B",
+            "date": null,
+            "competence": "sistema",
+            "scope": {
+              "kind": "vehicle",
+              "vehicleId": " v1 "
+            },
+            "reliability": "reported"
+          },
+          "success": true
+        },
+        {
+          "id": "canonical-003",
+          "input": {
+            "kind": "reported-personal",
+            "source": "fonte C",
+            "date": "2025-02-02",
+            "competence": null,
+            "scope": {
+              "kind": "scenario",
+              "scenarioId": "s1"
+            },
+            "reliability": "estimated"
+          },
+          "success": true
+        },
+        {
+          "id": "canonical-004",
+          "input": {
+            "kind": "observation",
+            "source": "fonte D",
+            "date": "2025-03-03",
+            "competence": "observador",
+            "scope": {
+              "kind": "global"
+            },
+            "reliability": "conditional"
+          },
+          "success": true
+        },
+        {
+          "id": "canonical-005",
+          "input": {
+            "kind": "measurement",
+            "source": "fonte E",
+            "date": null,
+            "competence": null,
+            "scope": {
+              "kind": "vehicle",
+              "vehicleId": "v2"
+            },
+            "reliability": "unverified"
+          },
+          "success": true
+        },
+        {
+          "id": "canonical-006",
+          "input": {
+            "kind": "estimate",
+            "source": "fonte F",
+            "date": "2025-04-04",
+            "competence": "estimador",
+            "scope": {
+              "kind": "scenario",
+              "scenarioId": "s2"
+            },
+            "reliability": "confirmed"
+          },
+          "success": true
+        },
+        {
+          "id": "canonical-007-data-invalida-somente-estrutura",
+          "input": {
+            "kind": "illustrative-hypothesis",
+            "source": "fonte G",
+            "date": "2026-99-99",
+            "competence": null,
+            "scope": {
+              "kind": "global"
+            },
+            "reliability": "reported"
+          },
+          "success": true
+        },
+        {
+          "id": "canonical-008",
+          "input": {
+            "kind": "suggestion",
+            "source": "fonte H",
+            "date": "2025-05-05",
+            "competence": "sugeridor",
+            "scope": {
+              "kind": "vehicle",
+              "vehicleId": "v3"
+            },
+            "reliability": "estimated"
+          },
+          "success": true
+        },
+        {
+          "id": "canonical-009",
+          "input": {
+            "kind": "gap",
+            "source": "fonte I",
+            "date": null,
+            "competence": "sistema",
+            "scope": {
+              "kind": "scenario",
+              "scenarioId": "s3"
+            },
+            "reliability": "conditional"
+          },
+          "success": true
+        }
+      ]
+    }
+  ]
+}

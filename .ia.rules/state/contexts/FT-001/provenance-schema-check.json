@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "unit": "FT-003.37",
+  "node": "v24.22.1",
+  "selection": {
+    "name": "valibot",
+    "version": "1.5.0",
+    "license": "MIT",
+    "integrity": "sha512-nil6AkP2TChWL43Z5uJ6GTxX01CUA+g8LWUM+N/rB9NBbkUMaUsi9PUNzlUPgoKASgmx9f7eGOYpJ04/fSa6FQ==",
+    "releaseCommit": "5016198907beb383f5a6d8bbcb4c7f1586d7c6a3",
+    "releaseDate": "2026-09-09T05:44:29Z",
+    "sources": [
+      "https://registry.npmjs.org/valibot/1.5.0",
+      "https://api.github.com/repos/open-circle/valibot/releases/tags/v1.5.0",
+      "https://valibot.dev/api/strictObject/",
+      "https://valibot.dev/api/safeParse/",
+      "https://zod.dev/packages/mini"
+    ]
+  },
+  "priorFilesPreserved": 68,
+  "lockMetadata": [
+    "TypeScript dev→devOptional: only flag transition caused by Valibot optional TypeScript peer; version/SRI/rest unchanged"
+  ],
+  "files": {
+    "src/domain/provenance-schema.ts": "727f2fc79a8d3d30cb717202eb06038a063628a41cc84e90dfacd0e069f2e4d5",
+    "src/domain/provenance-schema.test.ts": "ec83ec3aefa296046da26429c24291263b01066ebd20775ed47de1cdcc355857"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\provenance-schema-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/provenance-schema-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 287,
+    "passed": 287,
+    "newSuite": 6
+  },
+  "bundle": {
+    "profile": "Vite installed; isolated ES2023 ES module minified write:false; standalone, not app delta/browser measurement",
+    "chunks": [
+      {
+        "file": "provenance-schema-probe.mjs",
+        "bytes": 8126,
+        "gzipBytes": 2472
+      }
+    ]
+  },
+  "limits": "Structure only; no semantic dates, source truth, financial admission, full JSON import or complete UI"
+}
