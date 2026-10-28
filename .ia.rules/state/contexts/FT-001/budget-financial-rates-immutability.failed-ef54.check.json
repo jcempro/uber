@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "failed": "types",
+  "commands": [
+    {
+      "name": "types",
+      "status": 2,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\nsrc/domain/budget-financial-rates-immutability.test.ts(99,33): error TS2339: Property 'value' does not exist on type 'BudgetWorkingRateResult'.\r\n  Property 'value' does not exist on type '{ readonly status: \"unavailable\"; readonly code: WorkingFailureCode; readonly dependency: string | null; readonly reason: string; readonly diagnostic: BudgetRateFailure | null; readonly denominator: ExactRational | null; }'.\r\nsrc/domain/budget-financial-rates-immutability.test.ts(100,36): error TS2339: Property 'value' does not exist on type 'BudgetWorkingRateResult'.\r\n  Property 'value' does not exist on type '{ readonly status: \"unavailable\"; readonly code: WorkingFailureCode; readonly dependency: string | null; readonly reason: string; readonly diagnostic: BudgetRateFailure | null; readonly denominator: ExactRational | null; }'.\r\nsrc/domain/budget-financial-rates-immutability.test.ts(150,33): error TS2339: Property 'value' does not exist on type 'BudgetWorkingRateResult'.\r\n  Property 'value' does not exist on type '{ readonly status: \"unavailable\"; readonly code: WorkingFailureCode; readonly dependency: string | null; readonly reason: string; readonly diagnostic: BudgetRateFailure | null; readonly denominator: ExactRational | null; }'.\r\nsrc/domain/budget-financial-rates-immutability.test.ts(151,36): error TS2339: Property 'value' does not exist on type 'BudgetWorkingRateResult'.\r\n  Property 'value' does not exist on type '{ readonly status: \"unavailable\"; readonly code: WorkingFailureCode; readonly dependency: string | null; readonly reason: string; readonly diagnostic: BudgetRateFailure | null; readonly denominator: ExactRational | null; }'.\r\n",
+      "stderr": ""
+    }
+  ]
+}

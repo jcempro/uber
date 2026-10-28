@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.4c.2h.1",
+  "beforeSha256": "c9ed16b88817061fbd868ce73e0577ef3ef0c41c69779a6daf3ffe8fb59652bf",
+  "afterSha256": "3e370c6d460f70770946d5be41591601bd728eb57030fc521a819493cbc64eef",
+  "changes": "use narrowed ready returns in2cases; restore outer calendar-unavailable and nested invalid-calendar for both rates; no numerical/freeze/getter changes",
+  "limits": "Somente4propriedades; reconciliação integral e aplicativo pendentes."
+}

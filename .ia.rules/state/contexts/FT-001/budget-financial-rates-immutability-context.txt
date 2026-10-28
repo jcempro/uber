@@ -1,0 +1,216 @@
+# Norma do alvo
+
+# AGENTS.md — Entrypoint da Norma
+
+Este arquivo governa a atuação da IA. O RCF governa requisito, contrato, arquitetura e negócio; é a especificação declarativa, determinística e verificável do sistema, ressalvado o domínio desta Norma. Precedência, autoridade, preservação e mecanismos oficiais são compulsórios.
+
+Antes de operação material sem rota válida em memória ou com alteração física:
+
+1. consulte `./.ia.rules/normative-index.json`;
+2. carregue `./.ia.rules/core/authority.md`, papéis cumulativos e somente a rota direta, cenários, contratos e recursos disparados;
+3. consulte prioritariamente `./.ia.rules/state/decisions/refused/index.json`;
+4. execute do estado canônico `./.ia.rules/continue.ia`, com FT, plano, RCF e autorização compatíveis.
+
+`./.ia.rules/agents.inc.md` preserva a Norma operacional integral. Leia-o somente diante de mudança de rota, perda de contexto, conflito, regra não localizada, índice/cache inválido, auditoria de preservação ou confiança insuficiente. Referências seletivas resolvem-se por `MN-REF`.
+
+Todo repositório é Final; fonte, build, atualização, distribuição ou release agregam Construtor. No construtor do produto, `./AGENTS.md` CURRENT/CONSUMED rege; `src/AGENTS.md` SOURCE/DEVELOPED não rege até adoção nem pode ser regredido pela consumida. Homonímia não transfere versão, papel, escopo ou autoridade. Ambiguidade preserva comportamento e conteúdo. Saída técnica usa PT-BR.
+
+Cada solicitação autoriza escrita e Git somente no único repositório corrente associado ao prompt; root irmã, dependência, submódulo, worktree, repositório aninhado ou path físico externo permanece intocável, ainda que aberto ou relacionado.
+
+
+# Autoridade operacional e mecanismos oficiais
+
+Identidade normativa: `core.authority`; papel: comum; tipo: folha. Ler integralmente em toda atuação governada. Não dispensar por cenário, papel, familiaridade ou economia de contexto. Aplicar `MN-2119`, `MN-PRES`, `MN-ROLE`, `MN-EXT` e `MN-REF`.
+
+## 1. Vocabulário canônico
+
+**Norma Operacional** é `AGENTS.md` e associados, responsável pelo modo de atuação, processo, leitura, edição, validação, rastreabilidade, automação, scripts, hooks, comandos e FTs. **RCF** é a SSOT arquitetural declarativa, determinística e verificável do que o sistema é e DEVE fazer. **Repositório Construtor** mantém, constrói, valida ou distribui a Norma Operacional. **Repositório Final** consome a Norma. Papéis são cumulativos e nenhum afasta o outro.
+
+**Mecanismo Oficial** é script, comando, hook, callback, adaptador, workflow, arquivo-gatilho, convenção, nomenclatura, contrato ou ponto de extensão normatizado. **Extensão Oficial** compõe o mecanismo sem substituir fluxo ou contrato. **Fluxo Paralelo** é mecanismo novo, duplicado, substitutivo ou funcionalmente equivalente que contorne o oficial. **Lacuna Oficial** é erro, risco, insuficiência ou ausência comprovada no mecanismo necessário. **Princípio Estruturante** é regra cuja degradação altera autoridade, alcance ou comportamento fundamental. **Microtexto Normativo** é unidade curta, coesa, autônoma, estável e referenciável. **Custo Líquido** compara tokens, bytes, tempo, processamento, navegação, manutenção, risco, precisão e reutilização.
+
+Definição canônica NÃO DEVE ser redefinida em papel, cenário, recurso, RCF específico ou extensão. Especialização referencia o termo e restringe somente seu contexto.
+
+## 2. Proteção estrutural
+
+Revisão parcial, cirúrgica, ampla ou estrutural DEVE preservar autoridade, precedência, domínios, contratos, nomes, proibições, exceções, hooks, modus operandi, incisividade, rastreabilidade, força, efeitos e intenção. Princípio Estruturante é permanente, identificável e não regressivo; validação DEVE detectar remoção, diluição, relativização, subordinação, abreviação com perda, facultatividade ou substituição.
+
+Densificação, modularização, roteamento, índice, resumo, tokenização e otimização NÃO DEVEM reduzir rigor, minúcia, clareza, explicitabilidade, exigibilidade, previsibilidade ou resistência a interpretação desviada. Norma não recuperada NÃO é norma inexistente.
+
+## 2.1 Fronteira absoluta do repositório corrente
+
+Cada solicitação associa-se a exatamente uma raiz Git corrente e ao `AGENTS.md` aplicável nela. Escrita, exclusão, movimento, geração, staging, commit, branch, merge, reset, clean, publish e release somente PODEM atingir arquivos fisicamente pertencentes a essa raiz e subordinados à mesma autoridade. Workspace/IDE com múltiplas roots, relação funcional, dependência, importação, build conjunto, mesma autoria, necessidade externa ou proximidade física NÃO ampliam escopo; edição cruzada é violação crítica.
+
+Submódulo, worktree, repositório aninhado, root irmã, terceiro, `node_modules`, dependência local/linked, cache e artefato não editável são fronteiras excluídas. Antes do efeito, resolver raiz, path absoluto real e ancestrais; recusar `..`, symlink, junction, mount, alias, hardlink detectável ou identidade Git própria que atravesse a fronteira. Leitura externa necessária PODE ocorrer para diagnóstico/contrato, mas NÃO concede escrita. Alteração externa exige nova solicitação explicitamente associada ao outro repositório.
+
+## 3. Compulsoriedade e evolução
+
+Antes de solucionar, agente e Repositório Final DEVEM consultar descoberta oficial, inspecionar estado real, reutilizar finalidade/nomenclatura existentes e corrigir implementação divergente. Dúvida, desconhecimento, cópia possivelmente desatualizada ou inadequação aparente exigem releitura, versão e rastreamento; NÃO autorizam improvisação.
+
+Mecanismo Oficial NÃO DEVE ser neutralizado, duplicado, renomeado, reimplementado, contornado ou substituído. Resultado correto por fluxo incompatível permanece não conforme. Expansão só PODE usar hook, callback, composição, adaptador, arquivo-gatilho, extensão local ou contrato oficial, preservando fluxo principal, nomes, precedência, efeitos e compatibilidade.
+
+Lacuna segue `../scenarios/governance/official-gap.md`. Solicitação segue `../scenarios/governance/request-lifecycle.md`. Contratos de composição, eventos, integração e assinaturas seguem `./contracts.md`; recurso especializado referencia o contrato comum e declara somente diferenças materiais.
+
+## 4. Verificação
+
+Revisão DEVE comprovar: conceitos centralizados; referências resolvíveis; ausência de fluxo paralelo; mecanismos oficiais preservados; papéis acumulados; extensão somente em ponto autorizado; princípio estruturante sem redução modal; e equivalência entre núcleo, módulo, índice e RCF aplicável.
+
+
+# Unidade exclusiva
+
+# FT-003.40.4c.2h — imutabilidade, snapshots e política
+
+Worker subordinado. Alterar só src/domain/budget-financial-rates-immutability.test.ts. Preservar prefixo pronto(imports/helpers/fixtures),substituir apenas4it.todo por4it de mesmos nomes. Sem leitura/busca/listagem/fontefuncional;contexto completo. Umwrite_file depois run_authorized_command verify_budget_rates_immutability UMAvez;encerrar inclusivefalha,semretry. Semoutroarquivo/commit/rede/instalação. expect_changes=true/supervisorcommit. Retorno<=60palavras.
+
+Base391/50suítes/97arquivos protegidos+fonteb9bc2ccb. Escopo4propriedadescoerentes/contexto<=23Kchars/saída<4Ktokens,margemsegura16K–32K. Semany/casts/non-nullassertion/optionalchain/novosimports. Helpers prontos:mutableInput() dá objeto mutável inferido com satisfies BudgetFinancialRatesInput;root(input,limits=policy) guarda conditional;verifyBaseResult verifica moeda/base/not-evaluated/identidademensal3200/mês3200/semana800/ano38400;verifyWorkingRate guarda ready;unavailable(input,limits) guarda rootfalho;sourceFailure(result) guarda source!=null/unavailable;canonicalSource(input,limits) guarda diagnóstico canônico indisponível;assertDeepFrozen(value:unknown) verifica todoobjeto/nestedobject com Object.isFrozen recursivo. Sem usar expectstatus como narrowing. Prefixo contém sóhelpers previstos emuso.
+
+mutableInput():BRL/budget-calendar-period/month/3200,calendarbudget/W4D28M12L0h4,6racionais mutáveis com strings(amount+5calendário). policy256/64 é técnica,sintética. RCF7.2/8.3:S16,H64,dia200,hora50,sem arredondamento. Não presumir estado readonly emruntime; deve copiar/congelar saídas sem congelar entrada. Snapshot via structuredClone legítimo só para estabilidade/imutabilidade;valoresfinanceiros independentes são literais acima,semoráculo circular.
+
+1. 'resultado pronto congela cópias sem congelar entrada':input=mutableInput(),before=structuredClone(input),result=root(input),repeat=root(input);verifyBaseResult(result),expect(repeat).toEqual(result). Day/hour via verifyWorkingRate,value200/50 e denominator16/64 racionais completos. assertDeepFrozen(result). Assert input.toEqual(before) e Object.isFrozen=false para input,input.amount,input.calendar e os5racionais decalendário(D,M,W,h,L),semcongelamento doargumento. saved=structuredClone(result). Depois alterar input.amount.numerator e numerator dos5racionaiscalendário para outros valores(string) válidos,exemploamount9999,D14,M10,W2,h2,L1. Assert result.toEqual(saved),assertDeepFrozen(result). Não recalcular expectativa chamando função, não congelar entrada no teste.
+
+2. 'falhas e diagnósticos aninhados também são congelados':base=mutableInput();horaausente=root({...base,calendar:{...base.calendar,hoursPerWorkingDay:null}}),assertperConnectedHour toMatchObject statusunavailable/code missing-calendar-input;assertDeepFrozen(rootinteiro). Perdasexcessivas=root({...base,calendar:{...base.calendar,lostWorkingDaysPerMonth:r('17')}}),assertambastaxas statusunavailable/codecalendar-unavailable e diagnosticstatusunavailable/codeinvalid-calendar;assertDeepFrozen(rootinteiro). Política inválida=unavailable(mutableInput(),{maxInputLength:0,maxDigits:64});assertcodeinvalid-budget/source:null eassertDeepFrozen. Cada falha deve ser real, não apenas Object.isFrozen(undefined). Não usar verifyBaseResult no root unavailable.
+
+3. 'política é lida uma vez e reutilizada como snapshot':let readsLength=0,readsDigits=0;limits com get maxInputLength(){readsLength++;return readsLength===1?256:0;} e get maxDigits(){readsDigits++;return readsDigits===1?64:0;}. result=root(mutableInput(),limits) UMAvez. verifyBaseResult;via verifyWorkingRate dia200/hora50;assertDeepFrozen(result). Assert readsLength===1,readsDigits===1, Object.isFrozen(limits)===false. Não usar structuredClone/Object.values/JSON.stringify no limits pois executariam getters; não ler limits.max... no teste. Se helper usar política original após validação,teste devefalhar,não ajustaroráculo.
+
+4. 'orçamento insuficiente preserva falha técnica da origem':input=mutableInput(),limits={maxInputLength:256,maxDigits:3},expected=canonicalSource(input,limits);assertexpected.code resource-budget,pois3200tem4dígitos>3. result=unavailable(input,limits),source=sourceFailure(result);assertrootcode source-unavailable,source.code resource-budget,source.toEqual(expected),root.reason===expected.reason/não vazia,assertDeepFrozen(result). Assertinput/amount/calendar não congelados. Referência convertBudgetCalendarAmount éinferiorjáaceita/protegida e sóconferepropagação,codeesperadorecurso éliteralindependente; não inventar viabilidade financeira nemconverterfalha emzero.
+
+Gate rates-immutability:tipos/lint/full395+/4novos/50anterioressemperda/97protegidos+fontepinada+prefixo. Aceite destaunidade não encerraapp;antes de fechar40.4c reconciliarchecklist/integral eperfilrates segmentado semapagar8grupos originais. Não ajustar expectativas àsaídadivergente.
+
+
+# Arquivo pronto: prefixo protegido,substituir4it.todo
+
+import { describe, it, expect } from 'vitest';
+import { calculateBudgetFinancialRates } from './budget-financial-rates';
+import type { BudgetFinancialRatesInput, BudgetWorkingRateResult } from './budget-financial-rates';
+import type { BudgetAmountResult } from './budget-amount';
+import type { BudgetPeriod } from './model';
+import type { ExactLimits } from './exact-budget';
+import { convertBudgetCalendarAmount } from './budget-amount';
+const policy = { maxInputLength: 256, maxDigits: 64 };
+
+function r(numerator: string, denominator = '1') {
+  return { numerator, denominator };
+}
+
+function root(input: BudgetFinancialRatesInput, limits: ExactLimits = policy) {
+  const result = calculateBudgetFinancialRates(input, limits);
+  if (result.status !== 'conditional') {
+    throw Error(result.reason);
+  }
+  return result;
+}
+
+function verifyWorkingRate(result: BudgetWorkingRateResult) {
+  if (result.status !== 'ready') {
+    throw Error(result.reason);
+  }
+  return result;
+}
+
+function verifyAmount(result: BudgetAmountResult, period: BudgetPeriod, amount: string) {
+  if (result.status !== 'ready') throw Error(result.reason);
+  expect(result.value).toEqual(r(amount));
+  expect(result.sourcePeriod).toBe('month');
+  expect(result.targetPeriod).toBe(period);
+  expect(result.basis).toBe('budget-calendar-period');
+}
+
+function mutableInput() {
+  return {
+      currency: 'BRL',
+      sourceBasis: 'budget-calendar-period',
+      amount: r('3200', '1'),
+      sourcePeriod: 'month',
+      calendar: {
+        kind: 'budget',
+        daysPerMonth: r('28'),
+        monthsPerYear: r('12'),
+        daysPerWeek: r('4'),
+        hoursPerWorkingDay: r('4'),
+        lostWorkingDaysPerMonth: r('0'),
+      },
+    } satisfies BudgetFinancialRatesInput;
+}
+
+function verifyBaseResult(result: ReturnType<typeof root>) {
+    expect(result.currency).toBe('BRL');
+    expect(result.sourceBasis).toBe('budget-calendar-period');
+    expect(result.financialAssessment).toBe('not-evaluated');
+    expect(result.source).toEqual({status:'ready',value:r('3200'),sourcePeriod:'month',targetPeriod:'month',basis:'budget-calendar-period'});
+    verifyAmount(result.perMonth, 'month', '3200');
+    verifyAmount(result.perWeek, 'week', '800');
+    verifyAmount(result.perYear, 'year', '38400');
+}
+
+function assertDeepFrozen(value: unknown) {
+  if (value !== null && typeof value === 'object') {
+    expect(Object.isFrozen(value)).toBe(true);
+    for (const nested of Object.values(value)) assertDeepFrozen(nested);
+  }
+}
+
+function unavailable(input: BudgetFinancialRatesInput, limits: ExactLimits) {
+  const result = calculateBudgetFinancialRates(input, limits);
+  if (result.status !== 'unavailable') throw Error('Resultado deveria estar indisponível.');
+  return result;
+}
+
+function sourceFailure(result: ReturnType<typeof unavailable>) {
+  const source = result.source;
+  if (source === null || source.status !== 'unavailable') throw Error('Origem deveria conter diagnóstico.');
+  return source;
+}
+
+function canonicalSource(input: BudgetFinancialRatesInput, limits: ExactLimits) {
+  const result = convertBudgetCalendarAmount(input.amount, input.sourcePeriod, input.sourcePeriod, input.calendar, limits);
+  if (result.status !== 'unavailable') throw Error('Origem canônica deveria ser rejeitada.');
+  return result;
+}
+
+describe('budget-financial-rates-immutability', () => {
+  it.todo('resultado pronto congela cópias sem congelar entrada');
+  it.todo('falhas e diagnósticos aninhados também são congelados');
+  it.todo('política é lida uma vez e reutilizada como snapshot');
+  it.todo('orçamento insuficiente preserva falha técnica da origem');
+});
+
+
+# API pública sem implementação
+
+export interface BudgetFinancialRateContext extends BudgetAmountContext {
+  readonly daysPerWeek?:ExactRational|null;
+  readonly lostWorkingDaysPerMonth?:ExactRational|null;
+  readonly hoursPerWorkingDay?:ExactRational|null;
+}
+export interface BudgetFinancialRatesInput {
+  readonly currency:'BRL';readonly sourceBasis:'budget-calendar-period';readonly amount:ExactRational;
+  readonly sourcePeriod:BudgetPeriod;readonly calendar:BudgetFinancialRateContext;
+}
+export type BudgetRateFailure=Extract<BudgetAmountResult|ReturnType<typeof calculateScheduledBudgetDays>|ReturnType<typeof calculateEffectiveMonthlyWorkingDays>|ReturnType<typeof calculateMonthlyAvailability>|ReturnType<typeof calculateExactProduct>|ReturnType<typeof compareExactRationals>,{status:'unavailable'}>;
+type WorkingUnit='BRL/working-day'|'BRL/connected-hour';
+type WorkingFailureCode='source-unavailable'|'missing-calendar-input'|'calendar-unavailable'|'non-positive-availability'|'calculation-unavailable';
+export type BudgetWorkingRateResult=
+  | {readonly status:'ready';readonly unit:WorkingUnit;readonly amountPeriod:'month';readonly sourceAmount:ExactRational;readonly denominator:ExactRational;readonly value:ExactRational}
+  | {readonly status:'unavailable';readonly code:WorkingFailureCode;readonly dependency:string|null;readonly reason:string;readonly diagnostic:BudgetRateFailure|null;readonly denominator:ExactRational|null};
+export type BudgetFinancialRatesResult=
+  | {readonly status:'conditional';readonly currency:'BRL';readonly sourceBasis:'budget-calendar-period';readonly source:Extract<BudgetAmountResult,{status:'ready'}>;readonly financialAssessment:'not-evaluated';readonly perMonth:BudgetAmountResult;readonly perWeek:BudgetAmountResult;readonly perYear:BudgetAmountResult;readonly perWorkingDay:BudgetWorkingRateResult;readonly perConnectedHour:BudgetWorkingRateResult}
+  | {readonly status:'unavailable';readonly code:'invalid-budget'|'unsupported-input'|'source-unavailable';readonly reason:string;readonly source:BudgetAmountResult|null};
+
+export type BudgetAmountContext = {
+  readonly kind: 'budget';
+  readonly daysPerMonth?: ExactRational | null;
+  readonly monthsPerYear?: ExactRational | null;
+};
+/** Quantia por período de calendário orçamentário; day não representa dia trabalhado. */
+export type BudgetAmountResult =
+  | { readonly status: 'ready'; readonly value: ExactRational; readonly sourcePeriod: BudgetPeriod; readonly targetPeriod: BudgetPeriod; readonly basis: 'budget-calendar-period' }
+  | ExactProductFailure
+  | ExactComparisonFailure
+  | { readonly status: 'unavailable'; readonly code: 'invalid-period' | 'unsupported-calendar'; readonly reason: string }
+  | { readonly status: 'unavailable'; readonly code: 'missing-calendar-input' | 'invalid-calendar'; readonly dependency: 'daysPerMonth' | 'monthsPerYear'; readonly reason: string };
+
+
+
+# Fonte independente
+
+RCF.md:103 2. Calendário sem datas reais: dias equivalentes programados/mês `4 × 30/7 = 17,142857…`, **não 16**; dias efetivos = programados − perdidos, respeitando domínio e período. Semana = 7 dias, mês orçamentário = 30, ano = 12 desses meses (**360 dias orçamentários**, não calendário civil); sempre identificar convenção. Se o usuário configurar dias exatos da semana/datas reais, usar calendário real e registrar competência, sem misturar as convenções. Não inventar escala horária para 6/8 h. Dias restantes/ausências recalculam valores necessários até o fechamento, sem aumentar demanda disponível por decreto.
+RCF.md:151 - **Patamares por unidade:** para cada contexto e cada alvo `0`, `Lmin`, `M15`, `M100`, apresentar **receita a creditar necessária em R$/hora, R$/km, R$/dia, R$/semana, R$/mês e, quando pertinente, R$/ano** (valor **requerido**, não comprovadamente recebido). Dividir receita requerida do **mesmo período** por horas conectadas efetivas, `K` total, dias efetivos e demais denominadores legítimos. O ganho **mínimo por km da operação** para cobrir custos/meta é `B_necessário / K_total`; a métrica a configurar no Rota Pro emprega **km de oferta** (coleta + viagem), não `K_total`, devendo absorver corretamente km vazios e custos nos requisitos projetados. Expor simultaneamente **ganho mínimo por km para empatar**, **para lucro mínimo** e **para cada meta**; não rotular todos de “mínimo” sem finalidade.

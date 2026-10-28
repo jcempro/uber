@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.4c.2h",
+  "node": "v24.22.1",
+  "sourceCommit": "eadd1b5aaf8bde87a30b907db17274a44f1b0314",
+  "files": {
+    "src/domain/budget-financial-rates.ts": "b9bc2ccbe0a7245b5f79e3a3d6847f430e43601a0b70b94c30f44eb03a0b9da4",
+    "src/domain/budget-financial-rates-immutability.test.ts": "3e370c6d460f70770946d5be41591601bd728eb57030fc521a819493cbc64eef"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\budget-financial-rates-immutability-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/budget-financial-rates-immutability-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 395,
+    "passed": 395,
+    "newSuite": 4
+  },
+  "protectedFiles": 97,
+  "limits": "Somente4propriedades freeze/snapshot/política/recurso; aceite integral e aplicativo pendentes. Conversões orçamentárias condicionais; não apura resultados reais ou custos completos."
+}

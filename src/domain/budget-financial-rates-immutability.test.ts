@@ -1,0 +1,175 @@
+import { describe, it, expect } from 'vitest';
+import { calculateBudgetFinancialRates } from './budget-financial-rates';
+import type { BudgetFinancialRatesInput, BudgetWorkingRateResult } from './budget-financial-rates';
+import type { BudgetAmountResult } from './budget-amount';
+import type { BudgetPeriod } from './model';
+import type { ExactLimits } from './exact-budget';
+import { convertBudgetCalendarAmount } from './budget-amount';
+const policy = { maxInputLength: 256, maxDigits: 64 };
+
+function r(numerator: string, denominator = '1') {
+  return { numerator, denominator };
+}
+
+function root(input: BudgetFinancialRatesInput, limits: ExactLimits = policy) {
+  const result = calculateBudgetFinancialRates(input, limits);
+  if (result.status !== 'conditional') {
+    throw Error(result.reason);
+  }
+  return result;
+}
+
+function verifyWorkingRate(result: BudgetWorkingRateResult) {
+  if (result.status !== 'ready') {
+    throw Error(result.reason);
+  }
+  return result;
+}
+
+function verifyAmount(result: BudgetAmountResult, period: BudgetPeriod, amount: string) {
+  if (result.status !== 'ready') throw Error(result.reason);
+  expect(result.value).toEqual(r(amount));
+  expect(result.sourcePeriod).toBe('month');
+  expect(result.targetPeriod).toBe(period);
+  expect(result.basis).toBe('budget-calendar-period');
+}
+
+function mutableInput() {
+  return {
+      currency: 'BRL',
+      sourceBasis: 'budget-calendar-period',
+      amount: r('3200', '1'),
+      sourcePeriod: 'month',
+      calendar: {
+        kind: 'budget',
+        daysPerMonth: r('28'),
+        monthsPerYear: r('12'),
+        daysPerWeek: r('4'),
+        hoursPerWorkingDay: r('4'),
+        lostWorkingDaysPerMonth: r('0'),
+      },
+    } satisfies BudgetFinancialRatesInput;
+}
+
+function verifyBaseResult(result: ReturnType<typeof root>) {
+    expect(result.currency).toBe('BRL');
+    expect(result.sourceBasis).toBe('budget-calendar-period');
+    expect(result.financialAssessment).toBe('not-evaluated');
+    expect(result.source).toEqual({status:'ready',value:r('3200'),sourcePeriod:'month',targetPeriod:'month',basis:'budget-calendar-period'});
+    verifyAmount(result.perMonth, 'month', '3200');
+    verifyAmount(result.perWeek, 'week', '800');
+    verifyAmount(result.perYear, 'year', '38400');
+}
+
+function assertDeepFrozen(value: unknown) {
+  if (value !== null && typeof value === 'object') {
+    expect(Object.isFrozen(value)).toBe(true);
+    for (const nested of Object.values(value)) assertDeepFrozen(nested);
+  }
+}
+
+function unavailable(input: BudgetFinancialRatesInput, limits: ExactLimits) {
+  const result = calculateBudgetFinancialRates(input, limits);
+  if (result.status !== 'unavailable') throw Error('Resultado deveria estar indisponível.');
+  return result;
+}
+
+function sourceFailure(result: ReturnType<typeof unavailable>) {
+  const source = result.source;
+  if (source === null || source.status !== 'unavailable') throw Error('Origem deveria conter diagnóstico.');
+  return source;
+}
+
+function canonicalSource(input: BudgetFinancialRatesInput, limits: ExactLimits) {
+  const result = convertBudgetCalendarAmount(input.amount, input.sourcePeriod, input.sourcePeriod, input.calendar, limits);
+  if (result.status !== 'unavailable') throw Error('Origem canônica deveria ser rejeitada.');
+  return result;
+}
+
+describe('budget-financial-rates-immutability', () => {
+  it('resultado pronto congela cópias sem congelar entrada', () => {
+    const input = mutableInput();
+    const before = structuredClone(input);
+    const result = root(input);
+    const repeat = root(input);
+    verifyBaseResult(result);
+    expect(repeat).toEqual(result);
+    const day = verifyWorkingRate(result.perWorkingDay);
+    const hour = verifyWorkingRate(result.perConnectedHour);
+    expect(day.value).toEqual(r('200'));
+    expect(hour.value).toEqual(r('50'));
+    expect(day.denominator).toEqual(r('16'));
+    expect(hour.denominator).toEqual(r('64'));
+    assertDeepFrozen(result);
+    expect(input).toEqual(before);
+    expect(Object.isFrozen(input)).toBe(false);
+    expect(Object.isFrozen(input.amount)).toBe(false);
+    expect(Object.isFrozen(input.calendar)).toBe(false);
+    expect(Object.isFrozen(input.calendar.daysPerMonth)).toBe(false);
+    expect(Object.isFrozen(input.calendar.monthsPerYear)).toBe(false);
+    expect(Object.isFrozen(input.calendar.daysPerWeek)).toBe(false);
+    expect(Object.isFrozen(input.calendar.hoursPerWorkingDay)).toBe(false);
+    expect(Object.isFrozen(input.calendar.lostWorkingDaysPerMonth)).toBe(false);
+    const saved = structuredClone(result);
+    input.amount.numerator = '9999';
+    input.calendar.daysPerMonth.numerator = '14';
+    input.calendar.monthsPerYear.numerator = '10';
+    input.calendar.daysPerWeek.numerator = '2';
+    input.calendar.hoursPerWorkingDay.numerator = '2';
+    input.calendar.lostWorkingDaysPerMonth.numerator = '1';
+    expect(result).toEqual(saved);
+    assertDeepFrozen(result);
+  });
+
+  it('falhas e diagnósticos aninhados também são congelados', () => {
+    const base = mutableInput();
+    const horaausente = root({ ...base, calendar: { ...base.calendar, hoursPerWorkingDay: null } });
+    expect(horaausente.perConnectedHour).toMatchObject({ status: 'unavailable', code: 'missing-calendar-input' });
+    assertDeepFrozen(horaausente);
+    const perdasexcessivas = root({ ...base, calendar: { ...base.calendar, lostWorkingDaysPerMonth: r('17') } });
+    expect(perdasexcessivas.perWorkingDay).toMatchObject({ status: 'unavailable', code: 'calendar-unavailable', diagnostic: {status:'unavailable',code:'invalid-calendar'} });
+    expect(perdasexcessivas.perConnectedHour).toMatchObject({ status: 'unavailable', code: 'calendar-unavailable', diagnostic: {status:'unavailable',code:'invalid-calendar'} });
+    assertDeepFrozen(perdasexcessivas);
+    const politicainvalida = unavailable(mutableInput(), { maxInputLength: 0, maxDigits: 64 });
+    expect(politicainvalida.code).toBe('invalid-budget');
+    expect(politicainvalida.source).toBeNull();
+    assertDeepFrozen(politicainvalida);
+  });
+
+  it('política é lida uma vez e reutilizada como snapshot', () => {
+    let readsLength = 0;
+    let readsDigits = 0;
+    const limits = {
+      get maxInputLength() { readsLength++; return readsLength === 1 ? 256 : 0; },
+      get maxDigits() { readsDigits++; return readsDigits === 1 ? 64 : 0; },
+    };
+    const result = root(mutableInput(), limits);
+    verifyBaseResult(result);
+    const day = verifyWorkingRate(result.perWorkingDay);
+    const hour = verifyWorkingRate(result.perConnectedHour);
+    expect(day.value).toEqual(r('200'));
+    expect(hour.value).toEqual(r('50'));
+    assertDeepFrozen(result);
+    expect(readsLength).toBe(1);
+    expect(readsDigits).toBe(1);
+    expect(Object.isFrozen(limits)).toBe(false);
+  });
+
+  it('orçamento insuficiente preserva falha técnica da origem', () => {
+    const input = mutableInput();
+    const limits = { maxInputLength: 256, maxDigits: 3 };
+    const expected = canonicalSource(input, limits);
+    expect(expected.code).toBe('resource-budget');
+    const result = unavailable(input, limits);
+    const source = sourceFailure(result);
+    expect(result.code).toBe('source-unavailable');
+    expect(source.code).toBe('resource-budget');
+    expect(source).toEqual(expected);
+    expect(result.reason).toBe(expected.reason);
+    expect(result.reason).not.toBe('');
+    assertDeepFrozen(result);
+    expect(Object.isFrozen(input)).toBe(false);
+    expect(Object.isFrozen(input.amount)).toBe(false);
+    expect(Object.isFrozen(input.calendar)).toBe(false);
+  });
+});
