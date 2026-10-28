@@ -1,5 +1,17 @@
 # FT-003.40.4c — execução local
 
+## Aceite40.4c.2g
+
+e86a35e2 recebidoUMAvez/COMPLETED inferência;gate0/typeslint391/391/4novostestes emUMA nova suíte(50suítes totais),não4suítescomorelatoafirmou. Testee416914b32ef869376b24a276b4e5f04d7ee42151d64870fb68fd3da14ddba99lido integralmente:política/unsupported/quantia-period/calendárioinválidos,códigosliterais epropagaçãodefalhascanônicascorretos. Q8S9rev1registrado;umaleituraextra semefeitos eimprecisãorelatada. Gitdeterminístico/liveahead5coincidem,96protegidos+source/prefixointactos. Supervisorassumecommitimediato. Próximafreeze/snapshot/políticagetters/resourcebudget;aceiteintegral/aplicativopendentes.
+
+## Atual40.4c.2g
+
+94478861 aceito/Q8S10rev1 e commit493bb1aa87db340eabe017cf4d63945dee72a21b efetuado pelo supervisor;387/387testes,fonteb9bc2ccb/availabilitytesta02db981. Gitantespreparo mainahead5,sem push.
+
+Novoe86a35e2-4e70-4354-a618-be37ca5a8314 confirmado RUNNING/R8Vv1,mesmochat01a16678-96c5-7eb2-9ee1-fea2b7b37cf2/repoD:/trampo/jcem.pro-uber. Unidade40.4c.2g:4it em src/domain/budget-financial-rates-input.test.ts;política inválida2casos,unsupportednull/USD/basis,den0/quarter,calendárioreal/null/undefined. Prefixoguardasprontas/boundaryunknowncasts exclusivosparafixturesinválidas;worker sópreenche4it.todo,umwrite_file+verify_budget_rates_input UMAvez/encerrar inclusivefalha. expect_changes=true/supervisorcommit. Contexto17287chars/SHAedfc7f62626b66dc6d8c182e87b500d66210e41a4d69b634ba0a25833f87d41f;scaffoldbc7858c797bf44276acd328a9fcd63b19391d140a954acfd02d82753e59e2fd0. Oráculos inferiores inspectExactLimits/convertBudgetCalendarAmount protegidos sócomparamclassificação/propagação;rootcode/sourcecodeindependentes literais. Gate391+/4novos/49anteriores/96protegidos+sourcepin+prefixo;extensão mantémperfis/sintaxeaprovada. Baseaceita387atéaceite.
+
+Callback local_resultUMAvez/revisão4grupos/Git/Q8S/commitseaceito. Freeze/snapshot/políticagetters/falhastécnicas eaceiteintegral/appcontinuampendentes;contagemnãofechaaceite. Não reconsultar944/aea/11/ae/3a/84/7b/215/108/1cc/0966/982/487. Sem polling. Monitor http://127.0.0.1:49767/job/e86a35e2-4e70-4354-a618-be37ca5a8314 eíndice http://127.0.0.1:49767/ (linkscompletosnochat). N7Csemferramentanativacompact/mediçãoautoritativabarata;impedimento declarado/checkpointnãoécompactação.
+
 ## Aceite40.4c.2f.1
 
 94478861 recebidoUMAvez/COMPLETED command_sequenceSEMinferência/patch0gate0;tiposlint387/387,4novos/48anteriores/95protegidos+fonte/prefixo. Correçõesa02db981revisadas comtesteoriginaljáexaminado:3guardasdiagnóstico/semoptional,zero/horas0e25/perdas17/W8semclamp/diagoriginais eperíodos mantidos. Q8S10rev1registrado. Gitdeterminístico/liveahead4coincidem;supervisorassumecommitimediato. Próximarejeiçãoentrada/políticainválida;freeze/snapshot/políticagetters/integral/appcontinuampendentes.

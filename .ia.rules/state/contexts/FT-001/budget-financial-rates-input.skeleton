@@ -1,0 +1,56 @@
+import { describe, it, expect } from 'vitest';
+import { calculateBudgetFinancialRates } from './budget-financial-rates';
+import type { BudgetFinancialRatesInput } from './budget-financial-rates';
+import { inspectExactLimits } from './exact-budget';
+import type { ExactLimits } from './exact-budget';
+import { convertBudgetCalendarAmount } from './budget-amount';
+
+function r(numerator: string, denominator = '1') {
+  return { numerator, denominator };
+}
+
+function baseInput(): BudgetFinancialRatesInput {
+  return {
+      currency: 'BRL',
+      sourceBasis: 'budget-calendar-period',
+      amount: r('3200', '1'),
+      sourcePeriod: 'month',
+      calendar: {
+        kind: 'budget',
+        daysPerMonth: r('28'),
+        monthsPerYear: r('12'),
+        daysPerWeek: r('4'),
+        hoursPerWorkingDay: r('4'),
+        lostWorkingDaysPerMonth: r('0'),
+      },
+    };
+}
+
+const policy = { maxInputLength: 256, maxDigits: 64 };
+
+// Únicos casts: fronteira de fixtures inválidas; nenhum cast de resultado.
+function invoke(input: unknown, limits: unknown = policy) {
+  const result = calculateBudgetFinancialRates(input as BudgetFinancialRatesInput, limits as ExactLimits);
+  if (result.status !== 'unavailable') throw Error('Entrada deveria ser rejeitada.');
+  return result;
+}
+
+function canonicalSource(input: unknown) {
+  const candidate = input as BudgetFinancialRatesInput;
+  const result = convertBudgetCalendarAmount(candidate.amount, candidate.sourcePeriod, candidate.sourcePeriod, candidate.calendar, policy);
+  if (result.status !== 'unavailable') throw Error('Origem canônica deveria ser rejeitada.');
+  return result;
+}
+
+function invalidPolicyReason(limits: unknown) {
+  const result = inspectExactLimits(limits);
+  if (result.valid) throw Error('Política deveria ser rejeitada.');
+  return result.reason;
+}
+
+describe('budget-financial-rates-input', () => {
+  it.todo('política inválida preserva motivo e não calcula origem');
+  it.todo('entrada não suportada não gera origem financeira');
+  it.todo('quantia ou período inválido preserva diagnóstico da origem');
+  it.todo('calendário não suportado preserva diagnóstico da origem');
+});
