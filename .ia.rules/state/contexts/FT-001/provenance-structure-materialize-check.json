@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "unit": "FT-003.37b.1",
+  "target": "src/domain/provenance-schema.ts",
+  "sha256": "727f2fc79a8d3d30cb717202eb06038a063628a41cc84e90dfacd0e069f2e4d5",
+  "modelSha256": "2c49be9dc99d29ae2d882584f63d59478bf5024fc34b30b5ea67456f5f4f2573",
+  "kinds": [
+    "current-decision",
+    "dated-official-fact",
+    "reported-personal",
+    "observation",
+    "measurement",
+    "estimate",
+    "illustrative-hypothesis",
+    "suggestion",
+    "gap"
+  ],
+  "reliability": [
+    "confirmed",
+    "reported",
+    "estimated",
+    "conditional",
+    "unverified"
+  ],
+  "fields": [
+    "kind",
+    "source",
+    "date",
+    "competence",
+    "scope",
+    "reliability"
+  ],
+  "sourceCommit": "04bc2f96c067e02d0f0c1be3a9c8b08b35d2336b",
+  "limits": "Somente estrutura: seis campos e listas literais do modelo, escopo reutilizado. Sem testes comportamentais, datas semânticas, verdade de fonte ou aceite financeiro."
+}

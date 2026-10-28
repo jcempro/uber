@@ -1,0 +1,13 @@
+# Handoff — FT-003.37b.1
+
+4a5683a6 recebido uma vez/revisado,Q8S10/revisão1. Fonte727f2fc7/modelo2c49be9d,6campos/9kinds/5reliabilities/composiçãodotargetScopeconferidos,types/lint0/67proteções/Gitmainahead7confere. Aceite sómaterialização/compilação,nãocomportamental. Commitantesdecasos independentesProvenance;281últimasuíteaceita.
+
+RUNNING confirmado:4a5683a6-d75b-4f93-924f-e030dcf98dfc;thread01a16678-96c5-7eb2-9ee1-fea2b7b37cf2/repoD:/trampo/jcem.pro-uber conferidoslist_threadsnesteturno. Sequênciamaterialize_provenance→compile_provenance,seminferência,expect_changestrue1fonte/commit_policysupervisor. PreflightAST6campos/9kinds/5reliabilities/67proteções,SHAprevisto727f2fc7/1593bytes,scripts syntaxNode24/TS6eAPIsValibotconferidos;traceoficial66/56rotaplanejada. Retomada:local_resultúnico/revisãofonte+enum/recibo/Git/Q8S/commitparcialseaderente;testesProvenanceposteriores,281últimasuíte.Semreconsultar4429/70a41.
+
+Escopo37a validado em04bc2f9:54f2a376/7e7a865b,37casos/6testes,tipos/lint281/281,bundleisolado6847B/gzip2162,66fontespreservadas.4429ad3a recebido uma vez/revisado/Q8S10. DocValibot/SRI/fontes/alternativa/limites atualizada. Não repetirtestes confiáveis semnovaedição,semrecorrerapredecessores.
+
+Novaunidade pequena determinística: somente schemaProvenance6campos obrigatórios,nullabledate/competence,source não-branca semtransformação,9kinds/5reliabilities extraídos doTypeScript canônico porAST (não recadastrados livremente). ComporPARAMETER_SCOPE_STRUCTURE_SCHEMA existente,sem copiar escopos. TypeScript6.0.3/compilerAST eValibotnullable/picklist instalados/verificados;nãoadicionarbiblioteca. Mapeamento declarativo trivial,seminferência/cálculofinanceiro. JSDocdelimitaestrutura≠data/verdade/confirmaçãofinanceira.
+
+Baseline67fontes commit04bc2f96c067e02d0f0c1be3a9c8b08b35d2336b,novo teste7e7a865b aceito e66anterioresiguais;pacotes/lockprotegidos. Sequênciamaterialize_provenance→compile_provenance,sourcegeradanãorepetível+recibo;compilehelperreutilizado perfilprovenance,tipo/lintsemtestesnovos. expect_changestrue emsrc/domain/provenance-schema.ts;commit_policysupervisor. Guardascolisão/root/ancestrais/hash/autoridade antes dosefeitos. Preflightsemgravarfonte/syntaxcheck primeiro.
+
+Apósterminalúnico:revisarsource/ASTenumcompletos/composiçãosemdefaults/recibo/Git,Q8S/commitparcialseaderente. TestescomportamentaisProvenance seguirãoetapaprópria,provavelcatálogocanônico/harnesscompleto,sematestarJSON/admissão/datas.281continuaúltimasuíte;appUI/ledger/metas/realização/defaultsmanutençãoopt-in/globalpendentes. N7Csemrotanativadecompactação;handoffauxiliar.
