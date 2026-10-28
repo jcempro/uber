@@ -1,0 +1,152 @@
+import { ExactLimits, inspectExactLimits } from './exact-budget';
+import { ExactRational } from './exact-rational';
+import { calculateFinancialProjection, FinancialProjectionInput, FinancialProjectionResult } from './financial-result';
+import { calculateExactProduct, ExactProductOperation } from './exact-product';
+import { calculateExactSum, ExactSumOperation } from './exact-sum';
+import { compareExactRationals } from './exact-compare';
+import { BudgetPeriod } from './model';
+
+export type LinearRevenueThresholdInput = {
+  readonly kind: 'linear-revenue-threshold';
+  readonly contextId: string;
+  readonly period: BudgetPeriod;
+  readonly fixedCosts: ExactRational;
+  readonly usageCosts: ExactRational;
+  readonly extraordinaryCosts: ExactRational;
+  readonly fixedTaxes: ExactRational;
+  readonly titheRate: ExactRational;
+  readonly revenueTaxRate: ExactRational;
+  readonly targetProfit: ExactRational;
+  readonly model: {
+    readonly kind: 'fixed-usage-linear';
+    readonly reason: string;
+  };
+};
+
+type ConditionalResult = {
+  readonly kind: 'projection';
+  readonly contextId: string;
+  readonly period: BudgetPeriod;
+  readonly model: { readonly kind: 'fixed-usage-linear'; readonly reason: string };
+  readonly financialAssessment: 'not-evaluated';
+  readonly taxAssessment: 'not-evaluated';
+  readonly costCoverage: 'not-evaluated';
+  readonly value: {
+    readonly requiredCreditedRevenue: ExactRational;
+    readonly operatingCost: ExactRational;
+    readonly targetProfit: ExactRational;
+    readonly remainingRevenueFactor: ExactRational;
+  };
+};
+
+type UnavailableResult = {
+  readonly code: 'invalid-budget' | 'unsupported-model' | 'invalid-target' | 'projection-unavailable' | 'calculation-unavailable' | 'non-positive-revenue-factor';
+  readonly reason: string;
+  readonly projection: FinancialProjectionResult | null;
+  readonly calculation: ExactProductFailure | ExactSumFailure | null;
+};
+
+export type LinearRevenueThresholdResult = ConditionalResult | UnavailableResult;
+
+export function calculateConditionalLinearRevenueThreshold(input: LinearRevenueThresholdInput, limits: ExactLimits): LinearRevenueThresholdResult {
+  const inspect = inspectExactLimits(limits);
+  if (!inspect.valid) {
+    return { code: 'invalid-budget', reason: inspect.reason, projection: null, calculation: null };
+  }
+
+  if (input.model.kind !== 'fixed-usage-linear' || input.model.reason.trim() === '') {
+    return { code: 'unsupported-model', reason: input.model.kind !== 'fixed-usage-linear' ? 'unsupported model kind' : 'reason must be non-empty string', projection: null, calculation: null };
+  }
+
+  const financialInput: FinancialProjectionInput = {
+    kind: 'projection',
+    contextId: input.contextId,
+    period: input.period,
+    creditedRevenue: { numerator: '0', denominator: '1' },
+    fixedCosts: input.fixedCosts,
+    usageCosts: input.usageCosts,
+    extraordinaryCosts: input.extraordinaryCosts,
+    fixedTaxes: input.fixedTaxes,
+    titheRate: input.titheRate,
+    revenueTaxRate: input.revenueTaxRate,
+  };
+
+  const projectionResult = calculateFinancialProjection(financialInput, limits);
+  if (projectionResult.status !== 'ready') {
+    return { code: 'projection-unavailable', reason: projectionResult.reason, projection: projectionResult, calculation: null };
+  }
+
+  const A = projectionResult.value.operatingCost;
+  const q = input.titheRate;
+  const tau = input.revenueTaxRate;
+
+  const one: ExactRational = { numerator: '1', denominator: '1' };
+  const qProduct = calculateExactProduct('multiply', q, one, limits);
+  if (qProduct.status === 'unavailable') {
+    return { code: 'calculation-unavailable', reason: qProduct.reason, projection: projectionResult, calculation: qProduct };
+  }
+
+  const tauProduct = calculateExactProduct('multiply', tau, one, limits);
+  if (tauProduct.status === 'unavailable') {
+    return { code: 'calculation-unavailable', reason: tauProduct.reason, projection: projectionResult, calculation: tauProduct };
+  }
+
+  const Gsub1 = calculateExactSum('subtract', one, qProduct.value, limits);
+  if (Gsub1.status === 'unavailable') {
+    return { code: 'calculation-unavailable', reason: Gsub1.reason, projection: projectionResult, calculation: Gsub1 };
+  }
+
+  const G = calculateExactSum('subtract', Gsub1.value, tauProduct.value, limits);
+  if (G.status === 'unavailable') {
+    return { code: 'calculation-unavailable', reason: G.reason, projection: projectionResult, calculation: G };
+  }
+
+  const GCompare = compareExactRationals(G.value, { numerator: '0', denominator: '1' }, limits);
+  if (GCompare.status === 'unavailable') {
+    return { code: 'calculation-unavailable', reason: GCompare.reason, projection: projectionResult, calculation: GCompare };
+  }
+
+  if (GCompare.order <= 0) {
+    return { code: 'non-positive-revenue-factor', reason: 'G must be positive for inversion', projection: projectionResult, calculation: null };
+  }
+
+  const targetProduct = calculateExactProduct('multiply', input.targetProfit, one, limits);
+  if (targetProduct.status === 'unavailable') {
+    return { code: 'calculation-unavailable', reason: targetProduct.reason, projection: projectionResult, calculation: targetProduct };
+  }
+
+  const targetCompare = compareExactRationals(targetProduct.value, { numerator: '0', denominator: '1' }, limits);
+  if (targetCompare.status === 'unavailable') {
+    return { code: 'calculation-unavailable', reason: targetCompare.reason, projection: projectionResult, calculation: targetCompare };
+  }
+
+  if (targetCompare.order < 0) {
+    return { code: 'invalid-target', reason: 'targetProfit must be non-negative', projection: projectionResult, calculation: null };
+  }
+
+  const sum = calculateExactSum('add', A, targetProduct.value, limits);
+  if (sum.status === 'unavailable') {
+    return { code: 'calculation-unavailable', reason: sum.reason, projection: projectionResult, calculation: sum };
+  }
+
+  const B = calculateExactProduct('divide', sum.value, G.value, limits);
+  if (B.status === 'unavailable') {
+    return { code: 'calculation-unavailable', reason: B.reason, projection: projectionResult, calculation: B };
+  }
+
+  return {
+    kind: 'projection',
+    contextId: input.contextId,
+    period: input.period,
+    model: { kind: 'fixed-usage-linear', reason: input.model.reason },
+    financialAssessment: 'not-evaluated',
+    taxAssessment: 'not-evaluated',
+    costCoverage: 'not-evaluated',
+    value: {
+      requiredCreditedRevenue: B.value,
+      operatingCost: A,
+      targetProfit: targetProduct.value,
+      remainingRevenueFactor: projectionResult.value.remainingRevenueFactor,
+    },
+  };
+}

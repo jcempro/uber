@@ -1,0 +1,37 @@
+// Controles adicionais derivados de RCF§8.2 e contratos de estados/exatidão, não da função sob teste.
+const thresholdBudget:ExactLimits={maxInputLength:256,maxDigits:64};
+function thresholdRational(numerator:string,denominator='1'){return {numerator,denominator};}
+function thresholdFixture():LinearRevenueThresholdInput{return {kind:'projection',contextId:'fixture-limiar',period:'month',fixedCosts:thresholdRational('100'),usageCosts:thresholdRational('200'),extraordinaryCosts:thresholdRational('30'),fixedTaxes:thresholdRational('10'),titheRate:thresholdRational('0'),revenueTaxRate:thresholdRational('0'),targetProfit:thresholdRational('60'),model:{kind:'fixed-usage-linear',reason:'Fixture matemática sintética; custos e uso constantes declarados'}};}
+function thresholdFrozen(value:unknown):void {if(value!==null&&typeof value==='object'){expect(Object.isFrozen(value)).toBe(true);for(const child of Object.values(value))thresholdFrozen(child);}}
+describe('Contrato condicional, diagnósticos e fronteiras do limiar',()=>{
+  it('A340 e alvo60 sem encargos proporcionais exigem400, com lucro60 no cálculo direto',()=>{
+    const input=thresholdFixture(),result=calculateConditionalLinearRevenueThreshold(input,thresholdBudget);
+    expect(result).toMatchObject({status:'conditional',kind:'projection',financialAssessment:'not-evaluated',costCoverage:'not-evaluated',taxAssessment:'not-evaluated',value:{operatingCost:thresholdRational('340'),requiredCreditedRevenue:thresholdRational('400'),targetProfit:thresholdRational('60'),remainingRevenueFactor:thresholdRational('1')}});
+    if(result.status!=='conditional')throw Error('Esperado limiar condicional');
+    expect(calculateFinancialProjection({...input,creditedRevenue:result.value.requiredCreditedRevenue},thresholdBudget)).toMatchObject({status:'ready',value:{netProfit:thresholdRational('60')}});
+  });
+  it('modelo, alvo e custos ausentes ou inválidos preservam falhas reais',()=>{
+    for(const input of [null,{...thresholdFixture(),model:undefined},{...thresholdFixture(),model:{kind:'outro',reason:'Declarado'}},{...thresholdFixture(),model:{kind:'fixed-usage-linear',reason:' '}},{...thresholdFixture(),model:{kind:'fixed-usage-linear',reason:12}}]){
+      const result=calculateConditionalLinearRevenueThreshold(input as unknown as LinearRevenueThresholdInput,thresholdBudget);
+      expect(result).toMatchObject({status:'unavailable',code:'unsupported-model',projection:null,calculation:null});thresholdFrozen(result);
+    }
+    expect(calculateConditionalLinearRevenueThreshold({...thresholdFixture(),targetProfit:thresholdRational('-1')},thresholdBudget)).toMatchObject({status:'unavailable',code:'invalid-target'});
+    expect(calculateConditionalLinearRevenueThreshold({...thresholdFixture(),targetProfit:thresholdRational('1','0')},thresholdBudget)).toMatchObject({status:'unavailable',code:'calculation-unavailable',calculation:{status:'unavailable',code:'invalid-rational'}});
+    expect(calculateConditionalLinearRevenueThreshold({...thresholdFixture(),fixedCosts:thresholdRational('-1')},thresholdBudget)).toMatchObject({status:'unavailable',code:'projection-unavailable',projection:{status:'unavailable',code:'invalid-input',field:'fixedCosts'}});
+    expect(calculateConditionalLinearRevenueThreshold({...thresholdFixture(),fixedTaxes:undefined} as unknown as LinearRevenueThresholdInput,thresholdBudget)).toMatchObject({status:'unavailable',code:'projection-unavailable',projection:{status:'unavailable',code:'calculation-unavailable',field:'fixedTaxes'}});
+    expect(calculateConditionalLinearRevenueThreshold({...thresholdFixture(),kind:'actual'} as unknown as LinearRevenueThresholdInput,thresholdBudget)).toMatchObject({status:'unavailable',code:'projection-unavailable',projection:{code:'unsupported-kind'}});
+  });
+  it('preserva inteiros acima de2^53 e bloqueia orçamento insuficiente',()=>{
+    const input={...thresholdFixture(),fixedCosts:thresholdRational('9007199254740993'),usageCosts:thresholdRational('0'),extraordinaryCosts:thresholdRational('0'),fixedTaxes:thresholdRational('0'),targetProfit:thresholdRational('1')};
+    expect(calculateConditionalLinearRevenueThreshold(input,thresholdBudget)).toMatchObject({status:'conditional',value:{requiredCreditedRevenue:thresholdRational('9007199254740994')}});
+    expect(calculateConditionalLinearRevenueThreshold(input,{maxInputLength:256,maxDigits:1})).toMatchObject({status:'unavailable',code:'projection-unavailable',projection:{code:'calculation-unavailable',calculation:{code:'resource-budget'}}});
+    expect(calculateConditionalLinearRevenueThreshold(input,{maxInputLength:256,maxDigits:0})).toMatchObject({status:'unavailable',code:'invalid-budget'});
+  });
+  it('saídas são snapshots congelados e repetíveis sem alterar entradas',()=>{
+    const model={kind:'fixed-usage-linear' as const,reason:' razão literal '},target=thresholdRational('2','2'),input={...thresholdFixture(),contextId:' contexto ',model,targetProfit:target},before=JSON.stringify(input);
+    const result=calculateConditionalLinearRevenueThreshold(input,thresholdBudget);expect(calculateConditionalLinearRevenueThreshold(input,thresholdBudget)).toEqual(result);thresholdFrozen(result);
+    expect(result).toMatchObject({status:'conditional',contextId:' contexto ',model:{reason:' razão literal '},value:{targetProfit:thresholdRational('1')}});
+    expect(JSON.stringify(input)).toBe(before);expect(Object.isFrozen(input)).toBe(false);expect(Object.isFrozen(model)).toBe(false);expect(Object.isFrozen(target)).toBe(false);
+    model.reason='alterada';target.numerator='999';expect(result).toMatchObject({model:{reason:' razão literal '},value:{targetProfit:thresholdRational('1')}});
+  });
+});

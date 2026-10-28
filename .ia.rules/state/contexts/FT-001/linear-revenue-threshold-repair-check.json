@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.1a",
+  "sourcePath": "src/domain/linear-revenue-threshold.ts",
+  "testPath": "src/domain/linear-revenue-threshold.test.ts",
+  "sourceSha256": "d14b0382369afc4c392c9b303751cb344d8d9851a25cb0bef0022c336fe5928d",
+  "testSha256": "ee66ecd551b9581b2182b6d1037f5bdb41cf7136a7846ed151e1a544fbb9de67",
+  "before": [
+    "df18393524d019f96e57466ec844df0b0b52d509f2ff7214408139d0302097bb",
+    "7d34e1ffe83bbbbcc0bd0d498fc1a3ad81b181c97758d56e3ca717eea44a1538"
+  ],
+  "returns": 11,
+  "protectedFiles": 84,
+  "limits": "Limiar condicional com custos/uso estáveis declarados; não comprova custos completos, tributação legal, demanda, viabilidade real ou UI."
+}
