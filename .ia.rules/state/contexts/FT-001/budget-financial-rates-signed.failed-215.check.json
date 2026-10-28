@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "failed": "types",
+  "commands": [
+    {
+      "name": "types",
+      "status": 2,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\nsrc/domain/budget-financial-rates-signed.test.ts(2,15): error TS2614: Module '\"decimal.js\"' has no exported member 'ExactRational'. Did you mean to use 'import ExactRational from \"decimal.js\"' instead?\r\nsrc/domain/budget-financial-rates-signed.test.ts(3,47): error TS2307: Cannot find module './budget-financial-rates-signed' or its corresponding type declarations.\r\n",
+      "stderr": ""
+    }
+  ]
+}

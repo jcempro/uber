@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.4c.2c.1",
+  "beforeSha256": "cc51b5663bb36cad403f5c8b2010ac65bf1ff0dbee900169bc79ff7dfa135a36",
+  "afterSha256": "6d0a826ac187bd03a5251be625a4add439571f669caecd5bc5cf7d0d617fd838",
+  "changes": "imports/typed fixture W4D28M12/kind; root and result guards;20whole rational comparisons; period metadata and day identity control",
+  "limits": "Somente2casos de sinal/origem diária; demais grupos pendentes."
+}

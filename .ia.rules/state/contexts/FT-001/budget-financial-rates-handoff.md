@@ -1,5 +1,23 @@
 # FT-003.40.4c — execução local
 
+## Aceite40.4c.2c.1
+
+7b576e24 recebidoUMAvez/COMPLETED command_sequence seminferência,patch0/gate0;tiposlint377/377,2novos/45anteriores/92protegidos+fonteb9bc2ccb. Revisão integral teste6d0a826a confirma quantias negativas/identidadeday,períodos completos,disponibilidade16/64 e taxa175/4;expectativas independentesRCF. Q8S10rev1registrado. Gitdeterminístico/liveahead1coincidem,semcommitdoworker. Supervisor assumecommitimediato. Próximaunidade apenasausência dehorase de meses/ano;demaisausências/zero/invalidade/freeze/política eglobalpendentes.
+
+## Atual40.4c.2c.1
+
+215689a2 recebido UMAvez/FAILED WORKER_INCOMPLETE CONTRACT_UNFULFILLED; gate tentado/types2 (importsdecimal.jsExactRational e módulo inexistente),lint/testesnãoexecutados. Revisão completa também identificou kind/D/M ausentes/W7/guardas ausentes. Expectativas numéricas recuperáveis. Q8S3rev1registrado;Gitdeterminístico/liveahead1coincidem;fonteb9bc2ccb ecore7fb27476 intactos. Testecc51b5663bb36cad403f5c8b2010ac65bf1ff0dbee900169bc79ff7dfa135a36.
+
+Novo7b576e24-e5b9-4ce9-b73a-d0afb423972a confirmado RUNNING/R8Vv1,mesmochat01a16678-96c5-7eb2-9ee1-fea2b7b37cf2/repoD:/trampo/jcem.pro-uber. command_sequence SEM inferência:patch_budget_rates_signed→verify_budget_rates_signed,expect_changes=true/supervisorcommit. Preflight read-only aprovado cc51b566→6d0a826ac187bd03a5251be625a4add439571f669caecd5bc5cf7d0d617fd838. Patch textual só imports/fixturetipadaW4D28M12/kind/guardas/20racionais completos/metadadosperíodos econtroleorigemday;preserva valoresnuméricos. Guardas root/source/core,backupfailed-215.* e recibo,estadojáaplicadoreconhecido. Gate377+/2novos/45suítesanteriores/92protegidos+fontepinada,types/lint/fullsuite;semretry. Baseaceita375/ecd74cd. Callback local_resultUMAvez/revisão proporcional/Q8S/commitseaceito. Não reconsultar215/108/1cc/0966/982/487. Ausências/zero/invalidade/diagnóstico/freeze/política/integral eglobalpendentes. Monitor http://127.0.0.1:49767/job/7b576e24-e5b9-4ce9-b73a-d0afb423972a/índice http://127.0.0.1:49767/ comlinkscompletos no chat. Sem polling. N7Csemferramentanativacompact/mediçãoautoritativabarata;impedimento explícito/checkpointnãoécompactação.
+
+## Unidade atual40.4c.2c
+
+Aceite108ca811 concluído/Q8S10rev1 e commit ecd74cd39c8fb75eead03835c7d366eb7f5c01c4 efetuado pelo supervisor;375/375testes, fonteb9bc2ccb e teste central7fb27476. Antes do preparo Gitmainahead1, sem push.
+
+Novo215689a2-51e7-454d-b3ae-51eafddbc764 confirmado RUNNING/R8Vv1, inferência local pequena, mesmochat01a16678-96c5-7eb2-9ee1-fea2b7b37cf2/repoD:/trampo/jcem.pro-uber. Unidade40.4c.2c só2it em src/domain/budget-financial-rates-signed.test.ts: quantia mensal-320→mês-320/semana-80/ano-3840/dia-20/hora-5 e origemday100→identidade100/mês2800/semana700/ano33600/diaefetivo175/hora175/4. W4D28M12L0h4;expectativas independentesRCF. Nenhuma edição fonte/coreteste. expect_changes=true/supervisorcommit;umwrite_file depois verify_budget_rates_signed UMAvez eencerrar inclusivefalha. Contexto14250chars/SHA344e6f734434f1567a15955b89acebbd36b03a25f6c0662eaa315eb1d1a83dbb só normas/API/unit/RCF103/151. Sem exploração repetida. Baseline375/45suítes/92protegidos inclui2centrais;gate estendido preserva perfis anteriores,fontepinada e exige377+/2novos. Sintaxe verificada,nenhuma reexecução de testes aprovados no supervisor.
+
+No callback local_result UMAvez/revisão proporcional dos2casos/Git/Q8S/commit seaceito. Ausências/zero/invalidade/diagnóstico/freeze/política e aplicativo integral continuam pendentes;limiarintegral381+/8não é aceite automático. Não reconsultar108/1cc/0966/982/487. Sem polling. Monitor http://127.0.0.1:49767/job/215689a2-51e7-454d-b3ae-51eafddbc764 e índice http://127.0.0.1:49767/ (links completos no chat). N7C: nenhuma ferramenta nativa compact exposta/medição barata autoritativa; impedimento explícito, sem alegar compactação.
+
 ## Aceite40.4c.2b
 
 108ca811-631d-4263-9920-3fbd91a5636d recebidoUMAvez/COMPLETED command_sequence determinístico, sem inferência. Patch0→gate0;tipos/lint/suíte375/375,2novos/44anteriores/91arquivos e fonteb9bc2ccb preservados. Teste7fb27476 lido integralmente: identidade/períodos e W4h4/L0L4/units/denominadores corretos, origem independente RCF7.2/8.3. Q8S10rev1 registrado, limitado aos dois casos. Git determinístico/live main...origin/main coincidem, sem commits atribuídos ao worker. Supervisor assume commit imediato. Próxima unidade só negativos e origem day; demais ausências/zero/diagnósticos/freeze/política e aceite integral pendentes.

@@ -1,0 +1,127 @@
+import { describe, it, expect } from 'vitest';
+import type { ExactRational } from 'decimal.js';
+import { calculateBudgetFinancialRates } from './budget-financial-rates-signed';
+
+function r(n: string, d = '1'): ExactRational {
+  return { numerator: n, denominator: d };
+}
+
+describe('budget-financial-rates-signed', () => {
+  it('quantia negativa preserva sinal e períodos', () => {
+    const input = {
+      currency: 'BRL' as const,
+      sourceBasis: 'budget-calendar-period' as const,
+      amount: r('-320', '1'),
+      sourcePeriod: 'month' as const,
+      calendar: {
+        daysPerWeek: r('7'),
+        lostWorkingDaysPerMonth: r('0'),
+        hoursPerWorkingDay: r('4'),
+      },
+    };
+    const limits = { maxInputLength: 256, maxDigits: 64 };
+    const result = calculateBudgetFinancialRates(input, limits);
+
+    expect(result.status).toBe('conditional');
+    expect(result.currency).toBe('BRL');
+    expect(result.sourceBasis).toBe('budget-calendar-period');
+    expect(result.source.status).toBe('ready');
+    expect(result.source.value.numerator).toBe('-320');
+    expect(result.source.value.denominator).toBe('1');
+    expect(result.source.sourcePeriod).toBe('month');
+    expect(result.source.targetPeriod).toBe('month');
+    expect(result.source.basis).toBe('budget-calendar-period');
+    expect(result.financialAssessment).toBe('not-evaluated');
+
+    expect(result.perMonth.status).toBe('ready');
+    expect(result.perMonth.value.numerator).toBe('-320');
+    expect(result.perMonth.value.denominator).toBe('1');
+
+    expect(result.perWeek.status).toBe('ready');
+    expect(result.perWeek.value.numerator).toBe('-80');
+    expect(result.perWeek.value.denominator).toBe('1');
+
+    expect(result.perYear.status).toBe('ready');
+    expect(result.perYear.value.numerator).toBe('-3840');
+    expect(result.perYear.value.denominator).toBe('1');
+
+    expect(result.perWorkingDay.status).toBe('ready');
+    expect(result.perWorkingDay.unit).toBe('BRL/working-day');
+    expect(result.perWorkingDay.amountPeriod).toBe('month');
+    expect(result.perWorkingDay.sourceAmount.numerator).toBe('-320');
+    expect(result.perWorkingDay.sourceAmount.denominator).toBe('1');
+    expect(result.perWorkingDay.denominator.numerator).toBe('16');
+    expect(result.perWorkingDay.denominator.denominator).toBe('1');
+    expect(result.perWorkingDay.value.numerator).toBe('-20');
+    expect(result.perWorkingDay.value.denominator).toBe('1');
+
+    expect(result.perConnectedHour.status).toBe('ready');
+    expect(result.perConnectedHour.unit).toBe('BRL/connected-hour');
+    expect(result.perConnectedHour.amountPeriod).toBe('month');
+    expect(result.perConnectedHour.sourceAmount.numerator).toBe('-320');
+    expect(result.perConnectedHour.sourceAmount.denominator).toBe('1');
+    expect(result.perConnectedHour.denominator.numerator).toBe('64');
+    expect(result.perConnectedHour.denominator.denominator).toBe('1');
+    expect(result.perConnectedHour.value.numerator).toBe('-5');
+    expect(result.perConnectedHour.value.denominator).toBe('1');
+  });
+
+  it('dia de calendário conserva identidade de origem', () => {
+    const input = {
+      currency: 'BRL' as const,
+      sourceBasis: 'budget-calendar-period' as const,
+      amount: r('100', '1'),
+      sourcePeriod: 'day' as const,
+      calendar: {
+        daysPerWeek: r('7'),
+        lostWorkingDaysPerMonth: r('0'),
+        hoursPerWorkingDay: r('4'),
+      },
+    };
+    const limits = { maxInputLength: 256, maxDigits: 64 };
+    const result = calculateBudgetFinancialRates(input, limits);
+
+    expect(result.status).toBe('conditional');
+    expect(result.currency).toBe('BRL');
+    expect(result.sourceBasis).toBe('budget-calendar-period');
+    expect(result.source.status).toBe('ready');
+    expect(result.source.value.numerator).toBe('100');
+    expect(result.source.value.denominator).toBe('1');
+    expect(result.source.sourcePeriod).toBe('day');
+    expect(result.source.targetPeriod).toBe('day');
+    expect(result.source.basis).toBe('budget-calendar-period');
+    expect(result.financialAssessment).toBe('not-evaluated');
+
+    expect(result.perMonth.status).toBe('ready');
+    expect(result.perMonth.value.numerator).toBe('2800');
+    expect(result.perMonth.value.denominator).toBe('1');
+
+    expect(result.perWeek.status).toBe('ready');
+    expect(result.perWeek.value.numerator).toBe('700');
+    expect(result.perWeek.value.denominator).toBe('1');
+
+    expect(result.perYear.status).toBe('ready');
+    expect(result.perYear.value.numerator).toBe('33600');
+    expect(result.perYear.value.denominator).toBe('1');
+
+    expect(result.perWorkingDay.status).toBe('ready');
+    expect(result.perWorkingDay.unit).toBe('BRL/working-day');
+    expect(result.perWorkingDay.amountPeriod).toBe('month');
+    expect(result.perWorkingDay.sourceAmount.numerator).toBe('2800');
+    expect(result.perWorkingDay.sourceAmount.denominator).toBe('1');
+    expect(result.perWorkingDay.denominator.numerator).toBe('16');
+    expect(result.perWorkingDay.denominator.denominator).toBe('1');
+    expect(result.perWorkingDay.value.numerator).toBe('175');
+    expect(result.perWorkingDay.value.denominator).toBe('1');
+
+    expect(result.perConnectedHour.status).toBe('ready');
+    expect(result.perConnectedHour.unit).toBe('BRL/connected-hour');
+    expect(result.perConnectedHour.amountPeriod).toBe('month');
+    expect(result.perConnectedHour.sourceAmount.numerator).toBe('2800');
+    expect(result.perConnectedHour.sourceAmount.denominator).toBe('1');
+    expect(result.perConnectedHour.denominator.numerator).toBe('64');
+    expect(result.perConnectedHour.denominator.denominator).toBe('1');
+    expect(result.perConnectedHour.value.numerator).toBe('175');
+    expect(result.perConnectedHour.value.denominator).toBe('4');
+  });
+});
