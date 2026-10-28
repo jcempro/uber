@@ -1,0 +1,65 @@
+import { describe, it, expect } from 'vitest';
+import { calculateBudgetFinancialRates } from './budget-financial-rates';
+import type { BudgetFinancialRatesInput, BudgetWorkingRateResult } from './budget-financial-rates';
+import { convertBudgetCalendarAmount } from './budget-amount';
+import type { BudgetAmountResult } from './budget-amount';
+const policy = { maxInputLength: 256, maxDigits: 64 };
+function r(numerator: string, denominator = '1') {
+  return { numerator, denominator };
+}
+
+function baseInput(): BudgetFinancialRatesInput {
+  return {
+      currency: 'BRL',
+      sourceBasis: 'budget-calendar-period',
+      amount: r('3200', '1'),
+      sourcePeriod: 'month',
+      calendar: {
+        kind: 'budget',
+        daysPerMonth: r('28'),
+        monthsPerYear: r('12'),
+        daysPerWeek: r('4'),
+        hoursPerWorkingDay: r('4'),
+        lostWorkingDaysPerMonth: r('0'),
+      },
+    };
+}
+
+function root(input: BudgetFinancialRatesInput) {
+  const result = calculateBudgetFinancialRates(input, policy);
+  if (result.status !== 'conditional') throw Error(result.reason);
+  return result;
+}
+function readyAmount(result: BudgetAmountResult) {
+  if (result.status !== 'ready') throw Error(result.reason);
+  return result;
+}
+function readyWorking(result: BudgetWorkingRateResult) {
+  if (result.status !== 'ready') throw Error(result.reason);
+  return result;
+}
+describe('budget-financial-rates-controls', () => {
+  it('conversor canônico distingue dia de calendário e dia efetivo', () => {
+    const input = baseInput();
+    const calendarDay = readyAmount(convertBudgetCalendarAmount(input.amount, 'month', 'day', input.calendar, policy));
+    expect(calendarDay).toEqual({
+      status: 'ready',
+      value: r('800', '7'),
+      sourcePeriod: 'month',
+      targetPeriod: 'day',
+      basis: 'budget-calendar-period',
+    });
+
+    const result = root(input);
+    expect(result.source).toEqual({status:'ready',value:r('3200'),sourcePeriod:'month',targetPeriod:'month',basis:'budget-calendar-period'});
+    expect(result.financialAssessment).toBe('not-evaluated');
+    const workingDay = readyWorking(result.perWorkingDay);
+    expect(workingDay.value).toEqual(r('200'));
+    expect(workingDay.denominator).toEqual(r('16'));
+    expect(workingDay.sourceAmount).toEqual(r('3200'));
+    expect(workingDay.unit).toBe('BRL/working-day');
+    expect(workingDay.amountPeriod).toBe('month');
+
+    expect(workingDay.value).not.toEqual(calendarDay.value);
+  });
+});

@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.4c.2i",
+  "node": "v24.22.1",
+  "sourceCommit": "cdb642d4868066c089081c6a2293fc55240e7eb5",
+  "files": {
+    "src/domain/budget-financial-rates.ts": "b9bc2ccbe0a7245b5f79e3a3d6847f430e43601a0b70b94c30f44eb03a0b9da4",
+    "src/domain/budget-financial-rates-controls.test.ts": "fb633a32095aa574fccaadd446a675a6268da316b5234f08381e67dcce07ba95",
+    "src/domain/budget-financial-rates.test.ts": "7fb27476a464ef3837c2026a1a2c929c65a7865c3f16d9461e63a1626916e858",
+    "src/domain/budget-financial-rates-signed.test.ts": "6d0a826ac187bd03a5251be625a4add439571f669caecd5bc5cf7d0d617fd838",
+    "src/domain/budget-financial-rates-missing.test.ts": "b4815c758bb25bff5c8696a6558e863b3f51e3bcd8002330d357ca378c4ee50d",
+    "src/domain/budget-financial-rates-calendar.test.ts": "fef1dcaad1a04e2649e6677b2502fa957759a158e88c4ef685d04bd589ed7081",
+    "src/domain/budget-financial-rates-availability.test.ts": "a02db9815fbeb29f8f6ec25ec18e4deba8afcb1d439040d2ed0637c4a375b212",
+    "src/domain/budget-financial-rates-input.test.ts": "e416914b32ef869376b24a276b4e5f04d7ee42151d64870fb68fd3da14ddba99",
+    "src/domain/budget-financial-rates-immutability.test.ts": "3e370c6d460f70770946d5be41591601bd728eb57030fc521a819493cbc64eef"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\budget-financial-rates-controls-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/budget-financial-rates-controls-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 396,
+    "passed": 396,
+    "newSuite": 1
+  },
+  "protectedFiles": 98,
+  "rateAggregate": {
+    "files": 8,
+    "tests": 23,
+    "reviewedPins": 7,
+    "semanticReview": "supervisor"
+  },
+  "limits": "Controle canônico e agregado8arquivos/8grupos; aceite semântico e aplicativo pendentes. Conversões orçamentárias condicionais; não apura resultados reais ou custos completos."
+}

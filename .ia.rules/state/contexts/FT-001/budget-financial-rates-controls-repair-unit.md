@@ -1,0 +1,7 @@
+# FT-003.40.4c.2i.1 — completar duas assertivas requeridas
+
+f3486163 recebidoUMAvez/COMPLETED inferência;gate0/typeslint396/396,1itnovo/8arquivosagregados23it/98protegidos+fonte/prefixo. Revisão integral confirma800/7canônicoversus200efetivo;masfaltam2assertsunit2i:sourceidentidademensal3200 efinancialAssessmentnot-evaluated. Já cobertos nocore pinado,semdefeitofuncionalcomprovado,porémsolicitaçãodestamicro-unidadeaindaincompleta. Q8S8rev1registrado;Gitdeterminístico/liveahead7coincidem. Não consultarnovamentef3486163.
+
+Novasequência determinística seminferência:patch_budget_rates_controls→verify_budget_rates_controls. Teste preimagefb633a32095aa574fccaadd446a675a6268da316b5234f08381e67dcce07ba95. Patch acrescenta sóexpect source{status:ready,value3200,sourcePeriodmonth,targetPeriodmonth,basisbudget-calendar-period} efinancialAssessmentnot-evaluated,semalterarcontrole/números/prefixo/contagens. Normas/unit antesdoefeito;98arquivos/fonteconferidos;backupteste/reportfailed-unit-f348 (jobCOMPLETED,parcialsemanticamente) e recibo/idempotência. Preflightread-only antesdedelegar. Semfonte/testesaceitos/rede/instalação/commit;supervisorassumecommitapósaceite.
+
+Gateexistenterates-controls mantém396+/1novo/51anteriores/98protegidos+sourcepin+prefixo+8arquivos23it com7pinsaceitos. Novo teste alterado justifica gate;nenhumrerunaprovado nopago. Depoisdoretorno/revisãofinalizarconciliação8grupos ecommit. Aplicativoglobal/UI/ledger/coberturatotal/realização pendentes;COMPLETEDnãosubstituiaceitesemântico.

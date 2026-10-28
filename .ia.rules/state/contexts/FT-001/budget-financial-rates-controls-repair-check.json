@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.4c.2i.1",
+  "beforeSha256": "fb633a32095aa574fccaadd446a675a6268da316b5234f08381e67dcce07ba95",
+  "afterSha256": "c4b4012d8dc9463574ca3fba0ba0ae5bd1a9cdea0f719218c9c9409d50e08a88",
+  "changes": "two missing required assertions: monthly source identity and financialAssessment not-evaluated; canonical control untouched",
+  "limits": "Aceite final8grupos e aplicativo ainda sujeitos à revisão."
+}
