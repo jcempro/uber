@@ -1,0 +1,114 @@
+import { describe, it, expect } from 'vitest';
+import { calculateBudgetFinancialRates } from './budget-financial-rates';
+import type { BudgetFinancialRatesInput, BudgetWorkingRateResult } from './budget-financial-rates';
+import type { BudgetAmountResult } from './budget-amount';
+import type { BudgetPeriod } from './model';
+
+function r(numerator: string, denominator = '1') {
+  return { numerator, denominator };
+}
+
+function root(input: BudgetFinancialRatesInput) {
+  const result = calculateBudgetFinancialRates(input, { maxInputLength: 256, maxDigits: 64 });
+  if (result.status !== 'conditional') {
+    throw Error(result.reason);
+  }
+  return result;
+}
+
+function verifyWorkingRate(result: BudgetWorkingRateResult) {
+  if (result.status !== 'ready') {
+    throw Error(result.reason);
+  }
+  return result;
+}
+
+function verifyAmount(result: BudgetAmountResult, period: BudgetPeriod, amount: string) {
+  if (result.status !== 'ready') throw Error(result.reason);
+  expect(result.value).toEqual(r(amount));
+  expect(result.sourcePeriod).toBe('month');
+  expect(result.targetPeriod).toBe(period);
+  expect(result.basis).toBe('budget-calendar-period');
+}
+
+function baseInput(): BudgetFinancialRatesInput {
+  return {
+      currency: 'BRL',
+      sourceBasis: 'budget-calendar-period',
+      amount: r('3200', '1'),
+      sourcePeriod: 'month',
+      calendar: {
+        kind: 'budget',
+        daysPerMonth: r('28'),
+        monthsPerYear: r('12'),
+        daysPerWeek: r('4'),
+        hoursPerWorkingDay: r('4'),
+        lostWorkingDaysPerMonth: r('0'),
+      },
+    };
+}
+
+function verifyUnavailableWorking(result: BudgetWorkingRateResult) {
+    if (result.status !== 'unavailable') throw Error('Taxa horária deveria estar indisponível.');
+  return result;
+}
+
+function verifyMissingAmount(result: BudgetAmountResult) {
+    if (result.status !== 'unavailable' || !('dependency' in result)) throw Error('Montante anual deveria estar indisponível por calendário.');
+  return result;
+}
+
+describe('budget-financial-rates-calendar', () => {
+  it('dias por semana ausentes bloqueiam apenas taxas de trabalho', () => {
+    const input = { ...baseInput(), calendar: { ...baseInput().calendar, daysPerWeek: null } };
+    const result = root(input);
+
+    verifyAmount(result.perMonth, 'month', '3200');
+    verifyAmount(result.perYear, 'year', '38400');
+    verifyUnavailableWorking(result.perWorkingDay);
+    verifyUnavailableWorking(result.perConnectedHour);
+  });
+
+  it('perdas mensais ausentes bloqueiam apenas taxas de trabalho', () => {
+    const input = { ...baseInput(), calendar: { ...baseInput().calendar, lostWorkingDaysPerMonth: undefined } };
+    const result = root(input);
+
+    verifyAmount(result.perMonth, 'month', '3200');
+    verifyAmount(result.perYear, 'year', '38400');
+    verifyUnavailableWorking(result.perWorkingDay);
+    verifyUnavailableWorking(result.perConnectedHour);
+  });
+
+  it('dias por mês ausentes preservam identidade mensal e anual', () => {
+    const input = { ...baseInput(), calendar: { ...baseInput().calendar, daysPerMonth: null } };
+    const result = root(input);
+
+    verifyAmount(result.perMonth, 'month', '3200');
+    verifyAmount(result.perYear, 'year', '38400');
+    verifyMissingAmount(result.perWeek);
+    verifyUnavailableWorking(result.perWorkingDay);
+    verifyUnavailableWorking(result.perConnectedHour);
+  });
+
+  it('origem diária sem dias por mês preserva semana', () => {
+    const input = {
+      ...baseInput(),
+      amount: r('100', '1'),
+      sourcePeriod: 'day',
+      calendar: { ...baseInput().calendar, daysPerMonth: undefined }
+    };
+    const result = root(input);
+
+    expect(result.perWeek).toEqual({
+      status: 'ready',
+      value: r('700', '1'),
+      sourcePeriod: 'day',
+      targetPeriod: 'week',
+      basis: 'budget-calendar-period'
+    });
+    verifyMissingAmount(result.perMonth);
+    verifyMissingAmount(result.perYear);
+    verifyUnavailableWorking(result.perWorkingDay);
+    verifyUnavailableWorking(result.perConnectedHour);
+  });
+});

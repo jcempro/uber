@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.4c.2e.1",
+  "beforeSha256": "68834eeb9c90f1db7be7301121dba6404abdb99c6a33db616f69e33b7399d12f",
+  "afterSha256": "fef1dcaad1a04e2649e6677b2502fa957759a158e88c4ef685d04bd589ed7081",
+  "scaffoldBeforeSha256": "2a85c83dcb7ffa2217bf04484d856ca878e4587ed49a6af54169671bb3a217a0",
+  "scaffoldAfterSha256": "0df81e5df1574aac8245b8f5d4b71f0322cef57521511f001043ac6d5e5992e4",
+  "changes": "remove unused protected helper in test/scaffold; type4inputs; add identities/week amounts/codes/dependencies/original diagnostic checks from unit matrix",
+  "limits": "Somente4casos W/L/D; demais grupos pendentes."
+}
