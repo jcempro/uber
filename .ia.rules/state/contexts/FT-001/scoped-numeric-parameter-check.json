@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "unit": "FT-003.39.4",
+  "node": "v24.22.1",
+  "sourceCommit": "206349f878f9c09027ab08428b59d17a292a1165",
+  "files": {
+    "src/domain/scoped-numeric-parameter.ts": "f8d95aaaef58e2e5d7976f28c809ff68b3b58d68799d6e91f428fe4484581983",
+    "src/domain/scoped-numeric-parameter.test.ts": "2345ebb3c37ec0190381ae5311728ecf0e85f483087c4976214167fa2c0ab229"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\scoped-numeric-parameter-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/scoped-numeric-parameter-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 335,
+    "passed": 335,
+    "newSuite": 8
+  },
+  "protectedFiles": 82,
+  "limits": "Quantidade e escopo declarados apenas; não comprova precedência, evidência, ledger financeiro ou UI."
+}

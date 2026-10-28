@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "unit": "FT-003.39.4",
+  "sourceSha256": "f8d95aaaef58e2e5d7976f28c809ff68b3b58d68799d6e91f428fe4484581983",
+  "testSha256": "2345ebb3c37ec0190381ae5311728ecf0e85f483087c4976214167fa2c0ab229",
+  "sourcePath": "src/domain/scoped-numeric-parameter.ts",
+  "testPath": "src/domain/scoped-numeric-parameter.test.ts",
+  "protectedFiles": 82,
+  "limits": "Quantidade e escopo declarados apenas; não comprova precedência, evidência, ledger financeiro ou UI."
+}
