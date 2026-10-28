@@ -1,0 +1,20 @@
+/**
+ * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
+ * Origem: jcem.pro-uber; RCF§8.3, FT-003.40.2.
+ * Autoria Git: JeanCarloEM <jeancarlo@jeancarloem.com>.
+ */
+import {inspectExactLimits,type ExactLimits} from './exact-budget';
+import type {ExactRational} from './exact';
+import type {BudgetPeriod} from './model';
+import {calculateFinancialProjection,type FinancialProjectionInput,type FinancialProjectionResult} from './financial-result';
+import {calculateExactProduct,type ExactProductFailure} from './exact-product';
+import {calculateExactSum,type ExactSumFailure} from './exact-sum';
+import {compareExactRationals,type ExactComparisonFailure} from './exact-compare';
+export interface FinancialTargetGapInput extends FinancialProjectionInput {readonly targetProfit:ExactRational;}
+export type FinancialTargetGapResult=
+  | {readonly status:'conditional';readonly kind:'projection';readonly contextId:string;readonly period:BudgetPeriod;readonly costCoverage:'not-evaluated';readonly taxAssessment:'not-evaluated';readonly projection:Extract<FinancialProjectionResult,{status:'ready'}>;readonly value:{readonly targetProfit:ExactRational;readonly signedTargetSlack:ExactRational;readonly profitShortfall:ExactRational;readonly modeledCoverageShortfall:ExactRational;readonly coversModeledCosts:boolean;readonly reachesModeledTarget:boolean}}
+  | {readonly status:'unavailable';readonly code:'invalid-budget'|'projection-unavailable'|'invalid-target'|'calculation-unavailable';readonly reason:string;readonly projection:FinancialProjectionResult|null;readonly calculation:ExactComparisonFailure|ExactProductFailure|ExactSumFailure|null};
+/** Somente resultado econômico do modelo; completude/evidência legal/empírica não atestadas. */
+export function calculateFinancialTargetGap(input:FinancialTargetGapInput,limits:ExactLimits):FinancialTargetGapResult {
+  // Implementar o algoritmo aprovado; não deixar placeholder na fonte funcional.
+}

@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.2a",
+  "sourcePath": "src/domain/financial-target-gap.ts",
+  "testPath": "src/domain/financial-target-gap.test.ts",
+  "sourceSha256": "3ffbee4d196d6f83b42e356afdb0e2e1a337d9cf29669d1ccd34c66be45e4747",
+  "testSha256": "e4a98ad50a96f8da2c3ad5463323e70c692c1bcd2ce8cbab733e50cb1f98c258",
+  "before": [
+    "19ef91ac73b2f56298703b9412517f00dd47f3b743c5efe33a64a1262594e163",
+    "f4d194a18c7bcb008d4b1ac8c1abac9fa0f8a4867e4f265407c27514dd00d47b"
+  ],
+  "returns": 11,
+  "technical": 2,
+  "testCount": 10,
+  "protectedFiles": 86,
+  "limits": "Desvios condicionais do modelo apenas; não comprova custos completos, tributação legal, resultado real, repasse adicional ou UI."
+}

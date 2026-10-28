@@ -1,0 +1,201 @@
+/**
+ * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
+ * Origem: jcem.pro-uber; RCF§8.3, FT-003.40.2.
+ * Autoria Git: JeanCarloEM <jeancarlo@jeancarloem.com>.
+ */
+import {inspectExactLimits, type ExactLimits} from './exact-budget';
+import type {ExactRational} from './exact';
+import type {BudgetPeriod} from './model';
+import {calculateFinancialProjection, type FinancialProjectionInput, type FinancialProjectionResult} from './financial-result';
+import {calculateExactProduct, type ExactProductFailure} from './exact-product';
+import {calculateExactSum, type ExactSumFailure} from './exact-sum';
+import {compareExactRationals, type ExactComparisonFailure} from './exact-compare';
+
+export interface FinancialTargetGapInput extends FinancialProjectionInput {
+  readonly targetProfit: ExactRational;
+}
+
+export type FinancialTargetGapResult =
+  | {
+      readonly status: 'conditional';
+      readonly kind: 'projection';
+      readonly contextId: string;
+      readonly period: BudgetPeriod;
+      readonly costCoverage: 'not-evaluated';
+      readonly taxAssessment: 'not-evaluated';
+      readonly projection: Extract<FinancialProjectionResult, {status: 'ready'}>;
+      readonly value: {
+        readonly targetProfit: ExactRational;
+        readonly signedTargetSlack: ExactRational;
+        readonly profitShortfall: ExactRational;
+        readonly modeledCoverageShortfall: ExactRational;
+        readonly coversModeledCosts: boolean;
+        readonly reachesModeledTarget: boolean;
+      };
+    }
+  | {
+      readonly status: 'unavailable';
+      readonly code: 'invalid-budget' | 'projection-unavailable' | 'invalid-target' | 'calculation-unavailable';
+      readonly reason: string;
+      readonly projection: FinancialProjectionResult | null;
+      readonly calculation: ExactComparisonFailure | ExactProductFailure | ExactSumFailure | null;
+    };
+
+/** Somente resultado econômico do modelo; completude/evidência legal/empírica não atestadas. */
+export function calculateFinancialTargetGap(input: FinancialTargetGapInput, limits: ExactLimits): FinancialTargetGapResult {
+  // Inspect limits
+  const limitsValidation = inspectExactLimits(limits);
+  if (!limitsValidation.valid) {
+    return {
+      status: 'unavailable',
+      code: 'invalid-budget',
+      reason: limitsValidation.reason,
+      projection: null,
+      calculation: null,
+    };
+  }
+
+  // Calculate financial projection
+  const projection = calculateFinancialProjection(input, limits);
+  if (projection.status !== 'ready') {
+    return {
+      status: 'unavailable',
+      code: 'projection-unavailable',
+      reason: projection.reason,
+      projection,
+      calculation: null,
+    };
+  }
+
+  // Normalize target profit with ONE (1/1)
+  const one: ExactRational = {numerator: '1', denominator: '1'};
+  const normalizedTarget = calculateExactProduct('multiply', input.targetProfit, one, limits);
+  if (normalizedTarget.status !== 'ready') {
+    return {
+      status: 'unavailable',
+      code: 'invalid-target',
+      reason: normalizedTarget.reason,
+      projection,
+      calculation: normalizedTarget,
+    };
+  }
+
+  // Compare normalized target with ZERO (0/1)
+  const zero: ExactRational = {numerator: '0', denominator: '1'};
+  const comparison = compareExactRationals(normalizedTarget.value, zero, limits);
+  if (comparison.status !== 'ready') {
+    return {
+      status: 'unavailable',
+      code: 'invalid-target',
+      reason: comparison.reason,
+      projection,
+      calculation: comparison,
+    };
+  }
+
+  // Target must be non-negative
+  if (comparison.order < 0) {
+    return {
+      status: 'unavailable',
+      code: 'invalid-target',
+      reason: 'targetProfit must be non-negative',
+      projection,
+      calculation: null,
+    };
+  }
+
+  // Calculate signedTargetSlack = projection.value.netProfit - targetProfit
+  const signedTargetSlack = calculateExactSum('subtract', projection.value.netProfit, normalizedTarget.value, limits);
+  if (signedTargetSlack.status !== 'ready') {
+    return {
+      status: 'unavailable',
+      code: 'calculation-unavailable',
+      reason: signedTargetSlack.reason,
+      projection,
+      calculation: signedTargetSlack,
+    };
+  }
+
+  // Calculate LLF (Lucro Líquido Disponível para Folga) = projection.value.netProfit
+  const llf = projection.value.netProfit;
+
+  // Calculate profitShortfall = max(0, -signedTargetSlack) = max(0, targetProfit - netProfit)
+  let profitShortfall: ExactRational;
+  const slackComparison = compareExactRationals(signedTargetSlack.value, zero, limits);
+  if (slackComparison.status !== 'ready') {
+    return {
+      status: 'unavailable',
+      code: 'calculation-unavailable',
+      reason: slackComparison.reason,
+      projection,
+      calculation: slackComparison,
+    };
+  }
+
+  if (slackComparison.order >= 0) {
+    profitShortfall = zero;
+  } else {
+    const shortfallCalc = calculateExactSum('subtract', zero, signedTargetSlack.value, limits);
+    if (shortfallCalc.status !== 'ready') {
+      return {
+        status: 'unavailable',
+        code: 'calculation-unavailable',
+        reason: shortfallCalc.reason,
+        projection,
+        calculation: shortfallCalc,
+      };
+    }
+    profitShortfall = shortfallCalc.value;
+  }
+
+  // Calculate modeledCoverageShortfall = max(0, -LLF)
+  let modeledCoverageShortfall: ExactRational;
+  const llfComparison = compareExactRationals(llf, zero, limits);
+  if (llfComparison.status !== 'ready') {
+    return {
+      status: 'unavailable',
+      code: 'calculation-unavailable',
+      reason: llfComparison.reason,
+      projection,
+      calculation: llfComparison,
+    };
+  }
+
+  if (llfComparison.order >= 0) {
+    modeledCoverageShortfall = zero;
+  } else {
+    const coverageShortfallCalc = calculateExactSum('subtract', zero, llf, limits);
+    if (coverageShortfallCalc.status !== 'ready') {
+      return {
+        status: 'unavailable',
+        code: 'calculation-unavailable',
+        reason: coverageShortfallCalc.reason,
+        projection,
+        calculation: coverageShortfallCalc,
+      };
+    }
+    modeledCoverageShortfall = coverageShortfallCalc.value;
+  }
+
+  // Booleans: coversModeledCosts = (LLF >= 0), reachesModeledTarget = (folga >= 0)
+  const coversModeledCosts = llfComparison.order >= 0;
+  const reachesModeledTarget = slackComparison.order >= 0;
+
+  return {
+    status: 'conditional',
+    kind: 'projection',
+    contextId: projection.contextId,
+    period: projection.period,
+    costCoverage: 'not-evaluated',
+    taxAssessment: 'not-evaluated',
+    projection,
+    value: {
+      targetProfit: normalizedTarget.value,
+      signedTargetSlack: signedTargetSlack.value,
+      profitShortfall,
+      modeledCoverageShortfall,
+      coversModeledCosts,
+      reachesModeledTarget,
+    },
+  };
+}

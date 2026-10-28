@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.2a",
+  "node": "v24.22.1",
+  "sourceCommit": "58951d963310241963ad01fc3f7b85da9fb00388",
+  "files": {
+    "src/domain/financial-target-gap.ts": "3ffbee4d196d6f83b42e356afdb0e2e1a337d9cf29669d1ccd34c66be45e4747",
+    "src/domain/financial-target-gap.test.ts": "e4a98ad50a96f8da2c3ad5463323e70c692c1bcd2ce8cbab733e50cb1f98c258"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\financial-target-gap-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/financial-target-gap-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 357,
+    "passed": 357,
+    "newSuite": 10
+  },
+  "protectedFiles": 86,
+  "limits": "Desvios condicionais do modelo apenas; não comprova custos completos, tributação legal, resultado real, repasse adicional ou UI."
+}
