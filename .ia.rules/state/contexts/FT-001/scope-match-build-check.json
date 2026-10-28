@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "unit": "FT-003.39.2",
+  "sourceSha256": "583b176cb2669f262a383848752ef37c0db95de0f5ada717bdfcb8bb60db684b",
+  "testSha256": "1a1d52f9f53a23c212a453039b866a22df4ad539978055e8d2cb802663a1bfa8",
+  "sourcePath": "src/domain/scope-match.ts",
+  "testPath": "src/domain/scope-match.test.ts",
+  "protectedFiles": 78,
+  "limits": "Somente correspondência literal de contexto declarado; não comprova cadastro, vínculo cenário-veículo, precedência, cobertura financeira ou UI."
+}

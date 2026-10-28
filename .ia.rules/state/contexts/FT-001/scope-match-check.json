@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "unit": "FT-003.39.2",
+  "node": "v24.22.1",
+  "sourceCommit": "28838bed2b5c66825ee12306fd66360d12a5d679",
+  "files": {
+    "src/domain/scope-match.ts": "583b176cb2669f262a383848752ef37c0db95de0f5ada717bdfcb8bb60db684b",
+    "src/domain/scope-match.test.ts": "1a1d52f9f53a23c212a453039b866a22df4ad539978055e8d2cb802663a1bfa8"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\scope-match-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/scope-match-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 319,
+    "passed": 319,
+    "newSuite": 8
+  },
+  "protectedFiles": 78,
+  "limits": "Somente correspondência literal de contexto declarado; não comprova cadastro, vínculo cenário-veículo, precedência, cobertura financeira ou UI."
+}

@@ -1,0 +1,9 @@
+# FT-003.39.2 — correspondência do escopo declarado
+
+Unidade pequena: correspondência literal entre ParameterScope e contexto declarado. RCF§4/model.ts exigem escopo global/veículo/cenário e preservação dos identificadores; usar PARAMETER_SCOPE_STRUCTURE_SCHEMA existente. Não definir precedência, existência cadastral, relação cenário-veículo, cobertura financeira ou valor zero. Fora do escopo não equivale a custo inaplicável. Fonte/teste novos apenas; 78 arquivos anteriores protegidos.
+
+Sequência determinística build_scope_match → verify_scope_match, sem inferência. Perfil scope nos mecanismos de build/verify existentes, projeção de templates aprovados. Scripts leem AGENTS/authority/unidade antes dos efeitos. Baseline commit28838bed2b5c66825ee12306fd66360d12a5d679,311testes/37suítes. Gate tipos/lint/>=319todos/8novos/37suítes sem perdas/proteções antes e depois. Sem rede/instalação/commit do worker. Supervisor assume commit imediato após revisão.
+
+Contrato matchParameterScope(scope,context?): invalid-scope bloqueia primeiro; global independe de IDs; vehicle exige vehicleId, scenario exige scenarioId. Campo relevante ausente/null gera missing-context-id; inválido/branco/não textual gera invalid-context-id. Reusar schema existente, sem transformação de IDs. Igualdade exata sensível a maiúsculas e espaços. Saída scope-matched ou outside-scope contém snapshot congelado do escopo e targetId; toda saída precedence:not-evaluated. Sem mutação/congelamento das entradas.
+
+8 controles independentes: global; veículo; cenário; diferença literal; escopo inválido/extra; contexto faltante/inválido; dependências irrelevantes; snapshots/freeze/repetição/imutabilidade. Fixtures sintéticas derivadas do contrato, não de resultados da função. Não alterar normas/módulos/testes existentes para obter aprovação. Aceite não fecha apuração financeira ou UI.
