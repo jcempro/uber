@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.4c.1",
+  "sourceSha256": "b9bc2ccbe0a7245b5f79e3a3d6847f430e43601a0b70b94c30f44eb03a0b9da4",
+  "protectedFiles": 91,
+  "failedTestPreserved": true,
+  "typeErrors": [],
+  "lint": {
+    "status": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "limits": "Tipos/lint apenas fonte e imports; testes/comportamento/aceite global pendentes."
+}

@@ -1,0 +1,167 @@
+/**
+ * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
+ * Origem: jcem.pro-uber; RCF§§7.2/8.2/8.3, FT-003.40.4c.
+ * Autoria Git: JeanCarloEM <jeancarlo@jeancarloem.com>.
+ */
+import {inspectExactLimits,type ExactLimits} from './exact-budget';
+import type {ExactRational} from './exact';
+import type {BudgetPeriod} from './model';
+import {convertBudgetCalendarAmount,type BudgetAmountContext,type BudgetAmountResult} from './budget-amount';
+import {calculateScheduledBudgetDays} from './budget-days';
+import {calculateEffectiveMonthlyWorkingDays,calculateMonthlyAvailability} from './monthly-availability';
+import {calculateExactProduct} from './exact-product';
+import {compareExactRationals} from './exact-compare';
+export interface BudgetFinancialRateContext extends BudgetAmountContext {
+  readonly daysPerWeek?:ExactRational|null;
+  readonly lostWorkingDaysPerMonth?:ExactRational|null;
+  readonly hoursPerWorkingDay?:ExactRational|null;
+}
+export interface BudgetFinancialRatesInput {
+  readonly currency:'BRL';readonly sourceBasis:'budget-calendar-period';readonly amount:ExactRational;
+  readonly sourcePeriod:BudgetPeriod;readonly calendar:BudgetFinancialRateContext;
+}
+export type BudgetRateFailure=Extract<BudgetAmountResult|ReturnType<typeof calculateScheduledBudgetDays>|ReturnType<typeof calculateEffectiveMonthlyWorkingDays>|ReturnType<typeof calculateMonthlyAvailability>|ReturnType<typeof calculateExactProduct>|ReturnType<typeof compareExactRationals>,{status:'unavailable'}>;
+type WorkingUnit='BRL/working-day'|'BRL/connected-hour';
+type WorkingFailureCode='source-unavailable'|'missing-calendar-input'|'calendar-unavailable'|'non-positive-availability'|'calculation-unavailable';
+export type BudgetWorkingRateResult=
+  | {readonly status:'ready';readonly unit:WorkingUnit;readonly amountPeriod:'month';readonly sourceAmount:ExactRational;readonly denominator:ExactRational;readonly value:ExactRational}
+  | {readonly status:'unavailable';readonly code:WorkingFailureCode;readonly dependency:string|null;readonly reason:string;readonly diagnostic:BudgetRateFailure|null;readonly denominator:ExactRational|null};
+export type BudgetFinancialRatesResult=
+  | {readonly status:'conditional';readonly currency:'BRL';readonly sourceBasis:'budget-calendar-period';readonly source:Extract<BudgetAmountResult,{status:'ready'}>;readonly financialAssessment:'not-evaluated';readonly perMonth:BudgetAmountResult;readonly perWeek:BudgetAmountResult;readonly perYear:BudgetAmountResult;readonly perWorkingDay:BudgetWorkingRateResult;readonly perConnectedHour:BudgetWorkingRateResult}
+  | {readonly status:'unavailable';readonly code:'invalid-budget'|'unsupported-input'|'source-unavailable';readonly reason:string;readonly source:BudgetAmountResult|null};
+function unavailableWorking(code:WorkingFailureCode,dependency:string|null,reason:string,diagnostic:BudgetRateFailure|null=null,denominator:ExactRational|null=null):BudgetWorkingRateResult{return Object.freeze({status:'unavailable',code,dependency,reason,diagnostic,denominator});}
+/** Denominador já calculado em mês; não aceita zero/negativo e não arredonda lucro assinado. */
+function divideMonthlyAmount(amount:ExactRational,denominator:ExactRational,unit:WorkingUnit,limits:ExactLimits):BudgetWorkingRateResult {
+  const sign=compareExactRationals(denominator,Object.freeze({numerator:'0',denominator:'1'}),limits);
+  if(sign.status!=='ready')return unavailableWorking('calculation-unavailable',null,sign.reason,sign);
+  if(sign.order<=0)return unavailableWorking('non-positive-availability',null,'Disponibilidade mensal deve ser positiva para calcular este indicador.',null,denominator);
+  const ratio=calculateExactProduct('divide',amount,denominator,limits);
+  return ratio.status!=='ready'?unavailableWorking('calculation-unavailable',null,ratio.reason,ratio):Object.freeze({status:'ready',unit,amountPeriod:'month',sourceAmount:amount,denominator,value:ratio.value});
+}
+/** Conversão estatística condicional; nenhum resultado confirma realização financeira. */
+export function calculateBudgetFinancialRates(input:BudgetFinancialRatesInput,limits:ExactLimits):BudgetFinancialRatesResult {
+  // Inspect limits
+  const limitValidation=inspectExactLimits(limits);
+  if(!limitValidation.valid)return {status:'unavailable',code:'invalid-budget',reason:limitValidation.reason,source:null};
+
+  // Validate input structure
+  if(typeof input!=='object'||input===null)return {status:'unavailable',code:'invalid-budget',reason:'Input deve ser um objeto não nulo.',source:null};
+  if(input.currency!=='BRL')return {status:'unavailable',code:'unsupported-input',reason:'Moeda suportada é apenas BRL.',source:null};
+  if(input.sourceBasis!=='budget-calendar-period')return {status:'unavailable',code:'unsupported-input',reason:'Base de origem suportada é apenas budget-calendar-period.',source:null};
+  if(!input.amount||typeof input.amount!=='object'||input.amount===null||typeof input.amount.numerator!=='string'||typeof input.amount.denominator!=='string')return {status:'unavailable',code:'unsupported-input',reason:'Quantia deve ser um racional válido.',source:null};
+  if(!['day','week','month','year'].includes(input.sourcePeriod))return {status:'unavailable',code:'unsupported-input',reason:'Período de origem inválido.',source:null};
+  if(!input.calendar||typeof input.calendar!=='object'||input.calendar===null||input.calendar.kind!=='budget')return {status:'unavailable',code:'unsupported-input',reason:'Calendário deve ser do tipo budget.',source:null};
+
+  // Convert to monthly amount (identity)
+  const identity=convertBudgetCalendarAmount(input.amount,input.sourcePeriod,'month',input.calendar,limits);
+  if(identity.status!=='ready')return {status:'unavailable',code:identity.status==='unavailable'?identity.code==='missing-calendar-input'?'source-unavailable':'source-unavailable':'source-unavailable',reason:identity.reason,source:null};
+
+  // Derive perWeek, perYear
+  const perWeek=convertBudgetCalendarAmount(identity.value,'month','week',input.calendar,limits);
+  const perYear=convertBudgetCalendarAmount(identity.value,'month','year',input.calendar,limits);
+
+  // Calculate working days availability
+  const daysPerMonth=input.calendar.daysPerMonth;
+  const daysPerWeek=input.calendar.daysPerWeek;
+  const lostWorkingDaysPerMonth=input.calendar.lostWorkingDaysPerMonth;
+
+  if(daysPerMonth===undefined||daysPerMonth===null||daysPerWeek===undefined||daysPerWeek===null||lostWorkingDaysPerMonth===undefined||lostWorkingDaysPerMonth===null) {
+    return {
+      status:'conditional',
+      currency:'BRL',
+      sourceBasis:'budget-calendar-period',
+      source:identity,
+      financialAssessment:'not-evaluated',
+      perMonth:identity,
+      perWeek:perWeek.status==='ready'?perWeek:{status:'unavailable',code:'missing-calendar-input',reason:'daysPerWeek ou daysPerMonth ausente.',dependency:'daysPerWeek',diagnostic:null},
+      perYear:perYear.status==='ready'?perYear:{status:'unavailable',code:'missing-calendar-input',reason:'daysPerMonth ausente.',dependency:'daysPerMonth',diagnostic:null},
+      perWorkingDay:unavailableWorking('missing-calendar-input','daysPerWeek','daysPerWeek ausente.',null,null),
+      perConnectedHour:unavailableWorking('missing-calendar-input','hoursPerWorkingDay','hoursPerWorkingDay ausente.',null,null)
+    };
+  }
+
+  // Calculate scheduled budget days
+  const scheduledDays=calculateScheduledBudgetDays(daysPerWeek,daysPerMonth,limits);
+  if(scheduledDays.status!=='ready') {
+    return {
+      status:'conditional',
+      currency:'BRL',
+      sourceBasis:'budget-calendar-period',
+      source:identity,
+      financialAssessment:'not-evaluated',
+      perMonth:identity,
+      perWeek:perWeek.status==='ready'?perWeek:{status:'unavailable',code:'calendar-unavailable',reason:scheduledDays.reason,diagnostic:scheduledDays},
+      perYear:perYear.status==='ready'?perYear:{status:'unavailable',code:'calendar-unavailable',reason:scheduledDays.reason,diagnostic:scheduledDays},
+      perWorkingDay:unavailableWorking('calendar-unavailable','scheduledDays','Falha ao calcular dias agendados.',scheduledDays,null),
+      perConnectedHour:unavailableWorking('calendar-unavailable','scheduledDays','Falha ao calcular dias agendados.',scheduledDays,null)
+    };
+  }
+
+  // Calculate effective monthly working days
+  const effective=calculateEffectiveMonthlyWorkingDays(scheduledDays.value,lostWorkingDaysPerMonth,limits);
+  if(effective.status!=='ready') {
+    return {
+      status:'conditional',
+      currency:'BRL',
+      sourceBasis:'budget-calendar-period',
+      source:identity,
+      financialAssessment:'not-evaluated',
+      perMonth:identity,
+      perWeek:perWeek.status==='ready'?perWeek:{status:'unavailable',code:'calendar-unavailable',reason:effective.reason,diagnostic:effective},
+      perYear:perYear.status==='ready'?perYear:{status:'unavailable',code:'calendar-unavailable',reason:effective.reason,diagnostic:effective},
+      perWorkingDay:unavailableWorking('calendar-unavailable','effective','Falha ao calcular dias efetivos.',effective,null),
+      perConnectedHour:unavailableWorking('calendar-unavailable','effective','Falha ao calcular dias efetivos.',effective,null)
+    };
+  }
+
+  // Calculate perWorkingDay
+  const perWorkingDay=divideMonthlyAmount(identity.value,effective.value,'BRL/working-day',limits);
+
+  // Calculate perConnectedHour
+  const hoursPerWorkingDay=input.calendar.hoursPerWorkingDay;
+  if(hoursPerWorkingDay===undefined||hoursPerWorkingDay===null) {
+    return {
+      status:'conditional',
+      currency:'BRL',
+      sourceBasis:'budget-calendar-period',
+      source:identity,
+      financialAssessment:'not-evaluated',
+      perMonth:identity,
+      perWeek:perWeek.status==='ready'?perWeek:{status:'unavailable',code:'calendar-unavailable',reason:'hoursPerWorkingDay ausente.',diagnostic:null},
+      perYear:perYear.status==='ready'?perYear:{status:'unavailable',code:'calendar-unavailable',reason:'hoursPerWorkingDay ausente.',diagnostic:null},
+      perWorkingDay,
+      perConnectedHour:unavailableWorking('missing-calendar-input','hoursPerWorkingDay','hoursPerWorkingDay ausente.',null,null)
+    };
+  }
+
+  const availability=calculateMonthlyAvailability(scheduledDays.value,lostWorkingDaysPerMonth,hoursPerWorkingDay,limits);
+  if(availability.status!=='ready') {
+    return {
+      status:'conditional',
+      currency:'BRL',
+      sourceBasis:'budget-calendar-period',
+      source:identity,
+      financialAssessment:'not-evaluated',
+      perMonth:identity,
+      perWeek:perWeek.status==='ready'?perWeek:{status:'unavailable',code:'calendar-unavailable',reason:availability.reason,diagnostic:availability},
+      perYear:perYear.status==='ready'?perYear:{status:'unavailable',code:'calendar-unavailable',reason:availability.reason,diagnostic:availability},
+      perWorkingDay,
+      perConnectedHour:unavailableWorking('calendar-unavailable','availability','Falha ao calcular disponibilidade mensal.',availability,null)
+    };
+  }
+
+  const perConnectedHour=divideMonthlyAmount(identity.value,availability.value.connectedHoursPerMonth,'BRL/connected-hour',limits);
+
+  return {
+    status:'conditional',
+    currency:'BRL',
+    sourceBasis:'budget-calendar-period',
+    source:identity,
+    financialAssessment:'not-evaluated',
+    perMonth:identity,
+    perWeek:perWeek.status==='ready'?perWeek:{status:'unavailable',code:'calculation-unavailable',reason:'Falha ao converter para semana.',diagnostic:perWeek},
+    perYear:perYear.status==='ready'?perYear:{status:'unavailable',code:'calculation-unavailable',reason:'Falha ao converter para ano.',diagnostic:perYear},
+    perWorkingDay,
+    perConnectedHour
+  };
+}

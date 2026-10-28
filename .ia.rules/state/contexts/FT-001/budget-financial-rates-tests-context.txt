@@ -1,0 +1,218 @@
+Worker subordinado, não supervisor. UNIDADE NOVA APENAS TESTE.
+AGENTS.md
+# AGENTS.md — Entrypoint da Norma
+
+Este arquivo governa a atuação da IA. O RCF governa requisito, contrato, arquitetura e negócio; é a especificação declarativa, determinística e verificável do sistema, ressalvado o domínio desta Norma. Precedência, autoridade, preservação e mecanismos oficiais são compulsórios.
+
+Antes de operação material sem rota válida em memória ou com alteração física:
+
+1. consulte `./.ia.rules/normative-index.json`;
+2. carregue `./.ia.rules/core/authority.md`, papéis cumulativos e somente a rota direta, cenários, contratos e recursos disparados;
+3. consulte prioritariamente `./.ia.rules/state/decisions/refused/index.json`;
+4. execute do estado canônico `./.ia.rules/continue.ia`, com FT, plano, RCF e autorização compatíveis.
+
+`./.ia.rules/agents.inc.md` preserva a Norma operacional integral. Leia-o somente diante de mudança de rota, perda de contexto, conflito, regra não localizada, índice/cache inválido, auditoria de preservação ou confiança insuficiente. Referências seletivas resolvem-se por `MN-REF`.
+
+Todo repositório é Final; fonte, build, atualização, distribuição ou release agregam Construtor. No construtor do produto, `./AGENTS.md` CURRENT/CONSUMED rege; `src/AGENTS.md` SOURCE/DEVELOPED não rege até adoção nem pode ser regredido pela consumida. Homonímia não transfere versão, papel, escopo ou autoridade. Ambiguidade preserva comportamento e conteúdo. Saída técnica usa PT-BR.
+
+Cada solicitação autoriza escrita e Git somente no único repositório corrente associado ao prompt; root irmã, dependência, submódulo, worktree, repositório aninhado ou path físico externo permanece intocável, ainda que aberto ou relacionado.
+
+core/authority.md
+# Autoridade operacional e mecanismos oficiais
+
+Identidade normativa: `core.authority`; papel: comum; tipo: folha. Ler integralmente em toda atuação governada. Não dispensar por cenário, papel, familiaridade ou economia de contexto. Aplicar `MN-2119`, `MN-PRES`, `MN-ROLE`, `MN-EXT` e `MN-REF`.
+
+## 1. Vocabulário canônico
+
+**Norma Operacional** é `AGENTS.md` e associados, responsável pelo modo de atuação, processo, leitura, edição, validação, rastreabilidade, automação, scripts, hooks, comandos e FTs. **RCF** é a SSOT arquitetural declarativa, determinística e verificável do que o sistema é e DEVE fazer. **Repositório Construtor** mantém, constrói, valida ou distribui a Norma Operacional. **Repositório Final** consome a Norma. Papéis são cumulativos e nenhum afasta o outro.
+
+**Mecanismo Oficial** é script, comando, hook, callback, adaptador, workflow, arquivo-gatilho, convenção, nomenclatura, contrato ou ponto de extensão normatizado. **Extensão Oficial** compõe o mecanismo sem substituir fluxo ou contrato. **Fluxo Paralelo** é mecanismo novo, duplicado, substitutivo ou funcionalmente equivalente que contorne o oficial. **Lacuna Oficial** é erro, risco, insuficiência ou ausência comprovada no mecanismo necessário. **Princípio Estruturante** é regra cuja degradação altera autoridade, alcance ou comportamento fundamental. **Microtexto Normativo** é unidade curta, coesa, autônoma, estável e referenciável. **Custo Líquido** compara tokens, bytes, tempo, processamento, navegação, manutenção, risco, precisão e reutilização.
+
+Definição canônica NÃO DEVE ser redefinida em papel, cenário, recurso, RCF específico ou extensão. Especialização referencia o termo e restringe somente seu contexto.
+
+## 2. Proteção estrutural
+
+Revisão parcial, cirúrgica, ampla ou estrutural DEVE preservar autoridade, precedência, domínios, contratos, nomes, proibições, exceções, hooks, modus operandi, incisividade, rastreabilidade, força, efeitos e intenção. Princípio Estruturante é permanente, identificável e não regressivo; validação DEVE detectar remoção, diluição, relativização, subordinação, abreviação com perda, facultatividade ou substituição.
+
+Densificação, modularização, roteamento, índice, resumo, tokenização e otimização NÃO DEVEM reduzir rigor, minúcia, clareza, explicitabilidade, exigibilidade, previsibilidade ou resistência a interpretação desviada. Norma não recuperada NÃO é norma inexistente.
+
+## 2.1 Fronteira absoluta do repositório corrente
+
+Cada solicitação associa-se a exatamente uma raiz Git corrente e ao `AGENTS.md` aplicável nela. Escrita, exclusão, movimento, geração, staging, commit, branch, merge, reset, clean, publish e release somente PODEM atingir arquivos fisicamente pertencentes a essa raiz e subordinados à mesma autoridade. Workspace/IDE com múltiplas roots, relação funcional, dependência, importação, build conjunto, mesma autoria, necessidade externa ou proximidade física NÃO ampliam escopo; edição cruzada é violação crítica.
+
+Submódulo, worktree, repositório aninhado, root irmã, terceiro, `node_modules`, dependência local/linked, cache e artefato não editável são fronteiras excluídas. Antes do efeito, resolver raiz, path absoluto real e ancestrais; recusar `..`, symlink, junction, mount, alias, hardlink detectável ou identidade Git própria que atravesse a fronteira. Leitura externa necessária PODE ocorrer para diagnóstico/contrato, mas NÃO concede escrita. Alteração externa exige nova solicitação explicitamente associada ao outro repositório.
+
+## 3. Compulsoriedade e evolução
+
+Antes de solucionar, agente e Repositório Final DEVEM consultar descoberta oficial, inspecionar estado real, reutilizar finalidade/nomenclatura existentes e corrigir implementação divergente. Dúvida, desconhecimento, cópia possivelmente desatualizada ou inadequação aparente exigem releitura, versão e rastreamento; NÃO autorizam improvisação.
+
+Mecanismo Oficial NÃO DEVE ser neutralizado, duplicado, renomeado, reimplementado, contornado ou substituído. Resultado correto por fluxo incompatível permanece não conforme. Expansão só PODE usar hook, callback, composição, adaptador, arquivo-gatilho, extensão local ou contrato oficial, preservando fluxo principal, nomes, precedência, efeitos e compatibilidade.
+
+Lacuna segue `../scenarios/governance/official-gap.md`. Solicitação segue `../scenarios/governance/request-lifecycle.md`. Contratos de composição, eventos, integração e assinaturas seguem `./contracts.md`; recurso especializado referencia o contrato comum e declara somente diferenças materiais.
+
+## 4. Verificação
+
+Revisão DEVE comprovar: conceitos centralizados; referências resolvíveis; ausência de fluxo paralelo; mecanismos oficiais preservados; papéis acumulados; extensão somente em ponto autorizado; princípio estruturante sem redução modal; e equivalência entre núcleo, módulo, índice e RCF aplicável.
+
+UNIDADE
+# FT-003.40.4c.2 — testes comportamentais dos indicadores orçamentários
+
+Worker subordinado. Corrigir SOMENTE src/domain/budget-financial-rates.test.ts, substituindo os testes falhos de487 já preservados. Fonte revisada b9bc2ccbe0a7245b5f79e3a3d6847f430e43601a0b70b94c30f44eb03a0b9da4 é intocável. Nenhuma exploração/read_file/search/list: normas, contrato e fonte fornecidos no contexto. Um write_file no teste, depois verify_budget_financial_rates UMA vez. Ao resultado parar, mesmo falha, sem reler ou repetir comando. Sem commit/rede/instalação. Saída<=80palavras, dizer somente validação efetiva/limites. expect_changes=true somente teste; supervisor assume commit após revisão.
+
+Estado:982ba2bc passou tipos/lint da fonte isolada e preservação91arquivos+teste; revisão Q8S7 apontou9chamadas usando limits original e cast redundante em finish. Correção textual1a agora usa snapshot validado e finish arrow sem cast; tipos/lint da fonte reaprovados. Testes/comportamento ainda PENDENTES. Antecessor487 tinha169erros tipos e expectativas incorretas; não importar seu código. Tarefa menor: apenas teste, fonte fixa, sem inferência de implementação.
+
+Vitest describe/it/expect. Usar import type para tipos. Criar helpers com narrowing real: root(input) chama função, se status!=='conditional' throw; retorna objeto estreitado. amount(result:BudgetAmountResult) exige status ready e retorna value. rate(result:BudgetWorkingRateResult) exige ready e retorna objeto. failure(...) guarda status unavailable antes de code/dependency/diagnostic. expect(status) NÃO estreita TypeScript. Não inventar campos sourceAmountMonthly. Cast somente em fixture de entrada inválida (via unknown) para testar runtime. Sem casts nos resultados, sem any, sem non-null assertion. Não deixar helpers/argumentos não usados. Racionais strings; comparar objeto completo numerator/denominator, não apenas numerator.
+
+Contrato público: root condicional tem source identidade no período ORIGINAL, perMonth/perWeek/perYear resultados originais de convertBudgetCalendarAmount; dia/hora partem da quantia mensal. rate.value é racional do indicador. rate.denominator é racional da DISPONIBILIDADE MENSAL (dias ou horas), distinto de rate.value.denominator (denominador da fração). Unidades BRL/working-day ou BRL/connected-hour; amountPeriod month; sourceAmount quantia mensal. financialAssessment not-evaluated, não realização/cobertura total.
+
+Oito grupos mínimos (pode dividir em mais it), expectativas literais independentes derivadas de RCF7.2/8.2/8.3, não função sob teste; dados SINTÉTICOS, não defaults:
+1.base amount3200/month,calendar kindbudget,W4,D28,M12,L0,h4: mês3200,semana800,ano38400;S=4*28/7=16,dia200 com availabilityden16,hora50 com availabilityden64. source identity month3200. Comparar contra dia calendário800/7 via conversor canônico, diferente de dia efetivo200.
+2.L4:efetivos12,horas48,dia VALUE800/3 e DENOMINATOR12/1;hora VALUE200/3 e DENOMINATOR48/1. Montantes período inalterados. Não confundir fração /3 com disponibilidade.
+3.amount-320: mês-320,semana-80,ano-3840,dia-20,hora-5. Fonte aceita lucro negativo.
+4.hausente: só hora missing-calendar-input/dependency hoursPerWorkingDay,dia200. Mausente:só ano missing-calendar-input/dependency monthsPerYear,dia200/hora50/semana800. Wausente e Lausente SEPARADOS: só dia/hora missing-calendar-input com dependency exata, mês/semana/ano prontos. Dausente: mês3200 e ano38400 PRONTOS;semana missing-calendar-input daysPerMonth;dia/hora ausentes daysPerMonth. Caso source day eDausente: source identidade preservada/day100 e semana700 prontos;perMonth/ano ausentes,day/hour source-unavailable/dependency perMonth. Ausência não zera/destrói derivados independentes.
+5.L16:montantes continuam prontos,dia/hora non-positive-availability,denominator0/1. h0 e h25: somente hora calendar-unavailable/dependency connectedHoursPerMonth,diagnostic.code invalid-calendar;dia200,períodos prontos. ExcessoL17 eW8:workingrates calendar-unavailable com diagnóstico original,sem clamp;períodos prontos.
+6.limits inválidos: root invalid-budget/source:null, razão original. inputnull/currencyUSD/sourceBasisworking-day: unsupported-input/source:null. amount inválido (denominator0),sourcePeriod inválido,calendarkindreal ou calendar ausente: root source-unavailable/source contém falha original/code/reason do helper; não substituir por código genérico nem source:null. Guardar discriminantes. Snapshot,reason e código podem ser comparados ao helper independente já aceito para diagnóstico, expectativas financeiras continuam literais.
+7.source calendarday100 comD28: source.value100/sourcePeriodday/targetPeriodday;perMonth2800,semana700,ano33600,diaefetivo175,hora175/4. Nada renomeia source para month. Sem metas/corridas/realização.
+8.freeze/repetição/inputs intactos: root e todos objetos novos/nestedracionais/diagnósticos congelados; mutable input e calendar NÃO congelados/alterados; snapshot de resultado não muda ao modificar amount/calendar após cálculo. Repetir antes de mutações retorna iguais. Política com getter maxInputLength que retorna256 na primeira leitura e0 depois deve produzir resultado base ready e getter lido UMA vez; maxDigits64. Isso prova uso do snapshot validado, não readaptar implementação. Não testar só Object.isFrozen da raiz.
+
+Gate obrigatório verify_budget_financial_rates: app:typecheck,app:lint,app:test completos;>=381testes/8novos,44suítes anteriores sem perda,91fontes/configs aceitos intactos e SHAfonte revisada antes/depois. Não alterar critérios/fixtures anteriores para passar. Este teste novo pode consolidar os12it NUNCA ACEITOS de487 nos8grupos, sem perder casos acima. Não chamar COMPLÉTO só com tipos/lint. Aceite global/UI/ledger/composição por cenário continuam posteriores.
+
+FONTE REVISADA (somente leitura no contexto)
+/**
+ * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
+ * Origem: jcem.pro-uber; RCF§§7.2/8.2/8.3, FT-003.40.4c.
+ * Autoria Git: JeanCarloEM <jeancarlo@jeancarloem.com>.
+ */
+import {inspectExactLimits,type ExactLimits} from './exact-budget';
+import type {ExactRational} from './exact';
+import type {BudgetPeriod} from './model';
+import {convertBudgetCalendarAmount,type BudgetAmountContext,type BudgetAmountResult} from './budget-amount';
+import {calculateScheduledBudgetDays} from './budget-days';
+import {calculateEffectiveMonthlyWorkingDays,calculateMonthlyAvailability} from './monthly-availability';
+import {calculateExactProduct} from './exact-product';
+import {compareExactRationals} from './exact-compare';
+export interface BudgetFinancialRateContext extends BudgetAmountContext {
+  readonly daysPerWeek?:ExactRational|null;
+  readonly lostWorkingDaysPerMonth?:ExactRational|null;
+  readonly hoursPerWorkingDay?:ExactRational|null;
+}
+export interface BudgetFinancialRatesInput {
+  readonly currency:'BRL';readonly sourceBasis:'budget-calendar-period';readonly amount:ExactRational;
+  readonly sourcePeriod:BudgetPeriod;readonly calendar:BudgetFinancialRateContext;
+}
+export type BudgetRateFailure=Extract<BudgetAmountResult|ReturnType<typeof calculateScheduledBudgetDays>|ReturnType<typeof calculateEffectiveMonthlyWorkingDays>|ReturnType<typeof calculateMonthlyAvailability>|ReturnType<typeof calculateExactProduct>|ReturnType<typeof compareExactRationals>,{status:'unavailable'}>;
+type WorkingUnit='BRL/working-day'|'BRL/connected-hour';
+type WorkingFailureCode='source-unavailable'|'missing-calendar-input'|'calendar-unavailable'|'non-positive-availability'|'calculation-unavailable';
+export type BudgetWorkingRateResult=
+  | {readonly status:'ready';readonly unit:WorkingUnit;readonly amountPeriod:'month';readonly sourceAmount:ExactRational;readonly denominator:ExactRational;readonly value:ExactRational}
+  | {readonly status:'unavailable';readonly code:WorkingFailureCode;readonly dependency:string|null;readonly reason:string;readonly diagnostic:BudgetRateFailure|null;readonly denominator:ExactRational|null};
+export type BudgetFinancialRatesResult=
+  | {readonly status:'conditional';readonly currency:'BRL';readonly sourceBasis:'budget-calendar-period';readonly source:Extract<BudgetAmountResult,{status:'ready'}>;readonly financialAssessment:'not-evaluated';readonly perMonth:BudgetAmountResult;readonly perWeek:BudgetAmountResult;readonly perYear:BudgetAmountResult;readonly perWorkingDay:BudgetWorkingRateResult;readonly perConnectedHour:BudgetWorkingRateResult}
+  | {readonly status:'unavailable';readonly code:'invalid-budget'|'unsupported-input'|'source-unavailable';readonly reason:string;readonly source:BudgetAmountResult|null};
+function unavailableWorking(code:WorkingFailureCode,dependency:string|null,reason:string,diagnostic:BudgetRateFailure|null=null,denominator:ExactRational|null=null):BudgetWorkingRateResult{return Object.freeze({status:'unavailable',code,dependency,reason,diagnostic,denominator});}
+/** Denominador já calculado em mês; não aceita zero/negativo e não arredonda lucro assinado. */
+function divideMonthlyAmount(amount:ExactRational,denominator:ExactRational,unit:WorkingUnit,limits:ExactLimits):BudgetWorkingRateResult {
+  const sign=compareExactRationals(denominator,Object.freeze({numerator:'0',denominator:'1'}),limits);
+  if(sign.status!=='ready')return unavailableWorking('calculation-unavailable',null,sign.reason,sign);
+  if(sign.order<=0)return unavailableWorking('non-positive-availability',null,'Disponibilidade mensal deve ser positiva para calcular este indicador.',null,denominator);
+  const ratio=calculateExactProduct('divide',amount,denominator,limits);
+  return ratio.status!=='ready'?unavailableWorking('calculation-unavailable',null,ratio.reason,ratio):Object.freeze({status:'ready',unit,amountPeriod:'month',sourceAmount:amount,denominator,value:ratio.value});
+}
+/** Conversão estatística condicional; nenhum resultado confirma realização financeira. */
+export function calculateBudgetFinancialRates(input:BudgetFinancialRatesInput,limits:ExactLimits):BudgetFinancialRatesResult {
+  const limitValidation=inspectExactLimits(limits);
+  if(!limitValidation.valid)return Object.freeze({status:'unavailable',code:'invalid-budget',reason:limitValidation.reason,source:null});
+
+  if(typeof input!=='object'||input===null)return Object.freeze({status:'unavailable',code:'unsupported-input',reason:'Input deve ser um objeto não nulo.',source:null});
+  if(input.currency!=='BRL')return Object.freeze({status:'unavailable',code:'unsupported-input',reason:'Moeda suportada é apenas BRL.',source:null});
+  if(input.sourceBasis!=='budget-calendar-period')return Object.freeze({status:'unavailable',code:'unsupported-input',reason:'Base de origem suportada é apenas budget-calendar-period.',source:null});
+
+  const identity=convertBudgetCalendarAmount(input.amount,input.sourcePeriod,input.sourcePeriod,input.calendar,limitValidation.limits);
+  if(identity.status!=='ready')return Object.freeze({status:'unavailable',code:'source-unavailable',reason:identity.reason,source:identity});
+
+  const perMonth=convertBudgetCalendarAmount(identity.value,identity.sourcePeriod,'month',input.calendar,limitValidation.limits);
+  const perWeek=convertBudgetCalendarAmount(identity.value,identity.sourcePeriod,'week',input.calendar,limitValidation.limits);
+  const perYear=convertBudgetCalendarAmount(identity.value,identity.sourcePeriod,'year',input.calendar,limitValidation.limits);
+
+  const finish=(perWorkingDay:BudgetWorkingRateResult,perConnectedHour:BudgetWorkingRateResult):BudgetFinancialRatesResult => {
+    return Object.freeze({
+      status:'conditional',
+      currency:'BRL',
+      sourceBasis:'budget-calendar-period',
+      source:identity,
+      financialAssessment:'not-evaluated',
+      perMonth,
+      perWeek,
+      perYear,
+      perWorkingDay,
+      perConnectedHour
+    });
+  };
+
+  if(perMonth.status!=='ready')return finish(unavailableWorking('source-unavailable','perMonth',perMonth.reason,perMonth),unavailableWorking('source-unavailable','perMonth',perMonth.reason,perMonth));
+
+  const daysPerMonth=input.calendar.daysPerMonth;
+  const daysPerWeek=input.calendar.daysPerWeek;
+  const lostWorkingDaysPerMonth=input.calendar.lostWorkingDaysPerMonth;
+
+  if(daysPerMonth===undefined||daysPerMonth===null)return finish(unavailableWorking('missing-calendar-input','daysPerMonth','daysPerMonth ausente.',null),unavailableWorking('missing-calendar-input','daysPerMonth','daysPerMonth ausente.',null));
+  if(daysPerWeek===undefined||daysPerWeek===null)return finish(unavailableWorking('missing-calendar-input','daysPerWeek','daysPerWeek ausente.',null),unavailableWorking('missing-calendar-input','daysPerWeek','daysPerWeek ausente.',null));
+  if(lostWorkingDaysPerMonth===undefined||lostWorkingDaysPerMonth===null)return finish(unavailableWorking('missing-calendar-input','lostWorkingDaysPerMonth','lostWorkingDaysPerMonth ausente.',null),unavailableWorking('missing-calendar-input','lostWorkingDaysPerMonth','lostWorkingDaysPerMonth ausente.',null));
+
+  const scheduled=calculateScheduledBudgetDays(daysPerWeek,daysPerMonth,limitValidation.limits);
+  if(scheduled.status!=='ready')return finish(unavailableWorking('calendar-unavailable','scheduledWorkingDaysPerMonth',scheduled.reason,scheduled),unavailableWorking('calendar-unavailable','scheduledWorkingDaysPerMonth',scheduled.reason,scheduled));
+  const effective=calculateEffectiveMonthlyWorkingDays(scheduled.value,lostWorkingDaysPerMonth,limitValidation.limits);
+  if(effective.status!=='ready')return finish(unavailableWorking('calendar-unavailable','effectiveWorkingDaysPerMonth',effective.reason,effective),unavailableWorking('calendar-unavailable','effectiveWorkingDaysPerMonth',effective.reason,effective));
+
+  const perWorkingDay=divideMonthlyAmount(perMonth.value,effective.value,'BRL/working-day',limitValidation.limits);
+
+  const hoursPerWorkingDay=input.calendar.hoursPerWorkingDay;
+  if(hoursPerWorkingDay===undefined||hoursPerWorkingDay===null)return finish(perWorkingDay,unavailableWorking('missing-calendar-input','hoursPerWorkingDay','hoursPerWorkingDay ausente.',null));
+  const availability=calculateMonthlyAvailability(scheduled.value,lostWorkingDaysPerMonth,hoursPerWorkingDay,limitValidation.limits);
+  if(availability.status!=='ready')return finish(perWorkingDay,unavailableWorking('calendar-unavailable','connectedHoursPerMonth',availability.reason,availability));
+  const perConnectedHour=divideMonthlyAmount(perMonth.value,availability.value.connectedHoursPerMonth,'BRL/connected-hour',limitValidation.limits);
+  return finish(perWorkingDay,perConnectedHour);
+}
+
+API src/domain/exact.ts
+export type ExactRational = {
+  readonly numerator: string;
+  readonly denominator: string;
+};
+API src/domain/exact-budget.ts
+export type ExactLimits = {
+  readonly maxInputLength: number;
+  readonly maxDigits: number;
+};
+export type ExactLimitValidation =
+  /** Política estruturalmente válida; snapshot congelado sem congelar o argumento original. */
+  | { readonly valid: true; readonly limits: ExactLimits }
+  /** Política rejeitada com o mesmo motivo usado pela ponte decimal. */
+  | { readonly valid: false; readonly reason: string };
+export function inspectExactLimits(value: unknown): ExactLimitValidation;
+API src/domain/model.ts
+export type BudgetPeriod = 'day' | 'week' | 'month' | 'year';
+API src/domain/budget-amount.ts
+export type BudgetAmountContext = {
+  readonly kind: 'budget';
+  readonly daysPerMonth?: ExactRational | null;
+  readonly monthsPerYear?: ExactRational | null;
+};
+export type BudgetAmountResult =
+  | { readonly status: 'ready'; readonly value: ExactRational; readonly sourcePeriod: BudgetPeriod; readonly targetPeriod: BudgetPeriod; readonly basis: 'budget-calendar-period' }
+  | ExactProductFailure
+  | ExactComparisonFailure
+  | { readonly status: 'unavailable'; readonly code: 'invalid-period' | 'unsupported-calendar'; readonly reason: string }
+  | { readonly status: 'unavailable'; readonly code: 'missing-calendar-input' | 'invalid-calendar'; readonly dependency: 'daysPerMonth' | 'monthsPerYear'; readonly reason: string };
+export function convertBudgetCalendarAmount(
+  amount: ExactRational,
+  from: BudgetPeriod,
+  to: BudgetPeriod,
+  context: BudgetAmountContext,
+  limits: ExactLimits,
+): BudgetAmountResult;
+ORIGEM CANÔNICA RCF.md SHA256 b66b4ba23d82abbbfb4a9350b629ee3dff3b1c473d7ece2f6a329563190dbd65
+103: 2. Calendário sem datas reais: dias equivalentes programados/mês `4 × 30/7 = 17,142857…`, **não 16**; dias efetivos = programados − perdidos, respeitando domínio e período. Semana = 7 dias, mês orçamentário = 30, ano = 12 desses meses (**360 dias orçamentários**, não calendário civil); sempre identificar convenção. Se o usuário configurar dias exatos da semana/datas reais, usar calendário real e registrar competência, sem misturar as convenções. Não inventar escala horária para 6/8 h. Dias restantes/ausências recalculam valores necessários até o fechamento, sem aumentar demanda disponível por decreto.
+151: - **Patamares por unidade:** para cada contexto e cada alvo `0`, `Lmin`, `M15`, `M100`, apresentar **receita a creditar necessária em R$/hora, R$/km, R$/dia, R$/semana, R$/mês e, quando pertinente, R$/ano** (valor **requerido**, não comprovadamente recebido). Dividir receita requerida do **mesmo período** por horas conectadas efetivas, `K` total, dias efetivos e demais denominadores legítimos. O ganho **mínimo por km da operação** para cobrir custos/meta é `B_necessário / K_total`; a métrica a configurar no Rota Pro emprega **km de oferta** (coleta + viagem), não `K_total`, devendo absorver corretamente km vazios e custos nos requisitos projetados. Expor simultaneamente **ganho mínimo por km para empatar**, **para lucro mínimo** e **para cada meta**; não rotular todos de “mínimo” sem finalidade.
+159: 3. **Cálculo dos desvios e alavancas:** expor pelo menos `déficitMeta = max(0, Meta − LLF(B))` e `déficitCobertura = max(0, −LLF(B))`, **ambos em R$ e na mesma competência**, sem ocultar excedentes (`Folga(M)` permanece sinalizada). Quando `G>0`, custos completos estiverem estáveis na hipótese e `B_necessário` for validamente determinado, exibir `repasseAdicionalNecessário = max(0, B_necessário − B)` e os equivalentes **R$/km total, R$/hora conectada, R$/dia, R$/semana e R$/mês** pelos denominadores válidos; **déficit de lucro e déficit de receita não são o mesmo valor**, por dízimo, tributos e custos. Simular separadamente e de forma editável ajuste de repasse efetivo/R$/km, custos fixos, combustível e outros custos de uso, quilômetros vazios/coleta/retorno, duração/ociosidade, jornada, calendário, elegibilidade e limiares, sempre mantendo coerência de demanda, capacidade, custos e demais regras. **Não** propor elevar corridas/h como objetivo autônomo, violar nota mínima 4,80, recriar piso nominal por corrida ou supor que filtros mais seletivos gerem mais ofertas verdes.
+Os números dos testes são sintéticos explicitamente; não alterar defaults30/12 do produto.

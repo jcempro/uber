@@ -1,0 +1,44 @@
+/**
+ * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
+ * Origem: jcem.pro-uber; RCF§§7.2/8.2/8.3, FT-003.40.4c.
+ * Autoria Git: JeanCarloEM <jeancarlo@jeancarloem.com>.
+ */
+import {inspectExactLimits,type ExactLimits} from './exact-budget';
+import type {ExactRational} from './exact';
+import type {BudgetPeriod} from './model';
+import {convertBudgetCalendarAmount,type BudgetAmountContext,type BudgetAmountResult} from './budget-amount';
+import {calculateScheduledBudgetDays} from './budget-days';
+import {calculateEffectiveMonthlyWorkingDays,calculateMonthlyAvailability} from './monthly-availability';
+import {calculateExactProduct} from './exact-product';
+import {compareExactRationals} from './exact-compare';
+export interface BudgetFinancialRateContext extends BudgetAmountContext {
+  readonly daysPerWeek?:ExactRational|null;
+  readonly lostWorkingDaysPerMonth?:ExactRational|null;
+  readonly hoursPerWorkingDay?:ExactRational|null;
+}
+export interface BudgetFinancialRatesInput {
+  readonly currency:'BRL';readonly sourceBasis:'budget-calendar-period';readonly amount:ExactRational;
+  readonly sourcePeriod:BudgetPeriod;readonly calendar:BudgetFinancialRateContext;
+}
+export type BudgetRateFailure=Extract<BudgetAmountResult|ReturnType<typeof calculateScheduledBudgetDays>|ReturnType<typeof calculateEffectiveMonthlyWorkingDays>|ReturnType<typeof calculateMonthlyAvailability>|ReturnType<typeof calculateExactProduct>|ReturnType<typeof compareExactRationals>,{status:'unavailable'}>;
+type WorkingUnit='BRL/working-day'|'BRL/connected-hour';
+type WorkingFailureCode='source-unavailable'|'missing-calendar-input'|'calendar-unavailable'|'non-positive-availability'|'calculation-unavailable';
+export type BudgetWorkingRateResult=
+  | {readonly status:'ready';readonly unit:WorkingUnit;readonly amountPeriod:'month';readonly sourceAmount:ExactRational;readonly denominator:ExactRational;readonly value:ExactRational}
+  | {readonly status:'unavailable';readonly code:WorkingFailureCode;readonly dependency:string|null;readonly reason:string;readonly diagnostic:BudgetRateFailure|null;readonly denominator:ExactRational|null};
+export type BudgetFinancialRatesResult=
+  | {readonly status:'conditional';readonly currency:'BRL';readonly sourceBasis:'budget-calendar-period';readonly source:Extract<BudgetAmountResult,{status:'ready'}>;readonly financialAssessment:'not-evaluated';readonly perMonth:BudgetAmountResult;readonly perWeek:BudgetAmountResult;readonly perYear:BudgetAmountResult;readonly perWorkingDay:BudgetWorkingRateResult;readonly perConnectedHour:BudgetWorkingRateResult}
+  | {readonly status:'unavailable';readonly code:'invalid-budget'|'unsupported-input'|'source-unavailable';readonly reason:string;readonly source:BudgetAmountResult|null};
+function unavailableWorking(code:WorkingFailureCode,dependency:string|null,reason:string,diagnostic:BudgetRateFailure|null=null,denominator:ExactRational|null=null):BudgetWorkingRateResult{return Object.freeze({status:'unavailable',code,dependency,reason,diagnostic,denominator});}
+/** Denominador já calculado em mês; não aceita zero/negativo e não arredonda lucro assinado. */
+function divideMonthlyAmount(amount:ExactRational,denominator:ExactRational,unit:WorkingUnit,limits:ExactLimits):BudgetWorkingRateResult {
+  const sign=compareExactRationals(denominator,Object.freeze({numerator:'0',denominator:'1'}),limits);
+  if(sign.status!=='ready')return unavailableWorking('calculation-unavailable',null,sign.reason,sign);
+  if(sign.order<=0)return unavailableWorking('non-positive-availability',null,'Disponibilidade mensal deve ser positiva para calcular este indicador.',null,denominator);
+  const ratio=calculateExactProduct('divide',amount,denominator,limits);
+  return ratio.status!=='ready'?unavailableWorking('calculation-unavailable',null,ratio.reason,ratio):Object.freeze({status:'ready',unit,amountPeriod:'month',sourceAmount:amount,denominator,value:ratio.value});
+}
+/** Conversão estatística condicional; nenhum resultado confirma realização financeira. */
+export function calculateBudgetFinancialRates(input:BudgetFinancialRatesInput,limits:ExactLimits):BudgetFinancialRatesResult {
+  // Completar somente a composição aprovada; não deixar placeholder na fonte funcional.
+}

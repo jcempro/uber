@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.4c.1a",
+  "beforeSha256": "963069a37b44a8f239664e9b14fde58f7622561adbc518b46599140c3d15c6bb",
+  "afterSha256": "b9bc2ccbe0a7245b5f79e3a3d6847f430e43601a0b70b94c30f44eb03a0b9da4",
+  "changes": "9calls use validated limit snapshot; finish arrow preserves narrowing without cast; remove copied instructions",
+  "limits": "Sem alteração de álgebra; comportamento ainda pendente."
+}
