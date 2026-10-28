@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "unit": "FT-003.37a.2c",
+  "sourceCommit": "b08a61832d17e4120f4a6bf77133c830617f7881",
+  "before": "9bc1b243501cfd5d42e2d79c64c9acd431d53a4fa3120c5cacdf31fcf33e3896",
+  "after": "cb1cdc3337fbde712d66ddcb1e22b2292dc0ae8b17f369a5a4d3261b1eff82f1",
+  "canonicalType": "ParameterScope.kind is literal global|vehicle|scenario; ID whitespace is preserved separately",
+  "expectedSuccessCorrections": 1,
+  "clarifiedOtherFixtures": 3,
+  "groups": 6,
+  "cases": 37,
+  "backups": [
+    {
+      "source": ".ia.rules/state/contexts/FT-001/parameter-scope-cases.json",
+      "path": ".ia.rules/state/contexts/FT-001/parameter-scope-cases.failed-70a41.json",
+      "sha256": "9bc1b243501cfd5d42e2d79c64c9acd431d53a4fa3120c5cacdf31fcf33e3896"
+    },
+    {
+      "source": ".cache/parameter-scope-schema-tests.json",
+      "path": ".ia.rules/state/contexts/FT-001/scope-cases-failed-70a41-report.json",
+      "sha256": "029c04586576cd146799bea15d4c45aec6764c10860f19d847c35136ac5b9d5f"
+    },
+    {
+      "source": ".ia.rules/state/contexts/FT-001/parameter-scope-schema-check.json",
+      "path": ".ia.rules/state/contexts/FT-001/scope-cases-failed-70a41-commands.json",
+      "sha256": "5d9cecf77f0fd6cc422b5afd2cc6f573b22b408aa3b140eedd04f5d16f0390a2"
+    },
+    {
+      "source": ".ia.rules/state/contexts/FT-001/parameter-scope-fixture-build-check.json",
+      "path": ".ia.rules/state/contexts/FT-001/scope-cases-failed-70a41-build.json",
+      "sha256": "6e32636dbdde647e1cda6a0b302f3dcbdaeaba9678f5d6fb3cec71d1854af7ab"
+    },
+    {
+      "source": "src/domain/parameter-scope-schema.test.ts",
+      "path": ".ia.rules/state/contexts/FT-001/scope-cases-failed-70a41-test.txt",
+      "sha256": "ef60da07692312f9307241efeb06c4ef376b1962e467c1f6861b5d9663c04be2"
+    }
+  ],
+  "limits": "Correção de oráculo incompatível com fonte canônica, reforçando rejeição de discriminador com espaço; produção e demais expectativas preservadas. Build/validação seguem comandos separados."
+}

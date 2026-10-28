@@ -1,0 +1,333 @@
+{
+  "schema": 1,
+  "groups": [
+    {
+      "group": "canonical",
+      "cases": [
+        {
+          "id": "global-sem-id",
+          "input": {
+            "kind": "global"
+          },
+          "success": true
+        },
+        {
+          "id": "vehicle-com-espaco-inicial",
+          "input": {
+            "kind": "vehicle",
+            "vehicleId": " abc123"
+          },
+          "success": true
+        },
+        {
+          "id": "vehicle-com-espaco-final",
+          "input": {
+            "kind": "vehicle",
+            "vehicleId": "xyz789 "
+          },
+          "success": true
+        },
+        {
+          "id": "scenario-com-espaco-inicial",
+          "input": {
+            "kind": "scenario",
+            "scenarioId": " def456"
+          },
+          "success": true
+        },
+        {
+          "id": "scenario-com-espaco-final",
+          "input": {
+            "kind": "scenario",
+            "scenarioId": "uvw321 "
+          },
+          "success": true
+        },
+        {
+          "id": "vehicle-id-sintetico-sem-resolucao",
+          "input": {
+            "kind": "vehicle",
+            "vehicleId": "fixture-sem-cadastro"
+          },
+          "success": true
+        }
+      ]
+    },
+    {
+      "group": "shape",
+      "cases": [
+        {
+          "id": "root-nulo",
+          "input": null,
+          "success": false
+        },
+        {
+          "id": "root-array",
+          "input": [],
+          "success": false
+        },
+        {
+          "id": "root-numero",
+          "input": 42,
+          "success": false
+        },
+        {
+          "id": "discriminador-ausente",
+          "input": {},
+          "success": false
+        },
+        {
+          "id": "discriminador-desconhecido",
+          "input": {
+            "kind": "invalid-kind"
+          },
+          "success": false
+        },
+        {
+          "id": "campo-outro-escopo",
+          "input": {
+            "kind": "vehicle",
+            "scenarioId": "cenario-trocado"
+          },
+          "success": false
+        },
+        {
+          "id": "global-com-id",
+          "input": {
+            "kind": "global",
+            "vehicleId": "abc123"
+          },
+          "success": false
+        },
+        {
+          "id": "discriminador-com-espaco-recusa",
+          "input": {
+            "kind": "global "
+          },
+          "success": false
+        }
+      ]
+    },
+    {
+      "group": "identifier",
+      "cases": [
+        {
+          "id": "id-ausente-vehicle",
+          "input": {
+            "kind": "vehicle"
+          },
+          "success": false,
+          "path": "vehicleId"
+        },
+        {
+          "id": "id-nulo-vehicle",
+          "input": {
+            "kind": "vehicle",
+            "vehicleId": null
+          },
+          "success": false,
+          "path": "vehicleId"
+        },
+        {
+          "id": "id-numero-vehicle",
+          "input": {
+            "kind": "vehicle",
+            "vehicleId": 123
+          },
+          "success": false,
+          "path": "vehicleId"
+        },
+        {
+          "id": "id-booleano-vehicle",
+          "input": {
+            "kind": "vehicle",
+            "vehicleId": true
+          },
+          "success": false,
+          "path": "vehicleId"
+        },
+        {
+          "id": "id-vazio-vehicle",
+          "input": {
+            "kind": "vehicle",
+            "vehicleId": ""
+          },
+          "success": false,
+          "path": "vehicleId"
+        },
+        {
+          "id": "id-espaços-vehicle",
+          "input": {
+            "kind": "vehicle",
+            "vehicleId": "   "
+          },
+          "success": false,
+          "path": "vehicleId"
+        },
+        {
+          "id": "id-tab-vehicle",
+          "input": {
+            "kind": "vehicle",
+            "vehicleId": "\t"
+          },
+          "success": false,
+          "path": "vehicleId"
+        },
+        {
+          "id": "id-newline-vehicle",
+          "input": {
+            "kind": "vehicle",
+            "vehicleId": "\n"
+          },
+          "success": false,
+          "path": "vehicleId"
+        },
+        {
+          "id": "id-ausente-scenario",
+          "input": {
+            "kind": "scenario"
+          },
+          "success": false,
+          "path": "scenarioId"
+        },
+        {
+          "id": "id-nulo-scenario",
+          "input": {
+            "kind": "scenario",
+            "scenarioId": null
+          },
+          "success": false,
+          "path": "scenarioId"
+        },
+        {
+          "id": "id-numero-scenario",
+          "input": {
+            "kind": "scenario",
+            "scenarioId": 456
+          },
+          "success": false,
+          "path": "scenarioId"
+        },
+        {
+          "id": "id-booleano-scenario",
+          "input": {
+            "kind": "scenario",
+            "scenarioId": false
+          },
+          "success": false,
+          "path": "scenarioId"
+        },
+        {
+          "id": "id-vazio-scenario",
+          "input": {
+            "kind": "scenario",
+            "scenarioId": ""
+          },
+          "success": false,
+          "path": "scenarioId"
+        },
+        {
+          "id": "id-espaços-scenario",
+          "input": {
+            "kind": "scenario",
+            "scenarioId": "   "
+          },
+          "success": false,
+          "path": "scenarioId"
+        },
+        {
+          "id": "id-tab-scenario",
+          "input": {
+            "kind": "scenario",
+            "scenarioId": "\t"
+          },
+          "success": false,
+          "path": "scenarioId"
+        },
+        {
+          "id": "id-newline-scenario",
+          "input": {
+            "kind": "scenario",
+            "scenarioId": "\n"
+          },
+          "success": false,
+          "path": "scenarioId"
+        }
+      ]
+    },
+    {
+      "group": "unknown-keys",
+      "cases": [
+        {
+          "id": "campo-extra-normal",
+          "input": {
+            "kind": "global",
+            "extraField": "value"
+          },
+          "success": false
+        },
+        {
+          "id": "constructor-own-property",
+          "input": {
+            "kind": "global",
+            "constructor": "override"
+          },
+          "success": false,
+          "ownKey": "constructor"
+        },
+        {
+          "id": "__proto__-own-property",
+          "input": {
+            "kind": "global",
+            "__proto__": "override"
+          },
+          "success": false,
+          "ownKey": "__proto__"
+        }
+      ]
+    },
+    {
+      "group": "issue-path",
+      "cases": [
+        {
+          "id": "vehicleId-invalido",
+          "input": {
+            "kind": "vehicle",
+            "vehicleId": "   "
+          },
+          "success": false,
+          "path": "vehicleId"
+        },
+        {
+          "id": "scenarioId-invalido",
+          "input": {
+            "kind": "scenario",
+            "scenarioId": null
+          },
+          "success": false,
+          "path": "scenarioId"
+        }
+      ]
+    },
+    {
+      "group": "immutability",
+      "cases": [
+        {
+          "id": "objeto-plano-valido",
+          "input": {
+            "kind": "global"
+          },
+          "success": true
+        },
+        {
+          "id": "objeto-plano-invalido",
+          "input": {
+            "kind": "global",
+            "extra": "field"
+          },
+          "success": false
+        }
+      ]
+    }
+  ]
+}

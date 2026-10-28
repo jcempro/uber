@@ -1,0 +1,41 @@
+/**
+ * @license MPL-2.0 — https://www.mozilla.org/MPL/2.0/
+ * Origem: jcem.pro-uber; RCF§4/FT-003.37a.2b; catálogo parameter-scope-cases.json.
+ * Autoria Git: JeanCarloEM <jeancarlo@jeancarloem.com>.
+ * Gerado pelo harness interno; expectativas vêm do contrato canônico, não do schema executado.
+ */
+import { describe, expect, it } from 'vitest';
+import { safeParse } from 'valibot';
+import { PARAMETER_SCOPE_STRUCTURE_SCHEMA } from './parameter-scope-schema';
+
+/** Caso sintético de teste; não representa cadastro nem dado financeiro. */
+interface ScopeCase { readonly id: string; readonly input: unknown; readonly success: boolean; readonly path?: string; readonly ownKey?: string; }
+/** Grupo de um requisito observável independente. */
+interface ScopeGroup { readonly group: string; readonly cases: readonly ScopeCase[]; }
+// JSON.parse preserva __proto__ como propriedade própria; object literal não comprovaria esse controle negativo.
+const groups = JSON.parse("[{\"group\":\"canonical\",\"cases\":[{\"id\":\"global-com-espaco-inicial\",\"input\":{\"kind\":\"global\"},\"success\":true},{\"id\":\"global-com-espaco-final\",\"input\":{\"kind\":\"global \"},\"success\":true},{\"id\":\"vehicle-com-espaco-inicial\",\"input\":{\"kind\":\"vehicle\",\"vehicleId\":\" abc123\"},\"success\":true},{\"id\":\"vehicle-com-espaco-final\",\"input\":{\"kind\":\"vehicle\",\"vehicleId\":\"xyz789 \"},\"success\":true},{\"id\":\"scenario-com-espaco-inicial\",\"input\":{\"kind\":\"scenario\",\"scenarioId\":\" def456\"},\"success\":true},{\"id\":\"scenario-com-espaco-final\",\"input\":{\"kind\":\"scenario\",\"scenarioId\":\"uvw321 \"},\"success\":true},{\"id\":\"global-id-nao-cadastrado\",\"input\":{\"kind\":\"global\"},\"success\":true}]},{\"group\":\"shape\",\"cases\":[{\"id\":\"root-nulo\",\"input\":null,\"success\":false},{\"id\":\"root-array\",\"input\":[],\"success\":false},{\"id\":\"root-numero\",\"input\":42,\"success\":false},{\"id\":\"discriminador-ausente\",\"input\":{},\"success\":false},{\"id\":\"discriminador-desconhecido\",\"input\":{\"kind\":\"invalid-kind\"},\"success\":false},{\"id\":\"campo-outro-escopo\",\"input\":{\"kind\":\"global\",\"vehicleId\":\"abc123\"},\"success\":false},{\"id\":\"global-com-id\",\"input\":{\"kind\":\"global\",\"vehicleId\":\"abc123\"},\"success\":false}]},{\"group\":\"identifier\",\"cases\":[{\"id\":\"id-ausente-vehicle\",\"input\":{\"kind\":\"vehicle\"},\"success\":false,\"path\":\"vehicleId\"},{\"id\":\"id-nulo-vehicle\",\"input\":{\"kind\":\"vehicle\",\"vehicleId\":null},\"success\":false,\"path\":\"vehicleId\"},{\"id\":\"id-numero-vehicle\",\"input\":{\"kind\":\"vehicle\",\"vehicleId\":123},\"success\":false,\"path\":\"vehicleId\"},{\"id\":\"id-booleano-vehicle\",\"input\":{\"kind\":\"vehicle\",\"vehicleId\":true},\"success\":false,\"path\":\"vehicleId\"},{\"id\":\"id-vazio-vehicle\",\"input\":{\"kind\":\"vehicle\",\"vehicleId\":\"\"},\"success\":false,\"path\":\"vehicleId\"},{\"id\":\"id-espaços-vehicle\",\"input\":{\"kind\":\"vehicle\",\"vehicleId\":\"   \"},\"success\":false,\"path\":\"vehicleId\"},{\"id\":\"id-tab-vehicle\",\"input\":{\"kind\":\"vehicle\",\"vehicleId\":\"\\t\"},\"success\":false,\"path\":\"vehicleId\"},{\"id\":\"id-newline-vehicle\",\"input\":{\"kind\":\"vehicle\",\"vehicleId\":\"\\n\"},\"success\":false,\"path\":\"vehicleId\"},{\"id\":\"id-ausente-scenario\",\"input\":{\"kind\":\"scenario\"},\"success\":false,\"path\":\"scenarioId\"},{\"id\":\"id-nulo-scenario\",\"input\":{\"kind\":\"scenario\",\"scenarioId\":null},\"success\":false,\"path\":\"scenarioId\"},{\"id\":\"id-numero-scenario\",\"input\":{\"kind\":\"scenario\",\"scenarioId\":456},\"success\":false,\"path\":\"scenarioId\"},{\"id\":\"id-booleano-scenario\",\"input\":{\"kind\":\"scenario\",\"scenarioId\":false},\"success\":false,\"path\":\"scenarioId\"},{\"id\":\"id-vazio-scenario\",\"input\":{\"kind\":\"scenario\",\"scenarioId\":\"\"},\"success\":false,\"path\":\"scenarioId\"},{\"id\":\"id-espaços-scenario\",\"input\":{\"kind\":\"scenario\",\"scenarioId\":\"   \"},\"success\":false,\"path\":\"scenarioId\"},{\"id\":\"id-tab-scenario\",\"input\":{\"kind\":\"scenario\",\"scenarioId\":\"\\t\"},\"success\":false,\"path\":\"scenarioId\"},{\"id\":\"id-newline-scenario\",\"input\":{\"kind\":\"scenario\",\"scenarioId\":\"\\n\"},\"success\":false,\"path\":\"scenarioId\"}]},{\"group\":\"unknown-keys\",\"cases\":[{\"id\":\"campo-extra-normal\",\"input\":{\"kind\":\"global\",\"extraField\":\"value\"},\"success\":false},{\"id\":\"constructor-own-property\",\"input\":{\"kind\":\"global\",\"constructor\":\"override\"},\"success\":false,\"ownKey\":\"constructor\"},{\"id\":\"__proto__-own-property\",\"input\":{\"kind\":\"global\",\"__proto__\":\"override\"},\"success\":false,\"ownKey\":\"__proto__\"}]},{\"group\":\"issue-path\",\"cases\":[{\"id\":\"vehicleId-invalido\",\"input\":{\"kind\":\"vehicle\",\"vehicleId\":\"   \"},\"success\":false,\"path\":\"vehicleId\"},{\"id\":\"scenarioId-invalido\",\"input\":{\"kind\":\"scenario\",\"scenarioId\":null},\"success\":false,\"path\":\"scenarioId\"}]},{\"group\":\"immutability\",\"cases\":[{\"id\":\"objeto-plano-valido\",\"input\":{\"kind\":\"global\"},\"success\":true},{\"id\":\"objeto-plano-invalido\",\"input\":{\"kind\":\"global\",\"extra\":\"field\"},\"success\":false}]}]") as readonly ScopeGroup[];
+
+describe('Escopos estruturais — oráculos canônicos independentes', () => {
+  for (const group of groups) {
+    it(group.group, () => {
+      for (const fixture of group.cases) {
+        const input = fixture.input;
+        if (fixture.ownKey) {
+          if (input === null || typeof input !== 'object') throw new Error('Fixture de chave própria exige objeto');
+          expect(Object.hasOwn(input, fixture.ownKey), fixture.id).toBe(true);
+        }
+        const before = JSON.stringify(input);
+        if (group.group === 'immutability') Object.freeze(input);
+        const result = safeParse(PARAMETER_SCOPE_STRUCTURE_SCHEMA, input);
+        expect(result.success, fixture.id).toBe(fixture.success);
+        if (result.success) expect(result.output, fixture.id).toEqual(input);
+        else if (fixture.path) expect(result.issues.some(issue => issue.path?.some(item => item.key === fixture.path)), fixture.id).toBe(true);
+        expect(JSON.stringify(input), fixture.id).toBe(before);
+        if (group.group === 'immutability') {
+          expect(Object.isFrozen(input), fixture.id).toBe(true);
+          expect(safeParse(PARAMETER_SCOPE_STRUCTURE_SCHEMA, input), fixture.id).toEqual(result);
+        }
+      }
+    });
+  }
+});

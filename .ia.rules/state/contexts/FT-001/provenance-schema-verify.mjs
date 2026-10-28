@@ -5,7 +5,15 @@ const base='.ia.rules/state/contexts/FT-001/';const profile=process.argv[2]||'pr
 for(const p of ['AGENTS.md','.ia.rules/core/authority.md','.ia.rules/state/continue.ia',base+stem+'-unit.md'])fs.readFileSync(p,'utf8');
 const prior=JSON.parse(fs.readFileSync(base+'provenance-schema-baseline.json','utf8'));const hash=x=>crypto.createHash('sha256').update(x).digest('hex');
 const stable=x=>JSON.stringify(sort(x));function sort(x){if(Array.isArray(x))return x.map(sort);if(x&&typeof x==='object')return Object.fromEntries(Object.keys(x).sort().map(k=>[k,sort(x[k])]));return x;}
-for(const [p,h]of Object.entries(prior.files)){guard(p);if(hash(fs.readFileSync(p))!==h)throw Error('prior source changed: '+p);}
+let protectedFiles=prior.files;
+if(profile==='scope'){
+const approved=JSON.parse(fs.readFileSync(base+'parameter-scope-tests-baseline.json','utf8'));
+if(approved.sourceCommit!=='b08a61832d17e4120f4a6bf77133c830617f7881'||approved.priorTests!==275||Object.keys(approved.files).length!==66)throw Error('unapproved source baseline');
+for(const [p,h]of Object.entries(prior.files))if(p!=='src/domain/cost-requirements.ts'&&approved.files[p]!==h)throw Error('unrelated rebaseline:'+p);
+if(approved.files['src/domain/cost-requirements.ts']!=='56db3ad05995583dd01f6ecfb276234265d82b0a525285b9599de8ea7b7454a6'||approved.files[sourcePath]!=='54f2a3764290403a0f661d185ae1026cf4c109efd4e39c217da16f8d7edc6c82')throw Error('unapproved source evolution');
+protectedFiles=approved.files;
+}
+for(const [p,h]of Object.entries(protectedFiles)){guard(p);if(hash(fs.readFileSync(p))!==h)throw Error('prior source changed: '+p);}
 if(profile==='scope'){guard(sourcePath);if(!fs.existsSync(sourcePath)||hash(fs.readFileSync(sourcePath))!=='54f2a3764290403a0f661d185ae1026cf4c109efd4e39c217da16f8d7edc6c82')throw Error('approved scope schema changed; tests cannot redefine production');}
 const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));if(pkg.dependencies?.valibot!=='1.5.0')throw Error('unpinned dependency');
 const pkgOld=structuredClone(pkg);delete pkgOld.dependencies.valibot;if(stable(pkgOld)!==stable(prior.package))throw Error('unrelated package change');
@@ -20,7 +28,12 @@ tsAfter.dev=true;delete tsAfter.devOptional;lockMetadata.push('TypeScript dev→
 }
 if(stable(lockOld)!==stable(prior.lock))throw Error('unrelated lock change; inspect semantic difference without relaxing gate');
 const installed=JSON.parse(fs.readFileSync('node_modules/valibot/package.json','utf8'));if(installed.version!=='1.5.0'||installed.license!=='MIT')throw Error('installed identity');
-if(process.argv.includes('--preflight')){console.log(JSON.stringify({preflight:true,profile,priorFiles:Object.keys(prior.files).length,lockMetadata,version:installed.version}));process.exit(0);}
+if(process.argv.includes('--preflight')){console.log(JSON.stringify({preflight:true,profile,priorFiles:Object.keys(protectedFiles).length,lockMetadata,version:installed.version}));process.exit(0);}
+if(!fs.existsSync(suitePath))throw Error('Create behavioral test artifact before verification; no test suite executed');
+if(profile==='scope'){
+const generated=JSON.parse(fs.readFileSync(base+'parameter-scope-fixture-build-check.json','utf8'));
+if(hash(fs.readFileSync(suitePath))!==generated.testSha256||hash(fs.readFileSync(base+'parameter-scope-cases.json'))!==generated.catalogSha256)throw Error('test/catalog generation binding changed');
+}
 const env={...process.env,PATH:path.dirname(process.execPath)+path.delimiter+process.env.PATH};const npm='C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js';const commands=[];
 for(const [name,args]of [['types',['run','app:typecheck']],['lint',['run','app:lint']],['tests',['run','app:test','--','--reporter=json','--outputFile='+testsPath]]]){
 const actualArgs=args.map(arg=>arg==='--outputFile='+testsPath?'--outputFile='+path.resolve(testsPath):arg);const r=spawnSync(process.execPath,[npm,...actualArgs],{cwd:root,env,encoding:'utf8',timeout:150000,maxBuffer:2e6});commands.push({name,status:r.status,error:r.error?.message,stdout:r.stdout,stderr:r.stderr});if(r.status!==0){fs.writeFileSync(reportPath,JSON.stringify({commands,failed:name},null,2)+'\n');throw Error(name+' failed: '+r.stderr);}
@@ -30,5 +43,6 @@ if(!suite||suite.assertionResults.length<6||suite.assertionResults.some(x=>x.sta
 const {build}=await import('vite');const result=await build({configFile:false,logLevel:'silent',build:{target:'es2023',write:false,minify:true,lib:{entry:path.resolve(sourcePath),formats:['es'],fileName:stem+'-probe'}}});
 const outputs=(Array.isArray(result)?result:[result]).flatMap(x=>x.output).filter(x=>x.type==='chunk');if(!outputs.length)throw Error('missing bundle');
 const bundle=outputs.map(x=>({file:x.fileName,bytes:Buffer.byteLength(x.code),gzipBytes:gzipSync(x.code).length}));const files={};for(const p of [sourcePath,suitePath]){guard(p);files[p]=hash(fs.readFileSync(p));}
-const report={schema:1,unit,node:process.version,selection:prior.selection,priorFilesPreserved:Object.keys(prior.files).length,lockMetadata,files,commands,tests:{total:tests.numTotalTests,passed:tests.numPassedTests,newSuite:suite.assertionResults.length},bundle:{profile:'Vite installed; isolated ES2023 ES module minified write:false; standalone, not app delta/browser measurement',chunks:bundle},limits:'Structure only; no semantic dates, source truth, financial admission, full JSON import or complete UI'};
+for(const [p,h]of Object.entries(protectedFiles))if(hash(fs.readFileSync(p))!==h)throw Error('prior source changed after verification:'+p);
+const report={schema:1,unit,node:process.version,selection:prior.selection,priorFilesPreserved:Object.keys(protectedFiles).length,lockMetadata,files,commands,tests:{total:tests.numTotalTests,passed:tests.numPassedTests,newSuite:suite.assertionResults.length},bundle:{profile:'Vite installed; isolated ES2023 ES module minified write:false; standalone, not app delta/browser measurement',chunks:bundle},limits:'Structure only; no semantic dates, source truth, financial admission, full JSON import or complete UI'};
 fs.writeFileSync(reportPath,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({reportPath,tests:report.tests,bundle:report.bundle,files}));

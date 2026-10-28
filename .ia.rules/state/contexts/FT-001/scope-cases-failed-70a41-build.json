@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "unit": "FT-003.37a.2b",
+  "catalogSha256": "9bc1b243501cfd5d42e2d79c64c9acd431d53a4fa3120c5cacdf31fcf33e3896",
+  "testSha256": "ef60da07692312f9307241efeb06c4ef376b1962e467c1f6861b5d9663c04be2",
+  "groups": 6,
+  "cases": 37,
+  "target": "src/domain/parameter-scope-schema.test.ts",
+  "sourceCommit": "b08a61832d17e4120f4a6bf77133c830617f7881",
+  "limits": "Formato/cobertura mecânicos não certificam verdade das expectativas; revisão supervisor obrigatória."
+}
