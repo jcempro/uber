@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "unit": "FT-003.38b.1c",
+  "sourceSha256": "e4296520d6f7b5e52fde405d5627280a5813d51cdedc1833c5b97c1a2269f68f",
+  "testSha256": "29c73de93cd6034bb991d709756583aaa736d9af520ba858d4c5b72fd18abfe4",
+  "sourcePath": "src/domain/maintenance-adoption.ts",
+  "testPath": "src/domain/maintenance-adoption.test.ts",
+  "protectedFiles": 74,
+  "limits": "Adoção explícita de hipótese; não confirma custo real/vigência, admissão financeira, ledger ou UI."
+}

@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "unit": "FT-003.38b.1c",
+  "node": "v24.22.1",
+  "sourceCommit": "3cd7f60f5a50622f9f8f41a9468e43733b4114ba",
+  "files": {
+    "src/domain/maintenance-adoption.ts": "e4296520d6f7b5e52fde405d5627280a5813d51cdedc1833c5b97c1a2269f68f",
+    "src/domain/maintenance-adoption.test.ts": "29c73de93cd6034bb991d709756583aaa736d9af520ba858d4c5b72fd18abfe4"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\maintenance-adoption-factory-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/maintenance-adoption-factory-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 303,
+    "passed": 303,
+    "newSuite": 8
+  },
+  "protectedFiles": 74,
+  "limits": "Adoção explícita de hipótese; não confirma custo real/vigência, admissão financeira, ledger ou UI."
+}
