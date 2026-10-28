@@ -1,0 +1,97 @@
+Worker subordinado, não supervisor. UNIDADE PEQUENA, APENAS2TESTES NOVOS.
+AGENTS.md
+# AGENTS.md — Entrypoint da Norma
+
+Este arquivo governa a atuação da IA. O RCF governa requisito, contrato, arquitetura e negócio; é a especificação declarativa, determinística e verificável do sistema, ressalvado o domínio desta Norma. Precedência, autoridade, preservação e mecanismos oficiais são compulsórios.
+
+Antes de operação material sem rota válida em memória ou com alteração física:
+
+1. consulte `./.ia.rules/normative-index.json`;
+2. carregue `./.ia.rules/core/authority.md`, papéis cumulativos e somente a rota direta, cenários, contratos e recursos disparados;
+3. consulte prioritariamente `./.ia.rules/state/decisions/refused/index.json`;
+4. execute do estado canônico `./.ia.rules/continue.ia`, com FT, plano, RCF e autorização compatíveis.
+
+`./.ia.rules/agents.inc.md` preserva a Norma operacional integral. Leia-o somente diante de mudança de rota, perda de contexto, conflito, regra não localizada, índice/cache inválido, auditoria de preservação ou confiança insuficiente. Referências seletivas resolvem-se por `MN-REF`.
+
+Todo repositório é Final; fonte, build, atualização, distribuição ou release agregam Construtor. No construtor do produto, `./AGENTS.md` CURRENT/CONSUMED rege; `src/AGENTS.md` SOURCE/DEVELOPED não rege até adoção nem pode ser regredido pela consumida. Homonímia não transfere versão, papel, escopo ou autoridade. Ambiguidade preserva comportamento e conteúdo. Saída técnica usa PT-BR.
+
+Cada solicitação autoriza escrita e Git somente no único repositório corrente associado ao prompt; root irmã, dependência, submódulo, worktree, repositório aninhado ou path físico externo permanece intocável, ainda que aberto ou relacionado.
+
+core/authority.md
+# Autoridade operacional e mecanismos oficiais
+
+Identidade normativa: `core.authority`; papel: comum; tipo: folha. Ler integralmente em toda atuação governada. Não dispensar por cenário, papel, familiaridade ou economia de contexto. Aplicar `MN-2119`, `MN-PRES`, `MN-ROLE`, `MN-EXT` e `MN-REF`.
+
+## 1. Vocabulário canônico
+
+**Norma Operacional** é `AGENTS.md` e associados, responsável pelo modo de atuação, processo, leitura, edição, validação, rastreabilidade, automação, scripts, hooks, comandos e FTs. **RCF** é a SSOT arquitetural declarativa, determinística e verificável do que o sistema é e DEVE fazer. **Repositório Construtor** mantém, constrói, valida ou distribui a Norma Operacional. **Repositório Final** consome a Norma. Papéis são cumulativos e nenhum afasta o outro.
+
+**Mecanismo Oficial** é script, comando, hook, callback, adaptador, workflow, arquivo-gatilho, convenção, nomenclatura, contrato ou ponto de extensão normatizado. **Extensão Oficial** compõe o mecanismo sem substituir fluxo ou contrato. **Fluxo Paralelo** é mecanismo novo, duplicado, substitutivo ou funcionalmente equivalente que contorne o oficial. **Lacuna Oficial** é erro, risco, insuficiência ou ausência comprovada no mecanismo necessário. **Princípio Estruturante** é regra cuja degradação altera autoridade, alcance ou comportamento fundamental. **Microtexto Normativo** é unidade curta, coesa, autônoma, estável e referenciável. **Custo Líquido** compara tokens, bytes, tempo, processamento, navegação, manutenção, risco, precisão e reutilização.
+
+Definição canônica NÃO DEVE ser redefinida em papel, cenário, recurso, RCF específico ou extensão. Especialização referencia o termo e restringe somente seu contexto.
+
+## 2. Proteção estrutural
+
+Revisão parcial, cirúrgica, ampla ou estrutural DEVE preservar autoridade, precedência, domínios, contratos, nomes, proibições, exceções, hooks, modus operandi, incisividade, rastreabilidade, força, efeitos e intenção. Princípio Estruturante é permanente, identificável e não regressivo; validação DEVE detectar remoção, diluição, relativização, subordinação, abreviação com perda, facultatividade ou substituição.
+
+Densificação, modularização, roteamento, índice, resumo, tokenização e otimização NÃO DEVEM reduzir rigor, minúcia, clareza, explicitabilidade, exigibilidade, previsibilidade ou resistência a interpretação desviada. Norma não recuperada NÃO é norma inexistente.
+
+## 2.1 Fronteira absoluta do repositório corrente
+
+Cada solicitação associa-se a exatamente uma raiz Git corrente e ao `AGENTS.md` aplicável nela. Escrita, exclusão, movimento, geração, staging, commit, branch, merge, reset, clean, publish e release somente PODEM atingir arquivos fisicamente pertencentes a essa raiz e subordinados à mesma autoridade. Workspace/IDE com múltiplas roots, relação funcional, dependência, importação, build conjunto, mesma autoria, necessidade externa ou proximidade física NÃO ampliam escopo; edição cruzada é violação crítica.
+
+Submódulo, worktree, repositório aninhado, root irmã, terceiro, `node_modules`, dependência local/linked, cache e artefato não editável são fronteiras excluídas. Antes do efeito, resolver raiz, path absoluto real e ancestrais; recusar `..`, symlink, junction, mount, alias, hardlink detectável ou identidade Git própria que atravesse a fronteira. Leitura externa necessária PODE ocorrer para diagnóstico/contrato, mas NÃO concede escrita. Alteração externa exige nova solicitação explicitamente associada ao outro repositório.
+
+## 3. Compulsoriedade e evolução
+
+Antes de solucionar, agente e Repositório Final DEVEM consultar descoberta oficial, inspecionar estado real, reutilizar finalidade/nomenclatura existentes e corrigir implementação divergente. Dúvida, desconhecimento, cópia possivelmente desatualizada ou inadequação aparente exigem releitura, versão e rastreamento; NÃO autorizam improvisação.
+
+Mecanismo Oficial NÃO DEVE ser neutralizado, duplicado, renomeado, reimplementado, contornado ou substituído. Resultado correto por fluxo incompatível permanece não conforme. Expansão só PODE usar hook, callback, composição, adaptador, arquivo-gatilho, extensão local ou contrato oficial, preservando fluxo principal, nomes, precedência, efeitos e compatibilidade.
+
+Lacuna segue `../scenarios/governance/official-gap.md`. Solicitação segue `../scenarios/governance/request-lifecycle.md`. Contratos de composição, eventos, integração e assinaturas seguem `./contracts.md`; recurso especializado referencia o contrato comum e declara somente diferenças materiais.
+
+## 4. Verificação
+
+Revisão DEVE comprovar: conceitos centralizados; referências resolvíveis; ausência de fluxo paralelo; mecanismos oficiais preservados; papéis acumulados; extensão somente em ponto autorizado; princípio estruturante sem redução modal; e equivalência entre núcleo, módulo, índice e RCF aplicável.
+
+UNIDADE
+# FT-003.40.4c.2a — dois testes centrais, sem reutilizar teste falho
+
+Worker subordinado. Substituir INTEIRAMENTE src/domain/budget-financial-rates.test.ts por arquivo novo pequeno, com APENAS2it abaixo. Arquivo atual NÃO é base válida; versão0966 foi preservada. Não ler nem copiar arquivo atual. Normas/API já fornecidas; sem read_file/search/list. Um write_file no alvo, depois run_authorized_command id verify_budget_rates_core UMA vez. Encerrar depois do comando, inclusive falha, sem retry/releitura. Sem outro arquivo/commit/rede/instalação. Fonte b9bc2ccb é intocável. Retorno<=60palavras com efeito, validação, pendência.
+
+Antecessor09662307 fez só remoção2campos inexistentes, manteve155erros e casos incorretos. Unidade materialmente reduzida: só2casos/nenhuma entrada inválida/freeze/ausência nesta etapa; contexto só API e expectativas, sem fonte funcional nem testes falhos. Restantes grupos da40.4c continuam obrigatórios e PENDENTES, sem aceite parcial global. Baseline373/44suítes/91arquivos; fonte7a6a177 já aceita apenas emtipos/lint.
+
+Imports: describe,it,expect de vitest; calculateBudgetFinancialRates da fonte. Tipos por import type. Racionais {numerator:string,denominator:string}, r(n,d='1'). Política técnica explícita {maxInputLength:256,maxDigits:64}. Criar input tipado BudgetFinancialRatesInput, currency BRL, sourceBasis budget-calendar-period, sourcePeriod month, amount3200/1,calendar kindbudget/W4,D28,M12,h4;L conforme caso. São DADOS SINTÉTICOS, não defaults do produto.
+
+Helpers mínimos com narrowing REAL: root(input) chama calculateBudgetFinancialRates, if(result.status!=='conditional')throw Error(result.reason), retorna result (TypeScript estreitado). ready<T...> genérico NÃO é necessário: para amount e rate pode usar funções separadas ou guardas explícitas emcada it. Sempre if(x.status!=='ready')throw Error(x.reason) ANTES de .value/.denominator/.unit. Expect(status) não estreita TypeScript. Sem any,casts,non-null assertion,optional chaining ou helpers/args não usados. Não criar aliasTestCase nem campos inexistentes. Comparar racionais COMPLETOS, não apenas numerador.
+
+Teste1: nome 'quantia mensal com dias efetivos'. L0:source identidade3200/month→month,basisbudget-calendar-period;perMonth3200/1,perWeek800/1,perYear38400/1. RCF7.2:S=4*28/7=16,H16*4=64. perWorkingDay.value200/1,denominator16/1,sourceAmount3200/1,unit BRL/working-day,amountPeriod month. perConnectedHour.value50/1,denominator64/1,sourceAmount3200/1,unit BRL/connected-hour,amountPeriod month. root financialAssessment not-evaluated;currencyBRL. Dia efetivo200 difere do dia calendário800/7 (expect valor não ser r('800','7')).
+
+Teste2: nome 'perdas alteram taxas sem alterar montantes'. L4:source/perMonth3200/1,perWeek800/1,perYear38400/1 permanecem. RCF7.2:D_eff16-4=12,H12*4=48. perWorkingDay.value800/3 e denominator12/1;perConnectedHour.value200/3 e denominator48/1. Comparar valor e disponibilidade separadamente: NÃO usar denominator3 como dias/horas. Mesmasunits/sourceAmount/amountPeriod. As expectativas vêm destas identidades independentes, nunca calcular expectativa chamando a função sob teste.
+
+Gateverify_budget_rates_core roda app:typecheck/app:lint/app:test integrais,>=375todos/2novos/44suítessemperda/91arquivosintactos efontepinada. O perfilrates original continua exigindo>=381/8novos para etapa completa; perfilcore não substitui esse aceite. Faltam testes negativos/ausências/zero/jornada/códigos/freeze/política e restante do aplicativo. Sucesso técnico só deste microescopo.
+
+API exports reais (declarativos; não é arquivo para copiar)
+export interface BudgetFinancialRateContext extends BudgetAmountContext {
+  readonly daysPerWeek?:ExactRational|null;
+  readonly lostWorkingDaysPerMonth?:ExactRational|null;
+  readonly hoursPerWorkingDay?:ExactRational|null;
+}
+export interface BudgetFinancialRatesInput {
+  readonly currency:'BRL';readonly sourceBasis:'budget-calendar-period';readonly amount:ExactRational;
+  readonly sourcePeriod:BudgetPeriod;readonly calendar:BudgetFinancialRateContext;
+}
+export type BudgetRateFailure=Extract<BudgetAmountResult|ReturnType<typeof calculateScheduledBudgetDays>|ReturnType<typeof calculateEffectiveMonthlyWorkingDays>|ReturnType<typeof calculateMonthlyAvailability>|ReturnType<typeof calculateExactProduct>|ReturnType<typeof compareExactRationals>,{status:'unavailable'}>;
+export type BudgetWorkingRateResult=
+  | {readonly status:'ready';readonly unit:WorkingUnit;readonly amountPeriod:'month';readonly sourceAmount:ExactRational;readonly denominator:ExactRational;readonly value:ExactRational}
+  | {readonly status:'unavailable';readonly code:WorkingFailureCode;readonly dependency:string|null;readonly reason:string;readonly diagnostic:BudgetRateFailure|null;readonly denominator:ExactRational|null};
+export type BudgetFinancialRatesResult=
+  | {readonly status:'conditional';readonly currency:'BRL';readonly sourceBasis:'budget-calendar-period';readonly source:Extract<BudgetAmountResult,{status:'ready'}>;readonly financialAssessment:'not-evaluated';readonly perMonth:BudgetAmountResult;readonly perWeek:BudgetAmountResult;readonly perYear:BudgetAmountResult;readonly perWorkingDay:BudgetWorkingRateResult;readonly perConnectedHour:BudgetWorkingRateResult}
+  | {readonly status:'unavailable';readonly code:'invalid-budget'|'unsupported-input'|'source-unavailable';readonly reason:string;readonly source:BudgetAmountResult|null};
+export function calculateBudgetFinancialRates(input:BudgetFinancialRatesInput,limits:ExactLimits):BudgetFinancialRatesResult;
+BudgetAmountContext={kind:budget;daysPerMonth?:ExactRational|null;monthsPerYear?:ExactRational|null}. ExactRational={numerator:string;denominator:string};ExactLimits={maxInputLength:number;maxDigits:number};BudgetPeriod=day|week|month|year. AliasBudgetRateFailure representa somente diagnósticos de helpers; estes2testes não acessam diagnostics. Importar os tipos de input/result/working da fonte verdadeira, não redeclará-los.
+
+RCF.md SHA256 b66b4ba23d82abbbfb4a9350b629ee3dff3b1c473d7ece2f6a329563190dbd65 linhas103/151
+103: 2. Calendário sem datas reais: dias equivalentes programados/mês `4 × 30/7 = 17,142857…`, **não 16**; dias efetivos = programados − perdidos, respeitando domínio e período. Semana = 7 dias, mês orçamentário = 30, ano = 12 desses meses (**360 dias orçamentários**, não calendário civil); sempre identificar convenção. Se o usuário configurar dias exatos da semana/datas reais, usar calendário real e registrar competência, sem misturar as convenções. Não inventar escala horária para 6/8 h. Dias restantes/ausências recalculam valores necessários até o fechamento, sem aumentar demanda disponível por decreto.
+151: - **Patamares por unidade:** para cada contexto e cada alvo `0`, `Lmin`, `M15`, `M100`, apresentar **receita a creditar necessária em R$/hora, R$/km, R$/dia, R$/semana, R$/mês e, quando pertinente, R$/ano** (valor **requerido**, não comprovadamente recebido). Dividir receita requerida do **mesmo período** por horas conectadas efetivas, `K` total, dias efetivos e demais denominadores legítimos. O ganho **mínimo por km da operação** para cobrir custos/meta é `B_necessário / K_total`; a métrica a configurar no Rota Pro emprega **km de oferta** (coleta + viagem), não `K_total`, devendo absorver corretamente km vazios e custos nos requisitos projetados. Expor simultaneamente **ganho mínimo por km para empatar**, **para lucro mínimo** e **para cada meta**; não rotular todos de “mínimo” sem finalidade.
+28dias é fixture sintética explícita, não mudança de default30dias.

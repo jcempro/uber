@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.4c.2b",
+  "beforeSha256": "2c901a8c42c393ee05a6b7ba029a7aa71dbe89da8bb7afde6e48b307b030a967",
+  "afterSha256": "7fb27476a464ef3837c2026a1a2c929c65a7865c3f16d9461e63a1626916e858",
+  "changes": "import/narrowing; W4/h4; units BRL; identity and independent period assertions; calendar-day negative control",
+  "limits": "Somente dois casos centrais; cobertura integral pendente."
+}
