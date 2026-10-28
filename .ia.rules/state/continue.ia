@@ -1,6 +1,6 @@
 # Estado canônico — FT-003 ativa após conciliação FT-010
 
-FT-003.38a validada: fábrica5e6f inicia manutenção pendente semvalor/itensdesativados/requisitosunverified;31dba369 recebido/revisado/Q8S10revisão1. Tipos/lint289/289,12manutenção/34suítessemperdas/68proteções/Gitahead2conferidos. Handoffmaintenance-tests-job.md. Próximo38b: adoção histórica explicitamente fundamentada, mantendo padrão38a intacto; fonte e testes em unidades próprias. Semânticaproveniência/ledger/metas/JSON/UI/planilhahistórica/aceiteintegralcontinuampendentes.
+FT-003.38b ativa: contratoestruturaldeadoçãocbfa68c/test40a322f validado em8723ff09 recebido/revisado/Q8S10revisão1;tiposlint295/295/6novos/72proteções/Gitmain...origin/mainconferidos. Próximo: comporcreateAdoptedMaintenanceCatalog reutilizando schema/fábrica/defaults, sem alterar inicialização pendente38a. Handoffmaintenance-adoption-schema-job.md. Fábricaopcional/testes38b,ledger/metas/semânticaproveniência/JSON/UI/planilhahistórica/aceiteglobalpendentes.
 
 37b.2 f4e97c6a recebido uma vez, FAILED/WORKER_INCOMPLETE: quatro leituras obrigatórias concluídas, depois leituras repetidas sem escrita/comandos. Revisão proporcional/Q8S3 revisão1 registrados; Git determinístico e atual main...origin/main coincidem, sem ahead a atribuir. Sem evidência de infraestrutura; nenhum teste novo. Correção 37b.2a reduz a um fragmento JSON canônico de nove casos, sem helpers/testes nesta unidade; preserva preparo e evita reexploração. Última suíte aceita281. Demais grupos, validação e implementação financeira/global pendentes.
 

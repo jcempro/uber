@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "unit": "FT-003.38b.1a",
+  "sourceSha256": "cbfa68c17438deb353681e415243c0fc18f3c3545d01dd53b758441dd1e307e5",
+  "testSha256": "40a322f62ed9d0c87faf6c6887839d4bd781d36322bb0609b1930cce8014603b",
+  "sourcePath": "src/domain/maintenance-adoption-schema.ts",
+  "testPath": "src/domain/maintenance-adoption-schema.test.ts",
+  "protectedFiles": 72,
+  "limits": "Forma apenas; não implementa fábrica opcional, adoção humana, ledger ou resultado financeiro."
+}
