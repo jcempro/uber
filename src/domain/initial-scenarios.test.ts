@@ -95,7 +95,7 @@ describe('Matriz das sementes reais, sem resultados financeiros', () => {
     }
   });
 
-  it('materializa as taxas de cada perfil uma vez, diretamente da tabela canônica', () => {
+  it('preserva rubricas de cada perfil como pendências, sem taxas históricas operacionais', () => {
     const section = rcf.split('### 6.2 Provisões por quilômetro')[1]?.split('## 7. Calendário')[0];
     if (!section) throw new Error('Seção de manutenção ausente');
     const table = section.split(/\r?\n/).filter(line=>line.startsWith('|')).map(line=>line.split('|').slice(1,-1).map(cell=>cell.replaceAll('*','').trim()));
@@ -105,10 +105,13 @@ describe('Matriz das sementes reais, sem resultados financeiros', () => {
     expect(INITIAL_MAINTENANCE_PARAMETERS).toHaveLength(count);
     expect(INITIAL_MAINTENANCE_COST_ITEMS).toHaveLength(count);
     expect(INITIAL_MAINTENANCE_REQUIREMENTS).toHaveLength(count);
-    for (const [index,s] of scenarios.entries()) {
+    for (const s of scenarios) {
       const own = s.parameterIds.map(id=>INITIAL_MAINTENANCE_PARAMETERS.find(p=>p.id===id));
-      expect(own.map(p=>({name:p?.name,value:p?.input.status==='provided'?p.input.value:undefined})))
-        .toEqual(rates.map(row=>({name:row[0],value:row[index+1].replace(',','.')})));
+      expect(own.map(p=>p?.name)).toEqual(rates.map(row=>row[0]));
+      for (const parameter of own) {
+        expect(parameter?.input.status).toBe('not-provided');
+        expect(parameter?.input).not.toHaveProperty('value');
+      }
     }
   });
   it('resolve itens e requisitos dentro do cenário, sem órfãos ou duplicação por jornada/meta', () => {
@@ -121,7 +124,13 @@ describe('Matriz das sementes reais, sem resultados financeiros', () => {
         expect(item.provenance.scope).toEqual({kind:'scenario',scenarioId:s.id});
         expect(s.parameterIds).toContain(item.amountParameterId);
         expect(INITIAL_MAINTENANCE_PARAMETERS.some(p=>p.id===item.amountParameterId)).toBe(true);
-        expect(reqs.filter(r=>r.status==='applicable' && r.costItemIds.length===1 && r.costItemIds[0]===item.id)).toHaveLength(1);
+        expect(item.enabled).toBe(false);
+        const matches = reqs.filter(r=>r.category===item.category);
+        expect(matches).toHaveLength(1);
+        const requirement = matches[0];
+        expect(requirement.status).toBe('unverified');
+        expect(requirement).not.toHaveProperty('costItemIds');
+        expect(requirement.status==='unverified' && /\S/.test(requirement.reason)).toBe(true);
       }
       expect(INITIAL_EVALUATION_CONTEXTS.filter(c=>c.scenarioId===s.id)).toHaveLength(schedulesCount*goalsCount);
     }

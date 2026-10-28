@@ -42,11 +42,11 @@ const initialScenarioData = Object.freeze(
 
 /** Cadastros imutáveis; proveniência confirma a decisão de cadastro, sem comprovar operação ou lucro. */
 export const INITIAL_SCENARIOS: readonly OperationalScenario[] = Object.freeze(initialScenarioData.map(entry => entry.scenario));
-/** Parâmetros individuais canônicos por cenário, sem total derivado como entrada adicional. */
+/** Parâmetros individuais pendentes por cenário, sem taxa histórica ou total presumido. */
 export const INITIAL_MAINTENANCE_PARAMETERS: readonly NumericParameter[] = Object.freeze(initialScenarioData.flatMap(entry => entry.catalog.parameters));
-/** Provisões estimadas por km; não representam pagamento ou cobertura dos demais custos. */
+/** Itens iniciais de manutenção desativados enquanto a parametrização estiver pendente. */
 export const INITIAL_MAINTENANCE_COST_ITEMS: readonly CostItem[] = Object.freeze(initialScenarioData.flatMap(entry => entry.catalog.items));
-/** Aplicabilidade declarada das reservas de manutenção; vigência e cobertura global ainda exigem apuração. */
+/** Pendências de manutenção; desativar a referência histórica não comprova inaplicabilidade ou custo zero. */
 export const INITIAL_MAINTENANCE_REQUIREMENTS: readonly CostRequirement[] = Object.freeze(initialScenarioData.flatMap(entry => entry.catalog.requirements));
 
 /** Identidades de contexto geradas dos cadastros iniciais; nenhum resultado financeiro é materializado aqui. */

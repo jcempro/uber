@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "unit": "FT-003.38a.2",
+  "sourceCommit": "c9aa3d1",
+  "substitutions": 20,
+  "files": {
+    "src/domain/maintenance.test.ts": {
+      "before": "8286885425aeeb8d0381f37a980720295f2df6062422d9dd7071bf2885e1effa",
+      "after": "6e8923b6dcf83cc4e1793979dea8aff351204283bc38b866e468c1f92c1feaa7"
+    },
+    "src/domain/initial-scenarios.test.ts": {
+      "before": "663764a7a020d3ae2ff73b4b91218cb45006a718e2879a142558219586aa1780",
+      "after": "b6ddc399ce4755d38f9ad1cd7f61b30664adb43d4877090c648f0fa615dc04d1"
+    },
+    "src/domain/initial-scenarios.ts": {
+      "before": "7ac5aefa3097884bd59df70802ba67cd01a883b6b3bef05dbeb2fcaf7a4d9ecf",
+      "after": "2f3a25ff8b49c2829641ed8b67328ae3fa1346e414667a6ba070957bec0d6251"
+    }
+  },
+  "protectedFiles": 69,
+  "limits": "Atualização normativa de oráculos; a aprovação exige execução integral posterior, sem atestar adoção/ledger/UI/finanças."
+}

@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "unit": "FT-003.38a",
+  "node": "v24.22.1",
+  "sourceCommit": "58b6f9b4fea6c524fc6e5f636c40a032afe05ffb",
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\maintenance-inactive-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/maintenance-inactive-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 289,
+    "passed": 289,
+    "maintenance": 12
+  },
+  "files": {
+    "src/domain/maintenance.test.ts": "6e8923b6dcf83cc4e1793979dea8aff351204283bc38b866e468c1f92c1feaa7",
+    "src/domain/maintenance.ts": "5e6f9353ed33cc9b78d416cf2ff2a0278119cb4ac193e2fc09b9b7be77207f89",
+    "src/domain/initial-scenarios.test.ts": "b6ddc399ce4755d38f9ad1cd7f61b30664adb43d4877090c648f0fa615dc04d1",
+    "src/domain/initial-scenarios.ts": "2f3a25ff8b49c2829641ed8b67328ae3fa1346e414667a6ba070957bec0d6251"
+  },
+  "protectedFiles": 68,
+  "limits": "Não certifica adoção explícita, custo real de manutenção, cobertura/ledger, UI ou viabilidade financeira."
+}

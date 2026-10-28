@@ -8,6 +8,7 @@ import Decimal from 'decimal.js';
 import { describe, expect, it } from 'vitest';
 import { createInitialMaintenanceParameters, createInitialMaintenanceCatalog } from './maintenance';
 import { NUMERIC_RULES } from './validation';
+import { INITIAL_MAINTENANCE_PARAMETERS, INITIAL_MAINTENANCE_COST_ITEMS, INITIAL_MAINTENANCE_REQUIREMENTS } from './initial-scenarios';
 import type { InitialProfileId } from './defaults';
 import { INITIAL_PROFILE_REFERENCES, MAINTENANCE_RATE_REFERENCES, MAINTENANCE_REFERENCE_METADATA } from './defaults';
 
@@ -30,29 +31,33 @@ function assertFrozen(value: unknown, seen = new Set<object>()): void {
 
 
 describe('Parâmetros de manutenção materializados da fonte normativa', () => {
-  it('preserva sete rubricas e21valores diretamente da tabela do RCF', () => {
+  it('preserva sete rubricas do RCF sem adotar automaticamente suas taxas', () => {
     expect(rows).toHaveLength(7);
-    for (const [index,id] of ids.entries()) {
+    for (const id of ids) {
       const result = createInitialMaintenanceParameters('scenario-'+id,id);
-      expect(result.map(p => ({name:p.name,value:p.input.status==='provided'?p.input.value:undefined})))
-        .toEqual(rows.map(row => ({name:row[0],value:row[index+1].replace(',','.')})));
+      expect(result.map(p => p.name)).toEqual(rows.map(row => row[0]));
+      for (const p of result) {
+        expect(p.input.status).toBe('not-provided');
+        expect(p.input).not.toHaveProperty('value');
+      }
     }
   });
-  it('confere somas dos parâmetros com os totais derivados canônicos, sem nova entrada de total', () => {
+  it('preserva totais apenas na tabela histórica, sem total operacional presumido', () => {
     for (const [index,id] of ids.entries()) {
       const result = createInitialMaintenanceParameters('scenario-'+id,id);
-      const values = result.map(p => { if(p.input.status!=='provided') throw new Error('Valor canônico ausente'); return p.input.value; });
+      const values = MAINTENANCE_RATE_REFERENCES.map(row => row.rates[id]);
+      expect(result.every(p => p.input.status === 'not-provided')).toBe(true);
       expect(Decimal.sum(...values).eq(totals[index+1].replace(',','.'))).toBe(true);
       expect(result).toHaveLength(rows.length);
     }
   });
-  it('mantém unidade, domínio e estimativa em escopo de cenário, sem pagamento ou cobertura presumidos', () => {
+  it('mantém unidade e domínio com lacuna explícita em escopo de cenário', () => {
     for (const id of ids) for (const [index,p] of createInitialMaintenanceParameters('scenario-'+id,id).entries()) {
       expect(p.category).toBe(MAINTENANCE_RATE_REFERENCES[index].id);
       expect(p.unit).toBe('BRL/km'); expect(p.required).toBe(true);
       expect(p.constraints).toBe(NUMERIC_RULES.nonNegative); expect(p.dependencies).toEqual([]);
-      expect(p.provenance).toEqual({kind:'estimate',source:'RCF.md §6.2',date:null,competence:null,scope:{kind:'scenario',scenarioId:'scenario-'+id},reliability:'estimated'});
-      expect(p.input.status).toBe('provided');
+      expect(p.provenance).toEqual({kind:'gap',source:'RCF.md §6.2',date:null,competence:null,scope:{kind:'scenario',scenarioId:'scenario-'+id},reliability:'unverified'});
+      expect(p.input.status).toBe('not-provided');
     }
   });
   it('preserva IDs brutos e identidades estáveis, distinguindo cenários sem colisões', () => {
@@ -82,11 +87,11 @@ describe('Parâmetros de manutenção materializados da fonte normativa', () => 
       expect(() => createInitialMaintenanceParameters('scenario',value as unknown as InitialProfileId)).toThrow(/profileId inválido/);
   });
 
-  it('liga sete reservas e requisitos aos parâmetros canônicos sem duplicar quantias', () => {
-    for (const [index,id] of ids.entries()) {
+  it('liga sete itens pendentes aos parâmetros sem duplicar quantias', () => {
+    for (const id of ids) {
       const scenarioId = 'scenario-'+id, catalog = createInitialMaintenanceCatalog(scenarioId,id);
-      expect(catalog.parameters.map(p=>({name:p.name,value:p.input.status==='provided'?p.input.value:undefined})))
-        .toEqual(rows.map(row=>({name:row[0],value:row[index+1].replace(',','.')})));
+      expect(catalog.parameters.map(p=>p.name)).toEqual(rows.map(row=>row[0]));
+      expect(catalog.parameters.every(p=>p.input.status==='not-provided')).toBe(true);
       expect(catalog.items).toHaveLength(rows.length); expect(catalog.requirements).toHaveLength(rows.length);
       for (const item of catalog.items) {
         const p = catalog.parameters.find(p=>p.id===item.amountParameterId);
@@ -94,7 +99,7 @@ describe('Parâmetros de manutenção materializados da fonte normativa', () => 
         expect(p?.provenance.scope).toEqual({kind:'scenario',scenarioId});
         expect(item).toEqual({
           id:JSON.stringify(['maintenance-reserve',scenarioId,p?.category]),
-          name:p?.name,category:p?.category,enabled:true,nature:'usage-variable',
+          name:p?.name,category:p?.category,enabled:false,nature:'usage-variable',
           basis:{kind:'usage',unit:'km'},amountParameterId:p?.id,provenance:p?.provenance,
           validity:{start:null,end:null},recognition:'planned-reserve',
           eventId:null,reconcilesReserveId:null,allocationRuleId:null,
@@ -102,7 +107,7 @@ describe('Parâmetros de manutenção materializados da fonte normativa', () => 
         expect(catalog.requirements.find(r=>r.category===item.category)).toEqual({
           id:JSON.stringify(['maintenance-requirement',scenarioId,item.category]),
           name:item.name,category:item.category,provenance:item.provenance,
-          status:'applicable',costItemIds:[item.id],
+          status:'unverified',reason:expect.stringMatching(/\S/),
         });
       }
     }
@@ -130,4 +135,35 @@ describe('Parâmetros de manutenção materializados da fonte normativa', () => 
     expect(()=>createInitialMaintenanceCatalog(null as unknown as string,'balanced')).toThrow(/scenarioId inválido/);
     expect(()=>createInitialMaintenanceCatalog('a','unknown' as unknown as InitialProfileId)).toThrow(/profileId inválido/);
   });
+  it('RCF vigente impede taxa operacional implícita ou zero em todos os perfis', () => {
+    expect(section).toContain('O sistema NÃO DEVE impô-los como custos operacionais ativos por padrão');
+    for (const profile of ids) {
+      const pending = createInitialMaintenanceParameters('no-adoption-'+profile,profile);
+      expect(pending).toHaveLength(rows.length);
+      for (const parameter of pending) {
+        expect(parameter.input).toEqual({status:'not-provided',reason:expect.stringMatching(/\S/)});
+        expect(parameter.input).not.toHaveProperty('value');
+        expect(parameter.provenance.kind).toBe('gap');
+        expect(parameter.provenance.reliability).toBe('unverified');
+      }
+    }
+  });
+  it('cenários iniciais mantêm manutenção pendente sem itens ativos ou adoção por perfil', () => {
+    expect(section).toContain('hipótese opcional explicitamente adotada');
+    const count = ids.length * rows.length;
+    expect(INITIAL_MAINTENANCE_PARAMETERS).toHaveLength(count);
+    expect(INITIAL_MAINTENANCE_COST_ITEMS).toHaveLength(count);
+    expect(INITIAL_MAINTENANCE_REQUIREMENTS).toHaveLength(count);
+    for (const parameter of INITIAL_MAINTENANCE_PARAMETERS) {
+      expect(parameter.input).toEqual({status:'not-provided',reason:expect.stringMatching(/\S/)});
+      expect(parameter.input).not.toHaveProperty('value');
+    }
+    for (const item of INITIAL_MAINTENANCE_COST_ITEMS) expect(item.enabled).toBe(false);
+    for (const requirement of INITIAL_MAINTENANCE_REQUIREMENTS) {
+      expect(requirement.status).toBe('unverified');
+      expect(requirement).not.toHaveProperty('costItemIds');
+      expect(requirement.status==='unverified' && /\S/.test(requirement.reason)).toBe(true);
+    }
+  });
+
 });
