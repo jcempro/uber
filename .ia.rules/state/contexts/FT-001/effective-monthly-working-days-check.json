@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.4b",
+  "node": "v24.22.1",
+  "sourceCommit": "169fcd8b481a42838eb856ad2a68ba3567a855a5",
+  "files": {
+    "src/domain/monthly-availability.ts": "c9ac9b770eaa8d6fdfa64c4175895e8169a599740a9ce873ed1ccf95a976ba9c",
+    "src/domain/effective-monthly-working-days.test.ts": "6c8d53c075879d1ae309290482243189a69ab837f560254ad9627e821998d1da"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\effective-monthly-working-days-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/effective-monthly-working-days-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 373,
+    "passed": 373,
+    "newSuite": 8
+  },
+  "protectedFiles": 89,
+  "limits": "Dias efetivos sem jornada; API antiga/diagnósticos preservados. Não comprova dias reais, demanda, indicadores financeiros ou UI."
+}

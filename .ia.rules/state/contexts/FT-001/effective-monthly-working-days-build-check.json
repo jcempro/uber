@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.4b",
+  "sourcePath": "src/domain/monthly-availability.ts",
+  "testPath": "src/domain/effective-monthly-working-days.test.ts",
+  "sourceSha256": "c9ac9b770eaa8d6fdfa64c4175895e8169a599740a9ce873ed1ccf95a976ba9c",
+  "testSha256": "6c8d53c075879d1ae309290482243189a69ab837f560254ad9627e821998d1da",
+  "beforeSha256": "8043866adc2566ad798d1593832cdc3efc728e2ab2d7e4104c380939dd789e29",
+  "protectedFiles": 89,
+  "limits": "Dias efetivos sem jornada; API antiga/diagnósticos preservados. Não comprova dias reais, demanda, indicadores financeiros ou UI."
+}

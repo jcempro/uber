@@ -1,0 +1,26 @@
+{
+  "working_days": {
+    "statement": "Módulo budget-calendar.ts exporta type BudgetCalendarValues com campo readonly effectiveWorkingDaysPerMonth: ExactRational (linha 29), effectiveWorkingDaysPerWeek: ExactRational (linha 30), effectiveWorkingDaysPerYear: ExactRational (linha 31).",
+    "sourcePointer": "/files/0/declarations/1/text"
+  },
+  "connected_hours": {
+    "statement": "Módulo budget-calendar.ts exporta type BudgetCalendarValues com campo readonly connectedHoursPerMonth: ExactRational (linha 32), connectedHoursPerWeek: ExactRational (linha 33), connectedHoursPerYear: ExactRational (linha 34).",
+    "sourcePointer": "/files/0/declarations/1/text"
+  },
+  "day_period": {
+    "statement": "Módulo budget-amount.ts exporta função convertBudgetCalendarAmount com parâmetro from: BudgetPeriod (linha 52), onde BudgetPeriod é 'day' | 'week' | 'month' | 'year' (inferido de isBudgetPeriod, linha 42).",
+    "sourcePointer": "/files/1/declarations/0/text"
+  },
+  "week_period": {
+    "statement": "Módulo budget-amount.ts exporta função convertBudgetCalendarAmount com parâmetro from: BudgetPeriod (linha 52), onde BudgetPeriod é 'day' | 'week' | 'month' | 'year' (inferido de isBudgetPeriod, linha 42).",
+    "sourcePointer": "/files/1/declarations/0/text"
+  },
+  "month_year": {
+    "statement": "Módulo budget-amount.ts exporta função convertBudgetCalendarAmount com parâmetro from: BudgetPeriod (linha 52), onde BudgetPeriod é 'day' | 'week' | 'month' | 'year' (inferido de isBudgetPeriod, linha 42).",
+    "sourcePointer": "/files/1/declarations/0/text"
+  },
+  "unresolved_denominators": {
+    "statement": "Módulo budget-calendar.ts usa calculateExactProduct com parâmetro 'divide' (linha 73) e 'multiply' (linhas 75, 79, 81, 83, 85), operando sobre ExactRational com numerator/denominator (linhas 63-64). Módulo budget-amount.ts usa calculateExactProduct com 'multiply' (linhas 85, 91, 93, 95) e 'divide' (linhas 87, 89), operando sobre ExactRational com numerator/denominator (linhas 68-69, 71-72).",
+    "sourcePointer": "/files/0/declarations/4/text"
+  }
+}

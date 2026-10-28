@@ -64,7 +64,7 @@ export function calculateMonthlyAvailability(
     });
   }
   // RCF§7.2: perdas não são clampadas nem presumidas; podem consumir todos os dias.
-  const effective = calculateExactSum('subtract', scheduledWorkingDaysPerMonth, lostWorkingDaysPerMonth, policy.limits);
+  const effective = calculateEffectiveMonthlyWorkingDays(scheduledWorkingDaysPerMonth, lostWorkingDaysPerMonth, policy.limits);
   if (effective.status !== 'ready') return effective;
   const hours = calculateExactProduct('multiply', effective.value, hoursPerWorkingDay, policy.limits);
   if (hours.status !== 'ready') return hours;
@@ -75,4 +75,21 @@ export function calculateMonthlyAvailability(
       connectedHoursPerMonth: hours.value,
     }),
   });
+}
+
+/** Dias efetivos do mês estatístico sem depender da jornada; não comprova atividade real. */
+export type EffectiveMonthlyWorkingDaysResult = {readonly status:'ready';readonly value:ExactRational}|MonthlyAvailabilityFailure;
+/** Valida perdas explícitas e retorna S-L; ausência, excesso e negativos não viram zero. */
+export function calculateEffectiveMonthlyWorkingDays(scheduledWorkingDaysPerMonth:ExactRational,lostWorkingDaysPerMonth:ExactRational,limits:ExactLimits):EffectiveMonthlyWorkingDaysResult {
+  const policy=inspectExactLimits(limits);
+  if(!policy.valid)return Object.freeze({status:'unavailable',code:'invalid-budget',reason:policy.reason});
+  const zero:ExactRational=Object.freeze({numerator:'0',denominator:'1'});
+  const scheduledLower=compareExactRationals(scheduledWorkingDaysPerMonth,zero,policy.limits);
+  if(scheduledLower.status!=='ready')return scheduledLower;
+  const lostLower=compareExactRationals(lostWorkingDaysPerMonth,zero,policy.limits);
+  if(lostLower.status!=='ready')return lostLower;
+  const lostUpper=compareExactRationals(lostWorkingDaysPerMonth,scheduledWorkingDaysPerMonth,policy.limits);
+  if(lostUpper.status!=='ready')return lostUpper;
+  if(scheduledLower.order<0||lostLower.order<0||lostUpper.order>0)return Object.freeze({status:'unavailable',code:'invalid-calendar',reason:'Dias programados e perdas devem ser não negativos; perdas não podem exceder dias programados.'});
+  return calculateExactSum('subtract',scheduledWorkingDaysPerMonth,lostWorkingDaysPerMonth,policy.limits);
 }

@@ -1,0 +1,21 @@
+# Handoff — FT-003.40.4a
+
+REVISADOc9742d2b recebido uma vez:6camposJSONformais,2nomesdecamposúteis;4itensinsuficientes(fatores/diagnósticosnãorespondidos,pointersday/week/monthyearapontamBudgetAmountContext,nãofunção). Q8S4revisão1/Gitmainahead9conferidos. Original financial-period-contract.worker-c9742d2b.json preservado. Revisão proporcional dos2arquivoscanônicos confirma:day édia de calendário; month→week×7/daysPerMonth;month→year×monthsPerYear;identidade/day↔weekexigem sódimensõesrelevantes;modelbudgetexplícito eoperandospositivos,falhasoriginais preservadas. calculateBudgetCalendar compõe dias/horasmensais masexigeano/jornada pararesultadointegral. calculateMonthlyAvailability tambémprecisajornada,sendo inadequado exigirh sóparadiaefetivo. Próximo40.4b:extraçãoaditivadehelperdias efetivosindependentedehoras,comoldAPI/errosprioritáriosinalterados;writefuncional/expect_changestrue,semreexploraçãooureenviodefatos.
+
+RUNNINGc9742d2b-c3c4-44c2-9a22-f672eb1128d3 confirmado/response_contract_version1. Thread atual01a16678-96c5-7eb2-9ee1-fea2b7b37cf2/repoD:/trampo/jcem.pro-uber comprovados list_threads neste turno. Inferência read-only sobreprovided_evidence;sem ferramentas/comandos/testes/edição/polling. Segmentopreparatório factual parawiring deindicadores financeiros temporais, não implementação concluída. Próximaunidadewritefuncional terá expect_changes:true/alvosfuncionais/validação.
+
+8df3257b recebido uma vez/revisado/Q8S10revisão1:2comandos0/tiposlint365/365/8novos/42suítessemperda/88proteções. Fontede5dff6a/test0e643904conferidos emleitura/hash eflagscondicionais/dependênciascorretos. Gitterminal/live mainahead8coincidem;live sóadicionahandoffposterior. Commit169fcd8b481a42838eb856ad2a68ba3567a855a5confirmado. Não reconsultar esse resultado/antecessores nemrepetir testesconfiáveisporprecauçãogenérica.
+
+Objetivo financial-period-contract-unit.md:6fatoscurtos sobre contratos existentes, campos/unidades/operações/diagnósticos, para não confundir dia civil/dia efetivo nem montarAPIpor suposição. Não éreanálise porfalha/demora; os nomes exatos de campos e as dimensões do conversor ainda não foram ligados à nova avaliação financeira. Nenhuma decisão normativa/arquitetural/risco/qualidade delegada. Macro/RCF/aceite ficam no supervisor.
+
+EvidêncialiteralAST semexecutarfontes, remove somenteimports/reexports/leadingcomments por seleção de declarações, conserva texto getText/nomes/linhas/SHA. financial-period-contract-evidence.json guarda provided_evidencecontent10077caracteres/SHAf653ebfc1354de40174d94d78255b88962ec8ed11f297d83998254101b1a1d00/12declarações,2arquivos:budget-calendar.tsSHA6f1527581355f1a0d3b4f71184edf1b45490005205722ebb3d191a95f78e1677 e budget-amount.tsSHA08f956d7663a6da3ffdcfacd4c8072de864fd61095e07f285c68c02428eb014e. NormasAGENTS/authority6573caracteresintegrais enviadas no task,semleiturasfísicas. Pacote dentro12Kpara provided_evidence, janela32Kcommargem; não ételemetria/dispensaN7C.
+
+R8VJSON6camposobrigatórios:working_days,connected_hours,day_period,week_period,month_year,unresolved_denominators. Cadaumstatement<=600/sourcePointerenum12refs;max_words450. Formato/ponteiro não provam verdade semântica. Worker deve dizer limite fora dos2módulos seminventar contrato, sem citarcódigo longo. Rever6fatoscontraorigem antes de adotar. Evitar repetição de exploração ampla/testes; somente contrato mínimo para próxima composiçãohora-dia-semana-mês.
+
+Retomar local_resultc9742d2b uma vez,revisarcorrespondênciacódigo/RCF eGit,Q8Scomrecibo. Não aceitar porJSON/status. Seapto,seguirunidadewritepequenacomcalendáriofinanceirocorreto/denominadoresválidos/localizaçãodelacunas,semzerofalso. Seinsuficiente,preservarretornoe corrigir segmentação semreconsultar/replaycego. Últimoaceito365/169fcd8;ledger/custoscompletos/tributaçãolegal/reconciliação/metascompletas/percentuais/períodos/JSON/UI/planilhahistórica/globalpendentes.
+
+Monitor http://127.0.0.1:49767/job/c9742d2b-c3c4-44c2-9a22-f672eb1128d3?token=71200b4594deb1357acf2643dd72509ca3906247dff6e2fc480d030b3f4f4d7d
+
+Índice http://127.0.0.1:49767/?token=71200b4594deb1357acf2643dd72509ca3906247dff6e2fc480d030b3f4f4d7d
+
+N7C:ALL_TOOLSsemrotanativacompact;semmediçãoautoritativabaratadamesmaconversa.Impedimentotécnico,nãodispensa/cumprimento.Handoffauxiliarnãoécompactação.Apósavisoencerrarsempolling.Latênciarunnerautomática,nãorecontar.

@@ -1,0 +1,15 @@
+/** MPL-2.0; FT-003.40.4b. Extração aditiva controlada de helper independente. */
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';
+const root=fs.realpathSync('.');if(root.replaceAll('\\','/').toLowerCase()!=='d:/trampo/jcem.pro-uber')throw Error('root');const base='.ia.rules/state/contexts/FT-001/',prefix='effective-monthly-working-days',hash=x=>crypto.createHash('sha256').update(x).digest('hex');
+function guard(rel){let p=root;for(const part of rel.split('/')){if(!part||part==='..')throw Error('path');p=path.join(p,part);if(fs.existsSync(p)){const s=fs.lstatSync(p);if(s.isSymbolicLink()||s.isFile()&&s.nlink!==1||s.isDirectory()&&fs.existsSync(path.join(p,'.git')))throw Error('linked');}}}
+for(const p of ['AGENTS.md','.ia.rules/core/authority.md',base+prefix+'-unit.md']){guard(p);fs.readFileSync(p,'utf8');}
+const sourcePath='src/domain/monthly-availability.ts',testPath='src/domain/effective-monthly-working-days.test.ts',receiptPath=base+prefix+'-build-check.json',oldSha='8043866adc2566ad798d1593832cdc3efc728e2ab2d7e4104c380939dd789e29';
+for(const p of [sourcePath,testPath,receiptPath,base+prefix+'.function.template',base+prefix+'.test.template'])guard(p);
+const snapshot=JSON.parse(fs.readFileSync(base+prefix+'-baseline.json'));if(snapshot.sourceCommit!=='169fcd8b481a42838eb856ad2a68ba3567a855a5'||snapshot.priorTests!==365||Object.keys(snapshot.files).length!==89||snapshot.allowedChanges?.[sourcePath]!==oldSha)throw Error('baseline');
+function protect(){for(const [p,h]of Object.entries(snapshot.files)){guard(p);if(hash(fs.readFileSync(p))!==h)throw Error('protected:'+p);}}protect();
+if(fs.existsSync(receiptPath)){const r=JSON.parse(fs.readFileSync(receiptPath));if(hash(fs.readFileSync(sourcePath))!==r.sourceSha256||hash(fs.readFileSync(testPath))!==r.testSha256)throw Error('applied state differs');console.log(JSON.stringify({...r,alreadyApplied:true}));process.exit(0);}
+if(hash(fs.readFileSync(sourcePath))!==oldSha||fs.existsSync(testPath))throw Error('target precondition');
+let source=fs.readFileSync(sourcePath,'utf8');const from="const effective = calculateExactSum('subtract', scheduledWorkingDaysPerMonth, lostWorkingDaysPerMonth, policy.limits);",to='const effective = calculateEffectiveMonthlyWorkingDays(scheduledWorkingDaysPerMonth, lostWorkingDaysPerMonth, policy.limits);';if(source.split(from).length!==2)throw Error('extraction point');source=source.replace(from,to)+'\n'+fs.readFileSync(base+prefix+'.function.template','utf8');const tests=fs.readFileSync(base+prefix+'.test.template','utf8');
+const record={schema:1,unit:'FT-003.40.4b',sourcePath,testPath,sourceSha256:hash(source),testSha256:hash(tests),beforeSha256:oldSha,protectedFiles:89,limits:'Dias efetivos sem jornada; API antiga/diagnósticos preservados. Não comprova dias reais, demanda, indicadores financeiros ou UI.'};
+if(process.argv.includes('--preflight')){console.log(JSON.stringify({...record,preflight:true}));process.exit(0);}
+fs.writeFileSync(sourcePath,source);fs.writeFileSync(testPath,tests);protect();fs.writeFileSync(receiptPath,JSON.stringify(record,null,2)+'\n');console.log(JSON.stringify(record));

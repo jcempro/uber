@@ -1,0 +1,23 @@
+# Handoff — FT-003.40.4b
+
+REVISADO5053f7b5 recebido uma vez:2comandos0/tiposlint373/373/8novos/43suítessemperda/89intactos+fonteautorizada porSHA. DiffMonthlyc9ac9b77/test6c8d53c0conferidos:APIantigasódelegasubtração,ordem/validações/motivosmantidos;novohelperdiassemhoraséindependente. Q8S10revisão1 registrado. Gitterminal/live ambosmainahead9;live adicionasóhandoffsupervisorposterior. Commitimediato supervisor. PróximoFinancialBudgetRates comcalendarcontextúnico/semdefault/daydecalendário distinto deworking-day/falhaslocalizadas. Nãoaceitefinanceiro/UI/global.
+
+RUNNING5053f7b5-80cb-411e-8e9b-ed894295781a confirmado/response_contract_version1. Thread atual01a16678-96c5-7eb2-9ee1-fea2b7b37cf2/repoD:/trampo/jcem.pro-uber comprovados list_threads. command_sequence seminferência:create_effective_days→verify_effective_days. expect_changes:true emsrc/domain/monthly-availability.ts(herdado) e src/domain/effective-monthly-working-days.test.ts(novo);commit_policy:supervisor. Semrede/instalação/commit/polling. Scripts leemnormas/unidade antesdosefeitos;semrequired_read_paths nessefluxo.
+
+c9742d2b recebido uma vez/revisado/Q8S4revisão1:JSONformal,2nomesdecamposúteis,demaisfatosinsuficientes/pointersincorretos,semimplementação/testes. Gitterminal/live mainahead9coincidem. Originalfinancial-period-contract.worker-c9742d2b.json preservado. Revisãoproporcional dos2arquivosconfirma diaBudgetAmount écalendário,nãotrabalhado;matrixmonth→week×7/D,month→year×M;dependênciasporrota/operandospositivossemdefaults. Disponibilidadecompostaexigeh/anoquandonão necessáriosparadiasefetivos. Não reconsultar esse resultado ouantecessores járevisados;estadofuncionalaceito365/169fcd8b481a42838eb856ad2a68ba3567a855a5.
+
+Unidadeeffective-monthly-working-days-unit.md:helperpúblicoaditivo calculateEffectiveMonthlyWorkingDays(S,L,limits)→S-L,domínioS>=0/0<=L<=S,somenteinspect/compare/sumexistentes,snapshots. API calculateMonthlyAvailability conserva assinatura/todasvalidações/mensagem/ordem/0<h<=24;delega sósubtração apósvalidar. Nãoinjetarjornadahipotética1hparacalculardias,nãoadotardefault,nãousarcalendardaycomoworkday. Novohelperpermitediassemh/mesesanuais;nãoatestaatividade/demanda/financeiroreal. Próximacomposiçãohora/diaefetivo/semana/mêsusarácontratosagoraverificados.
+
+Oitocontroles:10-3=7/oldh8→56;120/7-2=106/7;0/perdas0/perdastotais;negativos;perdas>Ssemclamp;ausência/racional/políticainválidos;semhparadias/oldh0e25inválido24válido;freeze/repetição/normalização/imutabilidade. ExpectativasindependentesdoRCF7.2,fixturessintéticas. Testesantigosintactos,semqualquercritérioenfraquecido.
+
+Baselineeffective-monthly-working-days-baseline.jsonreconcilia90fontes-configsaceitas:89intactas+1authorizedChanges(src/domain/monthly-availability.ts)compré-imagem8043866adc2566ad798d1593832cdc3efc728e2ab2d7e4104c380939dd789e29. Nenhumsrcsemcontrole:recibobuildpinahashpósdanovafonte/teste;verifierexigenomes/oldSHAexatos.365testes/43suítes/de169fcd8,hashesatuais/relatórioanteriorconferidos. Pré-condição fonteantigaexata/testeainda ausente;estadojáaplicadoexigerecibo+hashesidênticos,semreplay. Guardasroot/links/hardlinks/nestedGit/colisões. Novo mecanismo é extraçãocurta controlada,nãofallbackdeprojetovolumoso.
+
+Preflightreadonlypassou89intactos+pré-imagemautorizada/sintaxes/diffcheck0. SourceplanejadoSHA c9ac9b770eaa8d6fdfa64c4175895e8169a599740a9ce873ed1ccf95a976ba9c/test6c8d53c075879d1ae309290482243189a69ab837f560254ad9627e821998d1da. Não éexecuçãodedomínio/testes. Gatefuturo tiposlint/>=373todos/8novos/43suítessemperda/89intactosantes-depois/recibofontealterada/teste. Outrosperfisdocommandvalidatorintactos. Reports effective-monthly-working-days-build-check.json/-check.json/.cache/effective-monthly-working-days-tests.json.373aindanãoresultado.
+
+Retomar local_result5053f7b5 uma vez,revisarcódigo/testes/compatibilidadediagnósticos/SHA/gates/GitcontraESTADOGITDETERMINÍSTICO/RCF. Q8Scomrecibo ecommitimediatoseconforme. Não repetirtestesconfiáveisgenericamente. Falha:preservarefeitos/causa/estágio,novamicrocorreçãomaterialsemreplaycego/fallbackpagovolumoso/manutençãoprópria. Indicadoresporperíodo/ledger/custoscompletos/tributaçãolegal/reconciliação/metas/percentuais/JSON/UI/planilhahistórica/aceiteglobalpendentes.
+
+Monitor http://127.0.0.1:49767/job/5053f7b5-80cb-411e-8e9b-ed894295781a?token=71200b4594deb1357acf2643dd72509ca3906247dff6e2fc480d030b3f4f4d7d
+
+Índice http://127.0.0.1:49767/?token=71200b4594deb1357acf2643dd72509ca3906247dff6e2fc480d030b3f4f4d7d
+
+N7C:ALL_TOOLSsemrotanativacompact;semmediçãoautoritativabaratadamesmaconversa.Impedimentotécnico,nãodispensa/cumprimento.Handoffauxiliarnãoécompactação.Apósavisoencerrarsempolling.Latênciarunnerautomática,nãorecontar.
