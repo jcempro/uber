@@ -1,0 +1,193 @@
+import { describe, it, expect } from 'vitest';
+import { calculateBudgetFinancialRates } from './budget-financial-rates';
+import { calculateMonthlyAvailability, calculateEffectiveMonthlyWorkingDays } from './monthly-availability';
+import { calculateScheduledBudgetDays } from './budget-days';
+import type { BudgetFinancialRatesInput, BudgetWorkingRateResult } from './budget-financial-rates';
+import type { BudgetAmountResult } from './budget-amount';
+import type { BudgetPeriod } from './model';
+
+function r(numerator: string, denominator = '1') {
+  return { numerator, denominator };
+}
+
+function root(input: BudgetFinancialRatesInput) {
+  const result = calculateBudgetFinancialRates(input, { maxInputLength: 256, maxDigits: 64 });
+  if (result.status !== 'conditional') {
+    throw Error(result.reason);
+  }
+  return result;
+}
+
+function verifyAmount(result: BudgetAmountResult, period: BudgetPeriod, amount: string) {
+  if (result.status !== 'ready') throw Error(result.reason);
+  expect(result.value).toEqual(r(amount));
+  expect(result.sourcePeriod).toBe('month');
+  expect(result.targetPeriod).toBe(period);
+  expect(result.basis).toBe('budget-calendar-period');
+}
+
+function baseInput(): BudgetFinancialRatesInput {
+  return {
+      currency: 'BRL',
+      sourceBasis: 'budget-calendar-period',
+      amount: r('3200', '1'),
+      sourcePeriod: 'month',
+      calendar: {
+        kind: 'budget',
+        daysPerMonth: r('28'),
+        monthsPerYear: r('12'),
+        daysPerWeek: r('4'),
+        hoursPerWorkingDay: r('4'),
+        lostWorkingDaysPerMonth: r('0'),
+      },
+    };
+}
+
+function verifyUnavailableWorking(result: BudgetWorkingRateResult) {
+    if (result.status !== 'unavailable') throw Error('Taxa horária deveria estar indisponível.');
+  return result;
+}
+
+function verifyWorkingRate(result: BudgetWorkingRateResult) {
+  if (result.status !== 'ready') {
+    throw Error(result.reason);
+  }
+  return result;
+}
+
+function verifyBaseResult(result: ReturnType<typeof root>) {
+    expect(result.currency).toBe('BRL');
+    expect(result.sourceBasis).toBe('budget-calendar-period');
+    expect(result.financialAssessment).toBe('not-evaluated');
+    expect(result.source).toEqual({status:'ready',value:r('3200'),sourcePeriod:'month',targetPeriod:'month',basis:'budget-calendar-period'});
+    verifyAmount(result.perMonth, 'month', '3200');
+    verifyAmount(result.perWeek, 'week', '800');
+    verifyAmount(result.perYear, 'year', '38400');
+}
+
+describe('budget-financial-rates-availability', () => {
+  it('perdas iguais aos dias deixam taxas indisponíveis', () => {
+    const input: BudgetFinancialRatesInput = {
+      ...baseInput(),
+      calendar: {
+        ...baseInput().calendar,
+        lostWorkingDaysPerMonth: r('16'),
+      },
+    };
+    const result = root(input);
+    verifyBaseResult(result);
+    const perWorkingDay = verifyUnavailableWorking(result.perWorkingDay);
+    expect(perWorkingDay.code).toBe('non-positive-availability');
+    expect(perWorkingDay.dependency).toBeNull();
+    expect(perWorkingDay.diagnostic).toBeNull();
+    expect(perWorkingDay.denominator).toEqual(r('0'));
+    expect(perWorkingDay.reason).toBeDefined();
+    expect(perWorkingDay.reason.length).toBeGreaterThan(0);
+
+    const perConnectedHour = verifyUnavailableWorking(result.perConnectedHour);
+    expect(perConnectedHour.code).toBe('non-positive-availability');
+    expect(perConnectedHour.dependency).toBeNull();
+    expect(perConnectedHour.diagnostic).toBeNull();
+    expect(perConnectedHour.denominator).toEqual(r('0'));
+    expect(perConnectedHour.reason).toBeDefined();
+    expect(perConnectedHour.reason.length).toBeGreaterThan(0);
+  });
+  it('jornada fora do domínio preserva taxa diária', () => {
+    for (const h of ['0', '25']) {
+      const input: BudgetFinancialRatesInput = {
+        ...baseInput(),
+        calendar: {
+          ...baseInput().calendar,
+          hoursPerWorkingDay: r(h),
+        },
+      };
+      const result = root(input);
+      verifyBaseResult(result);
+
+      const perWorkingDay = verifyWorkingRate(result.perWorkingDay);
+      expect(perWorkingDay.value).toEqual(r('200'));
+      expect(perWorkingDay.denominator).toEqual(r('16'));
+      expect(perWorkingDay.sourceAmount).toEqual(r('3200'));
+      expect(perWorkingDay.amountPeriod).toBe('month');
+      expect(perWorkingDay.unit).toBe('BRL/working-day');
+
+      const perConnectedHour = verifyUnavailableWorking(result.perConnectedHour);
+      expect(perConnectedHour.code).toBe('calendar-unavailable');
+      expect(perConnectedHour.dependency).toBe('connectedHoursPerMonth');
+      expect(perConnectedHour.denominator).toBeNull();
+      const diagnostic = calculateMonthlyAvailability(r('16'), r('0'), r(h), { maxInputLength: 256, maxDigits: 64 });
+      if (diagnostic.status !== 'unavailable') throw Error('Diagnóstico canônico deveria estar indisponível.');
+      expect(diagnostic.status).toBe('unavailable');
+      expect(diagnostic.code).toBe('invalid-calendar');
+      expect(perConnectedHour.diagnostic).toEqual(diagnostic);
+      expect(perConnectedHour.reason).toBe(diagnostic.reason);
+      expect(perConnectedHour.reason.length).toBeGreaterThan(0);
+    }
+  });
+  it('perdas superiores aos dias preservam falha original', () => {
+    const input: BudgetFinancialRatesInput = {
+      ...baseInput(),
+      calendar: {
+        ...baseInput().calendar,
+        lostWorkingDaysPerMonth: r('17'),
+      },
+    };
+    const result = root(input);
+    verifyBaseResult(result);
+
+    const perWorkingDay = verifyUnavailableWorking(result.perWorkingDay);
+    expect(perWorkingDay.code).toBe('calendar-unavailable');
+    expect(perWorkingDay.dependency).toBe('effectiveWorkingDaysPerMonth');
+    expect(perWorkingDay.denominator).toBeNull();
+    const diagnosticEffective = calculateEffectiveMonthlyWorkingDays(r('16'), r('17'), { maxInputLength: 256, maxDigits: 64 });
+    if (diagnosticEffective.status !== 'unavailable') throw Error('Diagnóstico canônico deveria estar indisponível.');
+    expect(diagnosticEffective.status).toBe('unavailable');
+    expect(diagnosticEffective.code).toBe('invalid-calendar');
+    expect(perWorkingDay.diagnostic).toEqual(diagnosticEffective);
+    expect(perWorkingDay.reason).toBe(diagnosticEffective.reason);
+    expect(perWorkingDay.reason.length).toBeGreaterThan(0);
+
+    const perConnectedHour = verifyUnavailableWorking(result.perConnectedHour);
+    expect(perConnectedHour.code).toBe('calendar-unavailable');
+    expect(perConnectedHour.dependency).toBe('effectiveWorkingDaysPerMonth');
+    expect(perConnectedHour.denominator).toBeNull();
+    expect(diagnosticEffective.status).toBe('unavailable');
+    expect(diagnosticEffective.code).toBe('invalid-calendar');
+    expect(perConnectedHour.diagnostic).toEqual(diagnosticEffective);
+    expect(perConnectedHour.reason).toBe(diagnosticEffective.reason);
+    expect(perConnectedHour.reason.length).toBeGreaterThan(0);
+  });
+  it('dias por semana acima de sete preservam falha original', () => {
+    const input: BudgetFinancialRatesInput = {
+      ...baseInput(),
+      calendar: {
+        ...baseInput().calendar,
+        daysPerWeek: r('8'),
+      },
+    };
+    const result = root(input);
+    verifyBaseResult(result);
+
+    const perWorkingDay = verifyUnavailableWorking(result.perWorkingDay);
+    expect(perWorkingDay.code).toBe('calendar-unavailable');
+    expect(perWorkingDay.dependency).toBe('scheduledWorkingDaysPerMonth');
+    expect(perWorkingDay.denominator).toBeNull();
+    const diagnosticScheduled = calculateScheduledBudgetDays(r('8'), r('28'), { maxInputLength: 256, maxDigits: 64 });
+    if (diagnosticScheduled.status !== 'unavailable') throw Error('Diagnóstico canônico deveria estar indisponível.');
+    expect(diagnosticScheduled.status).toBe('unavailable');
+    expect(diagnosticScheduled.code).toBe('invalid-calendar');
+    expect(perWorkingDay.diagnostic).toEqual(diagnosticScheduled);
+    expect(perWorkingDay.reason).toBe(diagnosticScheduled.reason);
+    expect(perWorkingDay.reason.length).toBeGreaterThan(0);
+
+    const perConnectedHour = verifyUnavailableWorking(result.perConnectedHour);
+    expect(perConnectedHour.code).toBe('calendar-unavailable');
+    expect(perConnectedHour.dependency).toBe('scheduledWorkingDaysPerMonth');
+    expect(perConnectedHour.denominator).toBeNull();
+    expect(diagnosticScheduled.status).toBe('unavailable');
+    expect(diagnosticScheduled.code).toBe('invalid-calendar');
+    expect(perConnectedHour.diagnostic).toEqual(diagnosticScheduled);
+    expect(perConnectedHour.reason).toBe(diagnosticScheduled.reason);
+    expect(perConnectedHour.reason.length).toBeGreaterThan(0);
+  });
+});

@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.4c.2f",
+  "node": "v24.22.1",
+  "sourceCommit": "aba9a0c6fb8be5a3a7b4f175c5bf705d396805d2",
+  "files": {
+    "src/domain/budget-financial-rates.ts": "b9bc2ccbe0a7245b5f79e3a3d6847f430e43601a0b70b94c30f44eb03a0b9da4",
+    "src/domain/budget-financial-rates-availability.test.ts": "a02db9815fbeb29f8f6ec25ec18e4deba8afcb1d439040d2ed0637c4a375b212"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\budget-financial-rates-availability-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/budget-financial-rates-availability-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 387,
+    "passed": 387,
+    "newSuite": 4
+  },
+  "protectedFiles": 95,
+  "limits": "Somente4casos disponibilidade zero/inválida; demais grupos e aceite integral pendentes. Conversões orçamentárias condicionais; não apura resultados reais ou custos completos."
+}

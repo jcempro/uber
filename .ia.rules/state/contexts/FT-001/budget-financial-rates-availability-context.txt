@@ -1,0 +1,197 @@
+# Norma do alvo
+
+# AGENTS.md — Entrypoint da Norma
+
+Este arquivo governa a atuação da IA. O RCF governa requisito, contrato, arquitetura e negócio; é a especificação declarativa, determinística e verificável do sistema, ressalvado o domínio desta Norma. Precedência, autoridade, preservação e mecanismos oficiais são compulsórios.
+
+Antes de operação material sem rota válida em memória ou com alteração física:
+
+1. consulte `./.ia.rules/normative-index.json`;
+2. carregue `./.ia.rules/core/authority.md`, papéis cumulativos e somente a rota direta, cenários, contratos e recursos disparados;
+3. consulte prioritariamente `./.ia.rules/state/decisions/refused/index.json`;
+4. execute do estado canônico `./.ia.rules/continue.ia`, com FT, plano, RCF e autorização compatíveis.
+
+`./.ia.rules/agents.inc.md` preserva a Norma operacional integral. Leia-o somente diante de mudança de rota, perda de contexto, conflito, regra não localizada, índice/cache inválido, auditoria de preservação ou confiança insuficiente. Referências seletivas resolvem-se por `MN-REF`.
+
+Todo repositório é Final; fonte, build, atualização, distribuição ou release agregam Construtor. No construtor do produto, `./AGENTS.md` CURRENT/CONSUMED rege; `src/AGENTS.md` SOURCE/DEVELOPED não rege até adoção nem pode ser regredido pela consumida. Homonímia não transfere versão, papel, escopo ou autoridade. Ambiguidade preserva comportamento e conteúdo. Saída técnica usa PT-BR.
+
+Cada solicitação autoriza escrita e Git somente no único repositório corrente associado ao prompt; root irmã, dependência, submódulo, worktree, repositório aninhado ou path físico externo permanece intocável, ainda que aberto ou relacionado.
+
+
+# Autoridade operacional e mecanismos oficiais
+
+Identidade normativa: `core.authority`; papel: comum; tipo: folha. Ler integralmente em toda atuação governada. Não dispensar por cenário, papel, familiaridade ou economia de contexto. Aplicar `MN-2119`, `MN-PRES`, `MN-ROLE`, `MN-EXT` e `MN-REF`.
+
+## 1. Vocabulário canônico
+
+**Norma Operacional** é `AGENTS.md` e associados, responsável pelo modo de atuação, processo, leitura, edição, validação, rastreabilidade, automação, scripts, hooks, comandos e FTs. **RCF** é a SSOT arquitetural declarativa, determinística e verificável do que o sistema é e DEVE fazer. **Repositório Construtor** mantém, constrói, valida ou distribui a Norma Operacional. **Repositório Final** consome a Norma. Papéis são cumulativos e nenhum afasta o outro.
+
+**Mecanismo Oficial** é script, comando, hook, callback, adaptador, workflow, arquivo-gatilho, convenção, nomenclatura, contrato ou ponto de extensão normatizado. **Extensão Oficial** compõe o mecanismo sem substituir fluxo ou contrato. **Fluxo Paralelo** é mecanismo novo, duplicado, substitutivo ou funcionalmente equivalente que contorne o oficial. **Lacuna Oficial** é erro, risco, insuficiência ou ausência comprovada no mecanismo necessário. **Princípio Estruturante** é regra cuja degradação altera autoridade, alcance ou comportamento fundamental. **Microtexto Normativo** é unidade curta, coesa, autônoma, estável e referenciável. **Custo Líquido** compara tokens, bytes, tempo, processamento, navegação, manutenção, risco, precisão e reutilização.
+
+Definição canônica NÃO DEVE ser redefinida em papel, cenário, recurso, RCF específico ou extensão. Especialização referencia o termo e restringe somente seu contexto.
+
+## 2. Proteção estrutural
+
+Revisão parcial, cirúrgica, ampla ou estrutural DEVE preservar autoridade, precedência, domínios, contratos, nomes, proibições, exceções, hooks, modus operandi, incisividade, rastreabilidade, força, efeitos e intenção. Princípio Estruturante é permanente, identificável e não regressivo; validação DEVE detectar remoção, diluição, relativização, subordinação, abreviação com perda, facultatividade ou substituição.
+
+Densificação, modularização, roteamento, índice, resumo, tokenização e otimização NÃO DEVEM reduzir rigor, minúcia, clareza, explicitabilidade, exigibilidade, previsibilidade ou resistência a interpretação desviada. Norma não recuperada NÃO é norma inexistente.
+
+## 2.1 Fronteira absoluta do repositório corrente
+
+Cada solicitação associa-se a exatamente uma raiz Git corrente e ao `AGENTS.md` aplicável nela. Escrita, exclusão, movimento, geração, staging, commit, branch, merge, reset, clean, publish e release somente PODEM atingir arquivos fisicamente pertencentes a essa raiz e subordinados à mesma autoridade. Workspace/IDE com múltiplas roots, relação funcional, dependência, importação, build conjunto, mesma autoria, necessidade externa ou proximidade física NÃO ampliam escopo; edição cruzada é violação crítica.
+
+Submódulo, worktree, repositório aninhado, root irmã, terceiro, `node_modules`, dependência local/linked, cache e artefato não editável são fronteiras excluídas. Antes do efeito, resolver raiz, path absoluto real e ancestrais; recusar `..`, symlink, junction, mount, alias, hardlink detectável ou identidade Git própria que atravesse a fronteira. Leitura externa necessária PODE ocorrer para diagnóstico/contrato, mas NÃO concede escrita. Alteração externa exige nova solicitação explicitamente associada ao outro repositório.
+
+## 3. Compulsoriedade e evolução
+
+Antes de solucionar, agente e Repositório Final DEVEM consultar descoberta oficial, inspecionar estado real, reutilizar finalidade/nomenclatura existentes e corrigir implementação divergente. Dúvida, desconhecimento, cópia possivelmente desatualizada ou inadequação aparente exigem releitura, versão e rastreamento; NÃO autorizam improvisação.
+
+Mecanismo Oficial NÃO DEVE ser neutralizado, duplicado, renomeado, reimplementado, contornado ou substituído. Resultado correto por fluxo incompatível permanece não conforme. Expansão só PODE usar hook, callback, composição, adaptador, arquivo-gatilho, extensão local ou contrato oficial, preservando fluxo principal, nomes, precedência, efeitos e compatibilidade.
+
+Lacuna segue `../scenarios/governance/official-gap.md`. Solicitação segue `../scenarios/governance/request-lifecycle.md`. Contratos de composição, eventos, integração e assinaturas seguem `./contracts.md`; recurso especializado referencia o contrato comum e declara somente diferenças materiais.
+
+## 4. Verificação
+
+Revisão DEVE comprovar: conceitos centralizados; referências resolvíveis; ausência de fluxo paralelo; mecanismos oficiais preservados; papéis acumulados; extensão somente em ponto autorizado; princípio estruturante sem redução modal; e equivalência entre núcleo, módulo, índice e RCF aplicável.
+
+
+# Unidade exclusiva
+
+# FT-003.40.4c.2f — zero e calendário inválido
+
+Worker subordinado. Alterar apenas src/domain/budget-financial-rates-availability.test.ts. Prefixo pronto contém imports/helpers/fixture válidos: PRESERVAR integralmente,substituir somente4it.todo por4it de mesmos nomes. Sem leitura/busca/listagem/implementaçãofuncional;contexto já completo. Umwrite_file depois run_authorized_command verify_budget_rates_availability UMAvez;encerrar inclusivefalha,semretry. Semoutroarquivo/commit/rede/instalação. expect_changes=true/supervisorcommit. Retorno<=60palavras.
+
+Base383/48suítes/95arquivos protegidos+fonteb9bc2ccb. Escopo4casos(contexto<=22Kchars,saídaesperada<4Ktokens,margemsegura16K–32K),sementradainválida/freeze/expansão. Prefixo seleciona sóhelpers usados para evitar erro anterior de scaffold protegido. Semany/casts/non-nullassertion/optionalchaining/nomesinventados. Imports prontos incluem funções canônicas aceitas calculateMonthlyAvailability,calculateEffectiveMonthlyWorkingDays ecalculateScheduledBudgetDays para conferir preservação do diagnóstico; NÃO usar calculateBudgetFinancialRates para gerar expectativa.
+
+baseInput():inputBRL/budget-calendar-period/month/3200,calendáriobudget/W4D28M12L0h4. Fixture sintética. root(input) guarda conditional; verifyBaseResult(result) jáconfere currency/sourceBasis/financialAssessmentnot-evaluated/identidade3200month→month/mês3200/semana800/ano38400. CHAMAR verifyBaseResult emTODOSresultados desta unidade. verifyWorkingRate guarda ready; verifyUnavailableWorking guarda unavailable. Toda leitura decampos exclusivos usaesseshelpers ou ifstatusreal;expectstatusnãoestreita. Usar input:BudgetFinancialRatesInput via spread debaseInput e alterar só campo declarado. Não inventardefaults.
+
+1. 'perdas iguais aos dias deixam taxas indisponíveis':L16,h4. S4*28/7=16,D_eff16-16=0,H0. Rootconditional e verifyBaseResult;ambas taxas via verifyUnavailableWorking devem code non-positive-availability,dependency:null,diagnostic:null,denominatorr('0'),reasonstringnão vazia. Zero disponibilidade não gera taxa0/NaN/Infinity nem apaga montantes.
+
+2. 'jornada fora do domínio preserva taxa diária':um it com for(const h of ['0','25']),cada vez hoursPerWorkingDay:r(h),outrosbase. Rootconditional/verifyBaseResult;dia via verifyWorkingRate:valuer('200'),denominatorr('16'),sourceAmountr('3200'),amountPeriodmonth,unitBRL/working-day. Hora via verifyUnavailableWorking:code calendar-unavailable,dependency connectedHoursPerMonth,denominator:null. Diagnóstico esperado=calculateMonthlyAvailability(r('16'),r('0'),r(h),{maxInputLength:256,maxDigits:64});guardar diagnostic.status==='unavailable' antes dereason/code;assertcode invalid-calendar. Comparar hora.diagnostic.toEqual(diagnostic),hora.reason.toBe(diagnostic.reason),reasonnão vazia. h0 NÃO é non-positive-availability;ambos h0/25 rejeitados pelo domínio0<h<=24.
+
+3. 'perdas superiores aos dias preservam falha original':L17,outrosbase. Rootconditional/verifyBaseResult;diagnóstico esperado calculateEffectiveMonthlyWorkingDays(r('16'),r('17'),{maxInputLength:256,maxDigits:64});guardar unavailable,codeinvalid-calendar. Ambas taxas verifyUnavailableWorking:codecalendar-unavailable,dependency effectiveWorkingDaysPerMonth,denominator:null;diagnostic.toEqual(esperado),reason.toBe(esperado.reason),não vazia. Sem clamp17para16/zero nemquantiazerada.
+
+4. 'dias por semana acima de sete preservam falha original':W8,outrosbase. Rootconditional/verifyBaseResult;diagnóstico esperado calculateScheduledBudgetDays(r('8'),r('28'),{maxInputLength:256,maxDigits:64});guardar unavailable,codeinvalid-calendar. Ambas taxas verifyUnavailableWorking:codecalendar-unavailable,dependency scheduledWorkingDaysPerMonth,denominator:null;diagnostic.toEqual(esperado),reason.toBe(esperado.reason),não vazia. Sem clamp8para7. Montantes por calendário continuam3200/800/38400.
+
+Origem independente:RCF7.2/8.3 define S=W*D/7 e dias efetivos descontandoL;0<=W<=7,0<=L<=S,0<h<=24 nos módulos canônicos já aceitos/protegidos. Expectativas financeiras literais vêm das identidades16dias/64horas/3200 e conversões orçamentárias. Referências inferiores só verificam encaminhamento exato de falha,com codeinvalid-calendar independente; não produzem expectativas dos indicadores nem usam a função sobteste. Isso não prova legalidade fiscal/custos completos/realização.
+
+Gate rates-availability exige tipos/lint/full387+/4novos/48anterioressemperda/95protegidos+fontepinada+prefixoscaffold. Contagem não fechaaceiteintegral:entradainválida/diagnósticotécnico/freeze/snapshot/política eappcontinuampendentes. Não ajustar expectativas àsaídadivergente.
+
+
+# Arquivo pronto: prefixo protegido,substituir4it.todo
+
+import { describe, it, expect } from 'vitest';
+import { calculateBudgetFinancialRates } from './budget-financial-rates';
+import { calculateMonthlyAvailability, calculateEffectiveMonthlyWorkingDays } from './monthly-availability';
+import { calculateScheduledBudgetDays } from './budget-days';
+import type { BudgetFinancialRatesInput, BudgetWorkingRateResult } from './budget-financial-rates';
+import type { BudgetAmountResult } from './budget-amount';
+import type { BudgetPeriod } from './model';
+
+function r(numerator: string, denominator = '1') {
+  return { numerator, denominator };
+}
+
+function root(input: BudgetFinancialRatesInput) {
+  const result = calculateBudgetFinancialRates(input, { maxInputLength: 256, maxDigits: 64 });
+  if (result.status !== 'conditional') {
+    throw Error(result.reason);
+  }
+  return result;
+}
+
+function verifyAmount(result: BudgetAmountResult, period: BudgetPeriod, amount: string) {
+  if (result.status !== 'ready') throw Error(result.reason);
+  expect(result.value).toEqual(r(amount));
+  expect(result.sourcePeriod).toBe('month');
+  expect(result.targetPeriod).toBe(period);
+  expect(result.basis).toBe('budget-calendar-period');
+}
+
+function baseInput(): BudgetFinancialRatesInput {
+  return {
+      currency: 'BRL',
+      sourceBasis: 'budget-calendar-period',
+      amount: r('3200', '1'),
+      sourcePeriod: 'month',
+      calendar: {
+        kind: 'budget',
+        daysPerMonth: r('28'),
+        monthsPerYear: r('12'),
+        daysPerWeek: r('4'),
+        hoursPerWorkingDay: r('4'),
+        lostWorkingDaysPerMonth: r('0'),
+      },
+    };
+}
+
+function verifyUnavailableWorking(result: BudgetWorkingRateResult) {
+    if (result.status !== 'unavailable') throw Error('Taxa horária deveria estar indisponível.');
+  return result;
+}
+
+function verifyWorkingRate(result: BudgetWorkingRateResult) {
+  if (result.status !== 'ready') {
+    throw Error(result.reason);
+  }
+  return result;
+}
+
+function verifyBaseResult(result: ReturnType<typeof root>) {
+    expect(result.currency).toBe('BRL');
+    expect(result.sourceBasis).toBe('budget-calendar-period');
+    expect(result.financialAssessment).toBe('not-evaluated');
+    expect(result.source).toEqual({status:'ready',value:r('3200'),sourcePeriod:'month',targetPeriod:'month',basis:'budget-calendar-period'});
+    verifyAmount(result.perMonth, 'month', '3200');
+    verifyAmount(result.perWeek, 'week', '800');
+    verifyAmount(result.perYear, 'year', '38400');
+}
+
+describe('budget-financial-rates-availability', () => {
+  it.todo('perdas iguais aos dias deixam taxas indisponíveis');
+  it.todo('jornada fora do domínio preserva taxa diária');
+  it.todo('perdas superiores aos dias preservam falha original');
+  it.todo('dias por semana acima de sete preservam falha original');
+});
+
+
+# API pública sem implementação
+
+export interface BudgetFinancialRateContext extends BudgetAmountContext {
+  readonly daysPerWeek?:ExactRational|null;
+  readonly lostWorkingDaysPerMonth?:ExactRational|null;
+  readonly hoursPerWorkingDay?:ExactRational|null;
+}
+export interface BudgetFinancialRatesInput {
+  readonly currency:'BRL';readonly sourceBasis:'budget-calendar-period';readonly amount:ExactRational;
+  readonly sourcePeriod:BudgetPeriod;readonly calendar:BudgetFinancialRateContext;
+}
+export type BudgetRateFailure=Extract<BudgetAmountResult|ReturnType<typeof calculateScheduledBudgetDays>|ReturnType<typeof calculateEffectiveMonthlyWorkingDays>|ReturnType<typeof calculateMonthlyAvailability>|ReturnType<typeof calculateExactProduct>|ReturnType<typeof compareExactRationals>,{status:'unavailable'}>;
+type WorkingUnit='BRL/working-day'|'BRL/connected-hour';
+type WorkingFailureCode='source-unavailable'|'missing-calendar-input'|'calendar-unavailable'|'non-positive-availability'|'calculation-unavailable';
+export type BudgetWorkingRateResult=
+  | {readonly status:'ready';readonly unit:WorkingUnit;readonly amountPeriod:'month';readonly sourceAmount:ExactRational;readonly denominator:ExactRational;readonly value:ExactRational}
+  | {readonly status:'unavailable';readonly code:WorkingFailureCode;readonly dependency:string|null;readonly reason:string;readonly diagnostic:BudgetRateFailure|null;readonly denominator:ExactRational|null};
+export type BudgetFinancialRatesResult=
+  | {readonly status:'conditional';readonly currency:'BRL';readonly sourceBasis:'budget-calendar-period';readonly source:Extract<BudgetAmountResult,{status:'ready'}>;readonly financialAssessment:'not-evaluated';readonly perMonth:BudgetAmountResult;readonly perWeek:BudgetAmountResult;readonly perYear:BudgetAmountResult;readonly perWorkingDay:BudgetWorkingRateResult;readonly perConnectedHour:BudgetWorkingRateResult}
+  | {readonly status:'unavailable';readonly code:'invalid-budget'|'unsupported-input'|'source-unavailable';readonly reason:string;readonly source:BudgetAmountResult|null};
+
+export type BudgetAmountContext = {
+  readonly kind: 'budget';
+  readonly daysPerMonth?: ExactRational | null;
+  readonly monthsPerYear?: ExactRational | null;
+};
+/** Quantia por período de calendário orçamentário; day não representa dia trabalhado. */
+export type BudgetAmountResult =
+  | { readonly status: 'ready'; readonly value: ExactRational; readonly sourcePeriod: BudgetPeriod; readonly targetPeriod: BudgetPeriod; readonly basis: 'budget-calendar-period' }
+  | ExactProductFailure
+  | ExactComparisonFailure
+  | { readonly status: 'unavailable'; readonly code: 'invalid-period' | 'unsupported-calendar'; readonly reason: string }
+  | { readonly status: 'unavailable'; readonly code: 'missing-calendar-input' | 'invalid-calendar'; readonly dependency: 'daysPerMonth' | 'monthsPerYear'; readonly reason: string };
+
+
+
+# Fonte independente
+
+RCF.md:103 2. Calendário sem datas reais: dias equivalentes programados/mês `4 × 30/7 = 17,142857…`, **não 16**; dias efetivos = programados − perdidos, respeitando domínio e período. Semana = 7 dias, mês orçamentário = 30, ano = 12 desses meses (**360 dias orçamentários**, não calendário civil); sempre identificar convenção. Se o usuário configurar dias exatos da semana/datas reais, usar calendário real e registrar competência, sem misturar as convenções. Não inventar escala horária para 6/8 h. Dias restantes/ausências recalculam valores necessários até o fechamento, sem aumentar demanda disponível por decreto.
+RCF.md:151 - **Patamares por unidade:** para cada contexto e cada alvo `0`, `Lmin`, `M15`, `M100`, apresentar **receita a creditar necessária em R$/hora, R$/km, R$/dia, R$/semana, R$/mês e, quando pertinente, R$/ano** (valor **requerido**, não comprovadamente recebido). Dividir receita requerida do **mesmo período** por horas conectadas efetivas, `K` total, dias efetivos e demais denominadores legítimos. O ganho **mínimo por km da operação** para cobrir custos/meta é `B_necessário / K_total`; a métrica a configurar no Rota Pro emprega **km de oferta** (coleta + viagem), não `K_total`, devendo absorver corretamente km vazios e custos nos requisitos projetados. Expor simultaneamente **ganho mínimo por km para empatar**, **para lucro mínimo** e **para cada meta**; não rotular todos de “mínimo” sem finalidade.

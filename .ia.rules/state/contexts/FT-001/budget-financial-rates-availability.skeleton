@@ -1,0 +1,73 @@
+import { describe, it, expect } from 'vitest';
+import { calculateBudgetFinancialRates } from './budget-financial-rates';
+import { calculateMonthlyAvailability, calculateEffectiveMonthlyWorkingDays } from './monthly-availability';
+import { calculateScheduledBudgetDays } from './budget-days';
+import type { BudgetFinancialRatesInput, BudgetWorkingRateResult } from './budget-financial-rates';
+import type { BudgetAmountResult } from './budget-amount';
+import type { BudgetPeriod } from './model';
+
+function r(numerator: string, denominator = '1') {
+  return { numerator, denominator };
+}
+
+function root(input: BudgetFinancialRatesInput) {
+  const result = calculateBudgetFinancialRates(input, { maxInputLength: 256, maxDigits: 64 });
+  if (result.status !== 'conditional') {
+    throw Error(result.reason);
+  }
+  return result;
+}
+
+function verifyAmount(result: BudgetAmountResult, period: BudgetPeriod, amount: string) {
+  if (result.status !== 'ready') throw Error(result.reason);
+  expect(result.value).toEqual(r(amount));
+  expect(result.sourcePeriod).toBe('month');
+  expect(result.targetPeriod).toBe(period);
+  expect(result.basis).toBe('budget-calendar-period');
+}
+
+function baseInput(): BudgetFinancialRatesInput {
+  return {
+      currency: 'BRL',
+      sourceBasis: 'budget-calendar-period',
+      amount: r('3200', '1'),
+      sourcePeriod: 'month',
+      calendar: {
+        kind: 'budget',
+        daysPerMonth: r('28'),
+        monthsPerYear: r('12'),
+        daysPerWeek: r('4'),
+        hoursPerWorkingDay: r('4'),
+        lostWorkingDaysPerMonth: r('0'),
+      },
+    };
+}
+
+function verifyUnavailableWorking(result: BudgetWorkingRateResult) {
+    if (result.status !== 'unavailable') throw Error('Taxa horária deveria estar indisponível.');
+  return result;
+}
+
+function verifyWorkingRate(result: BudgetWorkingRateResult) {
+  if (result.status !== 'ready') {
+    throw Error(result.reason);
+  }
+  return result;
+}
+
+function verifyBaseResult(result: ReturnType<typeof root>) {
+    expect(result.currency).toBe('BRL');
+    expect(result.sourceBasis).toBe('budget-calendar-period');
+    expect(result.financialAssessment).toBe('not-evaluated');
+    expect(result.source).toEqual({status:'ready',value:r('3200'),sourcePeriod:'month',targetPeriod:'month',basis:'budget-calendar-period'});
+    verifyAmount(result.perMonth, 'month', '3200');
+    verifyAmount(result.perWeek, 'week', '800');
+    verifyAmount(result.perYear, 'year', '38400');
+}
+
+describe('budget-financial-rates-availability', () => {
+  it.todo('perdas iguais aos dias deixam taxas indisponíveis');
+  it.todo('jornada fora do domínio preserva taxa diária');
+  it.todo('perdas superiores aos dias preservam falha original');
+  it.todo('dias por semana acima de sete preservam falha original');
+});

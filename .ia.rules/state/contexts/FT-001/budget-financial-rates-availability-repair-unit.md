@@ -1,0 +1,7 @@
+# FT-003.40.4c.2f.1 — guardas dos diagnósticos de referência
+
+aea7e634 recebidoUMAvez/FAILED WORKER_INCOMPLETE CONTRACT_UNFULFILLED;types2/5erros,sem lint/testes. Quatro casos/fixture/valores/códigos/encaminhamentos corretos;faltam3guardas unavailable emdiagnostic/diagnosticEffective/diagnosticScheduled,antes de reason;optionalchainingvedado. Q8S7rev1registrado;Gitdeterminístico/liveahead4coincidem;fonteb9bc2ccb/prefixo/base383intactos.
+
+Sequência determinística seminferência:patch_budget_rates_availability→verify_budget_rates_availability. Preimagedf5057ed05156ef16cb882164ba2bd0b5c514ebbe8d2573e3844161a6cb3f6c9. Só3guardas e10substituições deexpectedsstatus/code dos diagnósticos canônicos jácomparados via toEqual. Removeencadeamentoopcional sem cast/assertion;preservanúmeros/fixtures/expectativas/aplicação. Os oráculos são módulos inferiores jáaceitos,independentesda função sobteste;codeinvalid-calendar éexpectativaliteral e comparaçãointegral dafalha/razão permanece.
+
+Script lê normas/unit,confere95arquivos/fonte e prefixo,arquiva teste/report failed-aea e salva recibo/reconheceestadojáaplicado. Preflightread-only antes da delegação. Sóteste funcional émutável;semfonte/testeaceito/rede/instalação/commit;supervisorassumecommitapósrevisão. Gate rates-availability continua types/lint/full387+/4novos/48anteriores/95protegidos+sourcepin+prefixo. Falha interrompe semretry. Aceite só4casos zero/inválido;entradainválida/falhastécnicas/freeze/snapshot/política/integral/aplicativopendentes.

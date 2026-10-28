@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.4c.2f.1",
+  "beforeSha256": "df5057ed05156ef16cb882164ba2bd0b5c514ebbe8d2573e3844161a6cb3f6c9",
+  "afterSha256": "a02db9815fbeb29f8f6ec25ec18e4deba8afcb1d439040d2ed0637c4a375b212",
+  "changes": "three unavailable guards for canonical diagnostics;10status/code assertions target guarded references; no optional chaining; no expectation changes",
+  "limits": "Somente4casos zero/inválido; demais grupos pendentes."
+}

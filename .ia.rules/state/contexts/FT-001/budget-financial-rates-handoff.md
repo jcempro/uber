@@ -1,5 +1,23 @@
 # FT-003.40.4c — execução local
 
+## Aceite40.4c.2f.1
+
+94478861 recebidoUMAvez/COMPLETED command_sequenceSEMinferência/patch0gate0;tiposlint387/387,4novos/48anteriores/95protegidos+fonte/prefixo. Correçõesa02db981revisadas comtesteoriginaljáexaminado:3guardasdiagnóstico/semoptional,zero/horas0e25/perdas17/W8semclamp/diagoriginais eperíodos mantidos. Q8S10rev1registrado. Gitdeterminístico/liveahead4coincidem;supervisorassumecommitimediato. Próximarejeiçãoentrada/políticainválida;freeze/snapshot/políticagetters/integral/appcontinuampendentes.
+
+## Atual40.4c.2f.1
+
+aea7e634 recebidoUMAvez/FAILED WORKER_INCOMPLETE CONTRACT_UNFULFILLED;gate tentoutypes2/5erros,sem lint/testes. Revisão completa:4casos/valores/códigos/canonicaldiagnosticscorretos,3guardasfaltantes emoráculosantesdereason e10optionalchainsvedados. Q8S7rev1registrado;Gitdeterminístico/liveahead4coincidem. Testedf5057ed05156ef16cb882164ba2bd0b5c514ebbe8d2573e3844161a6cb3f6c9;fonteb9bc2ccb/prefixo/base383preservados. Sem falha infra comprovada.
+
+Novo94478861-2f82-4acc-906d-c018a792fa40 confirmado RUNNING/R8Vv1,mesmochat01a16678-96c5-7eb2-9ee1-fea2b7b37cf2/repoD:/trampo/jcem.pro-uber. command_sequenceSEMinferência:patch_budget_rates_availability→verify_budget_rates_availability,expect_changes=true/supervisorcommit. Preflight read-onlyaprovadodf5057ed→a02db9815fbeb29f8f6ec25ec18e4deba8afcb1d439040d2ed0637c4a375b212. Patch só3guardas+10assertsstatus/code sobreoráculosguardados,removeoptional;mantémtoEqualdiagnostic ecomparaçõesreason,semalterarnúmeros/fixture/prefixo. Backupfailed-aea.* e recibo;95arquivos/fonteconferidosantesefeitos;estadojáaplicadoreconhecido. Gate387+/4novos/48anteriores/95protegidos+sourcepin+prefixo. Baseaceita383/aba9a0c. Callback local_resultUMAvez/revisão/Git/Q8S/commitseaceito. Não reconsultaraea/11/ae/3a/84/7b/215/108/1cc/0966/982/487. Entradainválida/falhastécnicas/freeze/snapshot/política/integral/appcontinuampendentes. Sem polling. Monitor http://127.0.0.1:49767/job/94478861-2f82-4acc-906d-c018a792fa40 eíndice http://127.0.0.1:49767/ (linkscompletosnochat). N7Csemferramentanativacompact/mediçãoautoritativabarata;impedimentodeclarado/checkpointnãoécompactação.
+
+## Atual40.4c.2f
+
+11e9d9ef aceito/Q8S10rev1 e commit aba9a0c6fb8be5a3a7b4f175c5bf705d396805d2 efetuado pelo supervisor;383/383testes,fonteb9bc2ccb/calendartestfef1dcaa. Gitantespreparo mainahead4,sem push.
+
+Novoaea7e634-7695-4b9d-955e-a223a9a66820 confirmado RUNNING/R8Vv1,mesmochat01a16678-96c5-7eb2-9ee1-fea2b7b37cf2/repoD:/trampo/jcem.pro-uber. Unidade40.4c.2f:4it em src/domain/budget-financial-rates-availability.test.ts;L16zero,h0/h25mesmoit,L17,W8. Prefixo seleciona sóhelpersusados/verifyBaseResultextraídodecoreaceito/guardas prontas/imports canônicos;worker sópreenche4it.todo,umwrite_file+verify_budget_rates_availability UMAvez/encerrar inclusivefalha. expect_changes=true/supervisorcommit. Contexto18382chars/SHA6d4477aec58987de191921090d912d1e2707376a0432db36c3f3ae307a6cb02d;scaffold184392c35929c485590d90b5dd5c35a4f54abc2ee44cfb60fc6a086a194154df. APIs/normas/RCF103151/expectativasindependentes,semimplementação. Gate387+/4novos/48anteriores/95protegidos+sourcepin+prefixo;extensãopreserva perfis/sintaxeconferida. Referências inferiorescalculateMonthlyAvailability/effective/scheduled só conferem encaminhamento exato de diagnóstico,codeinvalid-calendarindependente;valoresfinanceirosliterais16/64/3200/800/38400/200daRCF,semoráculocircular dafunçãosobteste. Baseaceita383atéaceite.
+
+Callback local_resultUMAvez/revisão dos4casos/diagnósticos/Git/Q8S/commitseaceito. Entradainválida/falhastécnicas/frozen/snapshot/política eappintegraispendentes;contagemnãofechaaceite. Não reconsultar11/ae/3a/84/7b/215/108/1cc/0966/982/487. Sem polling. Monitor http://127.0.0.1:49767/job/aea7e634-7695-4b9d-955e-a223a9a66820 eíndice http://127.0.0.1:49767/ (linkscompletosnochat). N7Csemferramentanativacompact/mediçãoautoritativabarata;impedimento declarado/checkpointnãoécompactação.
+
 ## Aceite40.4c.2e.1
 
 11e9d9ef recebidoUMAvez/COMPLETED command_sequenceSEMinferência/patch0gate0;tiposlint383/383,4novos/47anteriores/94protegidos+fonte/prefixo. Testefef1dcaalido integralmente:ausênciaslocalizadasW/L/D,identidades/semanas/códigos/dependências eponteiro diagnósticooriginal preservados conformeunit/RCF. Q8S10rev1registrado. Gitdeterminístico/liveahead3coincidem;supervisorassumecommitimediato. Nenhuma inferênciaatribuída àsequência. Próximodisponibilidadezero/jornadainválida/perdasexcessivas;invalidadeentrada/freeze/política/integral/appcontinuampendentes.
