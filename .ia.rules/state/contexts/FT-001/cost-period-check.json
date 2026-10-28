@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "unit": "FT-003.39.1",
+  "node": "v24.22.1",
+  "sourceCommit": "86bdf01fd80352ac5545a8ae6c2a34128f16ead4",
+  "files": {
+    "src/domain/cost-period.ts": "a6ab6b1354ea70df373f2c922f4c6326e9a34e0cfc78dd776c5afadbf536843a",
+    "src/domain/cost-period.test.ts": "f0d1c5dafd6aded7af5fcbe688f907754e7a32adb26c00a499a20ac3b2fc617f"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\cost-period-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/cost-period-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 311,
+    "passed": 311,
+    "newSuite": 8
+  },
+  "protectedFiles": 76,
+  "limits": "Apenas referências e vigência; não comprova quantia, incidência, escopo, reconciliação, admissão financeira ou UI."
+}

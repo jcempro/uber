@@ -1,10 +1,12 @@
 /** MPL-2.0; FT-003.38b.1a. Gate comportamental e preservação do estado aceito. */
 import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {spawnSync} from 'node:child_process';
 const root=fs.realpathSync('.');if(root.replaceAll('\\','/').toLowerCase()!=='d:/trampo/jcem.pro-uber')throw Error('root');
-const profile=process.argv[2]||'schema';if(!['schema','factory'].includes(profile))throw Error('profile');const prefix=profile==='schema'?'maintenance-adoption-schema':'maintenance-adoption-factory',unit=profile==='schema'?'FT-003.38b.1a':'FT-003.38b.1c',requiredNew=profile==='schema'?6:8;
+const profile=process.argv[2]||'schema';if(!['schema','factory','period'].includes(profile))throw Error('profile');const prefix=profile==='period'?'cost-period':profile==='schema'?'maintenance-adoption-schema':'maintenance-adoption-factory',unit=profile==='period'?'FT-003.39.1':profile==='schema'?'FT-003.38b.1a':'FT-003.38b.1c',requiredNew=profile==='schema'?6:8;
 const base='.ia.rules/state/contexts/FT-001/',reportPath=base+prefix+'-check.json',testsPath=path.resolve('.cache/'+prefix+'-tests.json'),hash=v=>crypto.createHash('sha256').update(v).digest('hex');
 function guard(rel){let p=root;for(const part of rel.split('/')){if(!part||part==='..')throw Error('path');p=path.join(p,part);if(fs.existsSync(p)){const s=fs.lstatSync(p);if(s.isSymbolicLink()||s.isFile()&&s.nlink!==1||s.isDirectory()&&fs.existsSync(path.join(p,'.git')))throw Error('linked');}}}
-const snapshot=JSON.parse(fs.readFileSync(base+prefix+'-baseline.json','utf8')),generated=JSON.parse(fs.readFileSync(base+prefix+'-build-check.json','utf8'));
+const snapshot=JSON.parse(fs.readFileSync(base+prefix+'-baseline.json','utf8'));
+if(profile==='period'&&(snapshot.priorTests!==303||Object.keys(snapshot.files).length!==76))throw Error('period baseline');
+const generated=JSON.parse(fs.readFileSync(base+prefix+'-build-check.json','utf8'));
 function protect(){for(const [p,h]of Object.entries(snapshot.files)){guard(p);if(hash(fs.readFileSync(p))!==h)throw Error('protected:'+p);}for(const [p,h]of [[generated.sourcePath,generated.sourceSha256],[generated.testPath,generated.testSha256]]){guard(p);if(hash(fs.readFileSync(p))!==h)throw Error('generated:'+p);}}
 protect();for(const p of ['AGENTS.md','.ia.rules/core/authority.md',base+prefix+'-unit.md'])fs.readFileSync(p,'utf8');for(const p of [reportPath,'.cache/'+prefix+'-tests.json'])guard(p);
 const npm='C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js',env={...process.env,PATH:path.dirname(process.execPath)+path.delimiter+process.env.PATH},commands=[];
