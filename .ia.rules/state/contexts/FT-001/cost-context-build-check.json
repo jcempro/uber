@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "unit": "FT-003.39.3b",
+  "sourceSha256": "2b53855d26df51657d0b5dbaf8345535f11700667a6978267c50ebc89603eccd",
+  "testSha256": "73680e041e1f03b820fc935bda6f71bb7d71f3d6539d939968a45ce65a774fe5",
+  "sourcePath": "src/domain/cost-context.ts",
+  "testPath": "src/domain/cost-context.test.ts",
+  "protectedFiles": 80,
+  "limits": "Referências/vigência/escopo declarado apenas; não comprova quantias, precedência, vínculo cadastral, reconciliação, ledger financeiro ou UI."
+}

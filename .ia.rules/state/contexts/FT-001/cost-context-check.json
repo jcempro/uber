@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "unit": "FT-003.39.3b",
+  "node": "v24.22.1",
+  "sourceCommit": "9506e3471914b7c49779da3315681839c3eeb3c9",
+  "files": {
+    "src/domain/cost-context.ts": "2b53855d26df51657d0b5dbaf8345535f11700667a6978267c50ebc89603eccd",
+    "src/domain/cost-context.test.ts": "73680e041e1f03b820fc935bda6f71bb7d71f3d6539d939968a45ce65a774fe5"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\cost-context-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/cost-context-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 327,
+    "passed": 327,
+    "newSuite": 8
+  },
+  "protectedFiles": 80,
+  "limits": "Referências/vigência/escopo declarado apenas; não comprova quantias, precedência, vínculo cadastral, reconciliação, ledger financeiro ou UI."
+}
