@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.3",
+  "sourceSha256": "de5dff6a678770b769acccca8c77d6c8afb7e5e0ce79170e46fa89ae3c154d8a",
+  "testSha256": "0e6439045b326eb47f23b7f51ea5ff607bcae82f33c16214c49fc3286299cb0e",
+  "sourcePath": "src/domain/financial-target-assessment.ts",
+  "testPath": "src/domain/financial-target-assessment.test.ts",
+  "protectedFiles": 88,
+  "limits": "Composição condicional de desvios/limiar/repasse adicional; não comprova custos completos, tributação legal, demanda, resultado real ou UI."
+}

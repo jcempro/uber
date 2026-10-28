@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.3",
+  "node": "v24.22.1",
+  "sourceCommit": "a7dc9b27d2a9e89dc0b92112dcd5e96cd7714ed2",
+  "files": {
+    "src/domain/financial-target-assessment.ts": "de5dff6a678770b769acccca8c77d6c8afb7e5e0ce79170e46fa89ae3c154d8a",
+    "src/domain/financial-target-assessment.test.ts": "0e6439045b326eb47f23b7f51ea5ff607bcae82f33c16214c49fc3286299cb0e"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\financial-target-assessment-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/financial-target-assessment-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 365,
+    "passed": 365,
+    "newSuite": 8
+  },
+  "protectedFiles": 88,
+  "limits": "Composição condicional de desvios/limiar/repasse adicional; não comprova custos completos, tributação legal, demanda, resultado real ou UI."
+}
