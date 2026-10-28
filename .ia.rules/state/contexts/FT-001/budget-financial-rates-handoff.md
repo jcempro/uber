@@ -1,5 +1,23 @@
 # FT-003.40.4c — execução local
 
+## Aceite40.4c.2d.1
+
+3a756ee9 recebidoUMAvez/COMPLETED command_sequence SEMinferência,patch0gate0;typeslint379/379,2novos/46anteriores/93protegidos+fonte/prefixo. Testeb4815c75lido integralmente: hnull apenasbloqueiahora,Mnull apenasano;identidades/períodos/taxas eguardascorretos. ExpectativasindependentesRCF. Q8S10rev1registrado. Gitdeterminístico/liveahead2coincidem,semcommitworker. Supervisorassumecommitimediato. PróximaunidadecalendárioW/L/Dausentes,semrefazercasosaceitos. Zero/invalidade/freeze/política/integral/appcontinuampendentes.
+
+## Atual40.4c.2d.1
+
+84f5f4d1 recebidoUMAvez/FAILED WORKER_INCOMPLETE/repetiçãocomandosemprogresso;gate tentoutypes2/9erros,lint/testesnãoexecutados. Revisão completa:2casosúteis/fixturevalorescorretos,faltamguardasunavailable/dependency eassertidentidade. Q8S6rev1registrado. Gitdeterminístico/liveahead2coincidem;fonteb9bc2ccb/core7fb27476/signed6d0a826a e prefixoscaffold preservados. Teste59b7c6f245d8dee904ab06f4e81c9e69b92ed919615794dae3695efab3dde295. Sem infraestrutura falha comprovada.
+
+Novo3a756ee9-fac9-4ef1-bd53-d47cbbaab155 confirmado RUNNING/R8Vv1,mesmochat01a16678-96c5-7eb2-9ee1-fea2b7b37cf2/repoD:/trampo/jcem.pro-uber. command_sequenceSEM inferência:patch_budget_rates_missing→verify_budget_rates_missing,expect_changes=true/supervisorcommit. Preflight read-onlyaprovado59b7c6f2→b4815c758bb25bff5c8696a6558e863b3f51e3bcd8002330d357ca378c4ee50d. Patch só2guardas e2assertsidentidade,preservanúmeros/prefixo/fixture/source/testesaceitos;backupfailed-84.* e recibo/estadojáaplicado. Gate379+/2novos/46anteriores/93protegidos+sourcepin+prefixo. Baseaceita377/23e20b6. Callback local_resultUMAvez/revisão/Git/Q8S/commitseaceito. Não reconsultar84/7b/215/108/1cc/0966/982/487. Demaisausências/zero/invalidade/freeze/política eappintegraispendentes. Sem polling. Monitor http://127.0.0.1:49767/job/3a756ee9-fac9-4ef1-bd53-d47cbbaab155 eíndice http://127.0.0.1:49767/ (linkscompletosnochat). N7Csemferramentanativacompact/mediçãoautoritativabarata;impedimentodeclarado/checkpointnãoécompactação.
+
+## Atual40.4c.2d
+
+7b576e24 recebidoUMAvez/revisado/Q8S10rev1 e commit23e20b6b5ad1cc382a939e6b7066f46971b9e506 efetuado pelo supervisor;377/377testes aceitos, fonteb9bc2ccb/core7fb27476/signed6d0a826a. Gitantespreparo mainahead2,sem push.
+
+Novo84f5f4d1-24a6-4fdd-97f1-755004edb6a4 confirmado RUNNING/R8Vv1,mesmochat01a16678-96c5-7eb2-9ee1-fea2b7b37cf2/repoD:/trampo/jcem.pro-uber. Unidade40.4c.2d apenas2casos hnull eMnull em src/domain/budget-financial-rates-missing.test.ts;expect_changes=true/supervisorcommit. Scaffold derivado mecanicamente do coreaceito,prefixo imports/helpers/fixture protegido;worker sópreenche2it.todo,umwrite_file e verify_budget_rates_missing UMAvez/encerrar inclusivefalha. Novoartefato tinha2todo antesdodelegar,nãotestesaceitos. Contexto16148chars/SHA415759e2f6f811ba3bc4155a209f07099d8e44959af72b0a88b00e77995c5392;scaffoldc7d764976ca0316e8db9024fed9b43922dd5c9f4310c9d410698795c74213aec. Normas/API/RCF103151/expectativasindependentes;semexploração. Gate rates-missing exige379+/2novos/46anteriores/93protegidos+fontepinada+prefixoscaffold;extensãopreservaperfis anteriores,sintaxeconferida,semrerun deaprovações no supervisor.
+
+Ao callback local_result UMAvez/revisar localização deausências e campos/Git/Q8S/commitseaceito. W/L/Dausentes,zero,invalidade,diagnóstico,frozen/snapshot/política,integration/appcontinuampendentes;limiar381+/8nãoéaceiteautomático. Não reconsultar7b/215/108/1cc/0966/982/487. Sem polling. Monitor http://127.0.0.1:49767/job/84f5f4d1-24a6-4fdd-97f1-755004edb6a4 eíndice http://127.0.0.1:49767/ (linkscompletosnochat). N7C:nenhumaferramentanativacompact/mediçãoautoritativabarata;impedimentodeclarado/checkpointnãoécompactação.
+
 ## Aceite40.4c.2c.1
 
 7b576e24 recebidoUMAvez/COMPLETED command_sequence seminferência,patch0/gate0;tiposlint377/377,2novos/45anteriores/92protegidos+fonteb9bc2ccb. Revisão integral teste6d0a826a confirma quantias negativas/identidadeday,períodos completos,disponibilidade16/64 e taxa175/4;expectativas independentesRCF. Q8S10rev1registrado. Gitdeterminístico/liveahead1coincidem,semcommitdoworker. Supervisor assumecommitimediato. Próximaunidade apenasausência dehorase de meses/ano;demaisausências/zero/invalidade/freeze/política eglobalpendentes.

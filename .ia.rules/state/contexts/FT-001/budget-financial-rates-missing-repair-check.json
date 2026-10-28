@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "unit": "FT-003.40.4c.2d.1",
+  "beforeSha256": "59b7c6f245d8dee904ab06f4e81c9e69b92ed919615794dae3695efab3dde295",
+  "afterSha256": "b4815c758bb25bff5c8696a6558e863b3f51e3bcd8002330d357ca378c4ee50d",
+  "changes": "two unavailable/dependency guards; two source identity assertions; expectations and prefix preserved",
+  "limits": "Somente2casos h/M ausentes; demais grupos pendentes."
+}
