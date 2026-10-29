@@ -1,0 +1,19 @@
+/** MPL-2.0; RCF8.4; FT-003.43.1. Custo total projetado/km total; sem certificação de realização/cobertura. */
+import {inspectExactLimits,type ExactLimits} from './exact-budget';
+import type {ExactRational} from './exact';
+import type {BudgetPeriod} from './model';
+import {calculateFinancialProjection,type FinancialProjectionInput,type FinancialProjectionResult} from './financial-result';
+import {calculateExactProduct,type ExactProductFailure} from './exact-product';
+import {compareExactRationals,type ExactComparisonFailure} from './exact-compare';
+export interface FinancialCostPerKilometerInput extends FinancialProjectionInput {readonly totalDistance:ExactRational}
+export type FinancialCostPerKilometerMetric=
+  | {readonly status:'ready';readonly value:ExactRational}
+  | {readonly status:'unavailable';readonly code:'zero-distance';readonly reason:string;readonly calculation:null}
+  | {readonly status:'unavailable';readonly code:'calculation-unavailable';readonly reason:string;readonly calculation:ExactProductFailure};
+export type FinancialCostPerKilometerResult=
+  | {readonly status:'conditional';readonly kind:'projection';readonly contextId:string;readonly period:BudgetPeriod;readonly financialAssessment:'not-evaluated';readonly costCoverage:'not-evaluated';readonly taxAssessment:'not-evaluated';readonly costBasis:'planned-total-cost';readonly distanceBasis:'total-distance';readonly projection:Extract<FinancialProjectionResult,{status:'ready'}>;readonly value:{readonly totalDistance:ExactRational;readonly costPerKilometer:FinancialCostPerKilometerMetric}}
+  | {readonly status:'unavailable';readonly code:'invalid-budget'|'projection-unavailable'|'invalid-distance'|'calculation-unavailable';readonly reason:string;readonly projection:FinancialProjectionResult|null;readonly calculation:ExactProductFailure|ExactComparisonFailure|null};
+type CostPerKilometerFailure=Extract<FinancialCostPerKilometerResult,{status:'unavailable'}>;
+function costPerKilometerFailure(code:CostPerKilometerFailure['code'],reason:string,projection:FinancialProjectionResult|null=null,calculation:CostPerKilometerFailure['calculation']=null):CostPerKilometerFailure{return Object.freeze({status:'unavailable',code,reason,projection,calculation});}
+type CostPerKilometerContext={readonly status:'ready';readonly limits:ExactLimits;readonly projection:Extract<FinancialProjectionResult,{status:'ready'}>;readonly totalDistance:ExactRational;readonly zeroDistance:boolean};
+type CostPerKilometerContextResult=CostPerKilometerContext|CostPerKilometerFailure;

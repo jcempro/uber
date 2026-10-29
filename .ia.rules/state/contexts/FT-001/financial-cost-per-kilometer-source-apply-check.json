@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "unit": "FT-003.43.1a",
+  "sourceSha256": "0d5af50e861ca769727e9a75523a0234b1a654b77bb18c0393d3bba8ff99aee9",
+  "protectedFiles": 104,
+  "priorTests": 423,
+  "parts": {
+    "financial-cost-per-kilometer-source-verify.mjs": "0e4ea46d34745e1279b6edbc5c0c05ecfee5b870aeaa4b9bd22f9b1b4c3752aa",
+    "financial-cost-per-kilometer.corrected-proposal.json": "2c2f81b2cb363900a2eef37e902ae6b5dd5f032e2f70ad7bcac6ef0c32ed7ccb",
+    "financial-cost-per-kilometer.skeleton": "8abae82ba380fc331f7c4fe0bab4dad5aa8ea6972e14b3b9bad9b4d35350ffb5",
+    "financial-cost-per-kilometer.original-proposal.json": "63d14b5723290e95153e7a4ba6dc6d39eca425949b781f3a3911f36f5492ea44"
+  },
+  "changes": "assemble scaffold + explicitly corrected proposal;source newly created",
+  "limits": "Source only;types/lint/behavior verification and full app pending."
+}
