@@ -63,4 +63,24 @@ describe('financial-margin-target', () => {
       expect(assessment.reachesModeledMargin).toBe(row.reaches);
     }
   });
+  it('receita zero mantém comparação de margem indisponível', () => {
+    const result = root({...baseInput(),creditedRevenue:r('0')});
+    expect(result.projection.value.operatingCost).toEqual(r('340'));
+    expect(result.projection.value.plannedTotalCost).toEqual(r('340'));
+    expect(result.projection.value.netProfit).toEqual(r('-340'));
+    expect(result.projection.value.remainingRevenueFactor).toEqual(r('17','20'));
+    expect(result.value.requiredMarginPercent).toEqual(r('50'));
+    expect(result.value.requiredMarginRatio).toEqual(r('1','2'));
+    const assessment = result.value.assessment;
+    if (assessment.status !== 'unavailable') throw Error('Margem deveria estar indisponível');
+    expect(assessment.code).toBe('margin-unavailable');
+    expect(assessment.margin).toBe(result.projection.value.margin);
+    expect(assessment.margin.status).toBe('unavailable');
+    expect(assessment.margin.code).toBe('zero-revenue');
+    expect(assessment.margin.calculation).toBeNull();
+    expect(assessment.reason).toBe(assessment.margin.reason);
+    expect(assessment.reason.length).toBeGreaterThan(0);
+    expect(assessment).not.toHaveProperty('reachesModeledMargin');
+    expect(assessment).not.toHaveProperty('signedMarginSlack');
+  });
 });

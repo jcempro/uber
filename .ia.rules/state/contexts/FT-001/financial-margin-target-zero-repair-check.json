@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "unit": "FT-003.41.2a.3a",
+  "beforeSha256": "fb5855958cd2d4905f586b3a5a89e00955ad63a6209506d59fa750d2554e0435",
+  "afterSha256": "15b77d94d194f013d0f87cf80f4333403556ee03adc229ad5836d0f52013d202",
+  "changes": "remove contradictory ready51/100 in B0;add percent50,ratio1/2 and original margin identity;other assertions and accepted2it preserved",
+  "limits": "Só receita zero;G<=0/falhas/freeze/getters/app pendentes."
+}

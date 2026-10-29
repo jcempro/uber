@@ -1,0 +1,11 @@
+# FT-003.41.2a.3 — receita zero
+
+Worker subordinado. Acrescentar somente1it ao final do describe em src/domain/financial-margin-target.test.ts, antes do último });. Preservar integralmente o arquivo aceito fornecido:imports/helpers/2it anteriores byte a byte. Não editar fonte/gate/outros arquivos. Sem commit/rede/instalação. PRIMEIROwrite_file com arquivo fornecido+novo it;DEPOISrun_authorized_command verify_financial_margin_zero UMAvez;encerrar inclusivefalha,semretry. Sem releitura/exploração. Retorno<=80palavras.
+
+it 'receita zero mantém comparação de margem indisponível':result=root({...baseInput(),creditedRevenue:r('0')}). Apenas B muda; A340,q1/10,tau1/20,L%50 permanecem. Conferir projeção operatingCost340,plannedTotalCost340,netProfit-340,remainingRevenueFactor17/20; value.requiredMarginPercent:r('50'),requiredMarginRatio:r('1','2'). root já testa metadados/3labels/projectionready.
+
+Use const assessment=result.value.assessment; guard if(assessment.status!=='unavailable')throw Error('Margem deveria estar indisponível'); depois acessar campos estreitados. Conferir assessment.code==='margin-unavailable', assessment.margin.toBe(result.projection.value.margin) (identidade do objeto ORIGINAL), assessment.margin.status==='unavailable',code==='zero-revenue',calculation===null; assessment.reason===assessment.margin.reason e reason não vazia. Assert que assessment NÃO possui reachesModeledMargin NEM signedMarginSlack (not.toHaveProperty). Não usar readyAssessment neste caso nem criar helper/import/cast/any/optionalchain/non-nullassertion.
+
+Origem independente RCF8.4/contrato41:LLF=B−(A+qB+tauB);B0 dá LLF−340 e custos340. Margem LLF/B é indefinida em B0; meta50% e ratio1/2 continuam conhecidos. Indisponibilidade não vira false/0 e não invalida projeção inteira. FinancialMargin unavailable contém status/code/reason/calculation; FinancialMarginComparison unavailable contém status/code/reason/margin. Sem apuração legal/cobertura real/inversa.
+
+Aceite gate margin-zero:tipos/lint399+/3it/52suítes/100proteções,fonte94pinada,2it aceitos bf35b14e preservados por prefixo integral (commit192393c). Perfil completo margin400+/4 continua obrigatório;G<=0/falhas/freeze/getters/aplicativo pendentes. Unidade1arquivo/1it,contexto<17Kchars com margem para janela16K–32Ktokens.

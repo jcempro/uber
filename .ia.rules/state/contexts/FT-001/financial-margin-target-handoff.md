@@ -1,5 +1,19 @@
 # FT-003.41.1 — margem percentual direta
 
+## Aceite41.2a.3a
+
+10d5dd34 recebidoUMAvez/COMPLETED command_sequenceSEMinferência. Patch15b77d94 conferido:meta50/ratio1/2 conhecidos,marginzero-revenue/identidadeoriginal/diagnósticos/ausênciaslackbool corretos;2itaceitos efonte94preservados. Tipos/lint399/399,100proteções e52suítesanterioresaprovados. Gitdeterminístico/liveahead11coincidemantescommit. Q8S10rev1registrado;B0aceito,restamG<=0/falhas/freeze/getters eaplicativointegral.
+
+## Atual41.2a.3a
+
+bb858737 recebidoUMAvez/FAILED WORKER_INCOMPLETE CONTRACT_UNFULFILLED(comando obrigatório sem exit0). Implementou3ºit,tipos/lint0,testes398/399:falha marginready51/100 copiada noB0;3asserts omitidos meta50/ratio1/2/identidademargin. Q8S6rev1registrado. Gitdeterminístico/live mainahead11coincidem. Fonte94/2itaceitos preservados;últimoaceite398/commit192393c. Seminfra comprovada.
+
+Novo10d5dd34-f1a2-4545-be72-74b5591591ff confirmado RUNNING/R8Vv1,mesmochat/repo. command_sequence SEMinferência patch_financial_margin_zero→verify_financial_margin_zero,expect_changes=true/commit supervisor. Preflightread-onlyaprovado fb5855958cd2d4905f586b3a5a89e00955ad63a6209506d59fa750d2554e0435→15b77d94d194f013d0f87cf80f4333403556ee03adc229ad5836d0f52013d202. Sócorrigecontradiçãoe3assertsrequeridos;arquiva failed-bb teste/report antesefeito. Gate margin-zero399+/3it/52anteriores/100proteções+fonte94+prefixo2itbf35b14e. Callback local_resultUMAvez/revisão/Git/Q8S/commitseaceito. Originalmargin400+/4,G<=0/falhas/freeze/getters/appcontinuampendentes. Monitor http://127.0.0.1:49767/job/10d5dd34-f1a2-4545-be72-74b5591591ff eíndice http://127.0.0.1:49767/ (linkscompletosnochat). Sem polling. N7Csemrotanativaexposta/mediçãoautoritativabarata;impedimentodeclarado/checkpointnãoécompactação.
+
+## Atual41.2a.3
+
+bb858737-36f8-4dc9-a966-2998065c66d0 confirmado RUNNING/R8Vv1,mesmochat/repo. Unidade somente1it receitaB0/arquivo financial-margin-target.test.ts;expect_changes=true/commit supervisor. Contexto14619chars/hash7b0174ec83057821280a8dfb2806139c2c4c02bdbaec145076fe70ff7f0e8ef2. Gate margin-zero399+/3it/52suítes anteriores/100proteções+fonte94+prefixointegral2itbf35b14e;preflight e sintaxe aprovados. Últimoaceite398testes/tiposlint;8485938d recebidoUMAvez/Q8S9rev1registrado/commit192393c/mainahead11. NovaunidadeconfereLLF−340,marginzero-revenue,meta50/ratio1/2conhecidos,identidadediagnóstico eausênciadeslack/bool. Callback local_resultUMAvez/revisão/Git/Q8S/commit. Originalmargin400+/4/G<=0/falhas/freeze/getters/aplicativopendentes. Sempolling. Monitor http://127.0.0.1:49767/job/bb858737-36f8-4dc9-a966-2998065c66d0 eíndice http://127.0.0.1:49767/ (linkscompletosnochat). N7Csemrotanativaexposta/mediçãoautoritativabarata;impedimentodeclarado/checkpointnãoécompactação.
+
 ## Aceite41.2a.2
 
 8485938d recebido UMAvez/COMPLETED inferência local. Teste bf35b14e2dbdb885d91df7ec2f14ad0aa10dde62cb13291c24e1f810bd1d096c revisado contra RCF164:0/100/101,ratio0/1/101/100,slack1/0/−1/100 e booltrue/true/false,sem teto artificial. Projeção A0,B100,q0,tau0/margin1 conferida. Tipos/lint398/398,100proteções,52suítes anteriores/core/fonte94 preservados. Git atual coincide determinístico ahead10 antes do commit. Q8S9rev1 registrado (releitura dispensável do alvo). B0/G<=0/falhas/freeze/getters/perfil400+/4/aplicativo pendentes.
