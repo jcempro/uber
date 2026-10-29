@@ -1,0 +1,21 @@
+# FT-003.41.1 — avaliação direta de margem percentual, somente fonte
+
+Worker subordinado. Implementar SOMENTE corpo de calculateFinancialMarginTarget em src/domain/financial-margin-target.ts,preservando prefixo/imports/tipos/failure helper. Semteste nestaunidade;semalteraroutroarquivo/commit/rede/instalação. Contextocontémnormas/API/contrato,nenhumaexploração/read/search/list. Umwrite_file noalvo,depois verify_financial_margin_source UMAvez eencerrar inclusivefalha,semretry. expect_changes=true/supervisorcommit. Saída<=70palavras:efeito,tipos/lint,limites.
+
+Objetivo: para projeção eL% explícito,comparar margem modeladaLLF/B com m=L%/100. RCF§8.4linha164 exigeL%finito/nãonegativo,admite0 eNÃO impõem<1. Não substituirLminabsoluto,Lucro%RotaPro,ouconcluircoberturatotal. B érepasseao motorista; nenhuma demanda/quantidade entra. Estaunidade NÃO fazinversão/otimização/soluçãoanalítica/tetoT/quilometragem/horas/UI/realização. SemhipóteseG>0:avaliaçãodiretacontinuaválidacomG<=0,seB>0.
+
+Escopo1corpo,contexto<=20Kchars,saída<3Ktokens,leituraextra0,margemsegura16K–32K. Baseline396/52suítes/100arquivosaceitos protegidos. Reusar calculateFinancialProjection/calculateExactProduct/calculateExactSum/compareExactRationals/inspectExactLimits. SemNumber/BigInt/float/parse/round/clamp/enum/casts/any/non-nullassertion/optionalchain/normalizaçãomanual. Sóhelpersexoexatos,objetosnovoscongelados,snapshots canônicos. Não copiar instruções para comentários.
+
+Contrato do prefixo define input FinancialProjectionInput+requiredMarginPercent:ExactRational(percentualL%,nãoratio). Rootconditional contém projeçãoready/contextId/period/kindprojection efinancialAssessment/costCoverage/taxAssessmentnot-evaluated. value:requiredMarginPercentnormalizado,requiredMarginRatioracionalm,assessment. Assessmentready:signedMarginSlack=projection.value.margin.value−m,reachesModeledMargin=slack>=0. Assessmentunavailable:codemargin-unavailable/reasonoriginal/marginoriginalindisponível. Não preencherfalse/zeroquandoB0;projeção/targetválidos ainda conhecidos. Topfalhaspreservamprojection/calculationoriginais segundo camposprefixo.
+
+Sequênciaobrigatória:
+1.inspectExactLimits(limits),seinvalid failure invalid-budget/reasonoriginal/null/null. TODASchamadas seguintes usam snapshot retornado,nenhuma lêlimitsoriginalougetterdenovo.
+2.calculateFinancialProjection(input,snapshot);seunavailable failure projection-unavailable/reasonoriginal/projection/null. Isso protegeinputnull/nãoobjeto antes delertarget. Não reimplementar fórmulaLLF.
+3.normalizar requiredMarginPercent com calculateExactProduct multiply porone1/1. Falha invalid-rational→failure invalid-target;outras(resource-budget/arithmetic etc)→calculation-unavailable. Preservarprojection ecalculationoriginal. Compararvalorcomzero via compareExactRationals;falha→calculation-unavailable. Valornegativo→invalid-target/projection/calculationnull,razãoPT-BR. Nenhumteto100%.
+4.calculateExactProduct divide targetnormalizado porhundred100/1. Falha→calculation-unavailable/projection/calculationoriginal. m ératio,slacktambémratio,não pontospercentuais.
+5.criar finish arrow local para conditional,value eassessmentcongelados,preservando narrowingsREAIS(apósifstatus,semcasts). Se projection.value.margin.statusunavailable:finish Object.freeze assessment margin-unavailable,reason=margin.reason,margin=objetooriginal;RETORNAR,sem calculardiferença/nemboolean.
+6.margemready:calculateExactSum subtract margin.value−m;falha→calculation-unavailable/projection/calculationoriginal. Compare slackcomzero;falhaigual. finish assessmentreadycongelada,slackexato,reachesModeledMarginorder>=0. Não exigirGpositivo,modelofixed-usage-linearnemnovofundamento paraavaliardiretamenteuma projeçãojáfornecida.
+
+Expectativasindependentes parapróximostestes,nãotestesdestaunidade:A340,q.1,tau.05,B1000→LLF510,margin51/100,L%50→m1/2,slack1/100,true;L%52→slack-1/100,false. A0,q0,tau0,B100→margin1,L%100slack0/true,L%101slack-1/100/false;0éaceito. B0→margin-unavailable(codezero-revenueoriginal),não booleanfalse. G<=0comB>0continuaavaliaçãofalse,paramargemalvonãonegativa. Nadaéviabilidadeglobal.
+
+Gate verify_financial_margin_source sótiposda fonte+imports/lintfonte/prefixo/100proteções. Não roda nemprova comportamento,pois testesestarãoem41.2apósrevisão/commitdestafonte. SemCOMPLETEDfinanceiroglobala partirdecompilação.

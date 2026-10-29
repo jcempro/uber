@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "unit": "FT-003.41.1",
+  "sourceSha256": "58fdf3cebcc97b0ce8287b3a48d8bd70d5bab79335b51da191c98a9cd2cf07bf",
+  "protectedFiles": 100,
+  "typeErrors": [
+    "Type 'number' is not assignable to type 'string'.",
+    "Type 'number' is not assignable to type 'string'.",
+    "Type 'number' is not assignable to type 'string'.",
+    "Type 'number' is not assignable to type 'string'.",
+    "Type 'number' is not assignable to type 'string'.",
+    "Type 'number' is not assignable to type 'string'.",
+    "Argument of type '{ readonly status: \"ready\"; readonly value: ExactRational; }' is not assignable to parameter of type 'ExactRational'.\n  Type '{ readonly status: \"ready\"; readonly value: ExactRational; }' is missing the following properties from type 'ExactRational': numerator, denominator",
+    "Argument of type '{ readonly status: \"ready\"; readonly value: ExactRational; }' is not assignable to parameter of type 'ExactRational'.\n  Type '{ readonly status: \"ready\"; readonly value: ExactRational; }' is missing the following properties from type 'ExactRational': numerator, denominator"
+  ],
+  "lint": null,
+  "limits": "Somente tipos/lint da fonte/imports; testes/comportamento/aceite financeiro/global pendentes."
+}

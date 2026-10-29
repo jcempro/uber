@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "unit": "FT-003.41.1a",
+  "beforeSha256": "58fdf3cebcc97b0ce8287b3a48d8bd70d5bab79335b51da191c98a9cd2cf07bf",
+  "afterSha256": "94dea5cd0393dbd2fd7dceec0737b027480fd32866c123bed501e7e05a721fcd",
+  "changes": "string frozen constants; normalized value operands; original failures and technical classification; frozen value with normalized snapshot; remove4const casts",
+  "limits": "Somente fonte; comportamento/testes41.2 e aceite global pendentes."
+}

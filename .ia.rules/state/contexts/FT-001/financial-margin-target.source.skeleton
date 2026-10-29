@@ -1,0 +1,20 @@
+/** MPL-2.0; RCF§8.4; FT-003.41.1. Avaliação matemática condicional, não viabilidade global. */
+import {inspectExactLimits,type ExactLimits} from './exact-budget';
+import type {ExactRational} from './exact';
+import type {BudgetPeriod} from './model';
+import {calculateFinancialProjection,type FinancialProjectionInput,type FinancialProjectionResult,type FinancialMargin} from './financial-result';
+import {calculateExactProduct,type ExactProductFailure} from './exact-product';
+import {calculateExactSum,type ExactSumFailure} from './exact-sum';
+import {compareExactRationals,type ExactComparisonFailure} from './exact-compare';
+export interface FinancialMarginTargetInput extends FinancialProjectionInput {readonly requiredMarginPercent:ExactRational}
+type MarginCalculationFailure=ExactProductFailure|ExactSumFailure|ExactComparisonFailure;
+export type FinancialMarginComparison=
+  | {readonly status:'ready';readonly signedMarginSlack:ExactRational;readonly reachesModeledMargin:boolean}
+  | {readonly status:'unavailable';readonly code:'margin-unavailable';readonly reason:string;readonly margin:Extract<FinancialMargin,{status:'unavailable'}>};
+export type FinancialMarginTargetResult=
+  | {readonly status:'conditional';readonly kind:'projection';readonly contextId:string;readonly period:BudgetPeriod;readonly financialAssessment:'not-evaluated';readonly costCoverage:'not-evaluated';readonly taxAssessment:'not-evaluated';readonly projection:Extract<FinancialProjectionResult,{status:'ready'}>;readonly value:{readonly requiredMarginPercent:ExactRational;readonly requiredMarginRatio:ExactRational;readonly assessment:FinancialMarginComparison}}
+  | {readonly status:'unavailable';readonly code:'invalid-budget'|'projection-unavailable'|'invalid-target'|'calculation-unavailable';readonly reason:string;readonly projection:FinancialProjectionResult|null;readonly calculation:MarginCalculationFailure|null};
+function failure(code:Extract<FinancialMarginTargetResult,{status:'unavailable'}>['code'],reason:string,projection:FinancialProjectionResult|null=null,calculation:MarginCalculationFailure|null=null):FinancialMarginTargetResult{return Object.freeze({status:'unavailable',code,reason,projection,calculation});}
+export function calculateFinancialMarginTarget(input:FinancialMarginTargetInput,limits:ExactLimits):FinancialMarginTargetResult {
+  throw new Error('PENDENTE FT-003.41.1');
+}

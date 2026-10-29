@@ -1,0 +1,143 @@
+# Norma do alvo
+
+# AGENTS.md — Entrypoint da Norma
+
+Este arquivo governa a atuação da IA. O RCF governa requisito, contrato, arquitetura e negócio; é a especificação declarativa, determinística e verificável do sistema, ressalvado o domínio desta Norma. Precedência, autoridade, preservação e mecanismos oficiais são compulsórios.
+
+Antes de operação material sem rota válida em memória ou com alteração física:
+
+1. consulte `./.ia.rules/normative-index.json`;
+2. carregue `./.ia.rules/core/authority.md`, papéis cumulativos e somente a rota direta, cenários, contratos e recursos disparados;
+3. consulte prioritariamente `./.ia.rules/state/decisions/refused/index.json`;
+4. execute do estado canônico `./.ia.rules/continue.ia`, com FT, plano, RCF e autorização compatíveis.
+
+`./.ia.rules/agents.inc.md` preserva a Norma operacional integral. Leia-o somente diante de mudança de rota, perda de contexto, conflito, regra não localizada, índice/cache inválido, auditoria de preservação ou confiança insuficiente. Referências seletivas resolvem-se por `MN-REF`.
+
+Todo repositório é Final; fonte, build, atualização, distribuição ou release agregam Construtor. No construtor do produto, `./AGENTS.md` CURRENT/CONSUMED rege; `src/AGENTS.md` SOURCE/DEVELOPED não rege até adoção nem pode ser regredido pela consumida. Homonímia não transfere versão, papel, escopo ou autoridade. Ambiguidade preserva comportamento e conteúdo. Saída técnica usa PT-BR.
+
+Cada solicitação autoriza escrita e Git somente no único repositório corrente associado ao prompt; root irmã, dependência, submódulo, worktree, repositório aninhado ou path físico externo permanece intocável, ainda que aberto ou relacionado.
+
+
+# Autoridade operacional e mecanismos oficiais
+
+Identidade normativa: `core.authority`; papel: comum; tipo: folha. Ler integralmente em toda atuação governada. Não dispensar por cenário, papel, familiaridade ou economia de contexto. Aplicar `MN-2119`, `MN-PRES`, `MN-ROLE`, `MN-EXT` e `MN-REF`.
+
+## 1. Vocabulário canônico
+
+**Norma Operacional** é `AGENTS.md` e associados, responsável pelo modo de atuação, processo, leitura, edição, validação, rastreabilidade, automação, scripts, hooks, comandos e FTs. **RCF** é a SSOT arquitetural declarativa, determinística e verificável do que o sistema é e DEVE fazer. **Repositório Construtor** mantém, constrói, valida ou distribui a Norma Operacional. **Repositório Final** consome a Norma. Papéis são cumulativos e nenhum afasta o outro.
+
+**Mecanismo Oficial** é script, comando, hook, callback, adaptador, workflow, arquivo-gatilho, convenção, nomenclatura, contrato ou ponto de extensão normatizado. **Extensão Oficial** compõe o mecanismo sem substituir fluxo ou contrato. **Fluxo Paralelo** é mecanismo novo, duplicado, substitutivo ou funcionalmente equivalente que contorne o oficial. **Lacuna Oficial** é erro, risco, insuficiência ou ausência comprovada no mecanismo necessário. **Princípio Estruturante** é regra cuja degradação altera autoridade, alcance ou comportamento fundamental. **Microtexto Normativo** é unidade curta, coesa, autônoma, estável e referenciável. **Custo Líquido** compara tokens, bytes, tempo, processamento, navegação, manutenção, risco, precisão e reutilização.
+
+Definição canônica NÃO DEVE ser redefinida em papel, cenário, recurso, RCF específico ou extensão. Especialização referencia o termo e restringe somente seu contexto.
+
+## 2. Proteção estrutural
+
+Revisão parcial, cirúrgica, ampla ou estrutural DEVE preservar autoridade, precedência, domínios, contratos, nomes, proibições, exceções, hooks, modus operandi, incisividade, rastreabilidade, força, efeitos e intenção. Princípio Estruturante é permanente, identificável e não regressivo; validação DEVE detectar remoção, diluição, relativização, subordinação, abreviação com perda, facultatividade ou substituição.
+
+Densificação, modularização, roteamento, índice, resumo, tokenização e otimização NÃO DEVEM reduzir rigor, minúcia, clareza, explicitabilidade, exigibilidade, previsibilidade ou resistência a interpretação desviada. Norma não recuperada NÃO é norma inexistente.
+
+## 2.1 Fronteira absoluta do repositório corrente
+
+Cada solicitação associa-se a exatamente uma raiz Git corrente e ao `AGENTS.md` aplicável nela. Escrita, exclusão, movimento, geração, staging, commit, branch, merge, reset, clean, publish e release somente PODEM atingir arquivos fisicamente pertencentes a essa raiz e subordinados à mesma autoridade. Workspace/IDE com múltiplas roots, relação funcional, dependência, importação, build conjunto, mesma autoria, necessidade externa ou proximidade física NÃO ampliam escopo; edição cruzada é violação crítica.
+
+Submódulo, worktree, repositório aninhado, root irmã, terceiro, `node_modules`, dependência local/linked, cache e artefato não editável são fronteiras excluídas. Antes do efeito, resolver raiz, path absoluto real e ancestrais; recusar `..`, symlink, junction, mount, alias, hardlink detectável ou identidade Git própria que atravesse a fronteira. Leitura externa necessária PODE ocorrer para diagnóstico/contrato, mas NÃO concede escrita. Alteração externa exige nova solicitação explicitamente associada ao outro repositório.
+
+## 3. Compulsoriedade e evolução
+
+Antes de solucionar, agente e Repositório Final DEVEM consultar descoberta oficial, inspecionar estado real, reutilizar finalidade/nomenclatura existentes e corrigir implementação divergente. Dúvida, desconhecimento, cópia possivelmente desatualizada ou inadequação aparente exigem releitura, versão e rastreamento; NÃO autorizam improvisação.
+
+Mecanismo Oficial NÃO DEVE ser neutralizado, duplicado, renomeado, reimplementado, contornado ou substituído. Resultado correto por fluxo incompatível permanece não conforme. Expansão só PODE usar hook, callback, composição, adaptador, arquivo-gatilho, extensão local ou contrato oficial, preservando fluxo principal, nomes, precedência, efeitos e compatibilidade.
+
+Lacuna segue `../scenarios/governance/official-gap.md`. Solicitação segue `../scenarios/governance/request-lifecycle.md`. Contratos de composição, eventos, integração e assinaturas seguem `./contracts.md`; recurso especializado referencia o contrato comum e declara somente diferenças materiais.
+
+## 4. Verificação
+
+Revisão DEVE comprovar: conceitos centralizados; referências resolvíveis; ausência de fluxo paralelo; mecanismos oficiais preservados; papéis acumulados; extensão somente em ponto autorizado; princípio estruturante sem redução modal; e equivalência entre núcleo, módulo, índice e RCF aplicável.
+
+
+# Unidade exclusiva
+
+# FT-003.41.1 — avaliação direta de margem percentual, somente fonte
+
+Worker subordinado. Implementar SOMENTE corpo de calculateFinancialMarginTarget em src/domain/financial-margin-target.ts,preservando prefixo/imports/tipos/failure helper. Semteste nestaunidade;semalteraroutroarquivo/commit/rede/instalação. Contextocontémnormas/API/contrato,nenhumaexploração/read/search/list. Umwrite_file noalvo,depois verify_financial_margin_source UMAvez eencerrar inclusivefalha,semretry. expect_changes=true/supervisorcommit. Saída<=70palavras:efeito,tipos/lint,limites.
+
+Objetivo: para projeção eL% explícito,comparar margem modeladaLLF/B com m=L%/100. RCF§8.4linha164 exigeL%finito/nãonegativo,admite0 eNÃO impõem<1. Não substituirLminabsoluto,Lucro%RotaPro,ouconcluircoberturatotal. B érepasseao motorista; nenhuma demanda/quantidade entra. Estaunidade NÃO fazinversão/otimização/soluçãoanalítica/tetoT/quilometragem/horas/UI/realização. SemhipóteseG>0:avaliaçãodiretacontinuaválidacomG<=0,seB>0.
+
+Escopo1corpo,contexto<=20Kchars,saída<3Ktokens,leituraextra0,margemsegura16K–32K. Baseline396/52suítes/100arquivosaceitos protegidos. Reusar calculateFinancialProjection/calculateExactProduct/calculateExactSum/compareExactRationals/inspectExactLimits. SemNumber/BigInt/float/parse/round/clamp/enum/casts/any/non-nullassertion/optionalchain/normalizaçãomanual. Sóhelpersexoexatos,objetosnovoscongelados,snapshots canônicos. Não copiar instruções para comentários.
+
+Contrato do prefixo define input FinancialProjectionInput+requiredMarginPercent:ExactRational(percentualL%,nãoratio). Rootconditional contém projeçãoready/contextId/period/kindprojection efinancialAssessment/costCoverage/taxAssessmentnot-evaluated. value:requiredMarginPercentnormalizado,requiredMarginRatioracionalm,assessment. Assessmentready:signedMarginSlack=projection.value.margin.value−m,reachesModeledMargin=slack>=0. Assessmentunavailable:codemargin-unavailable/reasonoriginal/marginoriginalindisponível. Não preencherfalse/zeroquandoB0;projeção/targetválidos ainda conhecidos. Topfalhaspreservamprojection/calculationoriginais segundo camposprefixo.
+
+Sequênciaobrigatória:
+1.inspectExactLimits(limits),seinvalid failure invalid-budget/reasonoriginal/null/null. TODASchamadas seguintes usam snapshot retornado,nenhuma lêlimitsoriginalougetterdenovo.
+2.calculateFinancialProjection(input,snapshot);seunavailable failure projection-unavailable/reasonoriginal/projection/null. Isso protegeinputnull/nãoobjeto antes delertarget. Não reimplementar fórmulaLLF.
+3.normalizar requiredMarginPercent com calculateExactProduct multiply porone1/1. Falha invalid-rational→failure invalid-target;outras(resource-budget/arithmetic etc)→calculation-unavailable. Preservarprojection ecalculationoriginal. Compararvalorcomzero via compareExactRationals;falha→calculation-unavailable. Valornegativo→invalid-target/projection/calculationnull,razãoPT-BR. Nenhumteto100%.
+4.calculateExactProduct divide targetnormalizado porhundred100/1. Falha→calculation-unavailable/projection/calculationoriginal. m ératio,slacktambémratio,não pontospercentuais.
+5.criar finish arrow local para conditional,value eassessmentcongelados,preservando narrowingsREAIS(apósifstatus,semcasts). Se projection.value.margin.statusunavailable:finish Object.freeze assessment margin-unavailable,reason=margin.reason,margin=objetooriginal;RETORNAR,sem calculardiferença/nemboolean.
+6.margemready:calculateExactSum subtract margin.value−m;falha→calculation-unavailable/projection/calculationoriginal. Compare slackcomzero;falhaigual. finish assessmentreadycongelada,slackexato,reachesModeledMarginorder>=0. Não exigirGpositivo,modelofixed-usage-linearnemnovofundamento paraavaliardiretamenteuma projeçãojáfornecida.
+
+Expectativasindependentes parapróximostestes,nãotestesdestaunidade:A340,q.1,tau.05,B1000→LLF510,margin51/100,L%50→m1/2,slack1/100,true;L%52→slack-1/100,false. A0,q0,tau0,B100→margin1,L%100slack0/true,L%101slack-1/100/false;0éaceito. B0→margin-unavailable(codezero-revenueoriginal),não booleanfalse. G<=0comB>0continuaavaliaçãofalse,paramargemalvonãonegativa. Nadaéviabilidadeglobal.
+
+Gate verify_financial_margin_source sótiposda fonte+imports/lintfonte/prefixo/100proteções. Não roda nemprova comportamento,pois testesestarãoem41.2apósrevisão/commitdestafonte. SemCOMPLETEDfinanceiroglobala partirdecompilação.
+
+
+# Alvo pronto: alterar apenas corpo exportado
+
+/** MPL-2.0; RCF§8.4; FT-003.41.1. Avaliação matemática condicional, não viabilidade global. */
+import {inspectExactLimits,type ExactLimits} from './exact-budget';
+import type {ExactRational} from './exact';
+import type {BudgetPeriod} from './model';
+import {calculateFinancialProjection,type FinancialProjectionInput,type FinancialProjectionResult,type FinancialMargin} from './financial-result';
+import {calculateExactProduct,type ExactProductFailure} from './exact-product';
+import {calculateExactSum,type ExactSumFailure} from './exact-sum';
+import {compareExactRationals,type ExactComparisonFailure} from './exact-compare';
+export interface FinancialMarginTargetInput extends FinancialProjectionInput {readonly requiredMarginPercent:ExactRational}
+type MarginCalculationFailure=ExactProductFailure|ExactSumFailure|ExactComparisonFailure;
+export type FinancialMarginComparison=
+  | {readonly status:'ready';readonly signedMarginSlack:ExactRational;readonly reachesModeledMargin:boolean}
+  | {readonly status:'unavailable';readonly code:'margin-unavailable';readonly reason:string;readonly margin:Extract<FinancialMargin,{status:'unavailable'}>};
+export type FinancialMarginTargetResult=
+  | {readonly status:'conditional';readonly kind:'projection';readonly contextId:string;readonly period:BudgetPeriod;readonly financialAssessment:'not-evaluated';readonly costCoverage:'not-evaluated';readonly taxAssessment:'not-evaluated';readonly projection:Extract<FinancialProjectionResult,{status:'ready'}>;readonly value:{readonly requiredMarginPercent:ExactRational;readonly requiredMarginRatio:ExactRational;readonly assessment:FinancialMarginComparison}}
+  | {readonly status:'unavailable';readonly code:'invalid-budget'|'projection-unavailable'|'invalid-target'|'calculation-unavailable';readonly reason:string;readonly projection:FinancialProjectionResult|null;readonly calculation:MarginCalculationFailure|null};
+function failure(code:Extract<FinancialMarginTargetResult,{status:'unavailable'}>['code'],reason:string,projection:FinancialProjectionResult|null=null,calculation:MarginCalculationFailure|null=null):FinancialMarginTargetResult{return Object.freeze({status:'unavailable',code,reason,projection,calculation});}
+export function calculateFinancialMarginTarget(input:FinancialMarginTargetInput,limits:ExactLimits):FinancialMarginTargetResult {
+  throw new Error('PENDENTE FT-003.41.1');
+}
+
+
+# API pública existente,sem implementação
+
+type CalculationFailure=ExactSumFailure|ExactProductFailure;
+export type FinancialMargin=
+  | {readonly status:'ready';readonly value:ExactRational}
+  | {readonly status:'unavailable';readonly code:'zero-revenue'|'calculation-unavailable';readonly reason:string;readonly calculation:CalculationFailure|null};
+export type FinancialProjectionResult=
+  | {readonly status:'ready';readonly kind:'projection';readonly contextId:string;readonly period:BudgetPeriod;readonly financialAssessment:'not-evaluated';readonly value:{
+      readonly operatingCost:ExactRational;readonly tithe:ExactRational;readonly receiptTax:ExactRational;
+      readonly plannedTotalCost:ExactRational;readonly netProfit:ExactRational;
+      readonly remainingRevenueFactor:ExactRational;readonly margin:FinancialMargin;
+    }}
+  | {readonly status:'unavailable';readonly code:'invalid-budget'|'unsupported-kind'|'invalid-input'|'calculation-unavailable';readonly reason:string;readonly field:FinancialInputField|null;readonly calculation:CalculationFailure|null};
+
+export interface FinancialProjectionInput {
+  readonly kind:'projection';
+  readonly contextId:string;
+  readonly period:BudgetPeriod;
+  readonly creditedRevenue:ExactRational;
+  readonly fixedCosts:ExactRational;
+  readonly usageCosts:ExactRational;
+  readonly extraordinaryCosts:ExactRational;
+  readonly fixedTaxes:ExactRational;
+  readonly titheRate:ExactRational;
+  readonly revenueTaxRate:ExactRational;
+}
+
+export function calculateFinancialProjection(input:FinancialProjectionInput,limits:ExactLimits):FinancialProjectionResult;
+calculateExactProduct(operation:"multiply"|"divide",left:ExactRational,right:ExactRational,limits:ExactLimits): {status:"ready",value:ExactRational}|ExactProductFailure;
+calculateExactSum(operation:"add"|"subtract",left:ExactRational,right:ExactRational,limits:ExactLimits): {status:"ready",value:ExactRational}|ExactSumFailure;
+compareExactRationals(left:ExactRational,right:ExactRational,limits:ExactLimits): {status:"ready",order:-1|0|1}|ExactComparisonFailure;
+inspectExactLimits(value:unknown): {valid:true,limits:ExactLimits}|{valid:false,reason:string};
+Falhas exatas têm statusunavailable,code e reason. FinancialMargin.value ératio, nãoL%. Cada objeto retornado pelos helpers jáé snapshotcongelado.
+
+# Fonte canônica independente
+
+RCF.md:164 - **Margem mínima configurável:** o sistema DEVE exigir L% finito e não negativo, admitindo 0, e definir m = L%/100; essa margem não substitui Lmin absoluto nem Lucro%RotaPro; preserva equilíbrio, Lmin, 15%/100% SM e matriz 18. Não impor teto artificial m < 1: condições degeneradas devem ser resolvidas. T ≥ 0 finito explícito em BRL/km total; ausente não vira 0 ou kRP. Inputs ausentes suspendem somente derivados. [PENDENTE-CODIGO]

@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "unit": "FT-003.41.1",
+  "sourceSha256": "94dea5cd0393dbd2fd7dceec0737b027480fd32866c123bed501e7e05a721fcd",
+  "protectedFiles": 100,
+  "typeErrors": [],
+  "lint": {
+    "status": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "limits": "Somente tipos/lint da fonte/imports; testes/comportamento/aceite financeiro/global pendentes."
+}
