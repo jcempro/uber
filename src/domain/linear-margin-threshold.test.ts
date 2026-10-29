@@ -57,4 +57,152 @@ describe('linear-margin-threshold', () => {
       }
     });
   });
+
+  it('it2: all-positive (2 rows)', () => {
+    // row1: q=0, tau=0, L=100 → G=1, m=1, H=0
+    {
+      const input: LinearMarginThresholdInput = {
+        ...baseInput(),
+        fixedCosts: r('0'),
+        usageCosts: r('0'),
+        extraordinaryCosts: r('0'),
+        fixedTaxes: r('0'),
+        titheRate: r('0'),
+        revenueTaxRate: r('0'),
+        requiredMarginPercent: r('100')
+      };
+      const result = root(input);
+      expect(result.value.operatingCost).toStrictEqual(r('0'));
+      expect(result.value.requiredMarginPercent).toStrictEqual(r('100'));
+      expect(result.value.requiredMarginRatio).toStrictEqual(r('1'));
+      expect(result.value.remainingRevenueFactor).toStrictEqual(r('1'));
+      expect(result.value.marginRevenueFactor).toStrictEqual(r('0'));
+      expect(result.value.solution.case).toBe('all-positive');
+      expect(result.value.solution.minimumCreditedRevenue).toBeNull();
+      expect(result.value.solution.infimumCreditedRevenue).toStrictEqual(r('0'));
+      expect(result.value.solution.minimumAttained).toBe(false);
+    }
+
+    // row2: q=1/10, tau=1/20, L=50 → G=17/20, m=1/2, H=7/20
+    {
+      const input: LinearMarginThresholdInput = {
+        ...baseInput(),
+        fixedCosts: r('0'),
+        usageCosts: r('0'),
+        extraordinaryCosts: r('0'),
+        fixedTaxes: r('0'),
+        titheRate: r('1', '10'),
+        revenueTaxRate: r('1', '20'),
+        requiredMarginPercent: r('50')
+      };
+      const result = root(input);
+      expect(result.value.operatingCost).toStrictEqual(r('0'));
+      expect(result.value.requiredMarginPercent).toStrictEqual(r('50'));
+      expect(result.value.requiredMarginRatio).toStrictEqual(r('1','2'));
+      expect(result.value.remainingRevenueFactor).toStrictEqual(r('17','20'));
+      expect(result.value.marginRevenueFactor).toStrictEqual(r('7','20'));
+      expect(result.value.solution.case).toBe('all-positive');
+      expect(result.value.solution.minimumCreditedRevenue).toBeNull();
+      expect(result.value.solution.infimumCreditedRevenue).toStrictEqual(r('0'));
+      expect(result.value.solution.minimumAttained).toBe(false);
+    }
+  });
+
+  it('it3: none (4 rows)', () => {
+    // row1: A=340, q=0, tau=0, L=100 → H=0, G=1, m=1
+    {
+      const input: LinearMarginThresholdInput = {
+        ...baseInput(),
+        fixedCosts: r('300'),
+        usageCosts: r('40'),
+        extraordinaryCosts: r('0'),
+        fixedTaxes: r('0'),
+        titheRate: r('0'),
+        revenueTaxRate: r('0'),
+        requiredMarginPercent: r('100')
+      };
+      const result = root(input);
+      expect(result.value.operatingCost).toStrictEqual(r('340'));
+      expect(result.value.requiredMarginPercent).toStrictEqual(r('100'));
+      expect(result.value.requiredMarginRatio).toStrictEqual(r('1'));
+      expect(result.value.remainingRevenueFactor).toStrictEqual(r('1'));
+      expect(result.value.marginRevenueFactor).toStrictEqual(r('0'));
+      expect(result.value.solution.case).toBe('none');
+      expect(result.value.solution.minimumCreditedRevenue).toBeNull();
+      expect(result.value.solution.infimumCreditedRevenue).toBeNull();
+      expect(result.value.solution.minimumAttained).toBe(false);
+    }
+
+    // row2: A=340, q=0, tau=0, L=101 → H=-1/100, G=1, m=101/100
+    {
+      const input: LinearMarginThresholdInput = {
+        ...baseInput(),
+        fixedCosts: r('300'),
+        usageCosts: r('40'),
+        extraordinaryCosts: r('0'),
+        fixedTaxes: r('0'),
+        titheRate: r('0'),
+        revenueTaxRate: r('0'),
+        requiredMarginPercent: r('101')
+      };
+      const result = root(input);
+      expect(result.value.operatingCost).toStrictEqual(r('340'));
+      expect(result.value.requiredMarginPercent).toStrictEqual(r('101'));
+      expect(result.value.requiredMarginRatio).toStrictEqual(r('101','100'));
+      expect(result.value.remainingRevenueFactor).toStrictEqual(r('1'));
+      expect(result.value.marginRevenueFactor).toStrictEqual(r('-1','100'));
+      expect(result.value.solution.case).toBe('none');
+      expect(result.value.solution.minimumCreditedRevenue).toBeNull();
+      expect(result.value.solution.infimumCreditedRevenue).toBeNull();
+      expect(result.value.solution.minimumAttained).toBe(false);
+    }
+
+    // row3: A=0, q=0, tau=0, L=101 → H=-1/100, G=1, m=101/100
+    {
+      const input: LinearMarginThresholdInput = {
+        ...baseInput(),
+        fixedCosts: r('0'),
+        usageCosts: r('0'),
+        extraordinaryCosts: r('0'),
+        fixedTaxes: r('0'),
+        titheRate: r('0'),
+        revenueTaxRate: r('0'),
+        requiredMarginPercent: r('101')
+      };
+      const result = root(input);
+      expect(result.value.operatingCost).toStrictEqual(r('0'));
+      expect(result.value.requiredMarginPercent).toStrictEqual(r('101'));
+      expect(result.value.requiredMarginRatio).toStrictEqual(r('101','100'));
+      expect(result.value.remainingRevenueFactor).toStrictEqual(r('1'));
+      expect(result.value.marginRevenueFactor).toStrictEqual(r('-1','100'));
+      expect(result.value.solution.case).toBe('none');
+      expect(result.value.solution.minimumCreditedRevenue).toBeNull();
+      expect(result.value.solution.infimumCreditedRevenue).toBeNull();
+      expect(result.value.solution.minimumAttained).toBe(false);
+    }
+
+    // row4: A=0, q=1, tau=1/10, L=0 → G=-1/10, m=0, H=-1/10
+    {
+      const input: LinearMarginThresholdInput = {
+        ...baseInput(),
+        fixedCosts: r('0'),
+        usageCosts: r('0'),
+        extraordinaryCosts: r('0'),
+        fixedTaxes: r('0'),
+        titheRate: r('1'),
+        revenueTaxRate: r('1', '10'),
+        requiredMarginPercent: r('0')
+      };
+      const result = root(input);
+      expect(result.value.operatingCost).toStrictEqual(r('0'));
+      expect(result.value.requiredMarginPercent).toStrictEqual(r('0'));
+      expect(result.value.requiredMarginRatio).toStrictEqual(r('0'));
+      expect(result.value.remainingRevenueFactor).toStrictEqual(r('-1','10'));
+      expect(result.value.marginRevenueFactor).toStrictEqual(r('-1','10'));
+      expect(result.value.solution.case).toBe('none');
+      expect(result.value.solution.minimumCreditedRevenue).toBeNull();
+      expect(result.value.solution.infimumCreditedRevenue).toBeNull();
+      expect(result.value.solution.minimumAttained).toBe(false);
+    }
+  });
 });

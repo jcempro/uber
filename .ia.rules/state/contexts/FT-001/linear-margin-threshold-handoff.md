@@ -1,5 +1,14 @@
 # FT-003.42 — inversa linear de margem
 
+## Atual42.3b — degenerações por reuso determinístico
+
+0badfcdb recebidoUMAvez/command_sequenceSEMinferência;teste mínimo06f76ffb conferido/412passaram/types+lint0/102proteções/53suítes anteriores;Gitlive/determinísticoahead22coincidem,Q8S10rev1,commit8b6eca7/mainagoraahead23. Aceite somente mínimo;app pendente.
+
+dee50cf9-2a86-4fec-b855-ae6bc4e9ce08 confirmadoRUNNING/R8Vv1/mesmochatrepo;command_sequence apply_linear_margin_degenerate→verify_linear_margin_degenerate SEMinferência;expect_changes=true/alvotestefuncional/commit supervisor/semGitlivre/rede. Script/unitdegenerate-apply reaproveitam it2/it3 do primeirodraft9cdSHA0879238c (6chamadas),corrigemúltimoA0 e doisfixturesA340=300+40,adicionam30assertsA/L/m/G/H literaisRCF8.4. Preservam mínimo,sourcee9149bbe/102/baseline411/53. Teste06f76ffb→4cd8b28b12932910782afa5d317a3873567b163110840cd541396c23c2c9e63e;gate734c36ec→c71bf4ee8a98ce5ea101fb204c3b297c76975b1ed72f6dcdeb5847db61e7b196/profilemargin-threshold-degenerate. Preflightread-only/syntaxgate0/6linhasconferidas;NÃOétesteexecutado.
+
+CallbackresultadoUMAvez/revisãoteste/check/Git/Q8S/commitseaceito. Gateesperado414total/3it;somenteA0H>=0all-positive/inf0nãoatingido eA>0H<=0/A0H<0nonecondicional. Backupsaccepted-minimum e minimum.accepted-check;depoisfalhas/policy/freeze. Não reconsultar0bad/3e5/9cd/etc. Monitor http://127.0.0.1:49767/job/dee50cf9-2a86-4fec-b855-ae6bc4e9ce08;índice http://127.0.0.1:49767/ (linkscompletosnochat). Sempolling;N7Csemrotanativa/mediçãoautoritativa,impedimento/checkpointnãoécompactação.
+
+
 ## Atual42.3a — aplicação determinística do mínimo
 
 3e51d023 recebidoUMAvez/COMPLETEDread-only/proposta;nenhumteste/comando/efeito. Revisão encontrou5divergências:L%50/100,G/Htrocados,wrappersolution.minimum,inf1/2;Q8S3rev1registrado.Gitdeterminístico/liveahead22coincidem. Original minimum-original.jsonSHA38e33c3ab82669a3a816bec13962d6b08ddf5131e3091ebaefc15e73317765bb preservada. Correções MECÂNICAS expressas no minimum-apply-unit.md e scriptminimum-apply.mjs:denL100→1,G7→17,H17→7,removerwrapperminimum,inf→6800/7. Fonte canônica RCF8.4/expectativas já fixadas;semnova geração/recodificação. Prefixo98e680dd inalterado.

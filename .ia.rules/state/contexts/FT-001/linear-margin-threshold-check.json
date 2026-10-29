@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "unit": "FT-003.42.3a",
+  "unit": "FT-003.42.3b",
   "node": "v24.22.1",
   "sourceCommit": "694ec64ddf2e1ee14121b5ed161d547d47183ff4",
   "files": {
     "src/domain/linear-margin-threshold.ts": "e9149bbe3d7259ddd688f96fbb43ba214328ab0d61a4081fdaea88d87f9fc8d0",
-    "src/domain/linear-margin-threshold.test.ts": "06f76ffb7f9cde3fa900a1e64fc09b25e52054707f36840cfad70d74bf287ab1"
+    "src/domain/linear-margin-threshold.test.ts": "4cd8b28b12932910782afa5d317a3873567b163110840cd541396c23c2c9e63e"
   },
   "commands": [
     {
@@ -28,11 +28,11 @@
     }
   ],
   "tests": {
-    "total": 412,
-    "passed": 412,
-    "newSuite": 1
+    "total": 414,
+    "passed": 414,
+    "newSuite": 3
   },
   "protectedFiles": 102,
   "rateAggregate": null,
-  "limits": "Only minimum case;degenerations/failures/freeze/policy/full app pending."
+  "limits": "Degenerate model solutions only;failures/freeze/policy/full app pending."
 }
