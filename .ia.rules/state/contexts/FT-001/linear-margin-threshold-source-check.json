@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "unit": "FT-003.42.2",
+  "sourceSha256": "e9149bbe3d7259ddd688f96fbb43ba214328ab0d61a4081fdaea88d87f9fc8d0",
+  "protectedFiles": 102,
+  "typeErrors": [],
+  "forbidden": [],
+  "lint": {
+    "status": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "limits": "Only source/imports types/lint and syntactic guards;behavior/full app pending.411 prior tests not rerun."
+}

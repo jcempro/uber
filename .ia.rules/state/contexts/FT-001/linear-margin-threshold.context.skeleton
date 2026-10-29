@@ -1,0 +1,18 @@
+type LinearMarginFailure = Extract<LinearMarginThresholdResult,{status:'unavailable'}>;
+type LinearMarginContext = {
+  readonly status:'ready';
+  readonly limits:ExactLimits;
+  readonly marginTarget:Extract<FinancialMarginTargetResult,{status:'conditional'}>;
+  readonly model:LinearMarginThresholdInput['model'];
+  readonly operatingCost:ExactRational;
+  readonly remainingRevenueFactor:ExactRational;
+  readonly requiredMarginPercent:ExactRational;
+  readonly requiredMarginRatio:ExactRational;
+  readonly marginRevenueFactor:ExactRational;
+  readonly operatingCostOrder:-1|0|1;
+  readonly marginRevenueOrder:-1|0|1;
+};
+type LinearMarginContextResult = LinearMarginContext|LinearMarginFailure;
+function linearMarginFailure(code:LinearMarginFailure['code'],reason:string,marginTarget:FinancialMarginTargetResult|null=null,calculation:LinearMarginFailure['calculation']=null):LinearMarginFailure {
+  return Object.freeze({status:'unavailable',code,reason,marginTarget,calculation});
+}

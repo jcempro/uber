@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "unit": "FT-003.42.2",
+  "beforeSha256": "8c1a618d110c7a1497721a4b195ae234871bc4a79ce49b3dfa2abbbe2f4b1632",
+  "sourceSha256": "e9149bbe3d7259ddd688f96fbb43ba214328ab0d61a4081fdaea88d87f9fc8d0",
+  "contractBodySha256": "c55c5b9dec01c375824c66531201021c1f374368a3e1087d02a883a21ae76bb7",
+  "parts": {
+    "linear-margin-threshold.context.skeleton": "fc33d66a85819421702f0f336c4efcfc762de690c9e0905144bf35b72d8c2474",
+    "linear-margin-threshold.context.body.ts.txt": "1a9c8803a3cdbd8376c7eccd9a361ddcacef83172d50d93ab60659f0a5fba4d8",
+    "linear-margin-threshold.solution.skeleton": "fdf377163d5f380e7a579dcc727de720cdf210b0148c67326d7b3143fa949294",
+    "linear-margin-threshold-solver-proposal.json": "a8b5479d444a2d1c81331e26c1b6afdf087058a23a7e7efa492405abf1745b3d"
+  },
+  "protectedFiles": 102,
+  "changes": "assemble runtime imports + unchanged public types + repaired context + literal solver/public body",
+  "limits": "Source implementation only;types/lint/behavior verification and full app pending."
+}

@@ -1,0 +1,9 @@
+# FT-003.42.2 — aplicação da função completa
+
+71014048 recebidoUMAvez/COMPLETEDread-onlysemefeitos/Q8S10rev1/Gitahead21coincide. JSONsolver-proposal.jsonSHAa8b5479d444a2d1c81331e26c1b6afdf087058a23a7e7efa492405abf1745b3d preservada:solver3casos/divisãosóA>0H>0/inf0nãoatingido/nonecondicional/diagnósticosoriginais/freezes e construtor público corretos. Proposta não foi executada.
+
+Montagem DETERMINÍSTICA,semnova inferência:contratopúblico8c1a618d(inalteradodepoisdoheader)+runtimeimportsfixos+context.skeletonSHAfc33d66a85819421702f0f336c4efcfc762de690c9e0905144bf35b72d8c2474+context.bodyreparadoSHA1a9c8803a3cdbd8376c7eccd9a361ddcacef83172d50d93ab60659f0a5fba4d8+solution.skeletonSHAfdf377163d5f380e7a579dcc727de720cdf210b0148c67326d7b3143fa949294+bodyJSONsolverliteral. Correçõesdocontextoespecificadasemcontext-review.md;originaleaf3abcfpreservada. Header deixa de dizer cálculo pendente e identifica42.2condicionalB>0;nenhuma alteração de tipos públicos.
+
+command_sequence apply_linear_margin_source→verify_linear_margin_source,expect_changes=true/alvofuncionalsrc/domain/linear-margin-threshold.ts/commit supervisor/semGitlivre/rede. Preimage8c1a618d/preservar102arquivosbaseline/prior411/53suítes;backuppreimage/skeletoncompleto/recibo/pins/idempotência. VerificaçãoTS/imports+lintisolados e integridade102/ASTsemcasts/non-null/BigInt/Number. Não rerun411inalteradosantesdostestesnovos;nenhumalegaçãodecomportamentovalidado porcompilação.
+
+ContratoindependenteRCF8.4/42.1p:B>0,HB>=A,H=1−q−tau−m;H>0A>0minimumA/H;A0H>=0all-positive/inf0nãoatingido;restononeapenasnomodelodeclarado. Policy1vez/modelreasonoriginalnonempty/frozen/helpersdiretos/exatas/diagnósticos e3labelsnot-evaluated. Apósestaunidade:REVISARfontecompletaeimplementarTESTEScomportamentaissegmentados(incluindonormal/degenerados/falhas/limites/imutabilidade)antesdeaceitar42. Appintegralpendente.

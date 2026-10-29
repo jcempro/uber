@@ -1,0 +1,1 @@
+type LinearMarginSolutionResult = {readonly status:'ready';readonly value:LinearMarginSolution}|LinearMarginFailure;

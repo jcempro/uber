@@ -1,0 +1,53 @@
+function prepareLinearMarginContext(input: LinearMarginThresholdInput, limits: ExactLimits): LinearMarginContextResult {
+  const snapshot = inspectExactLimits(limits);
+  if (!snapshot.valid) {
+    return linearMarginFailure('invalid-budget', snapshot.reason);
+  }
+
+  if (input === null || typeof input !== 'object') return linearMarginFailure('unsupported-model', 'Modelo linear declarado e justificativa não vazia são obrigatórios.');
+  const rawModel = input.model;
+  if (rawModel === null || typeof rawModel !== 'object') return linearMarginFailure('unsupported-model', 'Modelo linear declarado e justificativa não vazia são obrigatórios.');
+  const { kind, reason } = rawModel;
+  if (kind !== 'fixed-usage-linear' || typeof reason !== 'string' || reason.trim() === '') return linearMarginFailure('unsupported-model', 'Modelo linear declarado e justificativa não vazia são obrigatórios.');
+
+  const zero: ExactRational = Object.freeze({ numerator: '0', denominator: '1' });
+  const mt = calculateFinancialMarginTarget({ ...input, creditedRevenue: zero }, snapshot.limits);
+  if (mt.status === 'unavailable') {
+    return linearMarginFailure(mt.code, mt.reason, mt, mt.calculation);
+  }
+
+  const A = mt.projection.value.operatingCost;
+  const G = mt.projection.value.remainingRevenueFactor;
+  const L = mt.value.requiredMarginPercent;
+  const m = mt.value.requiredMarginRatio;
+
+  const hResult = calculateExactSum('subtract', G, m, snapshot.limits);
+  if (hResult.status === 'unavailable') {
+    return linearMarginFailure('calculation-unavailable', hResult.reason, mt, hResult);
+  }
+  const H = hResult.value;
+
+  const cmpA = compareExactRationals(A, zero, snapshot.limits);
+  if (cmpA.status === 'unavailable') {
+    return linearMarginFailure('calculation-unavailable', cmpA.reason, mt, cmpA);
+  }
+
+  const cmpH = compareExactRationals(H, zero, snapshot.limits);
+  if (cmpH.status === 'unavailable') {
+    return linearMarginFailure('calculation-unavailable', cmpH.reason, mt, cmpH);
+  }
+
+  return Object.freeze({
+    status: 'ready',
+    limits: snapshot.limits,
+    marginTarget: mt,
+    model: Object.freeze({ kind, reason }),
+    operatingCost: A,
+    remainingRevenueFactor: G,
+    requiredMarginPercent: L,
+    requiredMarginRatio: m,
+    marginRevenueFactor: H,
+    operatingCostOrder: cmpA.order,
+    marginRevenueOrder: cmpH.order
+  });
+}
