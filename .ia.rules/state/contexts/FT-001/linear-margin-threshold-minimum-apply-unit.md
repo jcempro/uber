@@ -1,0 +1,9 @@
+# FT-003.42.3a — aplicação corrigida do teste
+
+Aceite:0badfcdb recebidoUMAvez/COMPLETEDcommand_sequenceSEMinferência/apply+verifyexit0. Teste06f76ffb conferido integralmente com5correções expressas/fixture independenteRCF;sourcee9149bbe/gate734c36ec/preservação102/53 confirmados. app:typecheck/lint/testsexit0;412/412passaram,novo1itmínimo. Gitdeterminístico/liveahead22coincidem/semcommitWorker;Q8S10rev1registrado. Commit imediato supervisor. Aceite restrito a mínimo;degen/falhas/freeze/policy/app pendentes.
+
+3e51d023 recebido UMA vez/COMPLETED somente proposta, sem testes/comandos/efeitos. Git determinístico e live mainahead22 coincidem. Q8S3rev1:requiredMarginPercent50/100 incorreto;G/H trocados;wrapper solution.minimum inexistente;infimum1/2 incorreto. OriginalJSON preservado minimum-original.json;nenhuma afirmação de teste executado.
+
+Correção MECÂNICA explícita, sem nova geração:denominador do percentual100→1;remainingRevenueFactor7→17; marginRevenueFactor17→7;remover somente wrapper minimum emsolution;infimum1/2→6800/7. Expectativas já fixadas no minimum-test-unit.md e RCF8.4:164/168. A340,L%50,m1/2,G17/20,H7/20,minimum+inf6800/7/true. Prefixo98e680dd revisado reutilizado;originais9cd/3e5 preservados.
+
+command_sequence apply_linear_margin_minimum→verify_linear_margin_minimum,expect_changes=true/alvo src/domain/linear-margin-threshold.test.ts;commit supervisor/semGitlivre. Aplicação pinada/idempotência/preservação102/sourcee9149bbe/baseline411/53;novo profile margin-threshold-minimum no gate existente maintenance-adoption-schema-verify.mjs, sem alterar perfis anteriores. Gate app:typecheck/app:lint/app:test integral com mínimo412total/1itnovo/53suítes anteriores. Sem rede. Proposta/correção não comprovam execução;aceite posterior via resultado/revisão/Q8S/commit. Degenerações/falhas/policy/freeze e appglobalpendentes.

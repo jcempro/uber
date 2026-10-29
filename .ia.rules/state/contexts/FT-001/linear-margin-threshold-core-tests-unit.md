@@ -1,0 +1,7 @@
+# FT-003.42.3p — proposta dos testes matemáticos
+
+Dependência:83c3eeb/fontee9149bbe;39071ff6 recebido/revisado/Q8S10rev1. Tipos/lint válidos; comportamento ainda sem aceite. Base411/102 arquivos/53 suítes; novo teste ausente. Sem agents.local.md.
+
+Unidade read-only provided_evidence, JSON body<=4000chars/1500words. Preparar arquivo linear-margin-threshold.test.ts completo:3it/7chamadas (minimum1,all-positive2,none4), API real e campos exatos. Escopo só proposta sem efeitos/Git/comandos. Fonte canônica RCF8.4 linhas164/168: H=1-q-tau-m;HB>=A com B>0; mínimo A/H sóA>0H>0;A0H>=0 inf0 não atingido;resto none condicional. Valores esperados literais independentes:minimum A340,G17/20,m1/2,H7/20→6800/7;all-positive A0H0(100%) e H7/20;none A340H0,A340H-1/100,A0H-1/100,A0G=H-1/10/m0(sintéticoq1,tau1/10). Sem teto artificial/NaN/margemB0/impossibilidade universal.
+
+Aceite da proposta:TS sem casts/mocks/helpers matemáticos, guard conditional antesvalue; asserts metadados/modelo/3labels/domain e A/L%/m/G/H/solução completa. Contexto estimado<7K tokens com saída<=4Kchars, margem segura. Custo/riscos limitados a proposta;sem manutenção própria. Após revisão, aplicação determinística pinada expect_changes=true/alvo teste e gate da família existente estendido à inversa:types/lint/testes integrais411+3, preservação102/53/sourcepin. Testes de falhas/policy/imutabilidade e app integral seguem pendentes.

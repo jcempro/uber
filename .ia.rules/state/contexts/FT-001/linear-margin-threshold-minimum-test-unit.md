@@ -1,0 +1,7 @@
+# FT-003.42.3a.p — somente teste de mínimo
+
+Continuação corrigida de9cdae4f5:revisão documentada em core-tests-review.md. A falha de forma e defeitos exigem unidade menor;sem replay dos7cenários. Preservados rascunhos,exploração,fontee9149bbe/commit83c3eeb/base411 e prefixo válido98e680dd. Sem agents.local.md. Proposta read-only sem ferramentas/efeitos/Git;JSONbody<=1800chars/500words. Contexto fornecido<4Ktokens incluindo saída,escopo conhecido e sem risco de expansão;nenhuma manutenção própria.
+
+Entregável:apenas describe('linear-margin-threshold',()=>{it(...)}),exatamente1it chamando root(baseInput()) uma vez e expect(result.value).toStrictEqual({...}) inteiro:operatingCost340,requiredMarginPercent50,requiredMarginRatio1/2,remainingRevenueFactor17/20,marginRevenueFactor7/20,solution{case:minimum,minimumCreditedRevenue6800/7,infimumCreditedRevenue6800/7,minimumAttained:true}. Usar r('numerador','denominador'),não r('fração');helpers/imports já no prefixo,sem reemitir. Valores independentes RCF8.4:HB>=A,B>0,H7/20,A340. Não incluir demais casos/falhas/freeze/policy/metadata duplicada.
+
+Depois:revisar resposta/salvar literal/Q8S;montar prefixo+body e aplicar em novo job command_sequence expect_changes=true/alvoteste. Gate oficial adaptado para fonte/teste inversa,baseline411+1=412/102arquivos protegidos/53suítes existentes. Degenerações e demais requisitos pendentes;nem proposta nem compilação comprovam teste executado.

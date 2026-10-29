@@ -1,5 +1,29 @@
 # FT-003.42 — inversa linear de margem
 
+## Atual42.3a — aplicação determinística do mínimo
+
+3e51d023 recebidoUMAvez/COMPLETEDread-only/proposta;nenhumteste/comando/efeito. Revisão encontrou5divergências:L%50/100,G/Htrocados,wrappersolution.minimum,inf1/2;Q8S3rev1registrado.Gitdeterminístico/liveahead22coincidem. Original minimum-original.jsonSHA38e33c3ab82669a3a816bec13962d6b08ddf5131e3091ebaefc15e73317765bb preservada. Correções MECÂNICAS expressas no minimum-apply-unit.md e scriptminimum-apply.mjs:denL100→1,G7→17,H17→7,removerwrapperminimum,inf→6800/7. Fonte canônica RCF8.4/expectativas já fixadas;semnova geração/recodificação. Prefixo98e680dd inalterado.
+
+0badfcdb-d1e4-48ac-a09f-fd88dab96ba7 confirmadoRUNNING/R8Vv1/mesmochatrepo;command_sequence SEMinferência apply_linear_margin_minimum→verify_linear_margin_minimum,expect_changes=true/alvofuncional src/domain/linear-margin-threshold.test.ts,commit supervisor/semGitlivre/rede. Preflight leitura/syntaxgate0/depsNode24/npm/vitestconfirmadas. Tentativaanterior rejeitadaANTESjobpor timeout600000>max300000;corrigido300000/semreplayefeitos.
+
+Aplicação prefixo+bodycorrigido→testSHA06f76ffb7f9cde3fa900a1e64fc09b25e52054707f36840cfad70d74bf287ab1;gateexistente6b684b87→734c36ecb8db7e15bb0e65e85690d38ad5b394c3f4c51d554187f1c2c3582673 via extensão1profile margin-threshold-minimum (outros perfis preservados). Fonte e9149bbe imutável/102proteções/baseline411/53. Scriptgera minimum.test.skeleton,backupgate-before e recibominimum-apply-check.json;idempotênciareconheceaplicado,separado dopasso verify. Gateapp:typecheck/app:lint/app:testtotal>=412,novo1it/53suítesanteriores,pins. Snapshot411 em linear-margin-threshold-baseline.json;NÃOusarperfilmargin antigo(base396).
+
+CallbackresultadoUMAvez;conferirfonte/teste mínimo/checkreportGiteQ8S;seaceito commitimediato supervisor. Não concluir42/apppelo1it. Próximodegeneraçõesall-positive2/none4 independenteRCF;depoisfalhas/freeze/policy. Basecomportamental411/commit83c3eeb/mainahead22 anteriorjob;novoresultado ainda não conhecido.Não reconsultar3e5/9cd/390/710/2df/59a nem rerunsemnovafalha.
+
+Monitor http://127.0.0.1:49767/job/0badfcdb-d1e4-48ac-a09f-fd88dab96ba7;índice http://127.0.0.1:49767/ (linkscompletosnochat). Sem polling.N7Csemrotanativaexposta/mediçãoautoritativabarata;impedimento declarado/checkpoint não é compactação.
+
+
+## Atual42.3a.p — mínimo isolado após falha de contrato
+
+9cdae4f5 recebidoUMAvez/FAILED WORKER_INCOMPLETE RESPONSE_CONTRACT;2drafts6243/6305chars>4000 e defeitos semânticos/TS. Não infraestrutura/não houve fonte/testes alterados. Gitdeterminístico/liveahead22coincidem.Q8S3rev1 registrado. Rascunhos completos preservados failed-9cd.rejections.json SHA0879238c197b49209243e655dde41730e1e4299e04014c0e453056d4fc87301a. Revisão/correção em core-tests-review.md;prefixo válido extraído98e680ddaaf17f77b64e2bbd6e5f789e3b40af3949337774130a90be435ecbc6/1433chars,removidos explicitamente tipo de retorno união e import inutilizado. Originais sem transformação. Teste ainda ausente;prefixo auxiliar não aplicado nem compilado.
+
+3e51d023-a36b-43bc-8102-447246db332f confirmado RUNNING/R8Vv1/read-only provided_evidence/mesmochatrepo/sem ferramentas/efeitos/Git. Mudança material:7cenários→somente1it/1chamada minimum,jsonbody<=1800chars/500words. Sódescribe,it(root(baseInput())/assert value INTEIRO A340,L50,m1/2,G17/20,H7/20,minimum+inf6800/7/true). Helpers prontos não reemitir. minimum-test-unit.md/RCF8.4:164/168/API/campos exatos fornecidos. Não converter proposta em teste executado.
+
+Callbacklocal_resultUMAvez/revisão/asserts/Git/Q8S/salvar literal;secorreto montar prefixo98e+body e aplicar via novo command_sequence expect_changes=true/alvoteste. Estender gate oficial da família existente para inversa:source e9149bbe preservada,102proteções/53suítesanteriores/411+1=412total. Degenerações all-positive2/none4 previstas no core-tests-unit e demaisfalhas/policy/freeze pendentes. Base83c3eeb/mainahead22;411últimosaceitos. Appglobalpendente.Não reconsultar9cd/390/710/2df/59a.
+
+Monitor http://127.0.0.1:49767/job/3e51d023-a36b-43bc-8102-447246db332f;índice http://127.0.0.1:49767/ (linkscompletosnochat). Sem polling.N7Csemrotanativaexposta/mediçãoautoritativabarata;impedimento declarado/checkpoint não é compactação.
+
+
 ## Atual42.2
 
 71014048 recebidoUMAvez/COMPLETEDread-onlysemefeitos/Q8S10rev1/Gitdeterminístico/liveahead21coincidem. Solver/publicJSONa8b5479d444a2d1c81331e26c1b6afdf087058a23a7e7efa492405abf1745b3d salvofiel,2352chars. Revisãocumpre3casos/divisãoapenasA>0H>0/inf0nãoatingido/nonecondicional/diagnósticosoriginais/envelopes/solution/root/valuefrozen/metadatactx/domain/3labelsnot-evaluated,semcasts/.ready. Propostanãoéexecução.

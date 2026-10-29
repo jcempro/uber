@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "unit": "FT-003.42.3a",
+  "sourcePath": "src/domain/linear-margin-threshold.ts",
+  "testPath": "src/domain/linear-margin-threshold.test.ts",
+  "sourceSha256": "e9149bbe3d7259ddd688f96fbb43ba214328ab0d61a4081fdaea88d87f9fc8d0",
+  "testSha256": "06f76ffb7f9cde3fa900a1e64fc09b25e52054707f36840cfad70d74bf287ab1",
+  "originalProposalSha256": "38e33c3ab82669a3a816bec13962d6b08ddf5131e3091ebaefc15e73317765bb",
+  "prefixSha256": "98e680ddaaf17f77b64e2bbd6e5f789e3b40af3949337774130a90be435ecbc6",
+  "gateBeforeSha256": "6b684b871523f614d7c1cb557060f8ccca0d0f5d32278b27635ee78b84073bbc",
+  "gateAfterSha256": "734c36ecb8db7e15bb0e65e85690d38ad5b394c3f4c51d554187f1c2c3582673",
+  "protectedFiles": 102,
+  "changes": "explicit5semanticcorrections frompredefinedRCFexpectations;prefix preserved;existinggateextended1profile",
+  "limits": "Only minimum case;degenerations/failures/freeze/policy/full app pending."
+}
