@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "unit": "FT-003.41.2d",
+  "beforeSha256": "165108859e3183eb6fddd6e2c3a9c06adc2790ef59d5c85396314400befb6c17",
+  "afterSha256": "5302d87e2e58dbf6a1581dc098ac226f835c605e56df4c76d51a62d86c5a5631",
+  "getterTemplateSha256": "5252f587ec31fd4b8c148f4d325d09e18916ce7022a44ce1ca4d1a7312f3882e",
+  "readyTemplateSha256": "723a4b4df14180dbd8af1f703b7b00b8376c4207dbee35f7964304568d135171",
+  "resourceTemplateSha256": "5fa7169331fccd8c61a149631dd96598a4636e0958fead4829a0d56ccab0e2e0",
+  "gateBeforeSha256": "d994231dc1376306949c7d9729ba01b8e059280b15b7120bba5c305b58d92977",
+  "gateAfterSha256": "6b684b871523f614d7c1cb557060f8ccca0d0f5d32278b27635ee78b84073bbc",
+  "changes": "derive2policytests fromacceptedREADYfreeze/resource bodies;reuseonlyreviewed getter prefix;preserve13accepted it/source/100files;gate411+/15",
+  "limits": "Policy snapshot only;full app pending."
+}

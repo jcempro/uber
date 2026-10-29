@@ -12,3 +12,13 @@ Gate400/400tipos/lint0,100arquivos/52suítesanteriorespreservados,fonte94dea5cd0
 Desvio39e7b202:commitocorreuapesarcommit_policy=supervisor einstruçãosemcommit. Causa interna não comprovada pelo state.json (apenas metadados de execução;sem campo commit_policy);não atribuir ator/modelo sem prova. Gitdeterminístico/liveahead13coincidem. Preservarcommitaceito,nãoreexecutar/reverterteste. Próximageração deproposta somente read-only/provided_evidence;aplicação posteriorcommand_sequenceparaevitarGitlivre,semmanutençãodopróprioworker.
 
 Esteaceite é exclusivo41.2a. Falhasinvalid-target/invalid-budget/projection-unavailable/calculation-unavailable,freeze/snapshot/getters,demaisfinanças eaplicativointegralcontinuampendentes.
+
+## Conciliação final do microescopo FT-003.41
+
+Estado atual: função direta calculateFinancialMarginTarget aceita no escopo contratado, fonte94dea5cd0393dbd2fd7dceec0737b027480fd32866c123bed501e7e05a721fcd; teste5302d87e2e58dbf6a1581dc098ac226f835c605e56df4c76d51a62d86c5a5631. A pendência do parágrafo anterior foi resolvida para estes casos adicionais; permanecem pendentes inversas, teto, interseção, integrações e aplicativo integral. Não é cobertura exaustiva de todo ramo técnico possível.
+
+- 41.2b:6it de falhas: alvo negativo, racional com denominador0, política inválida prioritária, projeção inválida, alvo ausente e limite técnico65>64. Classificação, projeção preservada ou nula conforme contrato, diagnóstico/reasonoriginal e ausência de value conferidos.
+- 41.2c:3it de congelamento/snapshot: saída pronta, margem indefinida comB0 e raiz de falha técnica. Nós novos congelados, inputs não congelados/inalterados, mutações posteriores sem efeito no snapshot; meta100/2 normalizada50/1.
+- 41.2d:2it com getters adversariais: primeira leitura256/64, posteriores0. Sucesso e falha resource-budget mantêm uma leitura por campo e não congelam limits. Corpos válidos herdados literalmente; proposta06da6292 recusada permanece arquivada e avaliada separadamente.
+
+Com os4it principais, são15it pertinentes em1suíte. Gate final9c031fa0 recebido uma vez:tipos/lint0,411/411testes,100arquivos/52suítesanteriorespreservados e fonte94pinada;Q8S10rev1 registrado. Git terminal e atual mainahead19 coincidem antes do commit supervisor. Os labels financialAssessment/costCoverage/taxAssessment continuam not-evaluated: cálculo direto condicional não admite custos completos, apuração legal ou resultado real. RCF8.4 permanece PENDENTE-CODIGO para seus requisitos compostos ainda incompletos.

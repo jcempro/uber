@@ -327,4 +327,100 @@ it('falha técnica mantém raiz e diagnóstico congelados', () => {
   input.contextId = 'mutated';
   expect(JSON.stringify(result)).toBe(snapshot);
 });
+
+it('política é capturada uma vez na comparação pronta', () => {
+  let lengthReads = 0;
+  let digitReads = 0;
+  const limits = {
+    get maxInputLength() {
+      lengthReads += 1;
+      return lengthReads === 1 ? 256 : 0;
+    },
+    get maxDigits() {
+      digitReads += 1;
+      return digitReads === 1 ? 64 : 0;
+    }
+  };
+  const target = r('100', '2');
+  const cost = r('300');
+  const input = { ...baseInput(), requiredMarginPercent: target, fixedCosts: cost };
+  const before = JSON.stringify(input);
+  const result = calculateFinancialMarginTarget(input, limits);
+  if (result.status !== 'conditional') throw Error(result.reason);
+  const assessment = readyAssessment(result.value.assessment);
+  const margin = result.projection.value.margin;
+  if (margin.status !== 'ready') throw Error('Esperada margem pronta');
+  const snapshot = JSON.stringify(result);
+
+  expect(Object.isFrozen(input)).toBe(false);
+  expect(Object.isFrozen(target)).toBe(false);
+  expect(Object.isFrozen(cost)).toBe(false);
+  expect(JSON.stringify(input)).toBe(before);
+
+  const nodes = [
+    result,
+    result.value,
+    result.value.requiredMarginPercent,
+    result.value.requiredMarginRatio,
+    assessment,
+    assessment.signedMarginSlack,
+    result.projection,
+    result.projection.value,
+    margin,
+    margin.value
+  ];
+  for (const node of nodes) {
+    expect(Object.isFrozen(node)).toBe(true);
+  }
+
+  expect(result.value.requiredMarginPercent).toEqual(r('50'));
+  expect(result.value.requiredMarginRatio).toEqual(r('1', '2'));
+  expect(assessment.signedMarginSlack).toEqual(r('1', '100'));
+  expect(assessment.reachesModeledMargin).toBe(true);
+  expect(result.projection.value.netProfit).toEqual(r('510'));
+  expect(margin.value).toEqual(r('51', '100'));
+  expect(result.value.requiredMarginPercent).not.toBe(target);
+
+  target.numerator = '0';
+  target.denominator = '1';
+  cost.numerator = '999';
+  input.contextId = 'mutated';
+
+  expect(JSON.stringify(result)).toBe(snapshot);
+  expect(lengthReads).toBe(1);
+  expect(digitReads).toBe(1);
+  expect(Object.isFrozen(limits)).toBe(false);
+});
+
+it('política é capturada uma vez também na falha técnica', () => {
+  let lengthReads = 0;
+  let digitReads = 0;
+  const limits = {
+    get maxInputLength() {
+      lengthReads += 1;
+      return lengthReads === 1 ? 256 : 0;
+    },
+    get maxDigits() {
+      digitReads += 1;
+      return digitReads === 1 ? 64 : 0;
+    }
+  };
+  const result = calculateFinancialMarginTarget({ ...baseInput(), requiredMarginPercent: r('1'.repeat(65)) }, limits);
+  if (result.status !== 'unavailable') throw Error('Esperado unavailable');
+  expect(result.code).toBe('calculation-unavailable');
+  const calculation = result.calculation;
+  if (calculation === null) throw Error('Diagnóstico deveria existir');
+  expect(calculation.status).toBe('unavailable');
+  expect(calculation.code).toBe('resource-budget');
+  expect(result.reason).toBe(calculation.reason);
+  expect(result.reason).not.toBe('');
+  const projection = result.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projeção deveria permanecer válida');
+  expect(projection.value.netProfit).toEqual(r('510'));
+  expect(projection.value.margin).toEqual({ status: 'ready', value: r('51', '100') });
+  expect(result).not.toHaveProperty('value');
+  expect(lengthReads).toBe(1);
+  expect(digitReads).toBe(1);
+  expect(Object.isFrozen(limits)).toBe(false);
+});
 });
