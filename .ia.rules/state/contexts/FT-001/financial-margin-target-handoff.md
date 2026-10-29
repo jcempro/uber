@@ -1,5 +1,19 @@
 # FT-003.41.1 — margem percentual direta
 
+## Aceite41.2c.2
+
+7beebeae recebidoUMAvez/COMPLETED command_sequenceSEMinferência. Aplicação16510885conferida:2itB0/resourcefreeze/snapshotconformeJSON4460f767+1correçãoexpressanormalização50/1. B0 8nós/rootresource4nósfrozen,inputsinalterados/mutáveis/2mutaçõescada→snapshotestável/originaismargin/reasonpreservados. Gate409/409tiposlint0/fonte94/prefixo11it/100proteçõespreservados;Gitdeterminístico/liveahead18coincidem/semcommitworker;Q8S10rev1registrado. Policygetters/appcontinuampendentes.
+
+## Atual41.2c.2
+
+4244bf40 recebidoUMAvez/COMPLETED read-onlysemefeitos. Proposta2itB0/falhafreeze/snapshotconferida,mas1expectativa100/2nãonormalizada;Q8S7rev1registrado/Gitdeterminístico/liveahead18coincidem. JSONoriginalSHA4460f767f3ab9835ed18edbde930a7bb6eea53745e77a8907d4331b141b6c37a preservada;correçãoEXPRESSA1assert→r50/1,entrada100/2inalterada. Propostaaindanãoétesteexecutado.
+
+7beebeae-1eb6-46be-bb59-4d8664046d59 confirmado RUNNING/R8Vv1,mesmochat/repo. command_sequenceSEMinferência apply_financial_margin_freeze_unavailable→verify_financial_margin_freeze_unavailable,expect_changes=true/testfunctional/commit supervisor/semGitlivre. Preflightpinadoteste1ba782a7a2098c6dee85f546fa1a4e00c1de3d68031ebb903ad5272872bf6c70→165108859e3183eb6fddd6e2c3a9c06adc2790ef59d5c85396314400befb6c17;gatedcb8ec1a→d994231dc1376306949c7d9729ba01b8e059280b15b7120bba5c305b58d92977. Backupaccepted-freeze-ready/report407/recibo,idempotência/prepost;gate409+/13it/52anteriores/100proteções+fonte94+prefixointegral11it;demaisperfisinalterados. Últimoaceite407/commit828f7e6/mainahead18. Callbacklocal_resultUMAvez/revisão/Git/Q8S/commitseaceito. Policygetters/appcontinuampendentes. Monitor http://127.0.0.1:49767/job/7beebeae-1eb6-46be-bb59-4d8664046d59 eíndice http://127.0.0.1:49767/ (linkscompletosnochat). Sempolling. N7Csemrotanativaexposta/mediçãoautoritativabarata;impedimentodeclarado/checkpointnãoécompactação.
+
+## Atual41.2c.2p
+
+4244bf40-a00d-4ed7-8eb9-f9e4a2fea362 confirmado RUNNING/R8Vv1 read-only/provided_evidence9258chars/semferramentas/efeitos/Git. PropostaJSONappend2itfreeze/snapshot:conditionalB0(8nósfrozen/inputtargetmutáveis/meta50/ratio1/2/originalmargin/2mutações);rootresource65dígitos(4nósfrozen/inputtargetmutáveis/originalreason/raizsemvalue/2mutações). Pacoteunitfreeze-unavailable-proposal-unit.md/APIparent+childCOMPLETA/helpers/exemploB0literal;schema4000chars/500words. Propostanãoéimplementação/testeexecutado. Últimoaceite407/11it/fonte94/teste1ba782a7;9d8cf94f recebidoUMAvez/command_sequenceSEMinferência/Q8S10rev1/gate407tiposlint/100proteções/prefixo10it/commit828f7e6/mainahead18. Callbacklocal_resultUMAvez/revisãoproposta/Git/Q8S/salvarfiel;aplicaçãoposteriorcommand_sequenceexpect_changes=true/gate409+/13it/prefixo11it+fonte94+100proteções. Policygetters/appcontinuampendentes. SemGitlivrepor39e7b202/semselfmaintenance. Monitor http://127.0.0.1:49767/job/4244bf40-a00d-4ed7-8eb9-f9e4a2fea362 eíndice http://127.0.0.1:49767/ (linkscompletosnochat). Sempolling. N7Csemrotanativaexposta/mediçãoautoritativabarata;impedimentodeclarado/checkpointnãoécompactação.
+
 ## Aceite41.2c.1
 
 9d8cf94f recebidoUMAvez/COMPLETED command_sequenceSEMinferência. Aplicação1ba782a7conferida:1itREADYfreeze/snapshotliteral,10nósfrozen/3inputsnãofrozen/inalterados,100/2→50/1+4mutaçõesorigemsemefeito. Gate407/407tiposlint0/fonte94/prefixo10it/100proteçõespreservados. Gitdeterminístico/liveahead17coincidem/semcommitworker;Q8S10rev1registrado. B0/failurefreeze/getters/appcontinuampendentes.

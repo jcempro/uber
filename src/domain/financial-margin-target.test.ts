@@ -270,4 +270,61 @@ it('saída pronta é congelada e isolada de entradas mutáveis', () => {
 
   expect(JSON.stringify(result)).toBe(snapshot);
 });
+
+it('margem indefinida mantém saída congelada e isolada', () => {
+  const target = r('100', '2');
+  const input = { ...baseInput(), creditedRevenue: r('0'), requiredMarginPercent: target };
+  const before = JSON.stringify(input);
+  const result = root(input);
+  const assessment = result.value.assessment;
+  if (assessment.status !== 'unavailable') throw Error('Margem deveria estar indisponível');
+  const snapshot = JSON.stringify(result);
+  expect(Object.isFrozen(result)).toBe(true);
+  expect(Object.isFrozen(result.value)).toBe(true);
+  expect(Object.isFrozen(result.value.requiredMarginPercent)).toBe(true);
+  expect(Object.isFrozen(result.value.requiredMarginRatio)).toBe(true);
+  expect(Object.isFrozen(assessment)).toBe(true);
+  expect(Object.isFrozen(assessment.margin)).toBe(true);
+  expect(Object.isFrozen(result.projection)).toBe(true);
+  expect(Object.isFrozen(result.projection.value)).toBe(true);
+  expect(Object.isFrozen(input)).toBe(false);
+  expect(Object.isFrozen(target)).toBe(false);
+  expect(JSON.stringify(input)).toBe(before);
+  expect(assessment.code).toBe('margin-unavailable');
+  expect(assessment.margin.code).toBe('zero-revenue');
+  expect(assessment.margin).toBe(result.projection.value.margin);
+  expect(result.value.requiredMarginPercent).toEqual(r('50'));
+  expect(result.value.requiredMarginRatio).toEqual(r('1', '2'));
+  target.numerator = '0';
+  input.contextId = 'mutated';
+  expect(JSON.stringify(result)).toBe(snapshot);
+});
+
+it('falha técnica mantém raiz e diagnóstico congelados', () => {
+  const target = r('1'.repeat(65));
+  const input = { ...baseInput(), requiredMarginPercent: target };
+  const before = JSON.stringify(input);
+  const result = calculateFinancialMarginTarget(input, policy);
+  if (result.status !== 'unavailable') throw Error('Status deveria ser unavailable');
+  expect(result.code).toBe('calculation-unavailable');
+  const calculation = result.calculation;
+  if (calculation === null) throw Error('Calculation não deveria ser null');
+  expect(calculation.code).toBe('resource-budget');
+  expect(result.reason).toBe(calculation.reason);
+  expect(result.reason.length).toBeGreaterThan(0);
+  const projection = result.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projection deveria ser ready');
+  const snapshot = JSON.stringify(result);
+  expect(Object.isFrozen(result)).toBe(true);
+  expect(Object.isFrozen(calculation)).toBe(true);
+  expect(Object.isFrozen(projection)).toBe(true);
+  expect(Object.isFrozen(projection.value)).toBe(true);
+  expect(Object.isFrozen(input)).toBe(false);
+  expect(Object.isFrozen(target)).toBe(false);
+  expect(JSON.stringify(input)).toBe(before);
+  expect(result).not.toHaveProperty('value');
+  target.numerator = '0';
+  input.contextId = 'mutated';
+  expect(JSON.stringify(result)).toBe(snapshot);
+});
 });

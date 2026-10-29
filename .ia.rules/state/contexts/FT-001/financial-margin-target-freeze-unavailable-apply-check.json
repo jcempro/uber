@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "unit": "FT-003.41.2c.2",
+  "beforeSha256": "1ba782a7a2098c6dee85f546fa1a4e00c1de3d68031ebb903ad5272872bf6c70",
+  "afterSha256": "165108859e3183eb6fddd6e2c3a9c06adc2790ef59d5c85396314400befb6c17",
+  "proposalSha256": "4460f767f3ab9835ed18edbde930a7bb6eea53745e77a8907d4331b141b6c37a",
+  "gateBeforeSha256": "dcb8ec1a49924b579b85384766689d7e30685edab088fe3a4e3a3db040044d2d",
+  "gateAfterSha256": "d994231dc1376306949c7d9729ba01b8e059280b15b7120bba5c305b58d92977",
+  "changes": "append2B0/resourcefreeze/snapshot tests with1explicit expected normalizedtarget50 correction;preserve11accepted it/source/100files;gate409+/13",
+  "limits": "OnlyB0/failurefreeze;policygetters/app pending."
+}

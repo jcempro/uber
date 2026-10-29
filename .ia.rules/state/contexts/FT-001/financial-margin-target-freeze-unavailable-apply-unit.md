@@ -1,0 +1,7 @@
+# FT-003.41.2c.2 — aplicação de freeze/snapshot B0 e falha técnica
+
+4244bf40 recebido UMAvez/COMPLETED read-only sem efeitos;Q8S7rev1/Gitahead18coincide. JSONoriginalSHA4460f767f3ab9835ed18edbde930a7bb6eea53745e77a8907d4331b141b6c37a preservada. Proposta2it funcionalmente coerente,mas1expectativa de requiredMarginPercent usa100/2emvezda formanormalizada50/1exigida. Correçãoexpressaexatamente1assert:expect(result.value.requiredMarginPercent).toEqual(r('100','2'))→r('50'),preservando entrada100/2 e todo restante da proposta. Não é acomodação à implementação: requisitoindependente já declarado/confere normalização do racional.
+
+command_sequence apply_financial_margin_freeze_unavailable→verify_financial_margin_freeze_unavailable SEMinferência,expect_changes=true/testfunctional/commit supervisor/semGitlivre. Preimage1ba782a7,preservar11it/fonte94/100arquivos. Backupaccepted-freeze-ready/report407/reciboprepost/idempotência. Perfilmargin-freeze-unavailable409+/13it/52suítesanteriores/100proteções/prefixointegral11it;outrosperfisinalterados. Normas/estaunitantesefeitos;somente2comandos,semrede/commit.
+
+Aceitecontrato41.1:B0conditional8nósfrozen/meta50/ratio1/2/margemindefinidaoriginal/inputstargetmutáveis;raizresource-budget4nósfrozen/diagnósticooriginal/raizsemvalue/inputs mutáveis. Emambos inputinalterado antesdemutação,2mutaçõesorigem não mudam JSONresultado. GuardasTS/APIchildconferidas. Política/getters eappcontinuampendentes;propostaanteriornãoera teste executado.
