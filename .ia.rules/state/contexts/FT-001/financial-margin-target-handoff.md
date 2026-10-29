@@ -1,5 +1,13 @@
 # FT-003.41.1 — margem percentual direta
 
+## Aceite41.2a.2
+
+8485938d recebido UMAvez/COMPLETED inferência local. Teste bf35b14e2dbdb885d91df7ec2f14ad0aa10dde62cb13291c24e1f810bd1d096c revisado contra RCF164:0/100/101,ratio0/1/101/100,slack1/0/−1/100 e booltrue/true/false,sem teto artificial. Projeção A0,B100,q0,tau0/margin1 conferida. Tipos/lint398/398,100proteções,52suítes anteriores/core/fonte94 preservados. Git atual coincide determinístico ahead10 antes do commit. Q8S9rev1 registrado (releitura dispensável do alvo). B0/G<=0/falhas/freeze/getters/perfil400+/4/aplicativo pendentes.
+
+## Atual41.2a.2
+
+8485938d-fac5-490a-a530-81473a14a356 confirmado RUNNING/R8Vv1, mesmo chat/repo. Unidade1arquivo/1it/3rows0/100/101, expect_changes=true/commit supervisor; inferência local com contexto13407chars/hash666e7c3257b98ca282c6206b3164bc5fbfe413c82c3290f108e483921dcd04bb. Fonte94 preservada. Core aceito dc8ae35a versionado fbb986e (main ahead10);58799e25 recebido UMAvez, Q8S10rev1 registrado,397testes/tipos/lint aprovados. Novo gate margin-boundaries mínimo398/2it/52suítes anteriores/100proteções; prefixo integral do core pinado. Preflight preparo e sintaxe gate aprovados; preparo não implementa teste. Verificar callback UMAvez/conteúdo/expectativasRCF/Git/Q8S/commit. Perfil completo400+/4 e B0/G<=0/falhas/freeze/getters/aplicativo pendentes. Sem polling. Monitor http://127.0.0.1:49767/job/8485938d-fac5-490a-a530-81473a14a356 e índice http://127.0.0.1:49767/ (links completos no chat). N7C sem rota nativa exposta/medição autoritativa barata; impedimento declarado, checkpoint não é compactação.
+
 ## Aceite41.2a.1b
 
 58799e25 recebido uma vez/COMPLETED command_sequence sem inferência. Patch dc8ae35a conferido:5asserts requeridos presentes;50/52/prefixo/fonte94 e100proteções preservados. Gate tipos/lint397/397 aprovado,52suítes anteriores preservadas. Git atual coincide main ahead9 antes do commit. Q8S10 revisão1 registrado. Aceito somente core41.2a.1; próximos0/100/101, B0, G<=0, falhas e imutabilidade; aplicativo integral pendente.
