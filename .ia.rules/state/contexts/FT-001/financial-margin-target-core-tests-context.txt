@@ -1,0 +1,118 @@
+# Norma do alvo
+
+# AGENTS.md — Entrypoint da Norma
+
+Este arquivo governa a atuação da IA. O RCF governa requisito, contrato, arquitetura e negócio; é a especificação declarativa, determinística e verificável do sistema, ressalvado o domínio desta Norma. Precedência, autoridade, preservação e mecanismos oficiais são compulsórios.
+
+Antes de operação material sem rota válida em memória ou com alteração física:
+
+1. consulte `./.ia.rules/normative-index.json`;
+2. carregue `./.ia.rules/core/authority.md`, papéis cumulativos e somente a rota direta, cenários, contratos e recursos disparados;
+3. consulte prioritariamente `./.ia.rules/state/decisions/refused/index.json`;
+4. execute do estado canônico `./.ia.rules/continue.ia`, com FT, plano, RCF e autorização compatíveis.
+
+`./.ia.rules/agents.inc.md` preserva a Norma operacional integral. Leia-o somente diante de mudança de rota, perda de contexto, conflito, regra não localizada, índice/cache inválido, auditoria de preservação ou confiança insuficiente. Referências seletivas resolvem-se por `MN-REF`.
+
+Todo repositório é Final; fonte, build, atualização, distribuição ou release agregam Construtor. No construtor do produto, `./AGENTS.md` CURRENT/CONSUMED rege; `src/AGENTS.md` SOURCE/DEVELOPED não rege até adoção nem pode ser regredido pela consumida. Homonímia não transfere versão, papel, escopo ou autoridade. Ambiguidade preserva comportamento e conteúdo. Saída técnica usa PT-BR.
+
+Cada solicitação autoriza escrita e Git somente no único repositório corrente associado ao prompt; root irmã, dependência, submódulo, worktree, repositório aninhado ou path físico externo permanece intocável, ainda que aberto ou relacionado.
+
+
+# Autoridade operacional e mecanismos oficiais
+
+Identidade normativa: `core.authority`; papel: comum; tipo: folha. Ler integralmente em toda atuação governada. Não dispensar por cenário, papel, familiaridade ou economia de contexto. Aplicar `MN-2119`, `MN-PRES`, `MN-ROLE`, `MN-EXT` e `MN-REF`.
+
+## 1. Vocabulário canônico
+
+**Norma Operacional** é `AGENTS.md` e associados, responsável pelo modo de atuação, processo, leitura, edição, validação, rastreabilidade, automação, scripts, hooks, comandos e FTs. **RCF** é a SSOT arquitetural declarativa, determinística e verificável do que o sistema é e DEVE fazer. **Repositório Construtor** mantém, constrói, valida ou distribui a Norma Operacional. **Repositório Final** consome a Norma. Papéis são cumulativos e nenhum afasta o outro.
+
+**Mecanismo Oficial** é script, comando, hook, callback, adaptador, workflow, arquivo-gatilho, convenção, nomenclatura, contrato ou ponto de extensão normatizado. **Extensão Oficial** compõe o mecanismo sem substituir fluxo ou contrato. **Fluxo Paralelo** é mecanismo novo, duplicado, substitutivo ou funcionalmente equivalente que contorne o oficial. **Lacuna Oficial** é erro, risco, insuficiência ou ausência comprovada no mecanismo necessário. **Princípio Estruturante** é regra cuja degradação altera autoridade, alcance ou comportamento fundamental. **Microtexto Normativo** é unidade curta, coesa, autônoma, estável e referenciável. **Custo Líquido** compara tokens, bytes, tempo, processamento, navegação, manutenção, risco, precisão e reutilização.
+
+Definição canônica NÃO DEVE ser redefinida em papel, cenário, recurso, RCF específico ou extensão. Especialização referencia o termo e restringe somente seu contexto.
+
+## 2. Proteção estrutural
+
+Revisão parcial, cirúrgica, ampla ou estrutural DEVE preservar autoridade, precedência, domínios, contratos, nomes, proibições, exceções, hooks, modus operandi, incisividade, rastreabilidade, força, efeitos e intenção. Princípio Estruturante é permanente, identificável e não regressivo; validação DEVE detectar remoção, diluição, relativização, subordinação, abreviação com perda, facultatividade ou substituição.
+
+Densificação, modularização, roteamento, índice, resumo, tokenização e otimização NÃO DEVEM reduzir rigor, minúcia, clareza, explicitabilidade, exigibilidade, previsibilidade ou resistência a interpretação desviada. Norma não recuperada NÃO é norma inexistente.
+
+## 2.1 Fronteira absoluta do repositório corrente
+
+Cada solicitação associa-se a exatamente uma raiz Git corrente e ao `AGENTS.md` aplicável nela. Escrita, exclusão, movimento, geração, staging, commit, branch, merge, reset, clean, publish e release somente PODEM atingir arquivos fisicamente pertencentes a essa raiz e subordinados à mesma autoridade. Workspace/IDE com múltiplas roots, relação funcional, dependência, importação, build conjunto, mesma autoria, necessidade externa ou proximidade física NÃO ampliam escopo; edição cruzada é violação crítica.
+
+Submódulo, worktree, repositório aninhado, root irmã, terceiro, `node_modules`, dependência local/linked, cache e artefato não editável são fronteiras excluídas. Antes do efeito, resolver raiz, path absoluto real e ancestrais; recusar `..`, symlink, junction, mount, alias, hardlink detectável ou identidade Git própria que atravesse a fronteira. Leitura externa necessária PODE ocorrer para diagnóstico/contrato, mas NÃO concede escrita. Alteração externa exige nova solicitação explicitamente associada ao outro repositório.
+
+## 3. Compulsoriedade e evolução
+
+Antes de solucionar, agente e Repositório Final DEVEM consultar descoberta oficial, inspecionar estado real, reutilizar finalidade/nomenclatura existentes e corrigir implementação divergente. Dúvida, desconhecimento, cópia possivelmente desatualizada ou inadequação aparente exigem releitura, versão e rastreamento; NÃO autorizam improvisação.
+
+Mecanismo Oficial NÃO DEVE ser neutralizado, duplicado, renomeado, reimplementado, contornado ou substituído. Resultado correto por fluxo incompatível permanece não conforme. Expansão só PODE usar hook, callback, composição, adaptador, arquivo-gatilho, extensão local ou contrato oficial, preservando fluxo principal, nomes, precedência, efeitos e compatibilidade.
+
+Lacuna segue `../scenarios/governance/official-gap.md`. Solicitação segue `../scenarios/governance/request-lifecycle.md`. Contratos de composição, eventos, integração e assinaturas seguem `./contracts.md`; recurso especializado referencia o contrato comum e declara somente diferenças materiais.
+
+## 4. Verificação
+
+Revisão DEVE comprovar: conceitos centralizados; referências resolvíveis; ausência de fluxo paralelo; mecanismos oficiais preservados; papéis acumulados; extensão somente em ponto autorizado; princípio estruturante sem redução modal; e equivalência entre núcleo, módulo, índice e RCF aplicável.
+
+
+# Unidade exclusiva
+
+# FT-003.41.2a.1 — somente um teste de comparação
+
+Worker subordinado. Trocar ÚNICOit.todo porit implementado em src/domain/financial-margin-target.test.ts. Preservar prefixo/imports/helpers prontos. Arquivo completo fornecido:semread_file/search/list. PRIMEIROwrite_file noalvo;DEPOISrun_authorized_command verify_financial_margin_core UMAvez;entãoencerrar inclusivefalha,semretry. Semoutroarquivo/commit/rede/instalação. expect_changes=true/supervisorcommit. Retorno<=50palavras.
+
+Antecessor08141948nãoeditou:4it.todo intactos,tentougatestub e repetiu leituras;Q8S3rev1. Unidade materialmente menor:1it/duaslinhasdedadosmesmacomparação,semcasoszero/degenerados/falhas/freeze. Helpersnão usados removidos APENASdopreparo nuncaaceito;original4todo/reportarquivados. Fonte94dea5cdintocável;baseline396/52suítes/100protegidos. Contexto<=15Kchars,saída<1.5Ktokens,margemsegurajanela16K–32K.
+
+Únicoit 'margem modelada compara percentuais normalizados':baseInput jádefineprojeçãosintéticaB1000,F300,V40,E0,Tfix0,q1/10,tau1/20,L%50. RCFLLF=B−(A+qB+tauB)=510,margin51/100. L%épercentual,m=L%/100. Usarloop sobre2rows literais:
+- percent:'50',ratio:r('1','2'),slack:r('1','100'),reaches:true.
+- percent:'52',ratio:r('13','25'),slack:r('-1','100'),reaches:false.
+Para cada row,result=root({...baseInput(),requiredMarginPercent:r(row.percent)}),assessment=readyAssessment(result.value.assessment). USARretornoassessment noscampos;helperchamadoisoladonãoestreitacampoantigo. Comparar result.value.requiredMarginPercent comr(row.percent),requiredMarginRatio comrow.ratio;assessment.signedMarginSlack comrow.slack,reachesModeledMargin comrow.reaches. Projeção:operatingCostr('340'),plannedTotalCostr('490'),netProfitr('510'),remainingRevenueFactorr('17','20'),marginobjeto{status:'ready',value:r('51','100')}. root játestametadados e3labelsnot-evaluated. Semcast/any/non-nullassertion/optionalchain/importnovo. Racionaiscompletos numerator/denominatorstrings. NÃOusar função sobtesteparagerarexpectativa.
+
+Gate margin-core exige397+/1novo/52anteriores/100protegidos+fontepinada+prefixocore. Perfilintegralmargin400+/4it continuaobrigatório,semrebaixamento;restam0/100/101/B0/G<=0,falhas/freeze/getters. Aceiteglobal/app pendente. Escrever oteste antesdeexecutargate,semtestarstub.
+
+
+# Arquivo pronto: substituir apenas1it.todo
+
+import { describe, it, expect } from 'vitest';
+import { calculateFinancialMarginTarget } from './financial-margin-target';
+import type { FinancialMarginTargetInput, FinancialMarginComparison } from './financial-margin-target';
+const policy = { maxInputLength: 256, maxDigits: 64 };
+function r(numerator: string, denominator = '1') { return {numerator,denominator}; }
+function baseInput(): FinancialMarginTargetInput {
+  return {kind:'projection',contextId:'synthetic-margin',period:'month',creditedRevenue:r('1000'),fixedCosts:r('300'),usageCosts:r('40'),extraordinaryCosts:r('0'),fixedTaxes:r('0'),titheRate:r('1','10'),revenueTaxRate:r('1','20'),requiredMarginPercent:r('50')};
+}
+function root(input: FinancialMarginTargetInput) {
+  const result = calculateFinancialMarginTarget(input,policy);
+  if (result.status !== 'conditional') throw Error(result.reason);
+  expect(result.kind).toBe('projection');
+  expect(result.contextId).toBe(input.contextId);
+  expect(result.period).toBe(input.period);
+  expect(result.financialAssessment).toBe('not-evaluated');
+  expect(result.costCoverage).toBe('not-evaluated');
+  expect(result.taxAssessment).toBe('not-evaluated');
+  expect(result.projection.status).toBe('ready');
+  expect(result.projection.financialAssessment).toBe('not-evaluated');
+  return result;
+}
+function readyAssessment(result: FinancialMarginComparison) {
+  if (result.status !== 'ready') throw Error(result.reason);
+  return result;
+}
+describe('financial-margin-target', () => {
+  it.todo('margem modelada compara percentuais normalizados');
+});
+
+
+# API pública sem implementação
+
+export interface FinancialMarginTargetInput extends FinancialProjectionInput {readonly requiredMarginPercent:ExactRational}
+type MarginCalculationFailure=ExactProductFailure|ExactSumFailure|ExactComparisonFailure;
+export type FinancialMarginComparison=
+  | {readonly status:'ready';readonly signedMarginSlack:ExactRational;readonly reachesModeledMargin:boolean}
+  | {readonly status:'unavailable';readonly code:'margin-unavailable';readonly reason:string;readonly margin:Extract<FinancialMargin,{status:'unavailable'}>};
+export type FinancialMarginTargetResult=
+  | {readonly status:'conditional';readonly kind:'projection';readonly contextId:string;readonly period:BudgetPeriod;readonly financialAssessment:'not-evaluated';readonly costCoverage:'not-evaluated';readonly taxAssessment:'not-evaluated';readonly projection:Extract<FinancialProjectionResult,{status:'ready'}>;readonly value:{readonly requiredMarginPercent:ExactRational;readonly requiredMarginRatio:ExactRational;readonly assessment:FinancialMarginComparison}}
+  | {readonly status:'unavailable';readonly code:'invalid-budget'|'projection-unavailable'|'invalid-target'|'calculation-unavailable';readonly reason:string;readonly projection:FinancialProjectionResult|null;readonly calculation:MarginCalculationFailure|null};
+
+
+RCF.md:164 - **Margem mínima configurável:** o sistema DEVE exigir L% finito e não negativo, admitindo 0, e definir m = L%/100; essa margem não substitui Lmin absoluto nem Lucro%RotaPro; preserva equilíbrio, Lmin, 15%/100% SM e matriz 18. Não impor teto artificial m < 1: condições degeneradas devem ser resolvidas. T ≥ 0 finito explícito em BRL/km total; ausente não vira 0 ou kRP. Inputs ausentes suspendem somente derivados. [PENDENTE-CODIGO]

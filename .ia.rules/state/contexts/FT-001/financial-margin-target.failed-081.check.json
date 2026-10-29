@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "failed": "types",
+  "commands": [
+    {
+      "name": "types",
+      "status": 2,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\nsrc/domain/financial-margin-target.test.ts(6,10): error TS6133: 'baseInput' is declared but its value is never read.\r\nsrc/domain/financial-margin-target.test.ts(9,10): error TS6133: 'root' is declared but its value is never read.\r\nsrc/domain/financial-margin-target.test.ts(22,10): error TS6133: 'readyAssessment' is declared but its value is never read.\r\nsrc/domain/financial-margin-target.test.ts(26,10): error TS6133: 'missingAssessment' is declared but its value is never read.\r\n",
+      "stderr": ""
+    }
+  ]
+}

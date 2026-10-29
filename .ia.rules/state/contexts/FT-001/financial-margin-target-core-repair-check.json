@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "unit": "FT-003.41.2a.1b",
+  "beforeSha256": "26e8d4ec84f7b85387c2eb4e95b10a8bd6a7b1d7de5b2588ac57fb0f490ec617",
+  "afterSha256": "dc8ae35adda2422e6f3496a315847f5855d1a1eeffb324d9375a40599b156bf7",
+  "changes": "five required independent projection assertions: A340,total490,LLF510,G17/20,margin51/100; original loop/targets/slacks preserved",
+  "limits": "Somente comparação50/52;demaisgrupos eaceiteintegralpendentes."
+}
