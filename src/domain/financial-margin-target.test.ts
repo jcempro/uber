@@ -102,4 +102,35 @@ describe('financial-margin-target', () => {
       expect(assessment.reachesModeledMargin).toBe(row.reaches);
     }
   });
+
+it('rejeita margem negativa mantendo projeção válida', () => {
+  const result = calculateFinancialMarginTarget({ ...baseInput(), requiredMarginPercent: r('-1') }, policy);
+  if (result.status !== 'unavailable') throw Error('Esperado unavailable');
+  expect(result.code).toBe('invalid-target');
+  expect(result.reason).toContain('requiredMarginPercent');
+  expect(result.reason).not.toBe('');
+  expect(result.calculation).toBeNull();
+  expect(result).not.toHaveProperty('value');
+  const projection = result.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projeção deveria permanecer válida');
+  expect(projection.value.netProfit).toEqual(r('510'));
+  expect(projection.value.margin).toEqual({ status: 'ready', value: r('51', '100') });
+});
+
+it('rejeita racional de margem inválido preservando diagnóstico', () => {
+  const result = calculateFinancialMarginTarget({ ...baseInput(), requiredMarginPercent: r('1', '0') }, policy);
+  if (result.status !== 'unavailable') throw Error('Esperado unavailable');
+  expect(result.code).toBe('invalid-target');
+  const calculation = result.calculation;
+  if (calculation === null) throw Error('Diagnóstico deveria existir');
+  expect(calculation.status).toBe('unavailable');
+  expect(calculation.code).toBe('invalid-rational');
+  expect(result.reason).toBe(calculation.reason);
+  expect(result.reason).not.toBe('');
+  const projection = result.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projeção deveria permanecer válida');
+  expect(projection.value.netProfit).toEqual(r('510'));
+  expect(projection.value.margin).toEqual({ status: 'ready', value: r('51', '100') });
+  expect(result).not.toHaveProperty('value');
+});
 });

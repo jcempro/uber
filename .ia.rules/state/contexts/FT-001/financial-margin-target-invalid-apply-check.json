@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "unit": "FT-003.41.2b.1",
+  "beforeSha256": "10b347d46b9704ea28d668639a2a4e93d4ff6965f48fcc4c9f53d048b6287ed6",
+  "afterSha256": "f721f79ae45fd8a6e1eb7ad7d3084d12c8010aa7add575d9651adb1c07c97127",
+  "proposalSha256": "72af68ad4611cde89459487a9cf1f45be3407676598cb5a543ee63a12097ac6e",
+  "gateBeforeSha256": "9a71cfa101e2d5f7a4cfd6a7105497243305663eb64192bbf1d8be14651e204c",
+  "gateAfterSha256": "c70ebb8d08bf598ec859f2dc36ed993d4fbdcfe32543deb23a1b0742eae88dce",
+  "changes": "append2proposed tests;2explicit property-absence corrections;preserve4accepted it/source/100files;gate402+/6",
+  "limits": "Invalid-target only;other failures/freeze/getters/app pending."
+}
