@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "unit": "FT-003.42.1a",
+  "sourceSha256": "8c1a618d110c7a1497721a4b195ae234871bc4a79ce49b3dfa2abbbe2f4b1632",
+  "protectedFiles": 102,
+  "typeErrors": [],
+  "lint": {
+    "status": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "limits": "Only public types/imports/lint;function/behavior/full app pending.411 prior tests not rerun."
+}

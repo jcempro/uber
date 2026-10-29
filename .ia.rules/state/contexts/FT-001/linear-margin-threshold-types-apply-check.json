@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "unit": "FT-003.42.1a",
+  "sourceSha256": "8c1a618d110c7a1497721a4b195ae234871bc4a79ce49b3dfa2abbbe2f4b1632",
+  "proposalSha256": "d7f7fe14ef376799abebc28218b9d6622e5819e2a25f301aed7737309e241c38",
+  "baselineSha256": "b718869ae11b3e93829ba3cfc932adcfd93de64c12190d3462a1fd4eec8b3799",
+  "protectedFiles": 102,
+  "priorTests": 411,
+  "suites": 53,
+  "changes": "nested model preserves projection kind;case tags;correct model snapshot type;public imports;types only",
+  "limits": "Function implementation and behavioral validation pending;full app pending."
+}
