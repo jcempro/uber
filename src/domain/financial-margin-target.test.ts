@@ -83,4 +83,23 @@ describe('financial-margin-target', () => {
     expect(assessment).not.toHaveProperty('reachesModeledMargin');
     expect(assessment).not.toHaveProperty('signedMarginSlack');
   });
+  it('fator de receita não positivo não bloqueia avaliação direta', () => {
+    const rows = [
+      { tax: r('0'), factor: r('0'), total: r('100'), profit: r('0'), margin: r('0'), reaches: true },
+      { tax: r('1','10'), factor: r('-1','10'), total: r('110'), profit: r('-10'), margin: r('-1','10'), reaches: false },
+    ];
+    for (const row of rows) {
+      const result = root({...baseInput(),creditedRevenue:r('100'),fixedCosts:r('0'),usageCosts:r('0'),extraordinaryCosts:r('0'),fixedTaxes:r('0'),titheRate:r('1'),revenueTaxRate:row.tax,requiredMarginPercent:r('0')});
+      expect(result.projection.value.operatingCost).toEqual(r('0'));
+      expect(result.projection.value.plannedTotalCost).toEqual(row.total);
+      expect(result.projection.value.netProfit).toEqual(row.profit);
+      expect(result.projection.value.remainingRevenueFactor).toEqual(row.factor);
+      expect(result.projection.value.margin).toEqual({status:'ready',value:row.margin});
+      const assessment = readyAssessment(result.value.assessment);
+      expect(result.value.requiredMarginPercent).toEqual(r('0'));
+      expect(result.value.requiredMarginRatio).toEqual(r('0'));
+      expect(assessment.signedMarginSlack).toEqual(row.margin);
+      expect(assessment.reachesModeledMargin).toBe(row.reaches);
+    }
+  });
 });
