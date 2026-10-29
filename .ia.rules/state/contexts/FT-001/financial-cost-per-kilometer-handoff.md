@@ -1,5 +1,16 @@
 # FT-003.43.1 — custo projetado por quilômetro
 
+## Atual43.1c — Kzero e falhas
+
+1746f79e recebidoUMAvez/command_sequenceSEMinferência;427passaram/types+lint0/4itC-K/104proteções/54suítesanteriores;fixtures49/10,17/5,26/5,13/5conferidas;Q8S10rev1/commitc06caa6/mainagoraahead29. Gitfuncionalahead28confere,metadataextra=supervisorapósjob;appglobalpendente.
+
+122c64b3-57e1-475e-9d59-1552bc584e14 confirmadoRUNNING/R8Vv1/mesmochatrepo;command_sequence apply_financial_cost_km_edges→verify_financial_cost_km_edges SEMinferência;expect_changes=true/alvoteste/commit supervisor/semGit/rede. edges-apply.mjs/unit reaproveitam9testes:K0C490,K0B0C0,negativo,1/0,ausente,normalizaçãoK65dígitos,policy0prioritária,projeçãonegativa,divisãotécnica. ÚltimoK1/(64ones) passa normalização/signmasC490×den>cap10^64-1=>resource-budget;prova conferidacódigoexact-product/fitsProduct. Deve manterrootconditional/Knormalizado/FPready,apenasmetricindisponível;falhaKinválidoérootunavailable comFPpreservada. K0undefined mesmoC0,nãozeraC/encargos. Preflightread-only/syntaxgate0/9itappendrevisados;NÃOéexecuçãodostestes.
+
+Preserva4itd91ace6b/source0d5af50e/104/baseline423/54. Teste→4c93acd0007ab10274b8ab1ad4ebc90eeff63dbe4d93fe0dcce4d4907409893b;gate033ddb0c→67ca6fbf3c670f83be8ee64446fe986796d070842c6054b64942f73807949875/profilecost-km-edges;esperado436total/13itC-K. Applybackupsaccepted-core/core.accepted-check/edges.skeleton/gatebefore/receipt. CallbackresultadoUMAvez/revisão9casos/check/Git/Q8S/commitseaceito. Próximosnapshot/freeze/policy1vez,43.2teto/interseção/ledger/UI/appglobalpendentes. Não reconsultar174/36a/2e3/a8a/etc.
+
+Monitor http://127.0.0.1:49767/job/122c64b3-57e1-475e-9d59-1552bc584e14;índice http://127.0.0.1:49767/ (linkscompletosnochat). Sem polling;N7Csemrotanativa/mediçãoautoritativa,impedimento/checkpointnãoécompactação.
+
+
 ## Atual43.1b — quatro casos centrais
 
 36a88ce8 recebidoUMAvez/command_sequenceSEMinferência/apply+verify0/source0d5af50e conferidaintegralmente/types/imports/lint/AST0/104proteções;423anteriores não rerun. Gitdeterminístico/liveahead27coincidem;Q8S10rev1/commit44a76c5/mainagoraahead28. Aceite somente fonte;comportamento ainda não aceito.

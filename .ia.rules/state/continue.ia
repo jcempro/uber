@@ -1,6 +1,6 @@
 # Estado canônico — FT-003 ativa após conciliação FT-010
 
-FT-003.43.1b revisada:1746f79e recebidoUMAvez/Q8S10rev1/command_sequenceSEMinferência;types/lint0/427testes/4itC-K.4fixturesindependentesconferidas/testd91ace6b/gate033ddb0c/source0d5af50e/104proteções/54suítesanteriores;Gitfuncionalahead28confere/metadataextra=supervisorapósjob. Commit supervisor a seguir;próximoK0/falhasdeK/policy/projeção e falha técnica de divisão por reuso de templatesaceitos;freeze/snapshot/teto43.2/appglobalpendentes.
+FT-003.43.1c efeitosaceitos:122c64b3 recebidoUMAvez/FAILEDapósapply+verifyexit0porR8V86/80palavras.Nãoinfra,nãorepetircomandos;draftpúblico41f8f878ereportprovam436passaram/types+lint0/13itC-K/hash4c93acd0/gate67ca6fbf/source0d5af50e/104proteções/54suítes.Gitfuncionalahead29confere/metadataextra=supervisorapósjob;Q8S10rev1. Commit supervisor a seguir;próximosnapshot/policy1vez commax_words200 (correçãoformal) eescoponovo;appglobal/teto43.2pendentes.
 
 37b.2 f4e97c6a recebido uma vez, FAILED/WORKER_INCOMPLETE: quatro leituras obrigatórias concluídas, depois leituras repetidas sem escrita/comandos. Revisão proporcional/Q8S3 revisão1 registrados; Git determinístico e atual main...origin/main coincidem, sem ahead a atribuir. Sem evidência de infraestrutura; nenhum teste novo. Correção 37b.2a reduz a um fragmento JSON canônico de nove casos, sem helpers/testes nesta unidade; preserva preparo e evita reexploração. Última suíte aceita281. Demais grupos, validação e implementação financeira/global pendentes.
 

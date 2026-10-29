@@ -59,4 +59,169 @@ describe('financial-cost-per-kilometer',()=>{
     expect(result.value.totalDistance).toEqual(r('200'));
     expect(readyCost(result.value.costPerKilometer)).toStrictEqual({status:'ready',value:r('13','5')});
   });
+
+it('Kzero mantém custo completo e suspende somente custo por km',()=>{
+    // RCF8.2 literal: Coper=F+V+E+Tfix; LLF=B-qB-tauB-Coper.
+    // Fixture: 100+200+30+10=340;1000-100-50-340=510;margem51%.
+    const result=root({...baseInput(),totalDistance:r('0'),creditedRevenue:r('1000'),fixedCosts:r('100'),usageCosts:r('200'),extraordinaryCosts:r('30'),fixedTaxes:r('10'),revenueTaxRate:r('1','20')});
+    expect(result.projection).toMatchObject({status:'ready',kind:'projection',contextId:'synthetic-cost-km',period:'month',financialAssessment:'not-evaluated',value:{operatingCost:r('340'),tithe:r('100'),receiptTax:r('50'),plannedTotalCost:r('490'),netProfit:r('510'),remainingRevenueFactor:r('17','20'),margin:{status:'ready',value:r('51','100')}}});
+    expect(result.value.totalDistance).toEqual(r('0'));
+    const metric=result.value.costPerKilometer;
+    if(metric.status!=='unavailable')throw Error('Esperado custo/km indefinido');
+    expect(metric.code).toBe('zero-distance');
+    expect(metric.reason).not.toBe('');
+    expect(metric.calculation).toBeNull();
+    expect(metric).not.toHaveProperty('value');
+  });
+
+it('receita e custos zero não tornam custo por km definido com Kzero',()=>{
+    const result=root({...baseInput(),creditedRevenue:r('0'),fixedCosts:r('0'),usageCosts:r('0'),extraordinaryCosts:r('0'),fixedTaxes:r('0'),totalDistance:r('0')});
+    expect(result.projection).toMatchObject({status:'ready',value:{operatingCost:r('0'),tithe:r('0'),receiptTax:r('0'),netProfit:r('0'),plannedTotalCost:r('0'),margin:{status:'unavailable',code:'zero-revenue'}}});
+    expect(result.value.totalDistance).toEqual(r('0'));
+    const metric=result.value.costPerKilometer;
+    if(metric.status!=='unavailable')throw Error('Esperado custo/km indefinido');
+    expect(metric.code).toBe('zero-distance');
+    expect(metric.reason).not.toBe('');
+    expect(metric.calculation).toBeNull();
+    expect(metric).not.toHaveProperty('value');
+  });
+
+it('rejeita distância negativa mantendo projeção válida', () => {
+  const result = calculateFinancialCostPerKilometer({ ...baseInput(), totalDistance: r('-1') }, policy);
+  if (result.status !== 'unavailable') throw Error('Esperado unavailable');
+  expect(result.code).toBe('invalid-distance');
+  expect(result.reason).toContain('totalDistance');
+  expect(result.reason).not.toBe('');
+  expect(result.calculation).toBeNull();
+  expect(result).not.toHaveProperty('value');
+  const projection = result.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projeção deveria permanecer válida');
+  expect(projection.value.netProfit).toEqual(r('510'));
+  expect(projection.value.margin).toEqual({ status: 'ready', value: r('51', '100') });
+});
+
+it('rejeita racional de distância inválido preservando diagnóstico', () => {
+  const result = calculateFinancialCostPerKilometer({ ...baseInput(), totalDistance: r('1', '0') }, policy);
+  if (result.status !== 'unavailable') throw Error('Esperado unavailable');
+  expect(result.code).toBe('invalid-distance');
+  const calculation = result.calculation;
+  if (calculation === null) throw Error('Diagnóstico deveria existir');
+  expect(calculation.status).toBe('unavailable');
+  expect(calculation.code).toBe('invalid-rational');
+  expect(result.reason).toBe(calculation.reason);
+  expect(result.reason).not.toBe('');
+  const projection = result.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projeção deveria permanecer válida');
+  expect(projection.value.netProfit).toEqual(r('510'));
+  expect(projection.value.margin).toEqual({ status: 'ready', value: r('51', '100') });
+  expect(result).not.toHaveProperty('value');
+});
+
+it('distância ausente não se transforma em zero', () => {
+  const input = baseInput();
+  expect(Reflect.deleteProperty(input, 'totalDistance')).toBe(true);
+  expect(input).not.toHaveProperty('totalDistance');
+  const result = calculateFinancialCostPerKilometer(input, policy);
+  if (result.status !== 'unavailable') throw Error('Esperado unavailable');
+  expect(result.code).toBe('invalid-distance');
+  const calculation = result.calculation;
+  if (calculation === null) throw Error('Diagnóstico deveria existir');
+  expect(calculation.status).toBe('unavailable');
+  expect(calculation.code).toBe('invalid-rational');
+  expect(result.reason).toBe(calculation.reason);
+  expect(result.reason).not.toBe('');
+  const projection = result.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projeção deveria permanecer válida');
+  expect(projection.value.netProfit).toEqual(r('510'));
+  expect(projection.value.margin).toEqual({ status: 'ready', value: r('51', '100') });
+  expect(result).not.toHaveProperty('value');
+});
+
+it('limite técnico da distância não vira distância inválida', () => {
+  const result = calculateFinancialCostPerKilometer({ ...baseInput(), totalDistance: r('1'.repeat(65)) }, policy);
+  if (result.status !== 'unavailable') throw Error('Esperado unavailable');
+  expect(result.code).toBe('calculation-unavailable');
+  const calculation = result.calculation;
+  if (calculation === null) throw Error('Diagnóstico deveria existir');
+  expect(calculation.status).toBe('unavailable');
+  expect(calculation.code).toBe('resource-budget');
+  expect(result.reason).toBe(calculation.reason);
+  expect(result.reason).not.toBe('');
+  const projection = result.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projeção deveria permanecer válida');
+  expect(projection.value.netProfit).toEqual(r('510'));
+  expect(projection.value.margin).toEqual({ status: 'ready', value: r('51', '100') });
+  expect(result).not.toHaveProperty('value');
+});
+
+it('orçamento inválido precede receita e distância negativas', () => {
+  const result = calculateFinancialCostPerKilometer(
+    {
+      ...baseInput(),
+      creditedRevenue: r('-1'),
+      totalDistance: r('-1')
+    },
+    { ...policy, maxDigits: 0 }
+  );
+
+  if (result.status !== 'unavailable') {
+    throw new Error('Esperado status unavailable');
+  }
+
+  expect(result.code).toBe('invalid-budget');
+  expect(result.reason).not.toBe('');
+  expect(result.projection).toBeNull();
+  expect(result.calculation).toBeNull();
+  expect(result).not.toHaveProperty('value');
+});
+
+it('projeção inválida preserva diagnóstico e impede custo por km', () => {
+  const result = calculateFinancialCostPerKilometer(
+    {
+      ...baseInput(),
+      creditedRevenue: r('-1')
+    },
+    policy
+  );
+
+  if (result.status !== 'unavailable') {
+    throw new Error('Esperado status unavailable');
+  }
+
+  expect(result.code).toBe('projection-unavailable');
+  expect(result.reason).not.toBe('');
+  expect(result.projection).not.toBeNull();
+  expect(result.calculation).toBeNull();
+
+  expect(result).not.toHaveProperty('value');
+  const projection = result.projection;
+  if (projection === null || projection.status !== 'unavailable') {
+    throw new Error('Esperada projeção indisponível');
+  }
+
+  expect(projection.code).toBe('invalid-input');
+  expect(projection.field).toBe('creditedRevenue');
+  expect(projection.calculation).toBeNull();
+  expect(projection.reason).toBe(result.reason);
+  expect(projection).not.toHaveProperty('value');
+});
+
+it('falha técnica da divisão preserva projeção e distância válidas', () => {
+  const result = root({ ...baseInput(), totalDistance:r('1','1'.repeat(64)) });
+  expect(result.value.totalDistance).toEqual(r('1','1'.repeat(64)));
+  const metric=result.value.costPerKilometer;
+  if (metric.status !== 'unavailable') throw Error('Esperado metric unavailable');
+  expect(metric.code).toBe('calculation-unavailable');
+  const calculation = metric.calculation;
+  if (calculation === null) throw Error('Diagnóstico deveria existir');
+  expect(calculation.status).toBe('unavailable');
+  expect(calculation.code).toBe('resource-budget');
+  expect(metric.reason).toBe(calculation.reason);
+  expect(metric.reason).not.toBe('');
+  const projection = result.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projeção deveria permanecer válida');
+  expect(projection.value.netProfit).toEqual(r('510'));
+  expect(projection.value.margin).toEqual({ status: 'ready', value: r('51', '100') });
+  expect(metric).not.toHaveProperty('value');
+});
 });
