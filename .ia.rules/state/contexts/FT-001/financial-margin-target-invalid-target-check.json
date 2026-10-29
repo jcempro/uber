@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "unit": "FT-003.41.2b.1",
+  "node": "v24.22.1",
+  "sourceCommit": "fddd5bde12d2873c98490dd511a5617d4c2fcebc",
+  "files": {
+    "src/domain/financial-margin-target.ts": "94dea5cd0393dbd2fd7dceec0737b027480fd32866c123bed501e7e05a721fcd",
+    "src/domain/financial-margin-target.test.ts": "f721f79ae45fd8a6e1eb7ad7d3084d12c8010aa7add575d9651adb1c07c97127"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\financial-margin-target-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/financial-margin-target-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 402,
+    "passed": 402,
+    "newSuite": 6
+  },
+  "protectedFiles": 100,
+  "rateAggregate": null,
+  "limits": "Comparação direta de margem projetada;falhas/imutabilidade adicionais eaceiteglobal pendentes."
+}

@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "unit": "FT-003.41.2b.2",
+  "beforeSha256": "f721f79ae45fd8a6e1eb7ad7d3084d12c8010aa7add575d9651adb1c07c97127",
+  "afterSha256": "16b026f446405a7250b0bd018bca9e0ed8a49734e9e564887fa89b44daa1df4a",
+  "proposalSha256": "ea323aaae920894cda2fa80c71aaaa6fc65d2d358fb69f393612d2ac036ef3ee",
+  "gateBeforeSha256": "c70ebb8d08bf598ec859f2dc36ed993d4fbdcfe32543deb23a1b0742eae88dce",
+  "gateAfterSha256": "ec4c1b8bcffd407e6bdd091cb6873e5ca8ef96303a17dc9898b78436e4c35924",
+  "changes": "append2proposed early-failure tests;1explicit missing outer-value absence assertion;preserve6accepted it/source/100files;gate404+/8",
+  "limits": "Only invalid-budget/projection-unavailable;missing-target/technical-fail/freeze/getters/app pending."
+}

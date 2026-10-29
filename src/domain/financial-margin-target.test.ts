@@ -133,4 +133,56 @@ it('rejeita racional de margem inválido preservando diagnóstico', () => {
   expect(projection.value.margin).toEqual({ status: 'ready', value: r('51', '100') });
   expect(result).not.toHaveProperty('value');
 });
+
+it('orçamento técnico inválido precede avaliação financeira', () => {
+  const result = calculateFinancialMarginTarget(
+    {
+      ...baseInput(),
+      creditedRevenue: r('-1'),
+      requiredMarginPercent: r('-1')
+    },
+    { ...policy, maxDigits: 0 }
+  );
+
+  if (result.status !== 'unavailable') {
+    throw new Error('Esperado status unavailable');
+  }
+
+  expect(result.code).toBe('invalid-budget');
+  expect(result.reason).not.toBe('');
+  expect(result.projection).toBeNull();
+  expect(result.calculation).toBeNull();
+  expect(result).not.toHaveProperty('value');
+});
+
+it('projeção inválida preserva diagnóstico e impede comparação de margem', () => {
+  const result = calculateFinancialMarginTarget(
+    {
+      ...baseInput(),
+      creditedRevenue: r('-1')
+    },
+    policy
+  );
+
+  if (result.status !== 'unavailable') {
+    throw new Error('Esperado status unavailable');
+  }
+
+  expect(result.code).toBe('projection-unavailable');
+  expect(result.reason).not.toBe('');
+  expect(result.projection).not.toBeNull();
+  expect(result.calculation).toBeNull();
+
+  expect(result).not.toHaveProperty('value');
+  const projection = result.projection;
+  if (projection === null || projection.status !== 'unavailable') {
+    throw new Error('Esperada projeção indisponível');
+  }
+
+  expect(projection.code).toBe('invalid-input');
+  expect(projection.field).toBe('creditedRevenue');
+  expect(projection.calculation).toBeNull();
+  expect(projection.reason).toBe(result.reason);
+  expect(projection).not.toHaveProperty('value');
+});
 });

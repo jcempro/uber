@@ -1,5 +1,21 @@
 # FT-003.41.1 — margem percentual direta
 
+## Aceite41.2b.2
+
+fbf68a75 recebidoUMAvez/COMPLETED command_sequenceSEMinferência. Aplicação16b026f4 conferida:invalid-budgetprecedeinputinválido/projectionnull/calculationnull;projection-unavailablepreserva invalid-input/fieldcreditedRevenue/reasonoriginal/calculationnull;ausênciavalueexterno/nestedcorreta. Gate404/404tipos/lint0,fonte94/prefixo6it/100proteçõespreservados. Gitdeterminístico/liveahead15coincidem/semcommitworker. Q8S10rev1registrado. Missingtarget/technicalfail/freeze/getters/appcontinuampendentes.
+
+## Atual41.2b.2
+
+03182705 recebidoUMAvez/COMPLETED read-only/provided_evidence,semferramentas/efeitos. PropostaJSONoriginalSHAea323aaae920894cda2fa80c71aaaa6fc65d2d358fb69f393612d2ac036ef3ee salva;2itbudgetprioritário/projectionfailcorretos,1assertomissa(raizsemvalue2ºit). Q8S8rev1registrado/Gitdeterminístico/liveahead15coincidem. Complementoexpressoantesconstprojection:expect(result).not.toHaveProperty('value');preservaroriginal. Propostanãofoiexecutada.
+
+fbf68a75-bde4-4486-99f5-78a09c2d0ad8 confirmado RUNNING/R8Vv1,mesmochat/repo. command_sequenceSEMinferência apply_financial_margin_early→verify_financial_margin_early,expect_changes=true/testfunctional/commit supervisor/semGitlivre. Preflightaprovado/pinprepost:testef721f79ae45fd8a6e1eb7ad7d3084d12c8010aa7add575d9651adb1c07c97127→16b026f446405a7250b0bd018bca9e0ed8a49734e9e564887fa89b44daa1df4a;gatec70ebb8d→ec4c1b8bcffd407e6bdd091cb6873e5ca8ef96303a17dc9898b78436e4c35924. Backupaccepted-invalid-target/report402/recibo,preserva6it/fonte94/100proteções;gate404+/8it/52anterioressemrebaixaroutrosperfis. Últimoaceite402/6it/commit268016a/mainahead15. Callbacklocal_resultUMAvez/revisão/Git/Q8S/commitseaceito. Missingtarget/technicalfail/freeze/getters/appcontinuampendentes. Monitor http://127.0.0.1:49767/job/fbf68a75-bde4-4486-99f5-78a09c2d0ad8 eíndice http://127.0.0.1:49767/ (linkscompletosnochat). Sem polling. N7Csemrotanativaexposta/mediçãoautoritativabarata;impedimentodeclarado/checkpointnãoécompactação.
+
+## Atual41.2b.2p
+
+03182705-bcfb-4143-acec-48b31606a178 confirmado RUNNING/R8Vv1,read-only/provided_evidence5697chars,semferramentas/efeitos/commit. PropostaJSONappendEXATAMENTE2it invalid-budgetprioritário(maxDigits0+inputnegativo) eprojection-unavailablecomdiagnósticooriginal(B−1/políticaválida). SchemaappendmaxLength4000/maxwords500. Unit early-failures-proposal-unit.md+API+fixtureconferidos;limitespositivos/projeçãonãonegativa/prioridadediagnósticoscontratosadotados,semproibiçãogenéricadevaloresassinadosnoutroscontratos. Propostanãoéimplementação/testeexecutado. Gitbaselineapóscommit268016a/mainahead15;últimoaceite402/6it/fonte94/testef721f79a. a614a290 recebidoUMAvez/command_sequenceSEMinferência/aplicação2it/gate402tiposlint/100proteções/prefixo4it/Q8S10rev1registrado/commit268016a.
+
+Callback local_resultUMAvez/revisãoproposta/Git/Q8S/salvarfiel;posterioraplicaçãocommand_sequenceexpect_changes=true/testfunctional/gate404+/8it/prefixo6itf721f79a+fonte94+100proteções. SeguirrestriçãoGitlivre motivadapor39e7b202;semselfmaintenance. Demaismissingtarget/technicalfail/freeze/getters eaplicativointegralcontinuampendentes. Monitor http://127.0.0.1:49767/job/03182705-bcfb-4143-acec-48b31606a178 eíndice http://127.0.0.1:49767/ (linkscompletosnochat). Sem polling. N7Csemrotanativaexposta/mediçãoautoritativabarata;impedimentodeclarado/checkpointnãoécompactação.
+
 ## Aceite41.2b.1
 
 a614a290 recebidoUMAvez/COMPLETED command_sequenceSEMinferência. Aplicaçãof721f79a conferida:2itnegativo/den0,projeção510/51/100preservada,diagnósticoinvalid-rational/originalreason eausênciavaluecorretos. Fonte94/prefixo4it/100proteçõespreservados. Tipos/lint402/402aprovados;Gitdeterminístico/liveahead14coincidem,semcommitworker. Q8S10rev1registrado. Aceiteexclusivo2casosinvalid-target;invalidbudget/projectionfail/technicalfail/ausente/freeze/getters/appcontinuampendentes.
