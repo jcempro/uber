@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "unit": "FT-003.42.4a",
+  "unit": "FT-003.42.4b",
   "node": "v24.22.1",
   "sourceCommit": "694ec64ddf2e1ee14121b5ed161d547d47183ff4",
   "files": {
     "src/domain/linear-margin-threshold.ts": "e9149bbe3d7259ddd688f96fbb43ba214328ab0d61a4081fdaea88d87f9fc8d0",
-    "src/domain/linear-margin-threshold.test.ts": "9a831aaafc4a9bad562b4527bf115fbc1fca188d94c381e60b57a37c4fdee1db"
+    "src/domain/linear-margin-threshold.test.ts": "c1211757273db447aec6dbf7e7e86d83c91111a981011eaac532fed2eb831b68"
   },
   "commands": [
     {
@@ -28,11 +28,11 @@
     }
   ],
   "tests": {
-    "total": 416,
-    "passed": 416,
-    "newSuite": 5
+    "total": 421,
+    "passed": 421,
+    "newSuite": 10
   },
   "protectedFiles": 102,
   "rateAggregate": null,
-  "limits": "Early failures only;target/projection/resource/freeze/policy snapshot/full app pending."
+  "limits": "Inherited failures only;operation failures/freeze/policy snapshot/full app pending."
 }

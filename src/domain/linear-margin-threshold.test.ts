@@ -238,4 +238,133 @@ it('orçamento técnico inválido precede avaliação financeira', () => {
   expect(result.calculation).toBeNull();
   expect(result).not.toHaveProperty('value');
 });
+
+it('rejeita margem negativa mantendo projeção válida', () => {
+  const result = calculateConditionalLinearMarginThreshold({ ...baseInput(), requiredMarginPercent: r('-1') }, policy);
+  if (result.status !== 'unavailable') throw Error('Esperado unavailable');
+  const marginTarget=result.marginTarget;
+  if(marginTarget===null||marginTarget.status!=='unavailable')throw Error('Diagnóstico de margem deveria existir');
+  expect(marginTarget.code).toBe(result.code);
+  expect(result.reason).toBe(marginTarget.reason);
+  expect(result.calculation).toBe(marginTarget.calculation);
+  expect(marginTarget).not.toHaveProperty('value');
+  expect(result.code).toBe('invalid-target');
+  expect(result.reason).toContain('requiredMarginPercent');
+  expect(result.reason).not.toBe('');
+  expect(result.calculation).toBeNull();
+  expect(result).not.toHaveProperty('value');
+  const projection = marginTarget.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projeção deveria permanecer válida');
+  expect(projection.value.netProfit).toEqual(r('-340'));
+  expect(projection.value.margin).toMatchObject({status:'unavailable',code:'zero-revenue',calculation:null});
+});
+
+it('rejeita racional de margem inválido preservando diagnóstico', () => {
+  const result = calculateConditionalLinearMarginThreshold({ ...baseInput(), requiredMarginPercent: r('1', '0') }, policy);
+  if (result.status !== 'unavailable') throw Error('Esperado unavailable');
+  const marginTarget=result.marginTarget;
+  if(marginTarget===null||marginTarget.status!=='unavailable')throw Error('Diagnóstico de margem deveria existir');
+  expect(marginTarget.code).toBe(result.code);
+  expect(result.reason).toBe(marginTarget.reason);
+  expect(result.calculation).toBe(marginTarget.calculation);
+  expect(marginTarget).not.toHaveProperty('value');
+  expect(result.code).toBe('invalid-target');
+  const calculation = result.calculation;
+  if (calculation === null) throw Error('Diagnóstico deveria existir');
+  expect(calculation.status).toBe('unavailable');
+  expect(calculation.code).toBe('invalid-rational');
+  expect(result.reason).toBe(calculation.reason);
+  expect(result.reason).not.toBe('');
+  const projection = marginTarget.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projeção deveria permanecer válida');
+  expect(projection.value.netProfit).toEqual(r('-340'));
+  expect(projection.value.margin).toMatchObject({status:'unavailable',code:'zero-revenue',calculation:null});
+  expect(result).not.toHaveProperty('value');
+});
+
+it('projeção inválida preserva diagnóstico e impede comparação de margem', () => {
+  const result = calculateConditionalLinearMarginThreshold(
+    {
+      ...baseInput(),
+      fixedCosts: r('-1')
+    },
+    policy
+  );
+
+  if (result.status !== 'unavailable') {
+    throw new Error('Esperado status unavailable');
+  }
+
+  const marginTarget=result.marginTarget;
+  if(marginTarget===null||marginTarget.status!=='unavailable')throw Error('Diagnóstico de margem deveria existir');
+  expect(marginTarget.code).toBe(result.code);
+  expect(result.reason).toBe(marginTarget.reason);
+  expect(result.calculation).toBe(marginTarget.calculation);
+  expect(marginTarget).not.toHaveProperty('value');
+  expect(result.code).toBe('projection-unavailable');
+  expect(result.reason).not.toBe('');
+  expect(marginTarget.projection).not.toBeNull();
+  expect(result.calculation).toBeNull();
+
+  expect(result).not.toHaveProperty('value');
+  const projection = marginTarget.projection;
+  if (projection === null || projection.status !== 'unavailable') {
+    throw new Error('Esperada projeção indisponível');
+  }
+
+  expect(projection.code).toBe('invalid-input');
+  expect(projection.field).toBe('fixedCosts');
+  expect(projection.calculation).toBeNull();
+  expect(projection.reason).toBe(result.reason);
+  expect(projection).not.toHaveProperty('value');
+});
+
+it('meta ausente não se transforma em zero', () => {
+  const input = baseInput();
+  expect(Reflect.deleteProperty(input, 'requiredMarginPercent')).toBe(true);
+  expect(input).not.toHaveProperty('requiredMarginPercent');
+  const result = calculateConditionalLinearMarginThreshold(input, policy);
+  if (result.status !== 'unavailable') throw Error('Esperado unavailable');
+  const marginTarget=result.marginTarget;
+  if(marginTarget===null||marginTarget.status!=='unavailable')throw Error('Diagnóstico de margem deveria existir');
+  expect(marginTarget.code).toBe(result.code);
+  expect(result.reason).toBe(marginTarget.reason);
+  expect(result.calculation).toBe(marginTarget.calculation);
+  expect(marginTarget).not.toHaveProperty('value');
+  expect(result.code).toBe('invalid-target');
+  const calculation = result.calculation;
+  if (calculation === null) throw Error('Diagnóstico deveria existir');
+  expect(calculation.status).toBe('unavailable');
+  expect(calculation.code).toBe('invalid-rational');
+  expect(result.reason).toBe(calculation.reason);
+  expect(result.reason).not.toBe('');
+  const projection = marginTarget.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projeção deveria permanecer válida');
+  expect(projection.value.netProfit).toEqual(r('-340'));
+  expect(projection.value.margin).toMatchObject({status:'unavailable',code:'zero-revenue',calculation:null});
+  expect(result).not.toHaveProperty('value');
+});
+
+it('limite técnico da meta não se transforma em meta inválida', () => {
+  const result = calculateConditionalLinearMarginThreshold({ ...baseInput(), requiredMarginPercent: r('1'.repeat(65)) }, policy);
+  if (result.status !== 'unavailable') throw Error('Esperado unavailable');
+  const marginTarget=result.marginTarget;
+  if(marginTarget===null||marginTarget.status!=='unavailable')throw Error('Diagnóstico de margem deveria existir');
+  expect(marginTarget.code).toBe(result.code);
+  expect(result.reason).toBe(marginTarget.reason);
+  expect(result.calculation).toBe(marginTarget.calculation);
+  expect(marginTarget).not.toHaveProperty('value');
+  expect(result.code).toBe('calculation-unavailable');
+  const calculation = result.calculation;
+  if (calculation === null) throw Error('Diagnóstico deveria existir');
+  expect(calculation.status).toBe('unavailable');
+  expect(calculation.code).toBe('resource-budget');
+  expect(result.reason).toBe(calculation.reason);
+  expect(result.reason).not.toBe('');
+  const projection = marginTarget.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projeção deveria permanecer válida');
+  expect(projection.value.netProfit).toEqual(r('-340'));
+  expect(projection.value.margin).toMatchObject({status:'unavailable',code:'zero-revenue',calculation:null});
+  expect(result).not.toHaveProperty('value');
+});
 });

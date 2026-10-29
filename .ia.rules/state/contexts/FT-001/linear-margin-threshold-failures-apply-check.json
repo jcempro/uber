@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "unit": "FT-003.42.4b",
+  "sourcePath": "src/domain/linear-margin-threshold.ts",
+  "testPath": "src/domain/linear-margin-threshold.test.ts",
+  "sourceSha256": "e9149bbe3d7259ddd688f96fbb43ba214328ab0d61a4081fdaea88d87f9fc8d0",
+  "beforeSha256": "9a831aaafc4a9bad562b4527bf115fbc1fca188d94c381e60b57a37c4fdee1db",
+  "testSha256": "c1211757273db447aec6dbf7e7e86d83c91111a981011eaac532fed2eb831b68",
+  "templateHashes": [
+    {
+      "title": "rejeita margem negativa mantendo projeção válida",
+      "sha256": "ef322a644307aea83909959fbda39a65fec1983a5b162b12e8c8579fdbafa981"
+    },
+    {
+      "title": "rejeita racional de margem inválido preservando diagnóstico",
+      "sha256": "c58c6c11639cc29112109295ff6e1aad06d81cbf429bfceaa153ebb80bdfd7fb"
+    },
+    {
+      "title": "projeção inválida preserva diagnóstico e impede comparação de margem",
+      "sha256": "ac1ae2f02e270f2c2d8325fe1919d98b63fda2e6e944a80a6c1244002765cfdc"
+    },
+    {
+      "title": "meta ausente não se transforma em zero",
+      "sha256": "f23920698272b2530da180c763f563eb1d22437485715914fdb82f82c5e242e4"
+    },
+    {
+      "title": "limite técnico da meta não se transforma em meta inválida",
+      "sha256": "5fa7169331fccd8c61a149631dd96598a4636e0958fead4829a0d56ccab0e2e0"
+    }
+  ],
+  "gateBeforeSha256": "f97c54ee89deb2c3636d9472762423d59b0df62052d3caea619bc61b8711cdd9",
+  "gateAfterSha256": "32091f4992887aed26417d606faa5967f75f1779ce0d403569273fe296b8f373",
+  "protectedFiles": 102,
+  "changes": "adapt5directfailuretests;guardoriginalmarginTarget;identitycode/reason/calculation;B0profit-340/undefinedmargin;negativefixedCostprojection",
+  "limits": "Inherited failures only;operation failures/freeze/policy snapshot/full app pending."
+}

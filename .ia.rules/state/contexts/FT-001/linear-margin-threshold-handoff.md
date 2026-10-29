@@ -1,5 +1,16 @@
 # FT-003.42 — inversa linear de margem
 
+## Atual42.4b — falhas herdadas de margem/projeção
+
+3a327681 recebidoUMAvez/command_sequenceSEMinferência;416passaram/types+lint0/5it inversa/102proteções/53suítes anteriores;modelo5/policyprecedenteconferidos/Q8S10rev1/commit1eb7268/mainagoraahead25. Gitdeterminístico/liveahead24coincidiram. Aceite restrito ao microescopo;appglobalpendente.
+
+5aedc262-f6ac-44e2-82af-b732aa58b9bf confirmadoRUNNING/R8Vv1/mesmochatrepo;command_sequence apply_linear_margin_failures→verify_linear_margin_failures SEMinferência;expect_changes=true/alvoteste/commit supervisor/semGit/rede. failures-apply.mjs/unit adaptam5testes aceitos financial-margin-target:negativa,racional1/0,projeçãoinválida,metaausente,limite65digits/policy64. Transformaçõesexpressas/rootmarginTargetunavailable+identitycode/reason/calculation;childprojectionemB0 profit-340/margemzero-revenueindefinida (não ready51/100). Projeçãoinválida usa fixedCosts-1/fieldfixedCosts,poisBéinterno0nainversa. Expectativas de contrato/mapeamento independentes;nenhuma nova geração. Preflightread-only/syntaxgate0/append5testesrevisado;NÃOéexecuçãodostestes.
+
+Preserva fonte e9149bbe/test9a831aaa(5it)/102arquivos/baseline411/53;teste→c1211757273db447aec6dbf7e7e86d83c91111a981011eaac532fed2eb831b68;gatef97c54ee→32091f4992887aed26417d606faa5967f75f1779ce0d403569273fe296b8f373/profilemargin-threshold-failures. Esperado421total/10it;backupsaccepted-early/early.accepted-check,receipt/skeleton/backupgate. CallbackresultadoUMAvez/revisãoTS/comportamento/check/Git/Q8S/commitseaceito. Próximoimutabilidade/policy1vez e avaliar operaçõesH/divisão malformados;top-levelnull/chaveausente aúnnão cobertos;appglobalpendente. Não reconsultar3a3/dee/0bad/3e5/9cd/etc.
+
+Monitor http://127.0.0.1:49767/job/5aedc262-f6ac-44e2-82af-b732aa58b9bf;índice http://127.0.0.1:49767/ (linkscompletosnochat). Sempolling;N7Csemrotanativa/mediçãoautoritativa,impedimento/checkpointnãoécompactação.
+
+
 ## Atual42.4a — rejeições iniciais
 
 dee50cf9 recebidoUMAvez/command_sequenceSEMinferência;414passaram/types+lint0/3it inversa/102proteções/53suítes anteriores;6cenários30assertsconferidos/Q8S10rev1/commit aa5e004/mainagoraahead24. Gitfuncionalahead23conferiu;metadatahandoff/continue adicional=supervisorapóstimestamp. Aceite restrito a mínimo+degenerações;appglobalpendente.
