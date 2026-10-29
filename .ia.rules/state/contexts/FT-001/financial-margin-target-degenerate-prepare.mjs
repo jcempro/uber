@@ -1,0 +1,19 @@
+/** MPL-2.0; FT-003.41.2a.4. Preparo determinístico, sem implementar teste. */
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';
+const root=fs.realpathSync('.'),base='.ia.rules/state/contexts/FT-001/',target='src/domain/financial-margin-target.test.ts',verifier=base+'maintenance-adoption-schema-verify.mjs',hash=v=>crypto.createHash('sha256').update(v).digest('hex');
+if(root.replaceAll('\\','/').toLowerCase()!=='d:/trampo/jcem.pro-uber')throw Error('root');
+function guard(rel){let p=root;for(const part of rel.split('/')){if(!part||part==='..')throw Error('path');p=path.join(p,part);if(fs.existsSync(p)){const s=fs.lstatSync(p);if(s.isSymbolicLink()||s.isFile()&&s.nlink!==1||s.isDirectory()&&fs.existsSync(path.join(p,'.git')))throw Error('linked');}}}
+function read(p){guard(p);return fs.readFileSync(p,'utf8');}
+const agents=read('AGENTS.md'),authority=read('.ia.rules/core/authority.md'),unit=read(base+'financial-margin-target-degenerate-unit.md'),source=read('src/domain/financial-margin-target.ts'),before=read(target),baseline=JSON.parse(read(base+'financial-margin-target-baseline.json')),rcf=read('RCF.md');
+if(hash(before)!=='15b77d94d194f013d0f87cf80f4333403556ee03adc229ad5836d0f52013d202'||hash(source)!=='94dea5cd0393dbd2fd7dceec0737b027480fd32866c123bed501e7e05a721fcd'||hash(rcf)!=='b66b4ba23d82abbbfb4a9350b629ee3dff3b1c473d7ece2f6a329563190dbd65'||!before.endsWith('});\n'))throw Error('preimage');
+for(const[p,h]of Object.entries(baseline.files))if(hash(read(p))!==h)throw Error('protected:'+p);
+let gate=read(verifier);function replace(a,b){if(gate.split(a).length!==2)throw Error('gate match:'+a);gate=gate.replace(a,b);}
+replace("marginZero=requestedProfile==='margin-zero',profile=marginCore||marginBoundaries||marginZero?'margin':", "marginZero=requestedProfile==='margin-zero',marginDegenerate=requestedProfile==='margin-degenerate',profile=marginCore||marginBoundaries||marginZero||marginDegenerate?'margin':");
+replace("(marginZero?'FT-003.41.2a.3':marginBoundaries?", "(marginDegenerate?'FT-003.41.2a.4':marginZero?'FT-003.41.2a.3':marginBoundaries?");
+replace("base+prefix+(marginCore||marginBoundaries||marginZero?'.core.test.skeleton':'.test.skeleton')", "base+prefix+'.core.test.skeleton'");
+replace("(marginZero?'-zero-unit.md':marginBoundaries?", "(marginDegenerate?'-degenerate-unit.md':marginZero?'-zero-unit.md':marginBoundaries?");
+replace("if(profile==='rates'&&generated.sourceSha256", "if(marginDegenerate){const accepted=fs.readFileSync(base+'financial-margin-target.accepted-zero.test.ts.txt','utf8');if(hash(accepted)!=='15b77d94d194f013d0f87cf80f4333403556ee03adc229ad5836d0f52013d202'||!fs.readFileSync(generated.testPath,'utf8').startsWith(accepted.slice(0,-4)))throw Error('accepted zero drift');}\nif(profile==='rates'&&generated.sourceSha256");
+const api=source.slice(source.indexOf('export interface FinancialMarginTargetInput'),source.indexOf('function failure(')),context=['# Norma do alvo',agents,authority,'# Unidade exclusiva',unit,'# Arquivo aceito integral: acrescentar1it antesdo último });',before,'# API pública sem implementação',api,'RCF.md:164 '+rcf.split(/\r?\n/)[163]].join('\n\n');if(context.length>18000)throw Error('capacity');
+const outputs=[[base+'financial-margin-target.accepted-zero.test.ts.txt',before],[base+'financial-margin-target-degenerate-context.txt',context]];for(const[p]of outputs){guard(p);if(fs.existsSync(p))throw Error('exists:'+p);}
+if(process.argv.includes('--preflight')){console.log(JSON.stringify({readOnly:true,chars:context.length,contextSha256:hash(context),acceptedSha256:hash(before),protectedFiles:Object.keys(baseline.files).length}));process.exit(0);}
+for(const[p,v]of outputs)fs.writeFileSync(p,v);fs.writeFileSync(verifier,gate);console.log(JSON.stringify({chars:context.length,contextSha256:hash(context),acceptedSha256:hash(before),protectedFiles:Object.keys(baseline.files).length}));

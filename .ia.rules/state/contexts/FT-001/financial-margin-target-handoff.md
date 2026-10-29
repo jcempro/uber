@@ -1,5 +1,13 @@
 # FT-003.41.1 — margem percentual direta
 
+## Aceite41.2a
+
+39e7b202 recebidoUMAvez/COMPLETED inferência. G<=0conferidoconformeRCF,gate400/400tipos/lint0/100proteções/prefixo3it/fonte94preservados. Teste10b347d4;4it/1suíte,não4suítes. Gitdeterminístico/liveahead13coincidem. Commit125ca8ae1a4a24851aea74b8821e1064ae49a52b contém só19linhas doteste,masocorreuapesarcommit_policy=supervisor einstruçãosemcommit;causainterna não comprovadaporstate.jsonmetadados,semselfmaintenance. Q8S6rev1registrado;preservarcommitfuncional,semreset/replay. coverage-review.mdreconcilia4grupos41.2aaceitos;41.2b/freeze/getters/appcontinuampendentes. Próxima proposta emread-only/provided_evidence,posterioraplicaçãocommand_sequence;reduçãodecapacidade paraimpedirGitlivre.
+
+## Atual41.2a.4
+
+39e7b202-e9de-4d68-9227-29e33baefcca confirmado RUNNING/R8Vv1,mesmochat/repo. Unidade1it/2rowsG0/G−1/10 em financial-margin-target.test.ts,expect_changes=true/commit supervisor. Contexto16084chars/hash23935c126b126ae00e15e19c9a831963d03d848a3d1339e228f56099bef2a9e2. Gate margin-degenerate400+/4it/52suítes anteriores/100proteções+fonte94+prefixointegral3it15b77d94. Preflight/sintaxeaprovados;originalmarginmantém400+/4 eusaagoraprefixocore efetivamenteaceito,semhelperunusedpreparonuncaaceito. q1éTESTEextremo,nãodefaultproduto. Últimoaceite399/tiposlint,B0/correção10d5dd34 recebidoUMAvez/Q8S10rev1registrado,commit0f5f5ce/mainahead12. Callback local_resultUMAvez/conteúdo/equaçõesRCF/Git/Q8S/commitseaceito;reconciliar4grupos cumulativos41.2a seaprovado;falhas/freeze/getters eaplicativointegralcontinuampendentes. Sem polling. Monitor http://127.0.0.1:49767/job/39e7b202-e9de-4d68-9227-29e33baefcca eíndice http://127.0.0.1:49767/ (linkscompletosnochat). N7Csemrotanativaexposta/mediçãoautoritativabarata;impedimentodeclarado/checkpointnãoécompactação.
+
 ## Aceite41.2a.3a
 
 10d5dd34 recebidoUMAvez/COMPLETED command_sequenceSEMinferência. Patch15b77d94 conferido:meta50/ratio1/2 conhecidos,marginzero-revenue/identidadeoriginal/diagnósticos/ausênciaslackbool corretos;2itaceitos efonte94preservados. Tipos/lint399/399,100proteções e52suítesanterioresaprovados. Gitdeterminístico/liveahead11coincidemantescommit. Q8S10rev1registrado;B0aceito,restamG<=0/falhas/freeze/getters eaplicativointegral.
