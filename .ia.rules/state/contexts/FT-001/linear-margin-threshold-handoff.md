@@ -1,5 +1,16 @@
 # FT-003.42 — inversa linear de margem
 
+## Atual42.5 — snapshot/policy mínimo e recurso
+
+5aedc262 recebidoUMAvez/command_sequenceSEMinferência/421passaram/types+lint0/10it inversa/102proteções/53suítes anteriores;5falhas/diagnósticosoriginais/B0conferidos;Q8S10rev1/commit14fa1cd/mainagoraahead26. Gitdeterminístico/liveahead25coincidiram;appglobalpendente.
+
+a8a9118a-5f3c-473d-b038-73d8af9bea10 confirmadoRUNNING/R8Vv1/mesmochatrepo;command_sequence apply_linear_margin_snapshot→verify_linear_margin_snapshot SEMinferência;expect_changes=true/alvoteste/commit supervisor/semGit/rede. snapshot-apply.mjs/unit adaptam2testes diretos protegidos:READYmínimo freeze/snapshot/modelreasoncom espaços preservados/getters256/64→0;RECURSO65digits freezechild/projection/B0 e mesmosgetters. Inputs/model/target/cost/limitsmutáveis,mutação posteriornãoalteraresultado,1leituraporlimite. Preflight/syntaxgate0/append2testesintegralrevisado;NÃOétesteexecutado.
+
+Preserva10itc1211757/sourcee9149bbe/102/baseline411/53. Teste→9595b1f6dd0a1eac2e7f0820d4f44fa2b6ef8c0d60a12a42bede5c416060c47d;gate32091f49→a679f1c314eba39dbe6846ae8b9e59c81fbabf52d3481903bbcf8f1b1f720868/profilemargin-threshold-snapshot. Esperado423total/12it;backupsaccepted-failures/failures.accepted-check/receipt/skeleton/gatebefore. CallbackresultadoUMAvez/revisão/Git/Q8S/commitseaceito. Depoisreconciliar cobertura42 com fonteRCF/obrigações críticas e pendências,sem repetir testes confiáveis nem inflar casos porprecauçãogenérica. Avaliar necessidade material de falhasinternas/inputsnull e freezeall-positive/none;appglobal/integralRCF ainda pendente. Não reconsultar5ae/3a3/dee/0bad/3e5/9cd/etc.
+
+Monitor http://127.0.0.1:49767/job/a8a9118a-5f3c-473d-b038-73d8af9bea10;índice http://127.0.0.1:49767/ (linkscompletosnochat). Sempolling;N7Csemrotanativa/mediçãoautoritativa,impedimento/checkpointnãoécompactação.
+
+
 ## Atual42.4b — falhas herdadas de margem/projeção
 
 3a327681 recebidoUMAvez/command_sequenceSEMinferência;416passaram/types+lint0/5it inversa/102proteções/53suítes anteriores;modelo5/policyprecedenteconferidos/Q8S10rev1/commit1eb7268/mainagoraahead25. Gitdeterminístico/liveahead24coincidiram. Aceite restrito ao microescopo;appglobalpendente.

@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "unit": "FT-003.42.4b",
+  "node": "v24.22.1",
+  "sourceCommit": "694ec64ddf2e1ee14121b5ed161d547d47183ff4",
+  "files": {
+    "src/domain/linear-margin-threshold.ts": "e9149bbe3d7259ddd688f96fbb43ba214328ab0d61a4081fdaea88d87f9fc8d0",
+    "src/domain/linear-margin-threshold.test.ts": "c1211757273db447aec6dbf7e7e86d83c91111a981011eaac532fed2eb831b68"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\linear-margin-threshold-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/linear-margin-threshold-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 421,
+    "passed": 421,
+    "newSuite": 10
+  },
+  "protectedFiles": 102,
+  "rateAggregate": null,
+  "limits": "Inherited failures only;operation failures/freeze/policy snapshot/full app pending."
+}

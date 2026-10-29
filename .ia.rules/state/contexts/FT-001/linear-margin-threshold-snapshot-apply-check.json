@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "unit": "FT-003.42.5",
+  "sourcePath": "src/domain/linear-margin-threshold.ts",
+  "testPath": "src/domain/linear-margin-threshold.test.ts",
+  "sourceSha256": "e9149bbe3d7259ddd688f96fbb43ba214328ab0d61a4081fdaea88d87f9fc8d0",
+  "beforeSha256": "c1211757273db447aec6dbf7e7e86d83c91111a981011eaac532fed2eb831b68",
+  "testSha256": "9595b1f6dd0a1eac2e7f0820d4f44fa2b6ef8c0d60a12a42bede5c416060c47d",
+  "templates": [
+    {
+      "title": "política é capturada uma vez na comparação pronta",
+      "sha256": "fab7d005fc239c18b3b5b2d15fa6b3bf008fc95e9b6b04039447029cb1c75343"
+    },
+    {
+      "title": "falha técnica mantém raiz e diagnóstico congelados",
+      "sha256": "50e30e10909b252e04b7b3df21324ea0e672264a44ea5eba5d60cfe717ec41bb"
+    }
+  ],
+  "gettersSha256": "5252f587ec31fd4b8c148f4d325d09e18916ce7022a44ce1ca4d1a7312f3882e",
+  "gateBeforeSha256": "32091f4992887aed26417d606faa5967f75f1779ce0d403569273fe296b8f373",
+  "gateAfterSha256": "a679f1c314eba39dbe6846ae8b9e59c81fbabf52d3481903bbcf8f1b1f720868",
+  "protectedFiles": 102,
+  "changes": "adapt2freeze/policytemplates;minimum/model/outputnodes;resourcechildidentity;singlelimitreads;mutableinputsisolated",
+  "limits": "Minimum/resource snapshots only;degenerate freeze/operation failures/malformed inputs/full app pending."
+}

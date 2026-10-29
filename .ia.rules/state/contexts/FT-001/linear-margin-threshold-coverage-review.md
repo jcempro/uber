@@ -1,0 +1,11 @@
+# Aceite delimitado FT-003.42 — inversa linear de margem
+
+Fonte src/domain/linear-margin-threshold.ts SHAe9149bbe3d7259ddd688f96fbb43ba214328ab0d61a4081fdaea88d87f9fc8d0;teste SHA9595b1f6dd0a1eac2e7f0820d4f44fa2b6ef8c0d60a12a42bede5c416060c47d. Fonte revisada integralmente em39071ff6;último gatea8a9118a apply/verifyexit0,types/lint0,423/423testes/12it novos. Base411/102arquivos/53suítes preservada. Resultados recebidos uma vez;Q8S individuais registrados;sequências determinísticas não usam inferência.
+
+Expectativas independentes:RCF8.4 linhas164/168,contrato42.1p e tipos públicos aceitos. Domínio B>0,A>=0,p=q+tau>=0,m=L%/100>=0,H=1-p-m. Inversa resolve HB>=A no modelo fixed-usage-linear explicitamente declarado,com A estável emB. H>0/A>0:minimumA/H atingido;A0/H>=0:all-positive com inf0nãoatingido;outroscasos permitidos:nonecondicional ao modelo. Semteto artificial m<1/NaN/divisãoporH<=0/margemB0/impossibilidade universal.
+
+Cobertura aceita (12it/20chamadas):1mínimo A340/G17/20/m1/2/H7/20→6800/7;2it/6casos degenerados com100%/101%/Gnegativo sintético;2it/6chamadas para5modelosinválidos e invalid-budget prioritário;5it/meta negativa/racional1/0/projeção negativa/meta ausente/resource-budget;2it/snapshotREADYmínimo+recurso,freeze/isolamento/normalização100/2→50/1/modelreasonoriginal/limiteslidos1vez. Diagnósticos originais do marginTarget preservados por identidade;projeção aninhada emB0 mantém lucro-340 e margem indefinida. Labels financeiro/cobertura/tributário continuam not-evaluated.
+
+Limites da evidência:freeze all-positive/none e guardas internas de operações foram conferidos no código,sem ensaios independentes de cada ramo;inputs fora do tipo TS/top-levelnull/chave-modeloauditada ausente não foram abrangidos pelos12it. Não há sinal concreto que justifique repetir testes confiáveis ou criar mocks que espelhem a implementação. Isso não comprova validação de JSON externo,ledger/custos completos,apuração legal,teto/interseção,identificabilidade deK/horas ouintegraçãoUI. Tais requisitos seguem pendentes no plano/RCF;cláusulas compostas não recebem aceiteglobal.
+
+Microescopo42 implementado e aceito com esses limites;próximo43 custo/km e comparação direta com teto explícito,antes da inversa do teto/interseção. Exploração anterior preservada;não repetir consultas de jobs. Aplicativo integral eFT-003 permanecem em execução parcial.
