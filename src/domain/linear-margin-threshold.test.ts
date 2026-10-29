@@ -205,4 +205,37 @@ describe('linear-margin-threshold', () => {
       expect(result.value.solution.minimumAttained).toBe(false);
     }
   });
+
+  it('modelo inválido impede o cálculo da inversa',()=>{
+    for(const model of [null,undefined,{kind:'outro',reason:'Declarado'},{kind:'fixed-usage-linear',reason:' '},{kind:'fixed-usage-linear',reason:12}]){
+      const input=baseInput();
+      expect(Reflect.set(input,'model',model)).toBe(true);
+      const result=calculateConditionalLinearMarginThreshold(input,policy);
+      if(result.status!=='unavailable')throw Error('Esperado unavailable');
+      expect(result).toMatchObject({status:'unavailable',code:'unsupported-model',marginTarget:null,calculation:null});
+      expect(result.reason).not.toBe('');
+      expect(result).not.toHaveProperty('value');
+    }
+  });
+
+it('orçamento técnico inválido precede avaliação financeira', () => {
+  const result = calculateConditionalLinearMarginThreshold(
+    {
+      ...baseInput(),
+      model: {kind:'fixed-usage-linear',reason:' '},
+      requiredMarginPercent: r('-1')
+    },
+    { ...policy, maxDigits: 0 }
+  );
+
+  if (result.status !== 'unavailable') {
+    throw new Error('Esperado status unavailable');
+  }
+
+  expect(result.code).toBe('invalid-budget');
+  expect(result.reason).not.toBe('');
+  expect(result.marginTarget).toBeNull();
+  expect(result.calculation).toBeNull();
+  expect(result).not.toHaveProperty('value');
+});
 });

@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "unit": "FT-003.42.4a",
+  "sourcePath": "src/domain/linear-margin-threshold.ts",
+  "testPath": "src/domain/linear-margin-threshold.test.ts",
+  "sourceSha256": "e9149bbe3d7259ddd688f96fbb43ba214328ab0d61a4081fdaea88d87f9fc8d0",
+  "beforeSha256": "4cd8b28b12932910782afa5d317a3873567b163110840cd541396c23c2c9e63e",
+  "testSha256": "9a831aaafc4a9bad562b4527bf115fbc1fca188d94c381e60b57a37c4fdee1db",
+  "modelTemplateSha256": "3529188f649a58561a40a1a8e4f8d8b399515f48a0f162af59fdc86c4a9da468",
+  "policyTemplateSha256": "1332b138fd41e39c1293dda55d28a4336818c62a692d4f41e30e49c92207bb99",
+  "gateBeforeSha256": "c71bf4ee8a98ce5ea101fb204c3b297c76975b1ed72f6dcdeb5847db61e7b196",
+  "gateAfterSha256": "f97c54ee89deb2c3636d9472762423d59b0df62052d3caea619bc61b8711cdd9",
+  "protectedFiles": 102,
+  "changes": "adaptmodel5cases viaReflect.set/no casts;adaptinvalidpolicyprioritytest;preserve3acceptedtests",
+  "limits": "Early failures only;target/projection/resource/freeze/policy snapshot/full app pending."
+}

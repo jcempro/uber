@@ -1,5 +1,16 @@
 # FT-003.42 — inversa linear de margem
 
+## Atual42.4a — rejeições iniciais
+
+dee50cf9 recebidoUMAvez/command_sequenceSEMinferência;414passaram/types+lint0/3it inversa/102proteções/53suítes anteriores;6cenários30assertsconferidos/Q8S10rev1/commit aa5e004/mainagoraahead24. Gitfuncionalahead23conferiu;metadatahandoff/continue adicional=supervisorapóstimestamp. Aceite restrito a mínimo+degenerações;appglobalpendente.
+
+3a327681-57c4-45b1-915d-dfa96e047b08 confirmadoRUNNING/R8Vv1/mesmochatrepo;command_sequence apply_linear_margin_early→verify_linear_margin_early SEMinferência;expect_changes=true/alvoteste/commit supervisor/semGitlivre/rede. early-apply.mjs/unit adaptam testes existentes protegidos:5modelosinválidos viaReflect.set e invalid-budgetprioritário comreasonmodeloespaço/meta-1/policymaxDigits0. Removido cast/helperfreeze antigo expressamente;inputnullantigo→nestedmodelnull,top-levelnull/chaveausente ainda não cobertos. Assertscode/reason/diagnósticosnull/semvalue. Preflightread-only/syntaxgate0 e appendcompleto revisado;NÃOétesteexecutado.
+
+Preserva fonte e9149bbe/test4cd8b28b(3it)/102arquivos/baseline411/53;teste→9a831aaafc4a9bad562b4527bf115fbc1fca188d94c381e60b57a37c4fdee1db;gatec71bf4ee→f97c54ee89deb2c3636d9472762423d59b0df62052d3caea619bc61b8711cdd9/profilemargin-threshold-early. Esperado416total/5it;backupsaccepted-degenerate/degenerate.accepted-check,receipt/skeleton/backupgate. CallbackresultadoUMAvez/revisãoTS/comportamento/check/Git/Q8S/commitseaceito. Próximo falhas da meta/projeção/recursos e imutabilidade/policy1vez;appglobalpendente. Não reconsultar dee/0bad/3e5/9cd/etc.
+
+Monitor http://127.0.0.1:49767/job/3a327681-57c4-45b1-915d-dfa96e047b08;índice http://127.0.0.1:49767/ (linkscompletosnochat). Sem polling;N7Csemrotanativa/mediçãoautoritativa,impedimento/checkpointnãoécompactação.
+
+
 ## Atual42.3b — degenerações por reuso determinístico
 
 0badfcdb recebidoUMAvez/command_sequenceSEMinferência;teste mínimo06f76ffb conferido/412passaram/types+lint0/102proteções/53suítes anteriores;Gitlive/determinísticoahead22coincidem,Q8S10rev1,commit8b6eca7/mainagoraahead23. Aceite somente mínimo;app pendente.
