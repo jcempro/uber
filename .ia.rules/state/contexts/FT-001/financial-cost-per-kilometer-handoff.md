@@ -1,5 +1,16 @@
 # FT-003.43.1 — custo projetado por quilômetro
 
+## Atual43.1d — snapshots/policy; correção de formato
+
+122c64b3 recebidoUMAvez/FAILEDWORKER_INCOMPLETE RESPONSE_CONTRACT86/80APÓSapply+verifyexit0. Draftpúblicointegro failed-122.rejections.jsonSHA6cbcd600973e805d6584ff408110c207602b1a8dc988ffb6d763e8fce19549d5/candidate41f8f878 confirmaambosrecibos;report436/13it/types+lint0/104proteções/54suítes e hashes4c93acd0/gate67ca6fbf/source0d5af50e conferidos.9casos revistos/aceitos;statusFAILEDmantido,nãoinfra/nãorepetircomandos. Q8S10rev1 porefeitosintegralmentecomprovados,sematribuircogniçãoàsequência;commitc4c0a73/mainagoraahead30. Gitfuncionalahead29confere,metadataextra=supervisorapósjob. Correçãosomentedecontrato:novojobmax_words200,nãoalterarWorkerpróprio.
+
+5c971c8d-9618-4bab-bb1c-4dd4da7487f9 confirmadoRUNNING/R8Vv1/mesmochatrepo;command_sequence apply_financial_cost_km_snapshot→verify_financial_cost_km_snapshot SEMinferência;expect_changes=true/alvoteste/commit supervisor/semGit/rede. NOVOescopo4snapshots porreusoAST de casosaceitos:READYK200/2→100,C490/49/10;K0C490;rootresourceK65;metricresourceK1/64ones. Getters5252f587/1leituracampo ehelperfrozenrecursivo de teste protegido;saídainteiracongelada,input/distance/cost/limitsnão congelados,mutação posterior mantém JSON.13it anteriores preservadosinteiros;novodescribe depoisarquivo. PreflightparserTS0/syntaxgate0/configs+previewrevisados;NÃOétesteexecutado.
+
+Preserva source0d5af50e/104/baseline423/54. Teste4c93acd0→2f7655b17561fe6bbc290f1a4335aa6f7882ecef28613232ea81ce20344d6db2;gate67ca6fbf→f0f3fcd483dde77846f9069a52e66a76ededc749bee87ab202d5ab4459bb6a97/profilecost-km-snapshot;esperado440total/17itC-K. Applybackupsaccepted-edges/edges.accepted-check/skeleton/gatebefore/receipt. CallbackresultadoUMAvez/revisão4caminhos/check/Git/Q8S/commitseaceito;depoisreconciliarcobertura43.1/planos semtestsgenéricos eavançar43.2teto. Interseção/ledger/UI/appglobalpendentes. Não reconsultar122/174/36a/2e3/a8a/etc.
+
+Monitor http://127.0.0.1:49767/job/5c971c8d-9618-4bab-bb1c-4dd4da7487f9;índice http://127.0.0.1:49767/ (linkscompletosnochat). Sem polling;N7Csemrotanativa/mediçãoautoritativa,impedimento/checkpointnãoécompactação.
+
+
 ## Atual43.1c — Kzero e falhas
 
 1746f79e recebidoUMAvez/command_sequenceSEMinferência;427passaram/types+lint0/4itC-K/104proteções/54suítesanteriores;fixtures49/10,17/5,26/5,13/5conferidas;Q8S10rev1/commitc06caa6/mainagoraahead29. Gitfuncionalahead28confere,metadataextra=supervisorapósjob;appglobalpendente.

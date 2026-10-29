@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "unit": "FT-003.43.1d",
+  "sourcePath": "src/domain/financial-cost-per-kilometer.ts",
+  "testPath": "src/domain/financial-cost-per-kilometer.test.ts",
+  "sourceSha256": "0d5af50e861ca769727e9a75523a0234b1a654b77bb18c0393d3bba8ff99aee9",
+  "beforeSha256": "4c93acd0007ab10274b8ab1ad4ebc90eeff63dbe4d93fe0dcce4d4907409893b",
+  "testSha256": "2f7655b17561fe6bbc290f1a4335aa6f7882ecef28613232ea81ce20344d6db2",
+  "templatePins": [
+    {
+      "title": "inclui fixos,uso,extraordinários,encargos e alíquotas sobre receita creditada",
+      "sha256": "20c9dce822905470a566d15f2fb7e4805b617de1e3915f388128ef33848eb3a0"
+    },
+    {
+      "title": "Kzero mantém custo completo e suspende somente custo por km",
+      "sha256": "b44c51afd5b4ca9a9d88f2611dbd0d1d895a9e23e176a1dfd0657aa2da766c58"
+    },
+    {
+      "title": "limite técnico da distância não vira distância inválida",
+      "sha256": "6f7a4c80b7587e1712c168524221cfe8e58f81690a89aa11710c03b824d35538"
+    },
+    {
+      "title": "falha técnica da divisão preserva projeção e distância válidas",
+      "sha256": "6c6fd25f80094f645371f7a754aa5996f64e04bafad70a4a628c17c4d7962fa8"
+    }
+  ],
+  "gettersSha256": "5252f587ec31fd4b8c148f4d325d09e18916ce7022a44ce1ca4d1a7312f3882e",
+  "helperSha256": "6583053887a2ebf3f3d5207bc8868afa12c7e9ecd5755c80630fdf1f3374d385",
+  "gateBeforeSha256": "67ca6fbf3c670f83be8ee64446fe986796d070842c6054b64942f73807949875",
+  "gateAfterSha256": "f0f3fcd483dde77846f9069a52e66a76ededc749bee87ab202d5ab4459bb6a97",
+  "protectedFiles": 104,
+  "changes": "reuse4acceptedcases+getter/freezehelpers;isolatedmutableinputs/policy1read;preserve13acceptedtests",
+  "limits": "Snapshots4paths only;ceiling/intersection/full app pending."
+}

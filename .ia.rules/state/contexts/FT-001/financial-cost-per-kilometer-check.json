@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "unit": "FT-003.43.1c",
+  "unit": "FT-003.43.1d",
   "node": "v24.22.1",
   "sourceCommit": "e49086b3219ad20b3c0eac22aa740d077d8b3fb2",
   "files": {
     "src/domain/financial-cost-per-kilometer.ts": "0d5af50e861ca769727e9a75523a0234b1a654b77bb18c0393d3bba8ff99aee9",
-    "src/domain/financial-cost-per-kilometer.test.ts": "4c93acd0007ab10274b8ab1ad4ebc90eeff63dbe4d93fe0dcce4d4907409893b"
+    "src/domain/financial-cost-per-kilometer.test.ts": "2f7655b17561fe6bbc290f1a4335aa6f7882ecef28613232ea81ce20344d6db2"
   },
   "commands": [
     {
@@ -28,11 +28,11 @@
     }
   ],
   "tests": {
-    "total": 436,
-    "passed": 436,
-    "newSuite": 13
+    "total": 440,
+    "passed": 440,
+    "newSuite": 17
   },
   "protectedFiles": 104,
   "rateAggregate": null,
-  "limits": "Distance edges/failures only;snapshots/policy1read/ceiling/full app pending."
+  "limits": "Snapshots4paths only;ceiling/intersection/full app pending."
 }

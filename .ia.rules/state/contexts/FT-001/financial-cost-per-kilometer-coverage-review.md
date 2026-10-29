@@ -1,0 +1,11 @@
+# Aceite delimitado FT-003.43.1 — custo total projetado/km
+
+Fonte src/domain/financial-cost-per-kilometer.ts SHA0d5af50e861ca769727e9a75523a0234b1a654b77bb18c0393d3bba8ff99aee9;teste SHA2f7655b17561fe6bbc290f1a4335aa6f7882ecef28613232ea81ce20344d6db2. Fonte revisada integralmente;correções de2e3preservadas/expressas. Últimogate5c971c8d apply/verify0,types/lint0,440/440testes,17itC-K;104arquivos/54suítesanteriores preservados. Q8Sindividuaisregistrados. Job122permaneceFAILEDpor86/80palavrasapóscomandosconcluídos/provados;efeitosaceitossemreplay;contratocorrigido200napróximaunidade.
+
+RCF8.4:164/166/170 é expectativa independente:C/Kusa plannedTotalCost=A+qB+tauB da mesma base/contexto/período;A=F+V+E+Tfix;Kdistânciatotal incluindo vazio. Não A/K,variável/K,kRP nem custo legal/realcertificado. K>0permite custo/km;K0indefinido mesmoC0,preservandocustosfixos. B0nãosuspendeC/KseK>0,emboramargemindefinida. Resultados permanecem projeções com3labelsnot-evaluated.
+
+17it:4fixturesC490/K10049/10;B0C340/K10017/5;E20/Tfix10C520/K10026/5;mesmoC520/K20013/5.9bordas:K0comC490,K0/B0/C0,negativo,racional1/0,ausente,recursoK65,poleprioritária,projeçãoinválida,divisãotécnica. Estaúltima usaK1/64onesvalidado;C490×den>cap64 prova resource-budget de metric semperderraizconditional/K/projeção.4snapshots comgetters1leituracampo/freezerecursivo/inputsinput-distance-cost-limitsnão congelados/mutaçãoposteriorisolada noscaminhosREADY/K0/rootresource/metricresource;K200/2normaliza100/copiadistinta.
+
+Limites:helpersmatemáticos eFPpreexistentes permanecem autoridades técnicas játestadas;cadaguarda não recebeu mock/testequecopiaimplementação. Getters adversariais cobrem limites,demaisinputssão objetosdadossimples;validaçãoJSONexterno/UI/ledger/provadecustocompleto/tributação real não comprovados. Teto ainda não é comparado;ausênciaT não pode apagarC/K,porisso43.2 seráwrapperseparado comchildC/Kpreservado. Interseção/identificabilidade deK/horas requerem modelos e outrasfrentes;nenhuma cláusulacompostaRCF recebeaceiteglobal.
+
+Microescopo43.1 implementado/aceito nesseslimites;próximo43.2 comparação direta C/K<=T explícito/nãonegativo,semimpor teto padrão/kRP. FT-003 eaplicativo integral continuam parciais.
