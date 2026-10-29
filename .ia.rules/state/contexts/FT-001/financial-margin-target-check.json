@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "unit": "FT-003.41.2b.3",
+  "unit": "FT-003.41.2c.1",
   "node": "v24.22.1",
   "sourceCommit": "fddd5bde12d2873c98490dd511a5617d4c2fcebc",
   "files": {
     "src/domain/financial-margin-target.ts": "94dea5cd0393dbd2fd7dceec0737b027480fd32866c123bed501e7e05a721fcd",
-    "src/domain/financial-margin-target.test.ts": "be5cdb1987b8b35921830527534958907425a7ce4c850c18c51f7237680db7d5"
+    "src/domain/financial-margin-target.test.ts": "1ba782a7a2098c6dee85f546fa1a4e00c1de3d68031ebb903ad5272872bf6c70"
   },
   "commands": [
     {
@@ -28,9 +28,9 @@
     }
   ],
   "tests": {
-    "total": 406,
-    "passed": 406,
-    "newSuite": 10
+    "total": 407,
+    "passed": 407,
+    "newSuite": 11
   },
   "protectedFiles": 100,
   "rateAggregate": null,

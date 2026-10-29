@@ -222,4 +222,52 @@ it('limite técnico da meta não se transforma em meta inválida', () => {
   expect(projection.value.margin).toEqual({ status: 'ready', value: r('51', '100') });
   expect(result).not.toHaveProperty('value');
 });
+
+it('saída pronta é congelada e isolada de entradas mutáveis', () => {
+  const target = r('100', '2');
+  const cost = r('300');
+  const input = { ...baseInput(), requiredMarginPercent: target, fixedCosts: cost };
+  const before = JSON.stringify(input);
+  const result = root(input);
+  const assessment = readyAssessment(result.value.assessment);
+  const margin = result.projection.value.margin;
+  if (margin.status !== 'ready') throw Error('Esperada margem pronta');
+  const snapshot = JSON.stringify(result);
+
+  expect(Object.isFrozen(input)).toBe(false);
+  expect(Object.isFrozen(target)).toBe(false);
+  expect(Object.isFrozen(cost)).toBe(false);
+  expect(JSON.stringify(input)).toBe(before);
+
+  const nodes = [
+    result,
+    result.value,
+    result.value.requiredMarginPercent,
+    result.value.requiredMarginRatio,
+    assessment,
+    assessment.signedMarginSlack,
+    result.projection,
+    result.projection.value,
+    margin,
+    margin.value
+  ];
+  for (const node of nodes) {
+    expect(Object.isFrozen(node)).toBe(true);
+  }
+
+  expect(result.value.requiredMarginPercent).toEqual(r('50'));
+  expect(result.value.requiredMarginRatio).toEqual(r('1', '2'));
+  expect(assessment.signedMarginSlack).toEqual(r('1', '100'));
+  expect(assessment.reachesModeledMargin).toBe(true);
+  expect(result.projection.value.netProfit).toEqual(r('510'));
+  expect(margin.value).toEqual(r('51', '100'));
+  expect(result.value.requiredMarginPercent).not.toBe(target);
+
+  target.numerator = '0';
+  target.denominator = '1';
+  cost.numerator = '999';
+  input.contextId = 'mutated';
+
+  expect(JSON.stringify(result)).toBe(snapshot);
+});
 });
