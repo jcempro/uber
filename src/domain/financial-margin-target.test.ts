@@ -185,4 +185,41 @@ it('projeção inválida preserva diagnóstico e impede comparação de margem',
   expect(projection.reason).toBe(result.reason);
   expect(projection).not.toHaveProperty('value');
 });
+
+it('meta ausente não se transforma em zero', () => {
+  const input = baseInput();
+  expect(Reflect.deleteProperty(input, 'requiredMarginPercent')).toBe(true);
+  expect(input).not.toHaveProperty('requiredMarginPercent');
+  const result = calculateFinancialMarginTarget(input, policy);
+  if (result.status !== 'unavailable') throw Error('Esperado unavailable');
+  expect(result.code).toBe('invalid-target');
+  const calculation = result.calculation;
+  if (calculation === null) throw Error('Diagnóstico deveria existir');
+  expect(calculation.status).toBe('unavailable');
+  expect(calculation.code).toBe('invalid-rational');
+  expect(result.reason).toBe(calculation.reason);
+  expect(result.reason).not.toBe('');
+  const projection = result.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projeção deveria permanecer válida');
+  expect(projection.value.netProfit).toEqual(r('510'));
+  expect(projection.value.margin).toEqual({ status: 'ready', value: r('51', '100') });
+  expect(result).not.toHaveProperty('value');
+});
+
+it('limite técnico da meta não se transforma em meta inválida', () => {
+  const result = calculateFinancialMarginTarget({ ...baseInput(), requiredMarginPercent: r('1'.repeat(65)) }, policy);
+  if (result.status !== 'unavailable') throw Error('Esperado unavailable');
+  expect(result.code).toBe('calculation-unavailable');
+  const calculation = result.calculation;
+  if (calculation === null) throw Error('Diagnóstico deveria existir');
+  expect(calculation.status).toBe('unavailable');
+  expect(calculation.code).toBe('resource-budget');
+  expect(result.reason).toBe(calculation.reason);
+  expect(result.reason).not.toBe('');
+  const projection = result.projection;
+  if (projection === null || projection.status !== 'ready') throw Error('Projeção deveria permanecer válida');
+  expect(projection.value.netProfit).toEqual(r('510'));
+  expect(projection.value.margin).toEqual({ status: 'ready', value: r('51', '100') });
+  expect(result).not.toHaveProperty('value');
+});
 });

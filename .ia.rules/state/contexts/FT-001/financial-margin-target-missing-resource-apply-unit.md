@@ -1,0 +1,10 @@
+# FT-003.41.2b.3 — derivação mecânica de2testes
+
+f4af467c recebidoUMAvez/COMPLETED técnico read-only,maspropostanãoaceita/Q8S3rev1:itsemchamadapseudocódigoinválido,projection.netProfit/marginsemvalue,calculationnullcontraditório nametaausente,diagnósticosomitidos. Originalpreservadafailed-f4af.proposal.json;semarquivofuncionalalterado/testeexecutado. Causaconcreta:geração livre inválida/APIchildincompletanopacoteapesarinstruções;semWORKER_INFRA_ERROR. Não repetirmesmageração2it.
+
+NovaestratégiaSEM inferência:transformação textual exata dotesteanálogo JÁaceito 'rejeita racional de margem inválido preservando diagnóstico' (commit268016a,presente/pinado noarquivo16b026f4). Extrairliteralentreesseit epróximoit;nenhummodelorecodificarátemplate. Derivar2cópias:
+- missing:trocartítulo;substituirumaúnicachamada porinput=baseInput(),assertReflect.deleteProperty(meta)true,assertinputsemmeta,call(input,policy). Todosguards/calculationnonnull/invalid-target/invalid-rational/reasonoriginal/projection.value510 e51/100/raizsemvalue ficamEXATAMENTEcomoaceitos.
+- resource:trocartítulo;r('1','0')→r('1'.repeat(65));outerinvalid-target→calculation-unavailable;childinvalid-rational→resource-budget. Restantedotesteanálogoexatamenteinalterado.
+São substituiçõesdeterminísticaspreaprovadas,semreimplementação volumosa/fallbackpago;reutilizamfonte/citaçõesliteraisverificadas. Contratosindependentesjáfixadosnoproposal-unit:ausente≠0;65dígitospositivosestruturalmenteválidos>maxDigits64commaxInputLength256;semclampnemtetofinanceiro. Projeçãobase510/margin51/100continuaevidênciaseparada.
+
+command_sequence derive_financial_margin_missing_resource→verify_financial_margin_missing_resource,expect_changes=true/testfunctional/commit supervisor/semGitlivre. Preimage16b026f4,preservar8it/fonte94/100arquivos;backupaccepted-early-failures/report404/recibohashes/idempotência. Novo gate margin-missing-resource406+/10it/52anteriores/100proteções/prefixo8it;outrosperfisinalterados. Normas/estaunitantesefeitos. Semoutroscomandos/rede/commits. Freeze/snapshot/getters/appcontinuampendentes;nenhumaceiteporCOMPLETEDisolado.

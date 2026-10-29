@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "unit": "FT-003.41.2b.3",
+  "beforeSha256": "16b026f446405a7250b0bd018bca9e0ed8a49734e9e564887fa89b44daa1df4a",
+  "afterSha256": "be5cdb1987b8b35921830527534958907425a7ce4c850c18c51f7237680db7d5",
+  "templateSha256": "c58c6c11639cc29112109295ff6e1aad06d81cbf429bfceaa153ebb80bdfd7fb",
+  "gateBeforeSha256": "ec4c1b8bcffd407e6bdd091cb6873e5ca8ef96303a17dc9898b78436e4c35924",
+  "gateAfterSha256": "4fbd54b41c14e031b40356c535f547bfbf3ff68ee8707e967595bc2f980da279",
+  "changes": "derive2tests fromaccepted invalid-rational literal via exact input/title/code substitutions;preserve8accepted it/source/100files;gate406+/10",
+  "limits": "Missing-target/resource-budget only;freeze/getters/app pending."
+}
