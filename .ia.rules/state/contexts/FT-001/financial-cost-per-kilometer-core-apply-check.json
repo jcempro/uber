@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "unit": "FT-003.43.1b",
+  "sourcePath": "src/domain/financial-cost-per-kilometer.ts",
+  "testPath": "src/domain/financial-cost-per-kilometer.test.ts",
+  "sourceSha256": "0d5af50e861ca769727e9a75523a0234b1a654b77bb18c0393d3bba8ff99aee9",
+  "testSha256": "d91ace6b99fa9f7033cfce74bbc5a02038353881a778791777873d7138ca810c",
+  "prefixSha256": "488e6741c71bf5e4519612baff25e049f686c0b16faddbe3c4039c0999f94e49",
+  "financialTemplates": {
+    "first": "1af0106e4a54d82d0b67f90525390092860f2c552eb2c82d4a50600e2ccb2e9b",
+    "zero": "052490b7e25c18562025764753abcb4265b4fcf82ed398fa9b5339912194d640"
+  },
+  "gateBeforeSha256": "a679f1c314eba39dbe6846ae8b9e59c81fbabf52d3481903bbcf8f1b1f720868",
+  "gateAfterSha256": "033ddb0c479211e458d8ebc7efee6da2a051ee1aab4479835059712ac29d9422",
+  "protectedFiles": 104,
+  "changes": "reusefinancialfixtures+metadatahelpers;4C/Kcases49/10,17/5,26/5,13/5;existinggateextended",
+  "limits": "Core positive-distance cases only;K0/failures/snapshots/ceiling/full app pending."
+}

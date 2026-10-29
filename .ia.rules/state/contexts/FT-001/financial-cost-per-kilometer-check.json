@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "unit": "FT-003.43.1b",
+  "node": "v24.22.1",
+  "sourceCommit": "e49086b3219ad20b3c0eac22aa740d077d8b3fb2",
+  "files": {
+    "src/domain/financial-cost-per-kilometer.ts": "0d5af50e861ca769727e9a75523a0234b1a654b77bb18c0393d3bba8ff99aee9",
+    "src/domain/financial-cost-per-kilometer.test.ts": "d91ace6b99fa9f7033cfce74bbc5a02038353881a778791777873d7138ca810c"
+  },
+  "commands": [
+    {
+      "name": "types",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:typecheck\n> node scripts/check-runtime.mts && tsc --noEmit\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:lint\n> node scripts/check-runtime.mts && eslint src vite.config.mts scripts/check-runtime.mts\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "stdout": "\n> agents-governance@0.1.14-rc5 app:test\n> node scripts/check-runtime.mts && vitest run --reporter=json --outputFile=D:\\trampo\\jcem.pro-uber\\.cache\\financial-cost-per-kilometer-tests.json\n\nJSON report written to D:/trampo/jcem.pro-uber/.cache/financial-cost-per-kilometer-tests.json\n",
+      "stderr": ""
+    }
+  ],
+  "tests": {
+    "total": 427,
+    "passed": 427,
+    "newSuite": 4
+  },
+  "protectedFiles": 104,
+  "rateAggregate": null,
+  "limits": "Core positive-distance cases only;K0/failures/snapshots/ceiling/full app pending."
+}

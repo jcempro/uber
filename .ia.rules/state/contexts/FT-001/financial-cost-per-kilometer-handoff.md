@@ -1,5 +1,16 @@
 # FT-003.43.1 — custo projetado por quilômetro
 
+## Atual43.1b — quatro casos centrais
+
+36a88ce8 recebidoUMAvez/command_sequenceSEMinferência/apply+verify0/source0d5af50e conferidaintegralmente/types/imports/lint/AST0/104proteções;423anteriores não rerun. Gitdeterminístico/liveahead27coincidem;Q8S10rev1/commit44a76c5/mainagoraahead28. Aceite somente fonte;comportamento ainda não aceito.
+
+1746f79e-3bc1-47b2-8757-4a678d4907c4 confirmadoRUNNING/R8Vv1/mesmochatrepo;command_sequence apply_financial_cost_km_core→verify_financial_cost_km_core SEMinferência;expect_changes=true/alvotestefuncional/commit supervisor/semGit/rede. core-apply.mjs/unit reaproveitam fixtures financeiras+helpers aceitos.4it:C490/K10049/10(todas6incidências),B0C340/K10017/5(margemindefinidamasC/Kready),E20/Tfix10C520/K10026/5 e mesmoscustos/K20013/5. Prefixometadata/basesnot-evaluated,metricreadyguard. Comentários/fixturemetadata/custosB0 ajustados expressamente;RCFindependente,não calcular expectativas da implementação. Preflightread-only/syntaxgate0 e testeprevisto integralrevisado;NÃOéexecuçãodostestes.
+
+Baselinead24550f423/104/54/fontee490;source0d5af50e pinada. TestenovoSHA d91ace6b99fa9f7033cfce74bbc5a02038353881a778791777873d7138ca810c;gatea679f1c3→033ddb0c479211e458d8ebc7efee6da2a051ee1aab4479835059712ac29d9422/newprofilecost-km-core/prefixfinancial-cost-per-kilometer;esperado427total/4itC-K. Applygera core.test.skeleton/gatebefore/receipt. Gateprotege104/54anteriores,pinsfonte/teste,fulltypes/lint/testes. Não reutilizar perfilesmargin/inversaqueapontamoutrosalvos/bases.
+
+Callbacklocal_resultUMAvez/revisão4casos/check/Git/Q8S/commitseaceito. PróximounidadeK0(semzerarfixos) eKinválido/ausente/recursos/policy;depoisfreeze/snapshot.43.2teto/interseção/ledger/UI/appglobalpendentes. Não reconsultar36a/2e3/a8a/5ae/etc. Monitor http://127.0.0.1:49767/job/1746f79e-3bc1-47b2-8757-4a678d4907c4;índice http://127.0.0.1:49767/ (linkscompletosnochat). Sem polling;N7Csemrotanativa/mediçãoautoritativa,impedimento/checkpointnãoécompactação.
+
+
 ## Atual43.1a — aplicação da proposta corrigida
 
 2e3a2d38 recebidoUMAvez/COMPLETEDsomenteproposta/semcomandos/efeitos;Gitdeterminístico/liveahead27coincidem;Q8S3rev1. OriginalJSON63d14b5723290e95153e7a4ba6dc6d39eca425949b781f3a3911f36f5492ea44 preservado. Fonte-proposta aceitaKnegativo/Kbruto/descartaFP/codestécnicoserrados/raizemfalhadedivisão/valueunfrozen/exportausente. CorreçõesMECÂNICASexpressas source-unit.md/source-prepare.mjs,semnovageração;auxcorrigido2c2f81b2cb363900a2eef37e902ae6b5dd5f032e2f70ad7bcac6ef0c32ed7ccb revisadointegralmente. Corrigidosnegativeguard/normalizedK/FPoriginal/codes/ctxfalhaunchanged/freezevalue/export/technicalmetricconditional;reusado literalmesmoconstrutorroot. Fonte ainda não validada emcomportamento.
